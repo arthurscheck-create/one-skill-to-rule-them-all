@@ -89,7 +89,14 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    Untertitel-Zone 1255–1515 und HUD-Zone 200–430 frei von wichtigen Texten halten.
    Das Referenzprojekt `videos/01-keiner-arbeitet/index.html` zeigt jede Technik.
 3. **Stimme** (deutsch) über **ElevenLabs**, Standardstimme **`bFv4VX9jlZxtKnEa6UWs`**
-   (vom Nutzer festgelegt), Modell `eleven_multilingual_v2`:
+   ("Arthur Holm – German", vom Nutzer festgelegt), Modell `eleven_multilingual_v2`.
+   **Weg A – ElevenLabs-Connector (11LBS, Credits des Nutzers):** `creative_create_flow`,
+   dann `creative_generate_speech` (voice_id oben, Skript als prompt, 2 Takes à ~710 Credits),
+   `creative_get_flow_run_status` pollen, den Take nehmen, der am besten in die Zieldauer passt,
+   `content_url` herunterladen (braucht Netzfreigabe für `elevenlabsusercontent.com`; sonst
+   lädt der Nutzer die MP3 im Chat hoch) und dann
+   `python3 tools/add_voice.py videos/<slug> take.mp3 --min-duration 50 --fit 50`.
+   **Weg B – API-Schlüssel (`ELEVENLABS_API_KEY`), wortgenau:**
    ```bash
    python3 tools/elevenlabs_tts.py videos/<slug> --min-duration 50 --fit 50
    ```
