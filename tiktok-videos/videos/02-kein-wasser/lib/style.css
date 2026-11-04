@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("fonts/montserrat-var-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+}
+:root {
+  --navy: #1b1936;
+  --navy2: #24214a;
+  --purple: #3b2b63;
+  --ink: #ffffff;
+  --red: #ff3b3b;
+  --yellow: #ffd23f;
+  --green: #3ee08f;
+  --cyan: #3fd4ff;
+  --skin: #f3c6a0;
+  --hair: #5b3a22;
+  --hoodie: #4d5275;
+  --font: "Montserrat", sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body {
+  width: 1080px; height: 1920px; overflow: hidden;
+  background: var(--navy); font-family: var(--font);
+}
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--navy); }
+
+/* ---------- Szenen ---------- */
+.scene { position: absolute; inset: 0; overflow: hidden; visibility: hidden; }
+.scene .cam, .scene .drift { position: absolute; inset: 0; transform-origin: 50% 45%; }
+.scene svg.art { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+
+/* ---------- Untertitel (Stil: fette Versalien, dunkle Kontur) ---------- */
+#captions { position: absolute; left: 50px; right: 50px; top: 1255px; height: 260px; z-index: 50; pointer-events: none; }
+.cap {
+  position: absolute; left: 0; right: 0; top: 0;
+  text-align: center; text-transform: uppercase;
+  font-weight: 900; font-size: 92px; line-height: 1.02; letter-spacing: -0.5px;
+  color: #fff;
+  -webkit-text-stroke: 14px #0d0b18; paint-order: stroke fill;
+  text-shadow: 0 8px 0 rgba(0,0,0,.45), 0 0 30px rgba(0,0,0,.35);
+  visibility: hidden; transform-origin: 50% 60%;
+}
+.cap .r, .title .r { color: var(--red); }
+.cap .y, .title .y { color: var(--yellow); }
+.cap .g, .title .g { color: var(--green); }
+
+/* ---------- HUD ---------- */
+#hud { position: absolute; top: 225px; left: 0; right: 0; z-index: 40; display: flex; flex-direction: column; align-items: center; gap: 14px; visibility: hidden; }
+.hud-panel {
+  position: relative; background: rgba(18, 8, 16, .92); border: 4px solid var(--red); border-radius: 16px;
+  padding: 10px 34px 12px; text-align: center; box-shadow: 0 0 34px rgba(255,59,59,.35), inset 0 0 20px rgba(255,59,59,.15);
+}
+.hud-label { font-size: 24px; font-weight: 800; letter-spacing: 2px; color: #ffd6d6; }
+.hud-row { display: flex; align-items: baseline; justify-content: center; gap: 10px; }
+.hud-num { font-size: 92px; font-weight: 900; line-height: 1; color: var(--red); letter-spacing: 2px; font-variant-numeric: tabular-nums; text-shadow: 0 0 22px rgba(255,59,59,.7); }
+.hud-unit { font-size: 38px; font-weight: 900; color: var(--red); }
+.hud-sub { font-size: 17px; font-weight: 700; letter-spacing: 2.5px; color: #c8bfd0; margin-top: 2px; }
+.hud-delta { position: absolute; left: 100%; top: 50%; margin-left: 18px; transform-origin: 0 50%; font-size: 40px; font-weight: 900; color: var(--yellow); white-space: nowrap; -webkit-text-stroke: 8px #0d0b18; paint-order: stroke fill; visibility: hidden; }
+.chip { border: 4px solid var(--green); background: rgba(6, 26, 18, .9); border-radius: 12px; padding: 6px 22px; font-weight: 900; font-size: 28px; color: #fff; letter-spacing: 1.5px; }
+.chip .chip-val { color: var(--green); margin-left: 10px; }
+.chip.warn { border-color: var(--yellow); background: rgba(30, 24, 4, .9); }
+.chip.warn .chip-val { color: var(--yellow); }
+.chip.bad { border-color: var(--red); background: rgba(34, 6, 8, .9); }
+.chip.bad .chip-val { color: var(--red); }
+
+/* ---------- Interaktion (Like / Folgen / Kommentar) ---------- */
+.interact {
+  position: absolute; left: 50%; top: 1560px; z-index: 55;
+  display: flex; align-items: center; gap: 18px; white-space: nowrap;
+  padding: 14px 34px 14px 18px; border-radius: 999px;
+  background: rgba(13, 11, 24, .88); border: 4px solid #fff;
+  box-shadow: 0 10px 0 rgba(0,0,0,.35), 0 0 40px rgba(255,59,92,.35);
+  font-weight: 900; font-size: 44px; color: #fff; text-transform: uppercase; letter-spacing: .5px;
+  visibility: hidden;
+}
+.interact .ico { width: 76px; height: 76px; flex: none; overflow: visible; }
+.interact.comment { box-shadow: 0 10px 0 rgba(0,0,0,.35), 0 0 40px rgba(63,212,255,.4); }
+.interact .r { color: var(--red); } .interact .y { color: var(--yellow); } .interact .g { color: var(--green); }
+
+/* ---------- Titel / Hook ---------- */
+.title { position: absolute; left: 40px; right: 40px; text-align: center; text-transform: uppercase; font-weight: 900; color: #fff; -webkit-text-stroke: 14px #0d0b18; paint-order: stroke fill; text-shadow: 0 8px 0 rgba(0,0,0,.45); }
+
+/* ---------- Overlays ---------- */
+#flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 60; pointer-events: none; }
+#vignette { position: absolute; inset: 0; z-index: 30; pointer-events: none; background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(5,3,15,.55) 100%); }
+#grain { position: absolute; inset: 0; z-index: 31; pointer-events: none; opacity: .07; mix-blend-mode: overlay; }

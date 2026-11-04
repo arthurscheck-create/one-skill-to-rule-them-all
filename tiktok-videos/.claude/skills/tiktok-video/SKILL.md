@@ -107,7 +107,8 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    `<section class="scene" id="sX"><div class="cam"><div class="drift"><svg class="art" viewBox="0 0 1080 1920">…`.
    Wiederverwendbar aus `cast.js`: `E.person(g,{x,y,s,face,arms,shirt,hair,pants,flip})`
    (faces: worried, shock, smirk, neutral · arms: down, phone, box, bag) und
-   `E.use(g,"rat"|"bag"|"truck"|"tower",x,y,s)`. Skylines/Regale/Fenster per Schleife mit
+   `E.use(g,"rat"|"bag"|"truck"|"tower",x,y,s)`. Effekte auf ein bestimmtes Wort legen mit
+   `E.cs("<zeile>", <chunk-index>, off)` (wortgenau nach align_words.py). Skylines/Regale/Fenster per Schleife mit
    `E.rng(seed)` erzeugen. Bildkomposition: wichtige Motive zwischen y≈450 und 1200,
    Untertitel-Zone 1255–1515 und HUD-Zone 200–430 frei von wichtigen Texten halten.
    Das Referenzprojekt `videos/01-keiner-arbeitet/index.html` zeigt jede Technik.
@@ -120,7 +121,7 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
       2 Takes à ~710 Credits pro 50 s) → `creative_get_flow_run_status` pollen.
    2. Take wählen (bei gleicher Qualität den lebendigeren/kürzeren); `content_url` mit curl nach
       `assets/` laden (Netzfreigabe `elevenlabsusercontent.com` ist eingerichtet).
-   3. `python3 tools/add_voice.py videos/<slug> assets/take.mp3 --tail 1.8`
+   3. `python3 tools/add_voice.py videos/<slug> assets/take.mp3 --copy-only --tail 2.4`
       (kopiert nach voice.*, trägt `<audio>` ein; Videolänge = Sprache + Nachlauf.
       Nur bei vorgegebener Länge `--fit <s>` ergänzen – beschleunigt max. 1,15x).
    4. **Wortgenau synchronisieren (immer machen, kostet 0 Credits):** gewählten Take mit
@@ -159,6 +160,10 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
 - **SVG mit `transform`-Attribut nicht direkt mit x/y animieren**, sonst überschreibt GSAP
   die Translation und das Element springt. In ein leeres `<g>` wrappen und den Wrapper animieren.
 - Kein `Math.random`/`Date.now`, nur `E.rng(seed)`. Alles muss seekbar sein.
+- `clip-path` nie auf das animierte Element selbst setzen (die Maske wandert mit): Element in ein
+  `<g clip-path=…>` legen und nur das Innere bewegen.
+- GSAP-`fill`/`stroke`-Tweens nur auf Elemente, die die Farbe wirklich haben sollen (ein Umriss mit
+  `fill:none` wird sonst vollflächig eingefärbt).
 - Texte im Hook: max. 3 Zeilen à ~14 Zeichen bei 90 px, sonst bricht es um und überlappt.
 - Ist ein Download-Host gesperrt (z. B. `elevenlabsusercontent.com`): den Nutzer Schritt für
   Schritt durch Umgebungsmenü → Edit → Network access → Allowed domains führen; die Freigabe

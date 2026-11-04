@@ -34,6 +34,7 @@ def main():
     ap.add_argument("project"); ap.add_argument("voice")
     ap.add_argument("--min-duration", type=float, default=0.0)
     ap.add_argument("--tail", type=float, default=2.2)
+    ap.add_argument("--copy-only", action="store_true", help="nur Tonspur einsetzen (Zeiten danach mit align_words.py)")
     ap.add_argument("--fit", type=float, default=0.0, help="Zieldauer in s: Stimme bei Bedarf bis max. 1.15x beschleunigen")
     a = ap.parse_args()
     proj = Path(a.project)
@@ -76,13 +77,19 @@ def main():
     # Sprechdauer jedes Satzes soll möglichst proportional zu seiner Zeichenzahl sein.
     chars = [len(re.sub(r"[^\wäöüÄÖÜß]", "", text(l))) or 1 for l in lines]
     n, m = len(segs), len(lines)
-    if n < m:
-        sys.exit(f"Nur {n} Sprechsegmente für {m} Sätze gefunden – Pausenschwelle anpassen.")
-    k = sum(b - a for a, b in segs) / sum(chars)
+    if not a.copy_only and n < m:
+        print(f"Nur {n} Sprechsegmente für {m} Sätze – setze nur die Tonspur ein. Danach align_words.py ausführen.")
+        a.copy_only = True
+    groups = []
+    if a.copy_only:
+        segs = []
+    k = sum(b_ - a_ for a_, b_ in segs) / sum(chars) if segs else 0
     pre = [0.0]
     for a_, b_ in segs:
         pre.append(pre[-1] + (b_ - a_))
     INF = float("inf")
+    if not segs:
+        m = 0
     cost = [[INF] * (n + 1) for _ in range(m + 1)]
     back = [[0] * (n + 1) for _ in range(m + 1)]
     cost[0][0] = 0.0

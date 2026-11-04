@@ -1,0 +1,2 @@
+{ "name": "02-kein-wasser", "private": true, "type": "module",
+  "scripts": { "check": "npx --yes hyperframes@0.9.11 check", "render": "npx --yes hyperframes@0.9.11 render" } }

@@ -18,6 +18,13 @@
   /** Endzeit eines Satzes (+ Offset). */
   const end = (id, off = 0) => +(L[id].t1 + off).toFixed(3);
   const ref = (r) => at(r.at, r.off || 0);
+  /** Startzeit des i-ten Untertitel-Chunks eines Satzes (wortgenau, wenn chunkStarts vorhanden). */
+  const cs = (id, i, off = 0) => {
+    const l = L[id];
+    if (!l) throw new Error("Unbekannte Zeile: " + id);
+    const t = l.chunkStarts && l.chunkStarts[i] !== undefined ? l.chunkStarts[i] : l.t0 + ((l.t1 - l.t0) * i) / l.chunks.length;
+    return +(t + off).toFixed(3);
+  };
 
   /** Deterministischer Zufall (Mulberry32). */
   function rng(seed) {
@@ -203,5 +210,5 @@
     fn(0);
   }
 
-  window.Engine = { T, at, end, ref, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract };
+  window.Engine = { T, at, end, ref, cs, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract };
 })();

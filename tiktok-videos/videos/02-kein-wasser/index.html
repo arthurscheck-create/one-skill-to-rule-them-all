@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was würde passieren, wenn es kein Wasser mehr auf der Erde gibt?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 90px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    #s10 .q { position: absolute; top: 300px; left: 40px; right: 40px; text-align: center; font-weight: 900; font-size: 86px; line-height: 1.02; text-transform: uppercase; color: #fff; -webkit-text-stroke: 14px #0d0b18; paint-order: stroke fill; }
+    #s10 .opt { position: absolute; left: 90px; right: 90px; height: 150px; border-radius: 22px; border: 5px solid; display: flex; align-items: center; padding: 0 34px; gap: 28px; font-weight: 900; text-transform: uppercase; }
+    #s10 .opt .k { font-size: 70px; width: 70px; text-align: center; }
+    #s10 .opt .t { font-size: 52px; color: #fff; line-height: 1.0; }
+    #s10 .opt .t small { display: block; font-size: 24px; font-weight: 800; letter-spacing: 1px; opacity: .85; margin-top: 6px; }
+    #s10 .o1 { top: 700px; border-color: #3fd4ff; background: rgba(8,40,60,.85); color: #3fd4ff; }
+    #s10 .o2 { top: 880px; border-color: #3ee08f; background: rgba(6,40,24,.85); color: #3ee08f; }
+    #s10 .o3 { top: 1060px; border-color: #ffd23f; background: rgba(46,36,4,.85); color: #ffd23f; }
+    #s10 .o4 { top: 1240px; border-color: #ff3b3b; background: rgba(50,8,10,.85); color: #ff3b3b; }
+    #s10 .cta { position: absolute; top: 1440px; left: 60px; right: 60px; text-align: center; font-weight: 900; font-size: 40px; line-height: 1.15; color: #3fd4ff; text-transform: uppercase; -webkit-text-stroke: 8px #0d0b18; paint-order: stroke fill; }
+    #s10 .ring { position: absolute; top: 120px; right: 70px; width: 130px; height: 130px; }
+    #s10 .ring .n { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 64px; color: #fff; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="52.99" data-width="1080" data-height="1920">
+
+    <!-- S1 · Hook: Bad, Wasserhahn trocken -->
+    <section class="scene" id="s1" data-drift="1.07"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs>
+          <linearGradient id="g-wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f3a6e"/><stop offset="1" stop-color="#1e2348"/></linearGradient>
+          <linearGradient id="g-sunrise" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b4a9a"/><stop offset=".6" stop-color="#e0788a"/><stop offset="1" stop-color="#ffc27a"/></linearGradient>
+          <clipPath id="c-win"><rect x="100" y="270" width="260" height="320" rx="8"/></clipPath>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#g-wall)"/>
+        <g id="s1-tiles" stroke="rgba(255,255,255,.05)" stroke-width="5"></g>
+        <rect x="80" y="250" width="300" height="360" rx="16" fill="#3a4580"/>
+        <g clip-path="url(#c-win)"><rect x="100" y="270" width="260" height="320" fill="url(#g-sunrise)"/><circle cx="230" cy="560" r="60" fill="#ffe28a"/><g id="s1-city"></g></g>
+        <rect x="226" y="270" width="8" height="320" fill="#3a4580"/><rect x="100" y="426" width="260" height="8" fill="#3a4580"/>
+        <rect x="740" y="560" width="260" height="16" rx="6" fill="#4a5590"/>
+        <rect x="790" y="480" width="60" height="80" rx="10" fill="#3fd4ff" opacity=".85"/><rect x="800" y="420" width="10" height="80" rx="5" fill="#ffd23f"/><rect x="822" y="430" width="10" height="70" rx="5" fill="#ff3b5c"/>
+        <rect x="890" y="500" width="70" height="60" rx="8" fill="#f2f0f7"/>
+        <g id="s1-kid"></g>
+        <rect x="60" y="1175" width="960" height="60" rx="14" fill="#d9d6ea"/>
+        <ellipse cx="540" cy="1200" rx="240" ry="34" fill="#a9a6c4"/><ellipse cx="540" cy="1204" rx="200" ry="22" fill="#86839f"/>
+        <rect x="100" y="1235" width="880" height="440" rx="10" fill="#3a4580"/>
+        <rect x="130" y="1265" width="400" height="380" rx="10" fill="#33407a"/><rect x="550" y="1265" width="400" height="380" rx="10" fill="#33407a"/>
+        <rect x="500" y="1430" width="12" height="60" rx="6" fill="#c9cff0"/><rect x="568" y="1430" width="12" height="60" rx="6" fill="#c9cff0"/>
+        <rect x="524" y="1090" width="32" height="90" rx="10" fill="#b9c0e6"/>
+        <path d="M540,1100 Q540,1060 590,1060 L620,1060 Q640,1060 640,1080 L640,1110" stroke="#b9c0e6" stroke-width="26" fill="none" stroke-linecap="round"/>
+        <ellipse id="s1-drop" cx="640" cy="1132" rx="9" ry="13" fill="#9adcff"/>
+        <g class="lbl" fill="#ffd23f" stroke="#0d0b18" stroke-width="8" paint-order="stroke"><text id="s1-q1" x="770" y="820" font-size="110">?</text><text id="s1-q2" x="250" y="780" font-size="80">?</text></g>
+      </svg>
+      <div class="title main">WAS WÄRE, WENN<br/>DAS <span class="r">WASSER</span><br/>VERSCHWINDET?</div>
+      <div class="title sub">⚠ DU HAST NUR 3 TAGE</div>
+    </div></div></section>
+
+    <!-- S2 · Sekunde eins: Wasserhahn – nichts -->
+    <section class="scene" id="s2"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="#24305e"/>
+        <g id="s2-tiles" stroke="#2d3a70" stroke-width="6"></g>
+        <rect x="0" y="1000" width="1080" height="920" fill="#2f3a6a"/><rect x="0" y="980" width="1080" height="50" fill="#d9d6ea"/>
+        <ellipse cx="540" cy="1090" rx="380" ry="80" fill="#a9a6c4"/><ellipse cx="540" cy="1090" rx="350" ry="64" fill="#86839f"/><ellipse cx="540" cy="1110" rx="40" ry="12" fill="#4a4866"/>
+        <rect x="500" y="860" width="80" height="140" rx="16" fill="#9aa3cf"/><rect x="515" y="870" width="20" height="120" fill="#d2d8f6" opacity=".6"/>
+        <path d="M540,880 L540,620 Q540,540 620,540 L700,540 Q760,540 760,600 L760,680" stroke="#9aa3cf" stroke-width="64" fill="none"/>
+        <path d="M528,860 L528,630 Q528,560 600,556" stroke="#dfe3fb" stroke-width="12" fill="none" opacity=".55"/>
+        <rect x="726" y="670" width="68" height="36" rx="8" fill="#7d86b4"/>
+        <g id="s2-handlewrap"><g id="s2-handle"><rect x="594" y="800" width="52" height="60" rx="10" fill="#7d86b4"/><rect x="606" y="680" width="28" height="130" rx="14" fill="#b2baea"/></g></g>
+        <ellipse id="s2-drop" cx="760" cy="724" rx="13" ry="18" fill="#9adcff"/>
+        <g id="s2-steam" fill="#e6eaff"><circle cx="760" cy="700" r="18"/><circle cx="740" cy="660" r="14"/><circle cx="782" cy="630" r="11"/></g>
+        <g id="s2-hand"><g transform="translate(470,900)">
+          <path d="M-260,520 L-120,90 Q-100,30 -40,40 L120,70 Q170,80 160,130 Q150,170 100,165 L-10,150" fill="#4d5275"/>
+          <path d="M-110,100 Q-80,10 -10,20 L130,40 Q190,50 180,110 Q170,160 110,150 L0,140 Q-60,150 -110,100Z" fill="#f3c6a0"/>
+        </g></g>
+        <text id="s2-x" class="lbl" x="760" y="1060" text-anchor="middle" font-size="150" fill="#ff3b3b" stroke="#0d0b18" stroke-width="10" paint-order="stroke">✕</text>
+      </svg>
+    </div></div></section>
+
+    <!-- S3 · Ozeane verschwinden, Schiff stürzt -->
+    <section class="scene" id="s3" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs>
+          <linearGradient id="g-sky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a6fc4"/><stop offset="1" stop-color="#bfe0ff"/></linearGradient>
+          <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a8ad6"/><stop offset="1" stop-color="#0b3568"/></linearGradient>
+          <linearGradient id="g-bed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6b47a"/><stop offset="1" stop-color="#8a6a42"/></linearGradient>
+          <linearGradient id="g-canyon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6b5236"/><stop offset="1" stop-color="#140e0a"/></linearGradient>
+          <clipPath id="c-sea"><rect x="0" y="0" width="1080" height="1920"/></clipPath>
+        </defs>
+        <rect width="1080" height="840" fill="url(#g-sky3)"/>
+        <g fill="#fff" opacity=".85"><ellipse cx="220" cy="240" rx="120" ry="40"/><ellipse cx="300" cy="215" rx="80" ry="40"/><ellipse cx="820" cy="320" rx="140" ry="44"/></g>
+        <path d="M0,840 L180,790 L330,830 L520,780 L700,825 L880,790 L1080,830 L1080,860 L0,860Z" fill="#7d93b8"/>
+        <rect y="840" width="1080" height="1080" fill="url(#g-bed)"/>
+        <path d="M360,860 Q470,1150 430,1920 L800,1920 Q690,1150 760,860Z" fill="url(#g-canyon)"/>
+        <path d="M470,980 Q520,1300 500,1920 L700,1920 Q640,1300 680,980Z" fill="#0d0907" opacity=".7"/>
+        <g stroke="rgba(90,60,30,.35)" stroke-width="6" fill="none"><path d="M40,1000 Q160,980 280,1010"/><path d="M820,1050 Q930,1030 1050,1060"/><path d="M60,1300 Q200,1270 320,1310"/><path d="M800,1400 Q930,1380 1060,1420"/></g>
+        <g id="s3-fish"></g>
+        <path d="M0,780 L250,790 Q300,820 320,1920 L0,1920Z" fill="#4e4136"/>
+        <path d="M0,780 L250,790 L260,812 L0,806Z" fill="#6a8f4a"/>
+        <g transform="translate(110,780)"><rect x="-34" y="-230" width="68" height="230" fill="#f2f0f7"/><rect x="-34" y="-170" width="68" height="40" fill="#e8463c"/><rect x="-34" y="-90" width="68" height="40" fill="#e8463c"/><rect x="-46" y="-270" width="92" height="44" rx="8" fill="#2b2a38"/><rect x="-30" y="-262" width="60" height="28" fill="#ffe28a"/><path d="M-40,-270 L0,-310 L40,-270Z" fill="#e8463c"/></g>
+        <g clip-path="url(#c-sea)"><g id="s3-water">
+          <rect x="250" y="830" width="830" height="1100" fill="url(#g-sea)"/>
+          <path d="M250,830 Q330,815 410,830 T570,830 T730,830 T890,830 T1080,830 L1080,850 L250,850Z" fill="#5fb3f0"/>
+        </g></g>
+        <g id="s3-shipwrap"><g id="s3-ship" transform="translate(690,840)">
+          <path d="M-230,-20 L230,-20 L190,70 L-200,70Z" fill="#2b2a38"/><path d="M-230,-20 L230,-20 L222,0 L-224,0Z" fill="#e8463c"/>
+          <g><rect x="-200" y="-80" width="60" height="60" fill="#3fd4ff"/><rect x="-136" y="-80" width="60" height="60" fill="#ffd23f"/><rect x="-72" y="-80" width="60" height="60" fill="#3ee08f"/><rect x="-8" y="-80" width="60" height="60" fill="#e8463c"/><rect x="-136" y="-140" width="60" height="60" fill="#c26bff"/><rect x="-72" y="-140" width="60" height="60" fill="#f08a4b"/></g>
+          <rect x="90" y="-150" width="90" height="130" fill="#f2f0f7"/><rect x="100" y="-136" width="70" height="22" fill="#24305e"/><rect x="150" y="-200" width="18" height="50" fill="#2b2a38"/>
+        </g></g>
+        <g id="s3-dust" fill="#d9c6a0"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S4 · Supermarkt: Getränke leer -->
+    <section class="scene" id="s4" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-shelf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4d4880"/><stop offset="1" stop-color="#2b2850"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-shelf)"/>
+        <rect x="40" y="420" width="1000" height="1260" rx="14" fill="#25223f"/>
+        <g id="s4-items"></g><g id="s4-boards"></g>
+        <g id="s4-leer"><g transform="translate(540,1000) rotate(-8)"><rect x="-260" y="-80" width="520" height="160" rx="12" fill="#e8463c" stroke="#fff" stroke-width="8"/><text class="lbl" x="0" y="34" text-anchor="middle" font-size="104" fill="#fff">LEER</text></g></g>
+        <g id="s4-badge"><g transform="translate(540,640)"><circle r="170" fill="#1f6fd6" stroke="#fff" stroke-width="10"/><text class="lbl" x="0" y="30" text-anchor="middle" font-size="120" fill="#fff">90%</text><text class="lbl" x="0" y="90" text-anchor="middle" font-size="42" fill="#bfe6ff">WASSER</text></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S5 · Tag eins: kein Regen, Hitze, eisige Nacht -->
+    <section class="scene" id="s5" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs>
+          <linearGradient id="g-hot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a3c"/><stop offset="1" stop-color="#ffd98a"/></linearGradient>
+          <linearGradient id="g-cold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#070a24"/><stop offset="1" stop-color="#1f3b7a"/></linearGradient>
+          <radialGradient id="g-sun"><stop offset="0" stop-color="#fffbe6"/><stop offset=".4" stop-color="#ffe28a"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#g-hot)"/>
+        <g id="s5-sun"><circle cx="420" cy="660" r="300" fill="url(#g-sun)"/><circle cx="420" cy="660" r="120" fill="#fffbe6"/></g>
+        <g id="s5-clouds" fill="#fff"><g id="s5-c1"><ellipse cx="760" cy="420" rx="150" ry="55"/><ellipse cx="700" cy="390" rx="90" ry="55"/></g><g id="s5-c2"><ellipse cx="220" cy="300" rx="130" ry="46"/><ellipse cx="270" cy="270" rx="80" ry="46"/></g></g>
+        <g id="s5-night" opacity="0"><rect width="1080" height="1920" fill="url(#g-cold)"/><g id="s5-stars" fill="#fff"></g><circle cx="300" cy="380" r="56" fill="#e9f0ff"/><circle cx="322" cy="364" r="56" fill="#0b1030"/></g>
+        <g id="s5-city"></g>
+        <rect y="1500" width="1080" height="420" fill="#3a2630"/>
+        <g id="s5-cracks" stroke="#1d1218" stroke-width="7" fill="none"></g>
+        <rect id="s5-frost" y="1480" width="1080" height="440" fill="#bfe6ff" opacity="0"/>
+        <g transform="translate(900,0)">
+          <rect x="-40" y="470" width="80" height="640" rx="40" fill="#f2f0f7" stroke="#0d0b18" stroke-width="8"/>
+          <circle cx="0" cy="1120" r="70" fill="#f2f0f7" stroke="#0d0b18" stroke-width="8"/>
+          <rect id="s5-merc" x="-20" y="900" width="40" height="220" rx="20" fill="#ff3b3b"/>
+          <circle id="s5-bulb" cx="0" cy="1120" r="50" fill="#ff3b3b"/>
+          <g stroke="#0d0b18" stroke-width="6"><path d="M40,560 h24 M40,660 h24 M40,760 h24 M40,860 h24 M40,960 h24"/></g>
+        </g>
+        <text id="s5-temp" class="lbl" x="900" y="440" text-anchor="middle" font-size="76" fill="#fff" stroke="#0d0b18" stroke-width="12" paint-order="stroke">+22°C</text>
+      </svg>
+    </div></div></section>
+
+    <!-- S6 · Bäume und Felder vertrocknen -->
+    <section class="scene" id="s6" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0a85a"/><stop offset="1" stop-color="#ffe3a8"/></linearGradient></defs>
+        <rect width="1080" height="1100" fill="url(#g-sky6)"/>
+        <circle cx="820" cy="300" r="90" fill="#fff6cf"/>
+        <rect id="s6-field" y="1000" width="1080" height="920" fill="#4caf50"/>
+        <g id="s6-rows" stroke="rgba(0,0,0,.12)" stroke-width="10"></g>
+        <g id="s6-cracks" stroke="#5a3a1a" stroke-width="8" fill="none" stroke-linecap="round"></g>
+        <g id="s6-trees"></g>
+        <g id="s6-leaves"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S7 · Tag zwei: Durst, Kopf hämmert -->
+    <section class="scene" id="s7" data-drift="1.08"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs>
+          <radialGradient id="g-bg7" cx=".5" cy=".45" r=".75"><stop offset="0" stop-color="#ff9a4c"/><stop offset="1" stop-color="#7a1f2a"/></radialGradient>
+          <radialGradient id="g-red7" cx=".5" cy=".5" r=".7"><stop offset=".55" stop-color="#ff0000" stop-opacity="0"/><stop offset="1" stop-color="#ff0000" stop-opacity=".55"/></radialGradient>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#g-bg7)"/>
+        <g id="s7-heat" stroke="rgba(255,255,255,.25)" stroke-width="8" fill="none" stroke-linecap="round"></g>
+        <g id="s7-ghost" opacity="0"></g>
+        <g id="s7-kid"></g>
+        <g stroke="#a3434c" stroke-width="5" stroke-linecap="round"><path d="M500,1222 l12,-14 M540,1226 l-6,-16 M575,1220 l-10,-14"/></g>
+        <rect id="s7-pulse" width="1080" height="1920" fill="url(#g-red7)" opacity="0"/>
+      </svg>
+    </div></div></section>
+
+    <!-- S8 · Tag drei: 3-Tage-Grenze -->
+    <section class="scene" id="s8" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-bg8" cx=".5" cy=".45" r=".8"><stop offset="0" stop-color="#2c2760"/><stop offset="1" stop-color="#110f26"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-bg8)"/>
+        <g id="s8-drops"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S9 · Wendung: das letzte Wasser steckt in dir -->
+    <section class="scene" id="s9" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs>
+          <radialGradient id="g-bg9" cx=".5" cy=".45" r=".8"><stop offset="0" stop-color="#1a3d7a"/><stop offset="1" stop-color="#0b0d24"/></radialGradient>
+          <linearGradient id="g-water9" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fd6ff"/><stop offset="1" stop-color="#1f6fd6"/></linearGradient>
+          <clipPath id="c-body">
+            <circle cx="540" cy="570" r="125"/><rect x="500" y="680" width="80" height="60"/>
+            <path d="M400,720 Q540,690 680,720 Q760,750 770,900 L795,1180 Q798,1215 765,1215 L730,1215 L712,980 L700,980 L700,1700 Q700,1730 670,1730 L565,1730 L552,1250 L528,1250 L515,1730 L410,1730 Q380,1730 380,1700 L380,980 L368,980 L350,1215 L315,1215 Q282,1215 285,1180 L310,900 Q320,750 400,720Z"/>
+          </clipPath>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#g-bg9)"/>
+        <g id="s9-rays" opacity=".15" fill="#6fd6ff"></g>
+        <g id="s9-body">
+          <g clip-path="url(#c-body)">
+            <rect x="260" y="420" width="560" height="1340" fill="#232052"/>
+            <g id="s9-water"><rect x="240" y="0" width="600" height="1800" fill="url(#g-water9)"/>
+              <path id="s9-wave" d="M240,0 Q290,-26 340,0 T440,0 T540,0 T640,0 T740,0 T840,0 T940,0 L940,30 L240,30Z" fill="#a9e8ff"/></g>
+            <g id="s9-bubbles" fill="#d6f4ff" opacity=".8"></g>
+          </g>
+          <g fill="none" stroke="#6fd6ff" stroke-width="8" opacity=".9">
+            <circle cx="540" cy="570" r="125"/>
+            <path d="M400,720 Q540,690 680,720 Q760,750 770,900 L795,1180 Q798,1215 765,1215 L730,1215 L712,980 L700,980 L700,1700 Q700,1730 670,1730 L565,1730 L552,1250 L528,1250 L515,1730 L410,1730 Q380,1730 380,1700 L380,980 L368,980 L350,1215 L315,1215 Q282,1215 285,1180 L310,900 Q320,750 400,720Z"/>
+          </g>
+        </g>
+        <text id="s9-pct" class="lbl" x="540" y="1080" text-anchor="middle" font-size="150" fill="#fff" stroke="#0d0b18" stroke-width="14" paint-order="stroke">0%</text>
+      </svg>
+    </div></div></section>
+
+    <!-- S10 · CTA-Abstimmung -->
+    <section class="scene" id="s10" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-bg10" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#1f3b7a"/><stop offset="1" stop-color="#0d1028"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-bg10)"/>
+        <g id="s10-drops" fill="#3fd4ff" opacity=".18"></g>
+      </svg>
+      <div class="q">WAS WÜRDEST <span style="color:var(--yellow)">DU</span> AM MEISTEN VERMISSEN?</div>
+      <div class="opt o1"><span class="k">A</span><span class="t">KAFFEE<small>Ohne Wasser kein Kaffee</small></span></div>
+      <div class="opt o2"><span class="k">B</span><span class="t">DUSCHEN<small>Nie wieder frisch</small></span></div>
+      <div class="opt o3"><span class="k">C</span><span class="t">COLA<small>Ist ja auch Wasser</small></span></div>
+      <div class="opt o4"><span class="k">D</span><span class="t">REGEN<small>Nie wieder Wolken</small></span></div>
+      <div class="cta">SCHREIB A, B, C ODER D<br/>IN DIE KOMMENTARE</div>
+      <div class="ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle id="s10-arc" cx="65" cy="65" r="56" fill="none" stroke="#3fd4ff" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" stroke-dashoffset="0" transform="rotate(-90 65 65)"/></svg><div class="n" id="s10-n">6</div></div>
+    </div></div></section>
+
+    <!-- Overlays -->
+    <div id="hud">
+      <div class="hud-panel">
+        <div class="hud-label"></div>
+        <div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div>
+        <div class="hud-sub"></div>
+        <div class="hud-delta"></div>
+      </div>
+      <div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div>
+    </div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div>
+    <div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="50.89" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="52.99" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const D = E.T.duration;
+
+    function skyline(g, o) {
+      const r = E.rng(o.seed); let x = o.x0 || 0;
+      while (x < (o.x1 || 1080)) {
+        const w = o.wMin + r() * (o.wMax - o.wMin), h = o.hMin + r() * (o.hMax - o.hMin), y = o.base - h;
+        svg("rect", { x, y, width: w, height: h + 4, fill: o.fill }, g);
+        if (o.lit) for (let wy = y + o.win; wy < o.base - o.win; wy += o.win * 2) for (let wx = x + o.win * .8; wx < x + w - o.win; wx += o.win * 1.8)
+          if (r() < o.lit) svg("rect", { x: wx, y: wy, width: o.win, height: o.win * 1.2, fill: o.litColor }, g);
+        x += w + (o.gap || 0);
+      }
+    }
+    function tiles(g, h) { for (let y = 0; y < h; y += 120) svg("line", { x1: 0, y1: y, x2: 1080, y2: y }, g); for (let x = 0; x < 1080; x += 120) svg("line", { x1: x, y1: 0, x2: x, y2: h }, g); }
+
+    /* ===== S1 Hook ===== */
+    tiles($("#s1-tiles"), 1180);
+    skyline($("#s1-city"), { seed: 2, x0: 100, x1: 360, base: 590, wMin: 30, wMax: 70, hMin: 60, hMax: 170, fill: "#2a2252", lit: .4, win: 7, litColor: "#ffd27a" });
+    E.person($("#s1-kid"), { x: 540, y: 1390, s: 1.1, face: "shock", arms: "down" });
+    tl.fromTo("#s1-kid", { y: 40 }, { y: 0, duration: 0.35, ease: "back.out(3)" }, 0.1);
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2.4)" }, 0.1);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 0.7);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: 0.15 }, at("loop", -0.15));
+    tl.set("#s1-drop", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s1-drop", { autoAlpha: 1, scale: .3, y: 0, svgOrigin: "640 1132" }, { scale: 1, duration: .5, immediateRender: false }, 0.2);
+    tl.to("#s1-drop", { y: 70, autoAlpha: 0, duration: .35, ease: "power2.in" }, 0.75);
+    ["#s1-q1", "#s1-q2"].forEach((q, i) => tl.fromTo(q, { autoAlpha: 0, scale: 0, transformOrigin: "50% 80%" }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(3)" }, at("loop", 0.1 + i * 0.35)));
+
+    /* ===== S2 Wasserhahn ===== */
+    tiles($("#s2-tiles"), 990);
+    tl.fromTo("#s2-hand", { x: 360, y: 520 }, { x: 0, y: 0, duration: 0.5, ease: "power3.out" }, at("hahn", -0.1));
+    tl.fromTo("#s2-handle", { rotation: 0, svgOrigin: "620 830" }, { rotation: -60, duration: 0.5, ease: "power2.inOut" }, at("hahn", 0.35));
+    tl.set("#s2-drop", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s2-drop", { autoAlpha: 1, scale: .2, svgOrigin: "760 712" }, { scale: 1, duration: .5, immediateRender: false }, at("hahn", 0.6));
+    tl.to("#s2-drop", { scale: 0, autoAlpha: 0, duration: .35, svgOrigin: "760 712" }, cs("hahn", 2, 0));
+    tl.set("#s2-steam", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s2-steam", { autoAlpha: .9, y: 0 }, { autoAlpha: 0, y: -90, duration: 1.0, immediateRender: false }, cs("hahn", 2, 0.1));
+    tl.fromTo("#s2-x", { autoAlpha: 0, scale: 0, transformOrigin: "50% 50%" }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(3)" }, cs("hahn", 2, 0));
+
+    /* ===== S3 Ozeane ===== */
+    (function () {
+      const F = $("#s3-fish"), r = E.rng(31);
+      for (let i = 0; i < 7; i++) {
+        const fx = 290 + r() * 740, fy = 950 + r() * 600; if (fx > 380 && fx < 780) continue;
+        const g = svg("g", { opacity: 0 }, F);
+        svg("ellipse", { cx: fx, cy: fy, rx: 30, ry: 13, fill: "#9fb7c9" }, g);
+        svg("path", { d: `M${fx - 28},${fy} l-22,-14 l0,28z`, fill: "#9fb7c9" }, g);
+        svg("circle", { cx: fx + 16, cy: fy - 3, r: 3, fill: "#111" }, g);
+        tl.to(g, { opacity: 1, duration: .2 }, at("meer", 1.2 + i * .1));
+        tl.fromTo(g, { rotation: -12, svgOrigin: `${fx} ${fy}` }, { rotation: 12, duration: .14, repeat: 15, yoyo: true, ease: "none" }, at("meer", 1.3));
+      }
+      tl.fromTo("#s3-water", { y: 0 }, { y: 1150, duration: 1.5, ease: "power2.in" }, at("meer", 0.2));
+      tl.fromTo("#s3-shipwrap", { y: 0, rotation: 0, svgOrigin: "690 840" }, { y: 60, rotation: -4, duration: 1.2, ease: "power1.inOut" }, at("meer", 0.4));
+      tl.to("#s3-shipwrap", { y: 1250, x: -60, rotation: 32, duration: 1.6, ease: "power2.in", svgOrigin: "690 840" }, at("schiffe", 0.1));
+      tl.fromTo("#s3 .cam", { y: 0 }, { y: 10, duration: .05, repeat: 9, yoyo: true, ease: "none", immediateRender: false }, at("meer", 0.2));
+      const dust = $("#s3-dust");
+      for (let i = 0; i < 6; i++) {
+        const c = svg("circle", { cx: 520 + i * 40, cy: 1500, r: 60, opacity: 0 }, dust);
+        tl.fromTo(c, { opacity: .8, scale: .3, svgOrigin: `${520 + i * 40} 1500` }, { opacity: 0, scale: 2, y: -160, duration: 1.0, immediateRender: false }, end("schiffe", -0.1 + i * .05));
+      }
+    })();
+
+    /* ===== S4 Getränke ===== */
+    (function () {
+      const I = $("#s4-items"), B = $("#s4-boards");
+      const kinds = [["#4a2414", "#e8463c", "COLA"], ["#f4f1ea", "#6c8cff", "MILCH"], ["#ff9f1c", "#3ee08f", "SAFT"]];
+      const liquids = [];
+      for (let row = 0; row < 3; row++) {
+        const by = [760, 1060, 1800][row];
+        for (let k = 0; k < 6; k++) {
+          const [liq, lab, name] = kinds[(k + row) % 3];
+          const x = 90 + k * 152, w = 110, h = 220, y = by - h;
+          svg("rect", { x: x + 33, y: y - 46, width: 44, height: 52, rx: 8, fill: "rgba(220,235,255,.35)" }, I);
+          svg("rect", { x: x + 30, y: y - 60, width: 50, height: 22, rx: 6, fill: lab }, I);
+          svg("rect", { x, y, width: w, height: h, rx: 24, fill: "rgba(220,235,255,.18)", stroke: "rgba(255,255,255,.55)", "stroke-width": 4 }, I);
+          const lq = svg("rect", { x: x + 8, y: y + 26, width: w - 16, height: h - 34, rx: 16, fill: liq }, I);
+          svg("rect", { x, y: y + 90, width: w, height: 58, fill: lab }, I);
+          const t = svg("text", { x: x + w / 2, y: y + 129, "text-anchor": "middle", class: "lbl", "font-size": 26, fill: "#fff" }, I); t.textContent = name;
+          liquids.push({ el: lq, ox: x + w / 2, oy: y + h - 8 });
+        }
+        svg("rect", { x: 40, y: by, width: 1000, height: 30, fill: "#6d6a9a" }, B);
+        svg("rect", { x: 40, y: by + 30, width: 1000, height: 12, fill: "#1a1830" }, B);
+      }
+      const t0 = cs("cola", 1, -0.1), span = Math.max(0.8, cs("cola", 2) - t0 + 0.4);
+      liquids.forEach((l, i) => tl.fromTo(l.el, { scaleY: 1, svgOrigin: `${l.ox} ${l.oy}` }, { scaleY: 0, duration: .45, ease: "power2.in" }, t0 + (i / liquids.length) * span));
+      tl.fromTo("#s4-leer", { autoAlpha: 0, scale: 2.2, svgOrigin: "540 1000" }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2)" }, cs("cola", 2));
+      tl.to("#s4-leer", { autoAlpha: 0, duration: .2 }, at("denn", -0.1));
+      tl.fromTo("#s4-badge", { autoAlpha: 0, scale: 0, svgOrigin: "540 640" }, { autoAlpha: 1, scale: 1, duration: .4, ease: "back.out(2.5)" }, at("denn", 0.1));
+    })();
+
+    /* ===== S5 Himmel, Hitze, Kälte ===== */
+    (function () {
+      skyline($("#s5-city"), { seed: 8, base: 1510, wMin: 90, wMax: 170, hMin: 160, hMax: 420, fill: "#3a2630", gap: 4 });
+      const st = $("#s5-stars"), r = E.rng(4);
+      for (let i = 0; i < 60; i++) svg("circle", { cx: r() * 1080, cy: r() * 1100, r: 1.5 + r() * 2.5, opacity: .3 + r() * .6 }, st);
+      const cr = $("#s5-cracks");
+      ["M80,1600 l60,40 l-20,60 l70,50", "M400,1560 l-40,70 l50,40 l-30,80", "M700,1620 l70,30 l-10,70 l60,60", "M960,1580 l-50,60 l40,70"].forEach((d) => svg("path", { d }, cr));
+      tl.to("#s5-c1", { autoAlpha: 0, scale: .4, x: 120, transformOrigin: "50% 50%", duration: .6, ease: "power2.in" }, cs("regen", 1, 0));
+      tl.to("#s5-c2", { autoAlpha: 0, scale: .4, x: -120, transformOrigin: "50% 50%", duration: .6, ease: "power2.in" }, cs("regen", 1, 0.15));
+      tl.fromTo("#s5-sun", { scale: 1, svgOrigin: "420 660" }, { scale: 1.25, duration: .8, ease: "back.out(2)" }, at("sonne"));
+      tl.to("#s5-sun", { y: 900, duration: 1.0, ease: "power2.in" }, at("nacht", -0.2));
+      tl.to("#s5-night", { opacity: 1, duration: .8 }, at("nacht", -0.1));
+      tl.to("#s5-frost", { opacity: .28, duration: .8 }, at("nacht", 0.3));
+      const merc = $("#s5-merc"), bulb = $("#s5-bulb"), temp = $("#s5-temp");
+      const tS = at("sonne"), tN = at("nacht", -0.1);
+      E.clock(tl, (t) => {
+        let v = 22;
+        if (t >= tS) v = 22 + (48 - 22) * Math.min(1, (t - tS) / 1.2);
+        if (t >= tN) v = 48 + (-15 - 48) * Math.min(1, (t - tN) / 1.2);
+        const h = 60 + (v + 20) * 7.2;
+        merc.setAttribute("y", 1120 - h); merc.setAttribute("height", h);
+        const col = v < 0 ? "#3fd4ff" : "#ff3b3b"; merc.setAttribute("fill", col); bulb.setAttribute("fill", col);
+        temp.textContent = (v >= 0 ? "+" : "−") + Math.abs(Math.round(v)) + "°C";
+      });
+    })();
+
+    /* ===== S6 Bäume ===== */
+    (function () {
+      const rows = $("#s6-rows");
+      for (let i = 0; i < 8; i++) { const y = 1040 + Math.pow(i / 7, 1.5) * 860; svg("line", { x1: 0, y1: y, x2: 1080, y2: y }, rows); }
+      const cr = $("#s6-cracks");
+      const crackPaths = ["M120,1500 l80,40 l-30,70 l90,40", "M480,1400 l-60,80 l70,50 l-40,90", "M760,1560 l90,30 l-20,80 l80,60", "M300,1750 l70,-40 l60,50", "M880,1300 l-70,60 l50,60"];
+      crackPaths.forEach((d) => { const p = svg("path", { d, "stroke-dasharray": 400, "stroke-dashoffset": 400 }, cr); tl.to(p, { attr: { "stroke-dashoffset": 0 }, duration: 1.2, ease: "power1.out" }, at("baeume", 0.6)); });
+      const T = $("#s6-trees"), Lv = $("#s6-leaves"), r = E.rng(17);
+      const crowns = [];
+      [[160, 1080, .8], [420, 1020, .6], [700, 1060, .75], [930, 1010, .55], [300, 1300, 1.1], [820, 1330, 1.15]].forEach(([x, y, s]) => {
+        const g = svg("g", {}, T);
+        svg("rect", { x: x - 18 * s, y: y - 40 * s, width: 36 * s, height: 220 * s, rx: 8, fill: "#6b4a2e" }, g);
+        [[0, -120, 110], [-80, -60, 80], [80, -60, 80], [0, -30, 90]].forEach(([dx, dy, rr]) => crowns.push(svg("circle", { cx: x + dx * s, cy: y + dy * s, r: rr * s, fill: "#3fae5a" }, g)));
+        for (let k = 0; k < 4; k++) {
+          const lx = x + (r() - .5) * 160 * s, ly = y - 60 * s;
+          const leaf = svg("ellipse", { cx: lx, cy: ly, rx: 12 * s, ry: 7 * s, fill: "#b07a32", opacity: 0 }, Lv);
+          tl.fromTo(leaf, { opacity: 1, y: 0, rotation: 0, svgOrigin: `${lx} ${ly}` }, { y: 280 * s, rotation: 220, opacity: 0, duration: 1.4, ease: "power1.in", immediateRender: false }, at("baeume", 0.5 + r() * .8));
+        }
+      });
+      tl.to(crowns, { fill: "#a0783c", duration: 1.4, stagger: .02, ease: "power1.inOut" }, at("baeume", 0.1));
+      tl.to("#s6-field", { fill: "#b8925a", duration: 1.4, ease: "power1.inOut" }, at("baeume", 0.1));
+    })();
+
+    /* ===== S7 Durst ===== */
+    (function () {
+      const H = $("#s7-heat");
+      for (let i = 0; i < 6; i++) { const x = 140 + i * 160; const p = svg("path", { d: `M${x},640 q-20,-40 0,-80 q20,-40 0,-80` }, H); tl.fromTo(p, { y: 40, opacity: 0 }, { y: -60, opacity: 1, duration: 1.2, repeat: 3, ease: "sine.inOut" }, at("tag2", i * .12)); }
+      E.person($("#s7-kid"), { x: 540, y: 2350, s: 2.6, face: "worried", arms: "down", shirt: "#5c6390" });
+      E.person($("#s7-ghost"), { x: 540, y: 2350, s: 2.6, face: "worried", arms: "down", shirt: "#5c6390" });
+      const beat = 0.85, n = Math.ceil((at("tag3") - at("mund")) / beat);
+      for (let i = 0; i < n; i++) tl.fromTo("#s7-pulse", { opacity: .75 }, { opacity: 0, duration: .6, ease: "power2.out", immediateRender: false }, at("mund", i * beat));
+      tl.set("#s7-pulse", { opacity: 0 }, 0);
+      tl.to("#s7-ghost", { opacity: .35, x: 26, duration: .12, repeat: 9, yoyo: true, ease: "none" }, at("kopf", 0));
+      tl.to("#s7-ghost", { opacity: 0, x: 0, duration: .2 }, end("kopf", 0.2));
+      tl.fromTo("#s7 .cam", { x: -12 }, { x: 12, duration: .05, repeat: 13, yoyo: true, ease: "none", immediateRender: false }, cs("kopf", 1, 0));
+      tl.set("#s7 .cam", { x: 0 }, cs("kopf", 1, 0.75));
+    })();
+
+    /* ===== S8 Drei Tage ===== */
+    (function () {
+      const G = $("#s8-drops"), dp = "M0,-150 C60,-60 115,0 115,60 A115,115 0 0 1 -115,60 C-115,0 -60,-60 0,-150Z";
+      const defs = svg("defs", {}, G);
+      const fills = [];
+      [270, 540, 810].forEach((x, i) => {
+        const cp = svg("clipPath", { id: "c-drop" + i }, defs); svg("path", { d: dp, transform: `translate(${x},800)` }, cp);
+        const g = svg("g", {}, G);
+        svg("path", { d: dp, transform: `translate(${x},800)`, fill: "rgba(63,212,255,.1)" }, g);
+        const cg = svg("g", { "clip-path": `url(#c-drop${i})` }, g);
+        const f = svg("rect", { x: x - 130, y: 640, width: 260, height: 360, fill: "#3fd4ff" }, cg);
+        const o = svg("path", { d: dp, transform: `translate(${x},800)`, fill: "none", stroke: "#3fd4ff", "stroke-width": 10 }, g);
+        const t = svg("text", { x, y: 1010, "text-anchor": "middle", class: "lbl", "font-size": 50, fill: "#fff", stroke: "#0d0b18", "stroke-width": 9, "paint-order": "stroke" }, G); t.textContent = "TAG " + (i + 1);
+        fills.push({ f, o, x });
+      });
+      tl.fromTo(fills[0].f, { y: 0 }, { y: 360, duration: .5, ease: "power2.in" }, at("tag3", 0.1));
+      tl.fromTo(fills[1].f, { y: 0 }, { y: 360, duration: .5, ease: "power2.in" }, at("tag3", 0.5));
+      tl.fromTo(fills[2].f, { y: 0 }, { y: 300, duration: Math.max(1, end("limit") - at("limit")), ease: "none" }, at("limit"));
+      tl.to(fills[2].f, { fill: "#ff3b3b", duration: .3 }, cs("limit", 2, 0));
+      tl.to(fills[2].o, { stroke: "#ff3b3b", duration: .3 }, cs("limit", 2, 0));
+      tl.fromTo(fills[2].o, { scale: 1, svgOrigin: "810 800" }, { scale: 1.12, duration: .25, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, cs("limit", 2, 0));
+    })();
+
+    /* ===== S9 Wasser in dir ===== */
+    (function () {
+      const rays = $("#s9-rays");
+      for (let i = 0; i < 12; i++) svg("path", { d: "M540,900 L500,-400 L580,-400Z", transform: `rotate(${i * 30} 540 900)` }, rays);
+      tl.fromTo("#s9-rays", { rotation: 0, svgOrigin: "540 900" }, { rotation: 30, duration: 6, ease: "none" }, at("verrueckt", -0.2));
+      tl.fromTo("#s9-body", { scale: .85, autoAlpha: 0, svgOrigin: "540 1100" }, { scale: 1, autoAlpha: 1, duration: .5, ease: "back.out(2)" }, at("verrueckt", -0.1));
+      const top0 = 1745, top60 = 1730 - 0.6 * (1730 - 445);
+      tl.set("#s9-water", { y: top0 }, 0);
+      tl.to("#s9-water", { y: top60, duration: 2.2, ease: "power2.out" }, at("letzte", 0.2));
+      tl.fromTo("#s9-wave", { x: 0 }, { x: -200, duration: 1.2, repeat: 6, ease: "none" }, at("letzte"));
+      const B = $("#s9-bubbles"), r = E.rng(3);
+      for (let i = 0; i < 14; i++) { const bx = 400 + r() * 280, by = 1700; const b = svg("circle", { cx: bx, cy: by, r: 6 + r() * 8 }, B); tl.fromTo(b, { y: 0 }, { y: -(by - top60) + 20, duration: 1.6 + r(), repeat: 2, ease: "none" }, at("letzte", 0.6 + r())); }
+      const pct = $("#s9-pct"), tP = at("prozent");
+      tl.set(pct, { autoAlpha: 0 }, 0);
+      tl.fromTo(pct, { autoAlpha: 0, scale: .5, svgOrigin: "540 1040" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)", immediateRender: false }, tP);
+      E.clock(tl, (t) => { pct.textContent = Math.round(60 * Math.max(0, Math.min(1, (t - tP) / 1.0))) + "%"; });
+    })();
+
+    /* ===== S10 CTA ===== */
+    (function () {
+      const G = $("#s10-drops"), r = E.rng(77);
+      for (let i = 0; i < 40; i++) { const x = r() * 1080, y = r() * 1920, s = .2 + r() * .4; svg("path", { d: "M0,-60 C25,-25 45,0 45,25 A45,45 0 0 1 -45,25 C-45,0 -25,-25 0,-60Z", transform: `translate(${x},${y}) scale(${s})` }, G); }
+      const t0 = at("frage", -0.3);
+      tl.fromTo("#s10 .q", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.4)" }, t0 + .05);
+      ["o1", "o2", "o3", "o4"].forEach((o, i) => tl.fromTo("#s10 ." + o, { autoAlpha: 0, x: i % 2 ? 300 : -300 }, { autoAlpha: 1, x: 0, duration: .35, ease: "back.out(1.8)" }, t0 + .5 + i * .18));
+      tl.fromTo("#s10 .cta", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: .3 }, at("komm", -0.1));
+      const rT = t0 + .4, RD = D - rT;
+      tl.fromTo("#s10-arc", { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": 352 }, duration: RD, ease: "none" }, rT);
+      const nEl = $("#s10-n");
+      E.clock(tl, (t) => { nEl.textContent = String(Math.max(1, Math.min(6, 6 - Math.floor((t - rT) / (RD / 6))))); });
+      tl.fromTo("#s10 .ring", { autoAlpha: 0, scale: .5 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(3)" }, rT);
+    })();
+
+    E.buildScenes(tl);
+    E.buildCaptions(tl);
+    E.buildHud(tl);
+    E.buildInteract(tl);
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["main"] = tl;
+    tl.seek(0);
+  })();
+  </script>
+</body>
+</html>

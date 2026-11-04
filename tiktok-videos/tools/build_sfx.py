@@ -138,6 +138,13 @@ def main(project: Path):
             n = int(d * SR); tt = np.arange(n) / SR
             chord = sum(np.sin(2 * np.pi * f * tt) for f in (261.6, 329.6, 392.0, 523.3)) / 4
             add(chord * np.clip(tt / d, 0, 1) ** 1.5 * env(n, 0.05, 0.6), t, 0.22)
+        elif typ == "heartbeat":
+            k = 0.0
+            while k < d:
+                for j, g in ((0.0, 1.0), (0.22, 0.7)):
+                    n = int(0.18 * SR); tt = np.arange(n) / SR
+                    add(np.sin(2 * np.pi * (55 + 40 * np.exp(-tt * 30)) * tt) * np.exp(-tt * 18) * g, t + k + j, 0.8)
+                k += 0.85
         elif typ == "ding":
             n = int(1.4 * SR); tt = np.arange(n) / SR
             add((np.sin(2 * np.pi * 1318 * tt) + 0.5 * np.sin(2 * np.pi * 1975 * tt)) * np.exp(-tt * 3.5), t, 0.3)
