@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn es in Deutschland kein Bargeld mehr gibt?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 88px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 38px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="67.88" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Geld verschwindet -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/><g id="s1-rain"></g><g id="s1-note"></g><g id="s1-x"></g></svg>
+      <div class="title main">WAS WÄRE, WENN<br/>ES KEIN <span class="r">BARGELD</span><br/>MEHR GIBT?</div>
+      <div class="title sub">⚠ AB MORGEN IN GANZ DEUTSCHLAND</div>
+    </div></div></section>
+
+    <!-- S2 Portemonnaie, Scheine ungültig -->
+    <section class="scene" id="s2" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#3b3768"/><rect y="1180" width="1080" height="740" fill="#5a4a6a"/><g id="s2-wallet"></g><g id="s2-cash"></g><g id="s2-stamp"></g></svg>
+    </div></div></section>
+
+    <!-- S3 Fast jeder zweite Einkauf bar -->
+    <section class="scene" id="s3" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s3-chart"></g><g id="s3-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S4 Jeder achte -->
+    <section class="scene" id="s4" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#2b2850"/><rect y="1180" width="1080" height="740" fill="#3b3058"/><g id="s4-crowd"></g><g id="s4-hl"></g><g id="s4-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S5 Oma + Trinkgeld -->
+    <section class="scene" id="s5" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#f2c9a0"/><rect y="0" width="1080" height="520" fill="#e8b88a"/><rect y="1180" width="1080" height="740" fill="#b07a52"/>
+        <g id="s5-oma"></g><g id="s5-kid"></g><g id="s5-note"></g><g id="s5-x"></g><g id="s5-app"></g></svg>
+    </div></div></section>
+
+    <!-- S6 Alles gespeichert -->
+    <section class="scene" id="s6" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#101a3a"/><g id="s6-phone"></g><g id="s6-eye"></g></svg>
+    </div></div></section>
+
+    <!-- S7 Gebühren -->
+    <section class="scene" id="s7" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/><g id="s7-term"></g><g id="s7-bank"></g><g id="s7-coins"></g><g id="s7-tag"></g></svg>
+    </div></div></section>
+
+    <!-- S8 Stromausfall -->
+    <section class="scene" id="s8"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122c"/><g id="s8-city"></g><g id="s8-lights"></g><rect id="s8-dark" width="1080" height="1920" fill="#05040e" opacity="0"/>
+        <g id="s8-icons"></g></svg>
+    </div></div></section>
+
+    <!-- S9 Spanien 2025 -->
+    <section class="scene" id="s9" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#2a2347"/><rect y="1180" width="1080" height="740" fill="#3a3a48"/><g id="s9-shop"></g><g id="s9-crowd"></g><g id="s9-flag"></g></svg>
+    </div></div></section>
+
+    <!-- S10 Schweden 5 von 100 -->
+    <section class="scene" id="s10" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0f2a4a"/><g id="s10-flag"></g><g id="s10-grid"></g><g id="s10-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S11 Bargeld für den Notfall -->
+    <section class="scene" id="s11" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0f2a22"/><g id="s11-box"></g><g id="s11-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S12 Endkarte -->
+    <section class="scene" id="s12" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s12-rain" opacity=".3"></g></svg>
+      <div class="ec-q" style="font-size:80px">WÜRDEST <span class="y">DU</span> DAS BARGELD VERMISSEN?</div>
+      <div class="ec-opt a"><span class="k">A</span><span class="t">JA, SEHR<small>Bargeld ist Freiheit</small></span></div>
+      <div class="ec-opt b"><span class="k">B</span><span class="t">NEIN<small>Ich zahle eh mit Karte</small></span></div>
+      <div class="ec-opt c"><span class="k">C</span><span class="t">NUR IM NOTFALL<small>Wenn der Strom ausfällt</small></span></div>
+      <div class="ec-cta">SCHREIB A, B ODER C IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG MIR FÜR MEHR</span></div>
+      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="65.65" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="67.88" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const SHIRTS = ["#e8463c", "#5c6390", "#3ee08f", "#ffd23f", "#3fd4ff", "#b05cd6", "#ff8a5c"];
+    function badge(g, x, y, text, color, size, sub) {
+      const b = svg("g", { transform: `translate(${x},${y})` }, g);
+      const fs = size || 64, w = text.length * fs * .66 + 80, h = fs * 1.6 + (sub ? 50 : 0);
+      svg("rect", { x: -w / 2, y: -h / 2, width: w, height: h, rx: 24, fill: "rgba(18,8,16,.94)", stroke: color, "stroke-width": 8 }, b);
+      const t = svg("text", { x: 0, y: sub ? -6 : fs * .36, "text-anchor": "middle", class: "lbl", "font-size": fs, fill: color }, b); t.textContent = text;
+      if (sub) { const s = svg("text", { x: 0, y: h / 2 - 26, "text-anchor": "middle", class: "lbl", "font-size": 30, fill: "#fff" }, b); s.textContent = sub; }
+      return b;
+    }
+    const pop = (el, t, origin) => { tl.set(el, { autoAlpha: 0 }, 0); tl.fromTo(el, { autoAlpha: 1, scale: .3, svgOrigin: origin }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, t); };
+    const cross = (g, cx, cy, s) => { const d = `M${cx - s},${cy - s} L${cx + s},${cy + s} M${cx + s},${cy - s} L${cx - s},${cy + s}`; svg("path", { d, stroke: "#0d0b18", "stroke-width": s * .42, "stroke-linecap": "round" }, g); svg("path", { d, stroke: "#ff3b3b", "stroke-width": s * .27, "stroke-linecap": "round" }, g); };
+    const check = (g, cx, cy, r) => { svg("circle", { cx, cy, r, fill: "#3ee08f", stroke: "#0d0b18", "stroke-width": 8 }, g); svg("path", { d: `M${cx - r * .45},${cy} L${cx - r * .1},${cy + r * .35} L${cx + r * .5},${cy - r * .35}`, fill: "none", stroke: "#0d0b18", "stroke-width": r * .22, "stroke-linecap": "round", "stroke-linejoin": "round" }, g); };
+    // Geldschein (Euro-Optik, Farbe je Wert)
+    const note = (g, x, y, s, val, rot) => { const n = svg("g", { transform: `translate(${x},${y}) rotate(${rot || 0}) scale(${s || 1})` }, g); const c = { 5: "#9aa0a6", 10: "#e88a8a", 20: "#7fb0e8", 50: "#f2a65a", 100: "#7fd18b" }[val] || "#f2a65a";
+      svg("rect", { x: -130, y: -65, width: 260, height: 130, rx: 10, fill: c, stroke: "#0d0b18", "stroke-width": 5 }, n); svg("rect", { x: -110, y: -45, width: 90, height: 90, rx: 8, fill: "rgba(255,255,255,.35)" }, n);
+      const t = svg("text", { x: 60, y: 22, "text-anchor": "middle", class: "lbl", "font-size": 64, fill: "#1b1936" }, n); t.textContent = val; const e = svg("text", { x: -65, y: 22, "text-anchor": "middle", class: "lbl", "font-size": 58, fill: "#1b1936" }, n); e.textContent = "€"; return n; };
+    const coin = (g, x, y, r, txt) => { const c = svg("g", {}, g); svg("circle", { cx: x, cy: y, r, fill: "#e0b84a", stroke: "#0d0b18", "stroke-width": 5 }, c); svg("circle", { cx: x, cy: y, r: r * .62, fill: "#c9c3e6", stroke: "#8a84b8", "stroke-width": 3 }, c); const t = svg("text", { x, y: y + r * .25, "text-anchor": "middle", class: "lbl", "font-size": r * .7, fill: "#1b1936" }, c); t.textContent = txt; return c; };
+
+    /* S1 Hook – Frame 0 in Bewegung: Scheine fallen (reine Funktion der Zeit) */
+    { const r = E.rng(5), RN = $("#s1-rain"), ns = [];
+      for (let i = 0; i < 18; i++) { const w = svg("g", {}, RN); note(w, r() * 1080, 0, .45 + r() * .3, [5, 10, 20, 50, 100][i % 5], (r() - .5) * 70); ns.push([w, r() * 2100, 350 + r() * 300]); }
+      E.clock(tl, (t) => ns.forEach(([w, y0, v]) => w.setAttribute("transform", `translate(0,${((y0 + v * t) % 2100) - 100})`))); }
+    const N1 = svg("g", {}, $("#s1-note")); note(N1, 540, 720, 2.2, 50, -6);
+    tl.fromTo(N1, { scale: .8, svgOrigin: "540 720" }, { scale: 1, duration: .6, ease: "back.out(1.8)" }, 0);
+    const X1 = $("#s1-x"); cross(X1, 540, 720, 230); pop(X1, at("hook", 2.4), "540 720");
+    tl.to(N1, { opacity: .35, duration: .3 }, at("hook", 2.4));
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.05);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.5);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+
+    /* S2 Portemonnaie */
+    const WA = $("#s2-wallet");
+    svg("rect", { x: 140, y: 560, width: 520, height: 360, rx: 40, fill: "#8a5a2e", stroke: "#0d0b18", "stroke-width": 8 }, WA);
+    svg("rect", { x: 170, y: 520, width: 300, height: 190, rx: 16, fill: "#1f3b7a", stroke: "#0d0b18", "stroke-width": 6 }, WA); svg("rect", { x: 200, y: 560, width: 70, height: 50, rx: 8, fill: "#ffd23f" }, WA);
+    svg("rect", { x: 300, y: 500, width: 300, height: 190, rx: 16, fill: "#e8463c", stroke: "#0d0b18", "stroke-width": 6 }, WA); svg("rect", { x: 330, y: 540, width: 70, height: 50, rx: 8, fill: "#ffd23f" }, WA);
+    svg("rect", { x: 140, y: 700, width: 520, height: 220, rx: 40, fill: "#a66a3a", stroke: "#0d0b18", "stroke-width": 8 }, WA);
+    const CS = $("#s2-cash"); note(CS, 800, 640, .9, 20, 12); note(CS, 820, 780, .9, 50, -8); coin(CS, 720, 980, 60, "2"); coin(CS, 880, 1010, 50, "1");
+    const ST = $("#s2-stamp"); const sb = badge(ST, 800, 860, "UNGÜLTIG", "#ff3b3b", 64); sb.setAttribute("transform", "translate(800,860) rotate(-12)"); pop(ST, cs("geld", 2), "800 860");
+    tl.to(CS, { opacity: .45, duration: .3 }, cs("geld", 2));
+
+    /* S3 Donut 45 % bar */
+    const CH = $("#s3-chart"), R3 = 250, C3 = 2 * Math.PI * R3;
+    svg("circle", { cx: 540, cy: 800, r: R3, fill: "none", stroke: "#3fd4ff", "stroke-width": 120 }, CH);
+    const bar = svg("circle", { cx: 540, cy: 800, r: R3, fill: "none", stroke: "#3ee08f", "stroke-width": 120, "stroke-dasharray": `${C3 * .45} ${C3}`, transform: "rotate(-90 540 800)" }, CH);
+    tl.fromTo(bar, { attr: { "stroke-dasharray": `0 ${C3}` } }, { attr: { "stroke-dasharray": `${C3 * .45} ${C3}` }, duration: 1, ease: "power2.out", immediateRender: true }, at("heute", 0));
+    const t3a = svg("text", { x: 540, y: 790, class: "lbl", "font-size": 92, fill: "#3ee08f", "text-anchor": "middle" }, CH); t3a.textContent = "45 %";
+    const t3b = svg("text", { x: 540, y: 850, class: "lbl", "font-size": 40, fill: "#fff", "text-anchor": "middle" }, CH); t3b.textContent = "BAR";
+    const t3c = svg("text", { x: 880, y: 520, class: "lbl", "font-size": 38, fill: "#3fd4ff", "text-anchor": "middle" }, CH); t3c.textContent = "KARTE & APP";
+    const b3 = badge($("#s3-badge"), 540, 1185, "FAST JEDER 2. EINKAUF", "#3ee08f", 46); pop(b3, cs("heute", 2), "540 1185");
+
+    /* S4 Jeder achte */
+    const C4 = $("#s4-crowd"), r4 = E.rng(41);
+    const figs = []; for (let i = 0; i < 8; i++) { const w = svg("g", {}, C4); const x = 90 + (i % 4) * 300 - (i >= 4 ? 0 : 0), y = i < 4 ? 840 : 1100; E.person(w, { x: i < 4 ? 160 + i * 253 : 160 + (i - 4) * 253, y, s: .42, face: "neutral", shirt: SHIRTS[i % 7], long: r4() < .5, flip: r4() < .5 }); figs.push(w); }
+    const HL = $("#s4-hl"); svg("circle", { cx: 666, cy: 910, r: 150, fill: "none", stroke: "#ff3b3b", "stroke-width": 12 }, HL); pop(HL, cs("probleme", 0, .2), "666 910");
+    tl.to(figs.filter((_, i) => i !== 6), { opacity: .35, duration: .3 }, cs("probleme", 0, .2));
+    const b4 = badge($("#s4-badge"), 540, 1185, "1 VON 8", "#ff3b3b", 70); pop(b4, cs("probleme", 0), "540 1185");
+
+    /* S5 Oma */
+    E.person($("#s5-oma"), { x: 300, y: 1250, s: .85, face: "happy", arms: "down", long: true, hair: "#d9d9e3", shirt: "#b05cd6" });
+    E.person($("#s5-kid"), { x: 800, y: 1250, s: .6, face: "happy", arms: "down", shirt: "#3ee08f", flip: true });
+    const N5 = svg("g", {}, $("#s5-note")); note(N5, 560, 820, 1, 20, -8);
+    tl.fromTo(N5, { x: -60 }, { x: 60, duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, at("oma", -0.2));
+    const X5 = $("#s5-x"); cross(X5, 560, 820, 130); pop(X5, cs("oma", 1, .2), "560 820");
+    const AP = $("#s5-app"); svg("rect", { x: 680, y: 560, width: 320, height: 200, rx: 30, fill: "#0d0b18", stroke: "#c9c3e6", "stroke-width": 8 }, AP);
+    { const a = svg("text", { x: 840, y: 640, class: "lbl", "font-size": 34, fill: "#c9c3e6", "text-anchor": "middle" }, AP); a.textContent = "TRINKGELD"; const b = svg("text", { x: 840, y: 710, class: "lbl", "font-size": 50, fill: "#3ee08f", "text-anchor": "middle" }, AP); b.textContent = "+ 2,00 €"; }
+    pop(AP, cs("oma", 4), "840 660");
+
+    /* S6 Alles gespeichert */
+    const PH = $("#s6-phone");
+    svg("rect", { x: 230, y: 470, width: 620, height: 760, rx: 60, fill: "#0d0b18", stroke: "#c9c3e6", "stroke-width": 10 }, PH);
+    svg("rect", { x: 260, y: 530, width: 560, height: 640, rx: 30, fill: "#f2f0f7" }, PH);
+    { const t = svg("text", { x: 540, y: 600, class: "lbl", "font-size": 40, fill: "#1f3b7a", "text-anchor": "middle" }, PH); t.textContent = "KONTOAUSZUG HEUTE"; }
+    [["08:12", "KAFFEE", "- 3,20 €", "#ff8a5c"], ["08:30", "BUS", "- 3,50 €", "#3fd4ff"], ["18:05", "SUPERMARKT", "- 42,80 €", "#3ee08f"]].forEach(([h, n, v, c], i) => {
+      const g = svg("g", {}, PH), y = 680 + i * 150;
+      svg("rect", { x: 290, y: y - 50, width: 500, height: 120, rx: 20, fill: "#fff", stroke: "#d9d2c4", "stroke-width": 4 }, g); svg("circle", { cx: 340, cy: y + 10, r: 24, fill: c }, g);
+      const a = svg("text", { x: 385, y: y, class: "lbl", "font-size": 28, fill: "#5c5890" }, g); a.textContent = h + " UHR";
+      const b = svg("text", { x: 385, y: y + 42, class: "lbl", "font-size": 36, fill: "#1b1936" }, g); b.textContent = n;
+      const d = svg("text", { x: 770, y: y + 42, class: "lbl", "font-size": 32, fill: "#e8463c", "text-anchor": "end" }, g); d.textContent = v;
+      pop(g, cs("daten", i), `540 ${y + 10}`);
+    });
+    const EY = $("#s6-eye"); const be = badge(EY, 540, 1160, "ALLES GESPEICHERT", "#ffd23f", 52); pop(EY, cs("daten", 4), "540 1160");
+
+    /* S7 Gebühren */
+    const TE = $("#s7-term");
+    svg("rect", { x: 140, y: 560, width: 300, height: 480, rx: 40, fill: "#2b2a38", stroke: "#0d0b18", "stroke-width": 8 }, TE); svg("rect", { x: 170, y: 600, width: 240, height: 140, rx: 12, fill: "#3ee08f" }, TE);
+    for (let i = 0; i < 9; i++) svg("rect", { x: 180 + (i % 3) * 78, y: 780 + Math.floor(i / 3) * 70, width: 60, height: 50, rx: 10, fill: "#4a4580" }, TE);
+    { const t = svg("text", { x: 290, y: 690, class: "lbl", "font-size": 40, fill: "#0d0b18", "text-anchor": "middle" }, TE); t.textContent = "KARTE"; }
+    svg("rect", { x: 220, y: 450, width: 160, height: 120, rx: 12, fill: "#1f3b7a", stroke: "#0d0b18", "stroke-width": 6 }, TE);
+    const BK = $("#s7-bank");
+    svg("path", { d: "M660,700 L860,600 L1060,700Z", fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 7 }, BK);
+    [700, 780, 860, 940].forEach((x) => svg("rect", { x: x - 22, y: 710, width: 44, height: 260, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 5 }, BK));
+    svg("rect", { x: 650, y: 970, width: 420, height: 40, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 6 }, BK);
+    { const t = svg("text", { x: 860, y: 680, class: "lbl", "font-size": 34, fill: "#1b1936", "text-anchor": "middle" }, BK); t.textContent = "BANK"; }
+    const CO = $("#s7-coins");
+    for (let i = 0; i < 5; i++) { const c = coin(CO, 440, 760, 40, "%"); tl.set(c, { autoAlpha: 0 }, 0); tl.fromTo(c, { autoAlpha: 1, x: 0, y: 0 }, { x: 380, y: -40, duration: .9, ease: "power1.inOut", repeat: 2, immediateRender: false }, cs("gebuehren", 3, i * .2)); }
+    const TG = $("#s7-tag"); svg("rect", { x: 330, y: 1060, width: 420, height: 120, rx: 16, fill: "#ffd23f", stroke: "#0d0b18", "stroke-width": 6 }, TG);
+    const pr = svg("text", { x: 540, y: 1140, class: "lbl", "font-size": 60, fill: "#1b1936", "text-anchor": "middle" }, TG);
+    const tp = cs("gebuehren", 5); E.clock(tl, (t) => { pr.textContent = t < tp + .3 ? "2,49 €" : "2,59 €"; pr.setAttribute("fill", t < tp + .3 ? "#1b1936" : "#e8463c"); });
+    pop(TG, cs("gebuehren", 4), "540 1120");
+
+    /* S8 Stromausfall */
+    const lights = E.skyline($("#s8-city"), { seed: 81, base: 1240, wMin: 90, wMax: 170, hMin: 260, hMax: 560, fill: "#2e2a58", gap: 6, lit: .7, win: 14, lightsInto: $("#s8-lights") });
+    const tb = cs("blackout", 0, .4);
+    tl.fromTo(lights, { opacity: 1 }, { opacity: 0, duration: .05, stagger: { each: .002, from: "random" }, immediateRender: false }, tb);
+    tl.fromTo("#s8-dark", { opacity: 0 }, { opacity: .55, duration: .4, immediateRender: false }, tb);
+    const IC = $("#s8-icons");
+    const icon = (x, i, draw, name) => { const g = svg("g", {}, IC); draw(g, x); const t = svg("text", { x, y: 1060, class: "lbl", "font-size": 30, fill: "#fff", "text-anchor": "middle", stroke: "#0d0b18", "stroke-width": 6, "paint-order": "stroke" }, g); t.textContent = name; cross(g, x, 830, 80); pop(g, cs("nichts", i), `${x} 830`); };
+    icon(200, 0, (g, x) => { svg("rect", { x: x - 80, y: 700, width: 160, height: 260, rx: 24, fill: "#2b2a38", stroke: "#c9c3e6", "stroke-width": 6 }, g); svg("rect", { x: x - 60, y: 725, width: 120, height: 80, rx: 8, fill: "#14131f" }, g); }, "KARTENLESER");
+    icon(540, 1, (g, x) => { svg("rect", { x: x - 100, y: 690, width: 200, height: 280, rx: 16, fill: "#5c6390", stroke: "#c9c3e6", "stroke-width": 6 }, g); svg("rect", { x: x - 70, y: 720, width: 140, height: 90, rx: 8, fill: "#14131f" }, g); svg("rect", { x: x - 60, y: 900, width: 120, height: 14, fill: "#0d0b18" }, g); }, "GELDAUTOMAT");
+    icon(880, 2, (g, x) => { svg("rect", { x: x - 70, y: 690, width: 140, height: 260, rx: 24, fill: "#0d0b18", stroke: "#c9c3e6", "stroke-width": 6 }, g); svg("rect", { x: x - 55, y: 715, width: 110, height: 200, rx: 10, fill: "#2b2a38" }, g); }, "BEZAHL-APP");
+    tl.fromTo("#s8 .cam", { x: -14, y: 6 }, { x: 14, y: -6, duration: .05, repeat: 9, yoyo: true, ease: "none", immediateRender: false }, cs("nichts", 4));
+
+    /* S9 Spanien */
+    const SP = $("#s9-shop");
+    svg("rect", { x: 80, y: 600, width: 920, height: 580, fill: "#4a4580", stroke: "#0d0b18", "stroke-width": 8 }, SP);
+    svg("rect", { x: 120, y: 900, width: 520, height: 120, rx: 10, fill: "#8a84b8", stroke: "#0d0b18", "stroke-width": 6 }, SP);
+    svg("rect", { x: 720, y: 800, width: 180, height: 220, rx: 14, fill: "#2b2a38", stroke: "#0d0b18", "stroke-width": 6 }, SP);
+    { const t = svg("text", { x: 810, y: 880, class: "lbl", "font-size": 30, fill: "#ff3b3b", "text-anchor": "middle" }, SP); t.textContent = "OFFLINE"; }
+    const sg = badge(SP, 540, 690, "NUR BARGELD", "#ffd23f", 60);
+    const C9 = $("#s9-crowd"); [[230, 1300, .6], [450, 1320, .62], [870, 1300, .6]].forEach(([x, y, s], i) => E.person(C9, { x, y, s, face: "worried", arms: "down", shirt: SHIRTS[i + 1], long: i === 1, flip: i === 2 }));
+    const FG = $("#s9-flag"); svg("rect", { x: 130, y: 770, width: 160, height: 30, fill: "#c60b1e" }, FG); svg("rect", { x: 130, y: 800, width: 160, height: 50, fill: "#ffc400" }, FG); svg("rect", { x: 130, y: 850, width: 160, height: 30, fill: "#c60b1e" }, FG);
+    { const t = svg("text", { x: 310, y: 842, class: "lbl", "font-size": 40, fill: "#fff", stroke: "#0d0b18", "stroke-width": 7, "paint-order": "stroke" }, FG); t.textContent = "APRIL 2025"; }
+    pop(FG, cs("spanien", 1), "300 825");
+
+    /* S10 Schweden */
+    const SF = $("#s10-flag"); svg("rect", { x: 410, y: 500, width: 260, height: 165, fill: "#006aa7", stroke: "#0d0b18", "stroke-width": 6 }, SF); svg("rect", { x: 488, y: 500, width: 36, height: 165, fill: "#fecc00" }, SF); svg("rect", { x: 410, y: 565, width: 260, height: 36, fill: "#fecc00" }, SF);
+    const GR = $("#s10-grid"), cells = [];
+    for (let i = 0; i < 100; i++) { const c = svg("circle", { cx: 225 + (i % 10) * 70, cy: 740 + Math.floor(i / 10) * 44, r: 17, fill: "#3fd4ff", opacity: .9 }, GR); cells.push(c); }
+    const five = [12, 37, 55, 71, 94].map((k) => cells[k]);
+    tl.to(five, { attr: { fill: "#3ee08f", r: 22 }, duration: .3, stagger: .12 }, cs("schweden", 3));
+    const b10 = badge($("#s10-badge"), 540, 1210, "5 VON 100 ZAHLEN BAR", "#3ee08f", 46); pop(b10, cs("schweden", 3, .3), "540 1210");
+
+    /* S11 Notgroschen */
+    const BX = $("#s11-box");
+    svg("circle", { cx: 540, cy: 830, r: 300, fill: "#3ee08f", opacity: .12 }, BX);
+    svg("path", { d: "M300,700 L780,700 L780,1040 L300,1040Z", fill: "#e8d8b0", stroke: "#0d0b18", "stroke-width": 8 }, BX);
+    note(BX, 540, 690, .95, 50, -6); note(BX, 500, 660, .95, 20, 8); note(BX, 580, 640, .95, 10, -14);
+    svg("path", { d: "M300,700 L540,880 L780,700", fill: "#d9c79a", stroke: "#0d0b18", "stroke-width": 8 }, BX);
+    { const t = svg("text", { x: 540, y: 1000, class: "lbl", "font-size": 44, fill: "#1b1936", "text-anchor": "middle" }, BX); t.textContent = "NOTGROSCHEN"; }
+    const b11 = badge($("#s11-badge"), 540, 1170, "BARGELD FÜR DEN NOTFALL", "#3ee08f", 44); pop(b11, cs("kehrt", 3), "540 1170");
+    tl.fromTo(BX, { y: 40 }, { y: 0, duration: .5, ease: "back.out(2)" }, at("kehrt", -0.2));
+
+    /* S12 */
+    { const r = E.rng(121), RN = $("#s12-rain"), ns = [];
+      for (let i = 0; i < 10; i++) { const w = svg("g", {}, RN); note(w, r() * 1080, 0, .4, [5, 10, 20, 50, 100][i % 5], (r() - .5) * 60); ns.push([w, r() * 2100, 250]); }
+      E.clock(tl, (t) => ns.forEach(([w, y0, v]) => w.setAttribute("transform", `translate(0,${((y0 + v * t) % 2100) - 100})`))); }
+    E.buildEndcard(tl, "s12", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookFx(tl, null, { dramatic: false });
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>

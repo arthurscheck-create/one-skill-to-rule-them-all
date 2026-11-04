@@ -1,0 +1,35 @@
+# Skript + Timing für Video 12 (kein Bargeld). Klassischer Hook, Folgen-Satz am Ende.
+import importlib.util
+spec = importlib.util.spec_from_file_location("b2", "/home/user/tiktok-videos/scripts/batch2_lib.py"); b2 = importlib.util.module_from_spec(spec); spec.loader.exec_module(b2)
+build, F = b2.build, b2.F
+build("12-kein-bargeld", "Was wäre, wenn es in Deutschland kein Bargeld mehr gibt?", [
+ ("hook", ["Was wäre, wenn es ab morgen in Deutschland kein Bargeld mehr gibt?"], True),
+ ("loop", ["Ein Land", "hat das schon", "fast geschafft.", "Und jetzt macht es", "eine ^Kehrtwende.^"], False),
+ ("tag1", ["^Tag eins.^"], False),
+ ("geld", ["Scheine und Münzen", "kannst du", "*nirgends mehr*", "ausgeben."], False),
+ ("heute", ["Dabei zahlen wir", "noch heute", "fast jeden ^zweiten^", "Einkauf bar."], False),
+ ("probleme", ["Jeder ^achte^", "sagt:", "Ohne Bargeld", "komme ich im Alltag", "*kaum klar.*"], False),
+ ("oma", ["Oma kann dir", "keinen Zwanziger", "mehr zustecken.", "Und Trinkgeld?", "Nur noch", "per App."], False),
+ ("woche", ["^Eine Woche später.^"], False),
+ ("daten", ["Jeder Kaffee,", "jede Busfahrt,", "jeder Einkauf:", "alles wird", "*gespeichert.*"], False),
+ ("gebuehren", ["Und jede", "Kartenzahlung", "kostet den Laden", "*Gebühren.*", "Die landen am Ende", "in deinen Preisen."], False),
+ ("blackout", ["^Dann fällt^", "^der Strom aus.^"], False),
+ ("nichts", ["Kein Kartenleser,", "kein Geldautomat,", "keine App.", "Du kannst", "*nichts mehr*", "kaufen."], False),
+ ("spanien", ["Genau das", "ist ^2025^", "in Spanien passiert.", "Wer kein Bargeld hatte,", "stand im Supermarkt", "mit *leeren Händen* da."], False),
+ ("verrueckt", ["Und das", "^Verrückte?^"], False),
+ ("schweden", ["In Schweden", "zahlt kaum noch", "jemand bar.", "Nur ^fünf^", "von hundert."], False),
+ ("kehrt", ["Und genau dort", "rät die Zentralbank", "jetzt:", "Leg dir ~Bargeld~", "~zu Hause~ an.", "Für den Notfall."], False),
+ ("frage", ["Würdest du das Bargeld vermissen?"], True),
+ ("komm", ["Schreib A, B oder C in die Kommentare."], True),
+ ("folg", ["Und folg mir. Aber heb vorher noch schnell Bargeld ab."], True),
+], [("s1","hook",-0.3),("s2","tag1",-0.2),("s3","heute",-0.2),("s4","probleme",-0.2),("s5","oma",-0.2),("s6","woche",-0.2),("s7","gebuehren",-0.2),
+    ("s8","blackout",-0.2),("s9","spanien",-0.2),("s10","verrueckt",-0.2),("s11","kehrt",-0.2),("s12","frage",-0.3)],
+ {"show": F("tag1",-0.2), "hide": F("frage",-0.3), "label": "OHNE BARGELD SEIT", "unit": "TAGE", "sub": "WAS WÄRE WENN · FIKTION", "chipLabel": "BEZAHLEN MÖGLICH",
+  "steps": [{"at":"tag1","off":-0.2,"value":1,"chip":100},{"at":"probleme","off":0.8,"value":1,"chip":88},{"at":"woche","off":-0.2,"value":7,"chip":88},
+            {"at":"blackout","off":0.6,"value":7,"chip":0},{"at":"verrueckt","off":-0.2,"value":7,"chip":0}]},
+ [{"type":"follow","at":"daten","off":0.3,"dur":2.8,"text":"FOLG FÜR MEHR <span class='y'>SZENARIEN</span>"},
+  {"type":"like","at":"schweden","off":0.4,"dur":2.6,"text":"LIKE, WENN DU'S NICHT WUSSTEST"},
+  {"type":"comment","at":"komm","off":0,"dur":2.2,"text":"SCHREIB A, B ODER C"},
+  {"type":"follow","at":"folg","off":0,"dur":2.4,"text":"FOLG MIR – <span class='y'>JETZT</span>"}],
+ [{"type":"ding","at":"hook","off":0.0},{"type":"glitch","at":"geld","off":0.8},{"type":"heartbeat","at":"probleme","off":0.8,"dur":2.5},{"type":"ding","at":"daten","off":2.0},
+  {"type":"flicker","at":"blackout","off":0.2},{"type":"boom","at":"nichts","off":2.2},{"type":"rise","at":"kehrt","off":0,"dur":3},{"type":"ding","at":"frage","off":-0.2}])
