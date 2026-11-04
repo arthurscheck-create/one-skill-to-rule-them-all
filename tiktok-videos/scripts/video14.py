@@ -1,0 +1,36 @@
+# Skript + Timing für Video 14 (Zombieapokalypse). Dramatischer Hook, Folgen-Satz am Ende.
+import importlib.util
+spec = importlib.util.spec_from_file_location("b2", "/home/user/tiktok-videos/scripts/batch2_lib.py"); b2 = importlib.util.module_from_spec(spec); spec.loader.exec_module(b2)
+build, F = b2.build, b2.F
+build("14-zombieapokalypse", "Was wäre, wenn du in einer Zombieapokalypse landest?", [
+ ("hook", ["Du landest mitten in einer Zombieapokalypse."], True),
+ ("kata", ["Und in deiner Stadt", "bleibt dir vielleicht", "nur ein *Tag.*"], False),
+ ("loop", ["Am Ende", "zeige ich dir den Ort,", "an dem du", "am längsten ^überlebst.^"], False),
+ ("std1", ["^Stunde eins.^"], False),
+ ("ausbruch", ["Der Ausbruch beginnt.", "Und in Simulationen", "fallen Großstädte", "am *schnellsten.*", "Je mehr Menschen,", "desto schneller", "springt es über."], False),
+ ("regel1", ["^Regel eins:^", "Weg von", "den Menschenmassen.", "Bahnhöfe,", "Einkaufszentren,", "Stadien:", "alles *Fallen.*"], False),
+ ("std6", ["^Sechs Stunden später.^"], False),
+ ("vorrat", ["Pack nur", "das Nötigste:", "Wasser, Essen,", "Medikamente,", "ein Radio.", "Pro Person", "rund ^vier Liter^", "Wasser am Tag."], False),
+ ("tag1", ["^Tag eins.^"], False),
+ ("stadt", ["Deine Stadt", "ist *überrannt.*", "Jetzt zählt nur noch:", "raus aufs Land."], False),
+ ("regel2", ["^Regel zwei:^", "Lass das Auto stehen.", "Die Straßen", "sind *verstopft.*", "Mit dem Fahrrad", "bist du schneller", "und ~leiser.~"], False),
+ ("woche", ["^Eine Woche später.^"], False),
+ ("land", ["Auf dem Land", "breitet sich alles", "viel ~langsamer~ aus.", "Hier hast du", "vielleicht", "^Wochen^ Zeit."], False),
+ ("verrueckt", ["Und das", "^Verrückte?^"], False),
+ ("pilz", ["Zombies", "gibt es wirklich.", "Im Regenwald", "bringt ein *Pilz*", "Ameisen dazu,", "auf ein Blatt", "zu klettern,", "sich festzubeißen", "und zu sterben."], False),
+ ("ort", ["Und der beste Ort", "zum Überleben?", "Abgelegene Berge,", "weit weg", "von Städten.", "Bei uns also:", "ab in die ~Alpen.~"], False),
+ ("frage", ["Wohin würdest du fliehen?"], True),
+ ("komm", ["Schreib A, B oder C in die Kommentare."], True),
+ ("folg", ["Und folg mir. Bevor dich die Zombies finden."], True),
+], [("s1","hook",-0.3),("s2","std1",-0.2),("s3","regel1",-0.2),("s4","std6",-0.2),("s5","tag1",-0.2),("s6","regel2",-0.2),("s7","woche",-0.2),
+    ("s8","verrueckt",-0.2),("s9","ort",-0.2),("s10","frage",-0.3)],
+ {"show": F("std1",-0.2), "hide": F("frage",-0.3), "label": "ÜBERLEBT SEIT", "unit": "", "sub": "WAS WÄRE WENN · FIKTION", "chipLabel": "SICHERHEIT",
+  "steps": [{"at":"std1","off":-0.2,"value":0,"chip":70},{"at":"ausbruch","off":2.0,"value":0,"chip":45},{"at":"std6","off":0,"value":0,"chip":35},
+            {"at":"stadt","off":0.8,"value":0,"chip":12},{"at":"land","off":2.0,"value":0,"chip":55},{"at":"ort","off":3.5,"value":0,"chip":85}]},
+ [{"type":"follow","at":"vorrat","off":0.4,"dur":2.8,"text":"FOLG FÜR MEHR <span class='y'>SZENARIEN</span>"},
+  {"type":"save","at":"regel2","off":0.3,"dur":2.6,"text":"SPEICHER DIR DIE <span class='y'>REGELN</span>"},
+  {"type":"like","at":"pilz","off":2.0,"dur":2.6,"text":"LIKE, WENN DU'S NICHT WUSSTEST"},
+  {"type":"comment","at":"komm","off":0,"dur":2.2,"text":"SCHREIB A, B ODER C"},
+  {"type":"follow","at":"folg","off":0,"dur":2.6,"text":"FOLG MIR – <span class='y'>SCHNELL</span>"}],
+ [{"type":"riser","at":"hook","off":0.0},{"type":"alarm","at":"ausbruch","off":0},{"type":"ding","at":"regel1","off":0},{"type":"heartbeat","at":"stadt","off":0.4,"dur":2.5},
+  {"type":"ding","at":"regel2","off":0},{"type":"rise","at":"ort","off":2.0,"dur":3},{"type":"ding","at":"frage","off":-0.2}])

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn du in einer Zombieapokalypse landest?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 92px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="72.9" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Zombies kommen -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14122c"/><stop offset=".6" stop-color="#4a1d34"/><stop offset="1" stop-color="#8a2a3a"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-red)"/><circle cx="820" cy="420" r="90" fill="#ffd9a8" opacity=".85"/><g id="s1-city"></g><rect y="1120" width="1080" height="800" fill="#2a2235"/>
+        <g id="s1-zombies"></g><g id="s1-kid"></g>
+      </svg>
+      <div class="title main">ZOMBIE-<br/><span class="r">APOKALYPSE</span><br/>UND DU?</div>
+      <div class="title sub">⚠ DEINE STADT HAT 1 TAG</div>
+    </div></div></section>
+
+    <!-- S2 Ausbruch auf der Karte -->
+    <section class="scene" id="s2" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/><defs><clipPath id="c2"><rect x="80" y="600" width="920" height="600" rx="20"/></clipPath></defs><g id="s2-map"></g><g clip-path="url(#c2)"><g id="s2-inf"></g></g><g id="s2-banner"></g><g id="s2-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S3 Regel 1 -->
+    <section class="scene" id="s3" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#2a2347"/><g id="s3-icons"></g><g id="s3-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S4 Rucksack -->
+    <section class="scene" id="s4" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#3b3768"/><rect y="1180" width="1080" height="740" fill="#5a4a6a"/><g id="s4-pack"></g><g id="s4-items"></g><g id="s4-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S5 Stadt überrannt -->
+    <section class="scene" id="s5" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="url(#g-red)"/><g id="s5-city"></g><rect y="1100" width="1080" height="820" fill="#2a2235"/>
+        <g id="s5-horde"></g><rect id="s5-red" width="1080" height="1920" fill="#ff3b3b" opacity="0"/><g id="s5-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S6 Regel 2: Fahrrad statt Auto -->
+    <section class="scene" id="s6" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#2a2347"/><rect y="900" width="1080" height="1020" fill="#3a3a48"/><g id="s6-cars"></g><g id="s6-x"></g>
+        <g id="s6-ride"><g id="s6-bike"></g></g><g id="s6-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S7 Auf dem Land -->
+    <section class="scene" id="s7" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#8fc9ff"/><rect y="900" width="1080" height="1020" fill="#6abf5a"/><g id="s7-farm"></g><g id="s7-far"></g><g id="s7-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S8 Zombie-Pilz -->
+    <section class="scene" id="s8" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0f2a1a"/><g id="s8-jungle"></g><g id="s8-leaf"></g><g id="s8-antwrap"><g id="s8-ant"></g></g><g id="s8-stalk"></g><g id="s8-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S9 Berge -->
+    <section class="scene" id="s9" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#7fb8e8"/><g id="s9-mts"></g><rect y="1150" width="1080" height="770" fill="#5aa04a"/><g id="s9-cabin"></g><g id="s9-kid"></g><g id="s9-sign"></g><g id="s9-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S10 Endkarte -->
+    <section class="scene" id="s10" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s10-stars"></g></svg>
+      <div class="ec-q" style="font-size:80px">WOHIN WÜRDEST <span class="y">DU</span> FLIEHEN?</div>
+      <div class="ec-opt a"><span class="k">A</span><span class="t">IN DIE ALPEN<small>Weit weg von allen</small></span></div>
+      <div class="ec-opt b"><span class="k">B</span><span class="t">IN DEN SUPERMARKT<small>Essen für Monate</small></span></div>
+      <div class="ec-opt c"><span class="k">C</span><span class="t">AUFS DACH<small>Und einfach hoffen</small></span></div>
+      <div class="ec-cta">SCHREIB A, B ODER C IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG MIR, BEVOR SIE DICH FINDEN</span></div>
+      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="70.64" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="72.9" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const SHIRTS = ["#e8463c", "#5c6390", "#3ee08f", "#ffd23f", "#3fd4ff", "#b05cd6", "#ff8a5c"];
+    function badge(g, x, y, text, color, size, sub) {
+      const b = svg("g", { transform: `translate(${x},${y})` }, g);
+      const fs = size || 64, w = text.length * fs * .66 + 80, h = fs * 1.6 + (sub ? 50 : 0);
+      svg("rect", { x: -w / 2, y: -h / 2, width: w, height: h, rx: 24, fill: "rgba(18,8,16,.94)", stroke: color, "stroke-width": 8 }, b);
+      const t = svg("text", { x: 0, y: sub ? -6 : fs * .36, "text-anchor": "middle", class: "lbl", "font-size": fs, fill: color }, b); t.textContent = text;
+      if (sub) { const s = svg("text", { x: 0, y: h / 2 - 26, "text-anchor": "middle", class: "lbl", "font-size": 30, fill: "#fff" }, b); s.textContent = sub; }
+      return b;
+    }
+    const pop = (el, t, origin) => { tl.set(el, { autoAlpha: 0 }, 0); tl.fromTo(el, { autoAlpha: 1, scale: .3, svgOrigin: origin }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, t); };
+    const cross = (g, cx, cy, s) => { const d = `M${cx - s},${cy - s} L${cx + s},${cy + s} M${cx + s},${cy - s} L${cx - s},${cy + s}`; svg("path", { d, stroke: "#0d0b18", "stroke-width": s * .42, "stroke-linecap": "round" }, g); svg("path", { d, stroke: "#ff3b3b", "stroke-width": s * .27, "stroke-linecap": "round" }, g); };
+    const zombie = (g, x, y, s, flip) => { const w = svg("g", { transform: `rotate(${flip ? -5 : 5} ${x} ${y})` }, g);
+      E.person(w, { x, y, s, face: "worried", arms: "down", skin: "#9cc48a", shirt: "#5a6a4a", pants: "#3a3a48", hair: "#2a2a1a", flip });
+      [-32, 32].forEach((dx) => svg("circle", { cx: x + dx * s, cy: y - 488 * s, r: 11 * s, fill: "#ff3b3b" }, w));
+      svg("path", { d: `M${x - 60 * s},${y - 300 * s} l${30 * s},${40 * s} l${20 * s},${-30 * s} l${30 * s},${35 * s}`, fill: "none", stroke: "#2a3a2a", "stroke-width": 8 * s }, w); return w; };
+    const car = (g, x, y, c, s) => { const k = svg("g", { transform: `translate(${x},${y}) scale(${s || 1})` }, g);
+      svg("rect", { x: -95, y: -40, width: 190, height: 70, rx: 22, fill: c, stroke: "#0d0b18", "stroke-width": 6 }, k); svg("path", { d: "M-60,-40 L-35,-85 L45,-85 L70,-40Z", fill: c, stroke: "#0d0b18", "stroke-width": 6 }, k);
+      svg("path", { d: "M-48,-44 L-30,-76 L40,-76 L58,-44Z", fill: "#bfe6ff" }, k); svg("circle", { cx: -55, cy: 32, r: 22, fill: "#14131f" }, k); svg("circle", { cx: 55, cy: 32, r: 22, fill: "#14131f" }, k); return k; };
+
+    /* S1 Hook – Zombies schlurfen ab Frame 0 (reine Funktion der Zeit) */
+    E.skyline($("#s1-city"), { seed: 14, base: 1130, wMin: 90, wMax: 170, hMin: 240, hMax: 560, fill: "#1b1530", gap: 6, lit: .15, win: 14, litColor: "#ff8a5c" });
+    const ZS = $("#s1-zombies"), zs = [];
+    [[180, 1180, .42], [360, 1170, .45], [560, 1190, .43], [760, 1175, .46], [930, 1185, .42], [470, 1260, .5], [820, 1270, .52]].forEach(([x, y, s], i) => { const w = svg("g", {}, ZS); zombie(w, x, y, s, i % 2); zs.push([w, i]); });
+    E.clock(tl, (t) => zs.forEach(([w, i]) => w.setAttribute("transform", `translate(${(Math.sin(t * 2.2 + i) * 14).toFixed(1)},${(Math.abs(Math.sin(t * 3 + i * 1.7)) * -12 + t * 6).toFixed(1)})`)));
+    E.person($("#s1-kid"), { x: 230, y: 1560, s: .9, face: "shock", arms: "down", shirt: "#3fd4ff" });
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.05);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.5);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
+
+    /* S2 Karte */
+    const MP = $("#s2-map");
+    svg("rect", { x: 80, y: 600, width: 920, height: 600, rx: 20, fill: "#2b2850", stroke: "#4a4580", "stroke-width": 8 }, MP);
+    for (let r = 0; r < 6; r++) for (let c = 0; c < 9; c++) svg("rect", { x: 110 + c * 100, y: 630 + r * 95, width: 80, height: 75, rx: 6, fill: (r * 9 + c) % 7 === 3 ? "#3e6a4a" : "#3b3768" }, MP);
+    const IF = $("#s2-inf"); [[300, 800], [700, 950], [520, 1080]].forEach(([x, y], i) => { const c = svg("circle", { cx: x, cy: y, r: 10, fill: "#ff3b3b", opacity: .55 }, IF); tl.fromTo(c, { attr: { r: 10 } }, { attr: { r: 360 }, duration: Math.max(3, end("ausbruch") - at("ausbruch")), ease: "power1.in", immediateRender: true }, at("ausbruch", i * .4)); });
+    const BN = $("#s2-banner"); svg("rect", { x: 0, y: 470, width: 1080, height: 90, fill: "#e8463c" }, BN);
+    { const t = svg("text", { x: 540, y: 532, class: "lbl", "font-size": 50, fill: "#fff", "text-anchor": "middle" }, BN); t.textContent = "EILMELDUNG: AUSBRUCH"; }
+    const b2 = badge($("#s2-badge"), 540, 1185, "GROSSSTÄDTE ZUERST", "#ff3b3b", 50); pop(b2, cs("ausbruch", 3), "540 1185");
+    tl.fromTo(BN, { opacity: 1 }, { opacity: .55, duration: .35, yoyo: true, repeat: 7, ease: "steps(1)", immediateRender: false }, at("std1", 0));
+
+    /* S3 Regel 1 */
+    const IC = $("#s3-icons");
+    const icon = (x, i, draw, name) => { const g = svg("g", {}, IC); draw(g, x); const t = svg("text", { x, y: 1090, class: "lbl", "font-size": 34, fill: "#fff", "text-anchor": "middle", stroke: "#0d0b18", "stroke-width": 6, "paint-order": "stroke" }, g); t.textContent = name; pop(g, cs("regel1", 3 + i), `${x} 880`); const X = svg("g", {}, IC); cross(X, x, 880, 90); pop(X, cs("regel1", 6, i * .12), `${x} 880`); };
+    icon(200, 0, (g, x) => { svg("rect", { x: x - 120, y: 760, width: 240, height: 240, rx: 20, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 7 }, g); svg("path", { d: `M${x - 130},770 L${x},700 L${x + 130},770Z`, fill: "#8a84b8", stroke: "#0d0b18", "stroke-width": 7 }, g); svg("rect", { x: x - 40, y: 880, width: 80, height: 120, fill: "#3b3768" }, g); svg("circle", { cx: x, cy: 815, r: 28, fill: "#fff", stroke: "#0d0b18", "stroke-width": 5 }, g); }, "BAHNHOF");
+    icon(540, 1, (g, x) => { svg("rect", { x: x - 130, y: 780, width: 260, height: 220, rx: 14, fill: "#ff9ab0", stroke: "#0d0b18", "stroke-width": 7 }, g); svg("rect", { x: x - 130, y: 760, width: 260, height: 50, fill: "#e8463c", stroke: "#0d0b18", "stroke-width": 7 }, g); svg("rect", { x: x - 40, y: 900, width: 80, height: 100, fill: "#7fc3ff" }, g); }, "EINKAUFSZENTRUM");
+    icon(880, 2, (g, x) => { svg("ellipse", { cx: x, cy: 900, rx: 140, ry: 90, fill: "#3ee08f", stroke: "#0d0b18", "stroke-width": 7 }, g); svg("ellipse", { cx: x, cy: 900, rx: 90, ry: 50, fill: "#6abf5a", stroke: "#fff", "stroke-width": 5 }, g); }, "STADION");
+    const b3 = badge($("#s3-badge"), 540, 620, "REGEL 1", "#ffd23f", 80); pop(b3, at("regel1", 0), "540 620");
+
+    /* S4 Rucksack */
+    const PK = $("#s4-pack");
+    svg("rect", { x: 380, y: 660, width: 320, height: 420, rx: 70, fill: "#e8463c", stroke: "#0d0b18", "stroke-width": 8 }, PK); svg("rect", { x: 420, y: 860, width: 240, height: 160, rx: 30, fill: "#c9312b", stroke: "#0d0b18", "stroke-width": 6 }, PK);
+    svg("path", { d: "M450,660 Q540,580 630,660", fill: "none", stroke: "#0d0b18", "stroke-width": 14 }, PK);
+    const IT = $("#s4-items");
+    const item = (t, draw) => { const g = svg("g", {}, IT); draw(g); pop(g, t, "540 860"); };
+    item(cs("vorrat", 2), (g) => { svg("rect", { x: 150, y: 640, width: 100, height: 230, rx: 26, fill: "#7fc3ff", stroke: "#0d0b18", "stroke-width": 6 }, g); svg("rect", { x: 175, y: 610, width: 50, height: 40, rx: 8, fill: "#3fd4ff", stroke: "#0d0b18", "stroke-width": 5 }, g); });
+    item(cs("vorrat", 2, .25), (g) => { svg("rect", { x: 820, y: 700, width: 120, height: 150, rx: 12, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 6 }, g); svg("rect", { x: 820, y: 740, width: 120, height: 60, fill: "#ffd23f" }, g); });
+    item(cs("vorrat", 3), (g) => { svg("rect", { x: 150, y: 950, width: 150, height: 100, rx: 18, fill: "#fff", stroke: "#0d0b18", "stroke-width": 6 }, g); svg("path", { d: "M225,970 L225,1030 M195,1000 L255,1000", stroke: "#e8463c", "stroke-width": 14 }, g); });
+    item(cs("vorrat", 4), (g) => { svg("rect", { x: 790, y: 940, width: 170, height: 120, rx: 18, fill: "#5c6390", stroke: "#0d0b18", "stroke-width": 6 }, g); svg("circle", { cx: 840, cy: 1000, r: 32, fill: "#1b1936" }, g); svg("line", { x1: 930, y1: 940, x2: 960, y2: 870, stroke: "#c9c3e6", "stroke-width": 8 }, g); });
+    const b4 = badge($("#s4-badge"), 540, 1190, "4 LITER WASSER / TAG", "#3fd4ff", 50); pop(b4, cs("vorrat", 6), "540 1190");
+
+    /* S5 Horde */
+    E.skyline($("#s5-city"), { seed: 51, base: 1110, wMin: 90, wMax: 170, hMin: 260, hMax: 600, fill: "#1b1530", gap: 6, lit: .1, win: 14, litColor: "#ff8a5c" });
+    const HO = $("#s5-horde"), hz = [];
+    [[120, 1150, .4], [300, 1140, .42], [480, 1160, .4], [660, 1145, .43], [850, 1155, .41], [200, 1290, .55], [420, 1310, .58], [640, 1300, .56], [880, 1290, .55], [320, 1500, .75], [760, 1520, .78]].forEach(([x, y, s], i) => { const w = svg("g", {}, HO); zombie(w, x, y, s, i % 2); hz.push([w, i]); });
+    E.clock(tl, (t) => hz.forEach(([w, i]) => w.setAttribute("transform", `translate(${(Math.sin(t * 2 + i) * 12).toFixed(1)},${(Math.abs(Math.sin(t * 2.6 + i)) * -10).toFixed(1)})`)));
+    tl.fromTo("#s5-red", { opacity: 0 }, { opacity: .22, duration: .4, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, cs("stadt", 1));
+    const b5 = badge($("#s5-badge"), 540, 620, "RAUS AUFS LAND", "#3ee08f", 60); pop(b5, cs("stadt", 3), "540 620");
+
+    /* S6 Regel 2 */
+    const C6 = $("#s6-cars"); for (let r = 0; r < 3; r++) for (let i = 0; i < 4; i++) car(C6, 140 + i * 270 + (r % 2) * 60, 1000 + r * 150, SHIRTS[(i + r) % 7], .9);
+    const X6 = $("#s6-x"); cross(X6, 540, 1150, 220); pop(X6, cs("regel2", 1), "540 1150");
+    tl.to([C6, X6], { opacity: .3, duration: .3 }, cs("regel2", 4, -0.1));
+    const BK = $("#s6-bike");
+    svg("circle", { cx: 0, cy: 0, r: 70, fill: "none", stroke: "#0d0b18", "stroke-width": 14 }, BK); svg("circle", { cx: 220, cy: 0, r: 70, fill: "none", stroke: "#0d0b18", "stroke-width": 14 }, BK);
+    svg("path", { d: "M0,0 L80,-110 L190,-110 L220,0 M80,-110 L110,0 L190,-110 M70,-140 L110,-140 M190,-110 L200,-160 L240,-165", fill: "none", stroke: "#3ee08f", "stroke-width": 12, "stroke-linejoin": "round" }, BK);
+    E.person(BK, { x: 110, y: 20, s: .45, face: "smirk", arms: "down", shirt: "#3fd4ff" });
+    tl.set("#s6-ride", { x: -500, y: 1260 }, 0);
+    tl.to("#s6-ride", { x: 1300, duration: 3.2, ease: "none" }, cs("regel2", 4, -0.2));
+    const b6 = badge($("#s6-badge"), 540, 640, "REGEL 2", "#ffd23f", 80); pop(b6, at("regel2", 0), "540 640");
+
+    /* S7 Land */
+    const FA = $("#s7-farm");
+    for (let i = 0; i < 6; i++) svg("path", { d: `M0,${960 + i * 60} Q540,${930 + i * 60} 1080,${960 + i * 60}`, fill: "none", stroke: "#5aa04a", "stroke-width": 10 }, FA);
+    svg("rect", { x: 620, y: 700, width: 300, height: 240, fill: "#c9312b", stroke: "#0d0b18", "stroke-width": 7 }, FA); svg("path", { d: "M600,710 L770,600 L940,710Z", fill: "#8a2a2a", stroke: "#0d0b18", "stroke-width": 7 }, FA);
+    svg("rect", { x: 730, y: 820, width: 80, height: 120, fill: "#fff", stroke: "#0d0b18", "stroke-width": 5 }, FA);
+    E.person(FA, { x: 320, y: 1180, s: .6, face: "neutral", arms: "bag", shirt: "#3fd4ff" });
+    const FR = $("#s7-far"); [[120, 960, .15], [980, 950, .14]].forEach(([x, y, s]) => zombie(FR, x, y, s, false));
+    const b7 = badge($("#s7-badge"), 540, 600, "WOCHEN STATT STUNDEN", "#3ee08f", 50); pop(b7, cs("land", 5), "540 600");
+
+    /* S8 Zombie-Pilz */
+    const JG = $("#s8-jungle"); for (let i = 0; i < 12; i++) svg("ellipse", { cx: (i * 173) % 1080, cy: 500 + (i * 131) % 700, rx: 160, ry: 60, fill: "#1f4a2a", transform: `rotate(${(i * 47) % 90 - 45} ${(i * 173) % 1080} ${500 + (i * 131) % 700})` }, JG);
+    const LF = $("#s8-leaf");
+    svg("path", { d: "M180,1150 C200,800 500,560 900,520 C860,900 600,1120 180,1150Z", fill: "#4caf50", stroke: "#0d0b18", "stroke-width": 8 }, LF);
+    svg("path", { d: "M180,1150 C400,950 650,700 900,520", fill: "none", stroke: "#2f7a3a", "stroke-width": 10 }, LF);
+    const AN = $("#s8-ant");
+    svg("ellipse", { cx: 0, cy: 0, rx: 34, ry: 24, fill: "#1b1936" }, AN); svg("ellipse", { cx: 46, cy: 0, rx: 18, ry: 16, fill: "#1b1936" }, AN); svg("circle", { cx: 78, cy: -4, r: 18, fill: "#1b1936" }, AN);
+    [-20, 0, 20].forEach((dx) => { svg("line", { x1: 40 + dx, y1: 6, x2: 30 + dx * 2, y2: 36, stroke: "#1b1936", "stroke-width": 5 }, AN); svg("line", { x1: 40 + dx, y1: -6, x2: 30 + dx * 2, y2: -36, stroke: "#1b1936", "stroke-width": 5 }, AN); });
+    svg("path", { d: "M92,-10 L110,-20 M92,4 L110,10", stroke: "#1b1936", "stroke-width": 5 }, AN);
+    tl.set("#s8-antwrap", { x: 260, y: 1060, rotation: -40, svgOrigin: "0 0" }, 0);
+    tl.to("#s8-antwrap", { x: 600, y: 770, duration: Math.max(1.5, cs("pilz", 7) - cs("pilz", 5)), ease: "none" }, cs("pilz", 5));
+    const SK = $("#s8-stalk"); svg("path", { d: "M678,736 C690,660 660,600 690,520", fill: "none", stroke: "#d9c79a", "stroke-width": 12, "stroke-linecap": "round" }, SK); svg("circle", { cx: 690, cy: 515, r: 22, fill: "#e8d8b0", stroke: "#0d0b18", "stroke-width": 4 }, SK);
+    tl.set(SK, { autoAlpha: 0 }, 0); tl.fromTo(SK, { autoAlpha: 1, scaleY: 0, svgOrigin: "678 740" }, { scaleY: 1, duration: 1.2, ease: "power2.out", immediateRender: false }, cs("pilz", 8));
+    const b8 = badge($("#s8-badge"), 540, 1190, "ECHTER ZOMBIE-PILZ", "#ffd23f", 50); pop(b8, cs("pilz", 3), "540 1190");
+
+    /* S9 Berge */
+    const MT = $("#s9-mts");
+    [[-100, 1160, 300, 620, 700], [250, 1160, 560, 520, 900], [600, 1160, 880, 600, 1200]].forEach(([x0, y0, px, py, x1]) => { svg("path", { d: `M${x0},${y0} L${px},${py} L${x1},${y0}Z`, fill: "#8a84a8", stroke: "#0d0b18", "stroke-width": 6 }, MT); svg("path", { d: `M${px - 70},${py + 90} L${px},${py} L${px + 70},${py + 90} L${px + 30},${py + 70} L${px},${py + 100} L${px - 30},${py + 70}Z`, fill: "#fff" }, MT); });
+    const CB = $("#s9-cabin"); svg("rect", { x: 700, y: 1000, width: 220, height: 160, fill: "#8a5a2e", stroke: "#0d0b18", "stroke-width": 6 }, CB); svg("path", { d: "M680,1010 L810,920 L940,1010Z", fill: "#5a3a1e", stroke: "#0d0b18", "stroke-width": 6 }, CB); svg("rect", { x: 780, y: 1070, width: 60, height: 90, fill: "#3a2414" }, CB);
+    for (let i = 0; i < 4; i++) { const c = svg("circle", { cx: 880, cy: 920, r: 20, fill: "#e9e4f2", opacity: .8 }, CB); tl.fromTo(c, { y: 0, opacity: .8 }, { y: -160, x: 30, opacity: 0, duration: 1.6, repeat: 2, ease: "none", immediateRender: false }, at("ort", i * .4)); }
+    E.person($("#s9-kid"), { x: 400, y: 1230, s: .7, face: "happy", arms: "bag", shirt: "#3fd4ff" });
+    const SG = $("#s9-sign"); svg("rect", { x: 175, y: 990, width: 14, height: 190, fill: "#5a3a1e" }, SG); svg("rect", { x: 60, y: 940, width: 250, height: 80, rx: 10, fill: "#f2c14e", stroke: "#0d0b18", "stroke-width": 6 }, SG);
+    { const t = svg("text", { x: 185, y: 995, class: "lbl", "font-size": 46, fill: "#1b1936", "text-anchor": "middle" }, SG); t.textContent = "ALPEN"; }
+    pop(SG, cs("ort", 6), "185 980");
+    const b9 = badge($("#s9-badge"), 540, 1170, "ABGELEGENE BERGE", "#3ee08f", 56); pop(b9, cs("ort", 2), "540 1170");
+
+    /* S10 */
+    E.stars($("#s10-stars"), 60, 141);
+    E.buildEndcard(tl, "s10", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookFx(tl, cs("kata", 2));
+    const hn = $("#hud .hud-num"), K = [[at("std6", -0.2), "6 STD"], [at("tag1", -0.2), "1 TAG"], [at("woche", -0.2), "7 TAGE"]];
+    E.clock(tl, (t) => { let v = "1 STD"; K.forEach(([a, s]) => { if (t >= a) v = s; }); hn.textContent = v; });
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>
