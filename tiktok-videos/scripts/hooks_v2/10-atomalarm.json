@@ -1,0 +1,18 @@
+{
+ "hook": [
+  "Atomalarm! Du hast nur zehn Minuten."
+ ],
+ "kata": [
+  "Und die meisten",
+  "machen sofort",
+  "den ersten *Fehler.*"
+ ],
+ "loop": [
+  "Die ^wichtigste Regel^",
+  "kommt ganz",
+  "am Ende."
+ ],
+ "key": 2,
+ "title": "ATOMALARM!<br/>DU HAST NUR<br/><span class=\"r\">10 MINUTEN</span>",
+ "sub": "⚠ WAS TUST DU?"
+}

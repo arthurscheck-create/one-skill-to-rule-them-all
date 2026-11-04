@@ -15,13 +15,13 @@
   </style>
 </head>
 <body>
-  <div id="root" data-composition-id="main" data-start="0" data-duration="60.14" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="main" data-start="0" data-duration="59.81" data-width="1080" data-height="1920">
 
     <!-- S1 Hook: hellwach neben dem Bett -->
     <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
       <svg class="art" viewBox="0 0 1080 1920"><g id="s1-room"></g><g id="s1-kid"></g><g id="s1-zzz"></g></svg>
-      <div class="title main">WAS WÄRE, WENN<br/><span class="r">NIEMAND</span> MEHR<br/>SCHLAFEN MÜSSTE?</div>
-      <div class="title sub">⚠ NIE WIEDER MÜDE</div>
+      <div class="title main"><span class="r">NIE MEHR</span><br/>SCHLAFEN<br/>AB HEUTE</div>
+      <div class="title sub">⚠ 8 STUNDEN MEHR – JEDEN TAG</div>
     </div></div></section>
 
     <!-- S2 Erste Nacht, 03:00 -->
@@ -105,8 +105,8 @@
     <div id="captions"></div>
     <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
     <div id="vignette"></div><div id="flash"></div>
-    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="57.94" data-volume="1"></audio>
-    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="60.14" data-volume="0.9"></audio>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="57.6" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="59.81" data-volume="0.9"></audio>
   </div>
 
   <script src="lib/cast.js"></script>
@@ -152,7 +152,7 @@
     tl.fromTo(Z, { autoAlpha: 0, scale: .4, svgOrigin: "860 750" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)" }, 0.4);
     tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
     tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
-    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
 
     /* S2 03:00 */
     room($("#s2-room"), "s2-bed");
@@ -282,6 +282,7 @@
     E.buildEndcard(tl, "s12", at("frage", -0.3), at("komm", -0.1));
 
     E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookFx(tl, cs("kata", 2));
     tl.set({}, {}, D);
     window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
   })();

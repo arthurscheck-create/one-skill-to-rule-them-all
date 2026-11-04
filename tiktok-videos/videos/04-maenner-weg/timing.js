@@ -1,14 +1,14 @@
 window.TIMING = {
   "title": "Was wäre, wenn alle Männer auf der Erde für immer verschwinden?",
-  "duration": 47.72,
+  "duration": 48.93,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 2.645,
+      "t1": 2.32,
       "chunks": [
-        "Was wäre, wenn alle Männer auf der Erde für immer verschwinden?"
+        "Alle Männer auf der Erde verschwinden. Für immer."
       ],
       "noCap": true,
       "chunkStarts": [
@@ -16,65 +16,76 @@ window.TIMING = {
       ]
     },
     {
-      "id": "loop",
-      "t0": 2.968,
-      "t1": 5.795,
+      "id": "kata",
+      "t0": 2.581,
+      "t1": 4.59,
       "chunks": [
-        "Und am Ende",
-        "entscheidet sich,",
-        "ob die Menschheit",
-        "^überlebt.^"
+        "Und für die Menschheit",
+        "beginnt ein *Countdown.*"
       ],
       "chunkStarts": [
-        2.968,
-        3.584,
-        4.301,
-        5.037
+        2.581,
+        3.49
+      ]
+    },
+    {
+      "id": "loop",
+      "t0": 4.851,
+      "t1": 7.032,
+      "chunks": [
+        "Am Ende",
+        "entscheidet sich,",
+        "ob wir ^überleben.^"
+      ],
+      "chunkStarts": [
+        4.851,
+        5.286,
+        5.972
       ]
     },
     {
       "id": "sek1",
-      "t0": 6.056,
-      "t1": 7.035,
+      "t0": 7.293,
+      "t1": 8.272,
       "chunks": [
         "^Sekunde eins.^"
       ],
       "chunkStarts": [
-        6.056
+        7.293
       ]
     },
     {
       "id": "weg",
-      "t0": 7.296,
-      "t1": 9.163,
+      "t0": 8.533,
+      "t1": 10.401,
       "chunks": [
         "Über ^vier Milliarden^",
         "Menschen",
         "sind *weg.*"
       ],
       "chunkStarts": [
-        7.296,
-        8.244,
-        8.588
+        8.533,
+        9.482,
+        9.825
       ]
     },
     {
       "id": "autos",
-      "t0": 9.424,
-      "t1": 11.706,
+      "t0": 10.662,
+      "t1": 12.943,
       "chunks": [
         "Autos ohne Fahrer",
         "*krachen* ineinander."
       ],
       "chunkStarts": [
-        9.424,
-        10.586
+        10.662,
+        11.823
       ]
     },
     {
       "id": "piloten",
-      "t0": 11.967,
-      "t1": 15.5,
+      "t0": 13.204,
+      "t1": 16.737,
       "chunks": [
         "Flugzeuge",
         "verlieren ihre Piloten.",
@@ -82,27 +93,27 @@ window.TIMING = {
         "sind Männer."
       ],
       "chunkStarts": [
-        11.967,
-        12.542,
-        13.834,
-        14.874
+        13.204,
+        13.779,
+        15.071,
+        16.111
       ]
     },
     {
       "id": "std1",
-      "t0": 15.761,
-      "t1": 16.548,
+      "t0": 16.998,
+      "t1": 17.785,
       "chunks": [
         "^Stunde eins.^"
       ],
       "chunkStarts": [
-        15.761
+        16.998
       ]
     },
     {
       "id": "bau",
-      "t0": 16.809,
-      "t1": 19.977,
+      "t0": 18.046,
+      "t1": 21.214,
       "chunks": [
         "Baustellen",
         "stehen *still.*",
@@ -110,27 +121,27 @@ window.TIMING = {
         "fährt mehr."
       ],
       "chunkStarts": [
-        16.809,
-        17.343,
-        18.351,
-        19.3
+        18.046,
+        18.581,
+        19.589,
+        20.537
       ]
     },
     {
       "id": "tag1",
-      "t0": 20.237,
-      "t1": 20.935,
+      "t0": 21.475,
+      "t1": 22.172,
       "chunks": [
         "^Tag eins.^"
       ],
       "chunkStarts": [
-        20.237
+        21.475
       ]
     },
     {
       "id": "jobs",
-      "t0": 21.196,
-      "t1": 25.885,
+      "t0": 22.433,
+      "t1": 27.123,
       "chunks": [
         "Strom, Müllabfuhr,",
         "Feuerwehr.",
@@ -139,28 +150,28 @@ window.TIMING = {
         "fast nur Männer."
       ],
       "chunkStarts": [
-        21.196,
-        23.05,
-        23.927,
-        24.523,
-        25.047
+        22.433,
+        24.288,
+        25.164,
+        25.76,
+        26.284
       ]
     },
     {
       "id": "woche",
-      "t0": 26.146,
-      "t1": 27.104,
+      "t0": 27.383,
+      "t1": 28.342,
       "chunks": [
         "^Eine Woche später.^"
       ],
       "chunkStarts": [
-        26.146
+        27.383
       ]
     },
     {
       "id": "frauen",
-      "t0": 27.365,
-      "t1": 29.435,
+      "t0": 28.603,
+      "t1": 30.672,
       "chunks": [
         "Die Frauen",
         "übernehmen.",
@@ -168,16 +179,16 @@ window.TIMING = {
         "läuft ~wieder.~"
       ],
       "chunkStarts": [
-        27.365,
-        27.758,
-        28.455,
-        28.899
+        28.603,
+        28.996,
+        29.692,
+        30.137
       ]
     },
     {
       "id": "monate",
-      "t0": 29.696,
-      "t1": 32.442,
+      "t0": 30.933,
+      "t1": 33.679,
       "chunks": [
         "Aber in",
         "^neun Monaten^",
@@ -186,30 +197,30 @@ window.TIMING = {
         "zur Welt."
       ],
       "chunkStarts": [
-        29.696,
-        30.019,
-        30.776,
-        31.099,
-        31.857
+        30.933,
+        31.257,
+        32.013,
+        32.337,
+        33.094
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 32.703,
-      "t1": 33.59,
+      "t0": 33.94,
+      "t1": 34.828,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        32.703,
-        32.964
+        33.94,
+        34.202
       ]
     },
     {
       "id": "samen",
-      "t0": 34.015,
-      "t1": 38.737,
+      "t0": 35.252,
+      "t1": 39.975,
       "chunks": [
         "In Samenbanken",
         "lagern",
@@ -219,18 +230,18 @@ window.TIMING = {
         "~weitermachen.~"
       ],
       "chunkStarts": [
-        34.015,
-        34.974,
-        35.307,
-        36.779,
-        37.536,
-        38.061
+        35.252,
+        36.211,
+        36.544,
+        38.017,
+        38.773,
+        39.298
       ]
     },
     {
       "id": "jungs",
-      "t0": 38.909,
-      "t1": 41.302,
+      "t0": 40.146,
+      "t1": 42.539,
       "chunks": [
         "Und die Hälfte",
         "dieser Babys",
@@ -238,34 +249,34 @@ window.TIMING = {
         "^Jungs.^"
       ],
       "chunkStarts": [
-        38.909,
-        39.504,
-        40.14,
-        40.736
+        40.146,
+        40.742,
+        41.377,
+        41.973
       ]
     },
     {
       "id": "frage",
-      "t0": 41.563,
-      "t1": 42.976,
+      "t0": 42.8,
+      "t1": 44.213,
       "chunks": [
         "Würde die Menschheit überleben?"
       ],
       "noCap": true,
       "chunkStarts": [
-        41.563
+        42.8
       ]
     },
     {
       "id": "komm",
-      "t0": 43.177,
-      "t1": 45.419,
+      "t0": 44.415,
+      "t1": 46.657,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        43.177
+        44.415
       ]
     }
   ],
@@ -422,6 +433,11 @@ window.TIMING = {
       "type": "ding",
       "at": "frage",
       "off": -0.2
+    },
+    {
+      "type": "boom",
+      "at": "kata",
+      "off": 0.909
     }
   ]
 };

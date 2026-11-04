@@ -1,0 +1,19 @@
+{
+ "hook": [
+  "Die Schwerkraft verschwindet. Für fünf Sekunden."
+ ],
+ "kata": [
+  "Klingt lustig.",
+  "Bis sie",
+  "*zurückkommt.*"
+ ],
+ "loop": [
+  "Und am Ende",
+  "erfährst du,",
+  "warum Astronauten",
+  "^gar nicht schweben.^"
+ ],
+ "key": 2,
+ "title": "DIE <span class=\"r\">SCHWERKRAFT</span><br/>IST WEG<br/>5 SEKUNDEN",
+ "sub": "⚠ BIS SIE ZURÜCKKOMMT"
+}

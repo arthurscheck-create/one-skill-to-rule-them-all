@@ -1,14 +1,14 @@
 window.TIMING = {
   "title": "Was wäre, wenn ein Asteroid mitten in Berlin einschlägt?",
-  "duration": 57.21,
+  "duration": 58.96,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 3.614,
+      "t1": 2.827,
       "chunks": [
-        "Was wäre, wenn ein Asteroid mitten in Berlin einschlägt?"
+        "Ein Asteroid rast direkt auf Berlin zu."
       ],
       "noCap": true,
       "chunkStarts": [
@@ -16,28 +16,43 @@ window.TIMING = {
       ]
     },
     {
-      "id": "loop",
-      "t0": 4.049,
-      "t1": 7.087,
+      "id": "kata",
+      "t0": 3.088,
+      "t1": 5.511,
       "chunks": [
-        "Wie weit du",
-        "weg sein musst,",
-        "um zu ^überleben,^",
-        "erfährst du",
-        "am Ende."
+        "Und der Fernsehturm",
+        "ist in Sekunden",
+        "*weg.*"
       ],
       "chunkStarts": [
-        4.049,
-        4.523,
-        5.149,
-        6.199,
-        6.593
+        3.088,
+        4.229,
+        5.168
+      ]
+    },
+    {
+      "id": "loop",
+      "t0": 5.772,
+      "t1": 8.851,
+      "chunks": [
+        "Am Ende",
+        "weißt du,",
+        "wie weit",
+        "du weg sein musst,",
+        "um zu ^überleben.^"
+      ],
+      "chunkStarts": [
+        5.772,
+        6.146,
+        6.56,
+        6.913,
+        7.761
       ]
     },
     {
       "id": "alex",
-      "t0": 7.348,
-      "t1": 11.052,
+      "t0": 9.112,
+      "t1": 12.817,
       "chunks": [
         "Du stehst",
         "am Alexanderplatz.",
@@ -45,85 +60,85 @@ window.TIMING = {
         "ein ^heller Punkt.^"
       ],
       "chunkStarts": [
-        7.348,
-        7.984,
-        9.277,
-        10.133
+        9.112,
+        9.749,
+        11.041,
+        11.897
       ]
     },
     {
       "id": "gross",
-      "t0": 11.313,
-      "t1": 13.575,
+      "t0": 13.077,
+      "t1": 15.339,
       "chunks": [
         "Er ist so groß",
         "wie ein ^Fußballfeld.^"
       ],
       "chunkStarts": [
-        11.313,
-        12.383
+        13.077,
+        14.148
       ]
     },
     {
       "id": "schnell",
-      "t0": 13.696,
-      "t1": 16.541,
+      "t0": 15.46,
+      "t1": 18.305,
       "chunks": [
         "Und zwanzig",
         "Kilometer schnell.",
         "^Pro Sekunde.^"
       ],
       "chunkStarts": [
-        13.696,
-        14.271,
-        15.542
+        15.46,
+        16.036,
+        17.306
       ]
     },
     {
       "id": "zehn",
-      "t0": 16.802,
-      "t1": 17.943,
+      "t0": 18.566,
+      "t1": 19.707,
       "chunks": [
         "^Zehn Sekunden^",
         "vorher."
       ],
       "chunkStarts": [
-        16.802,
-        17.468
+        18.566,
+        19.232
       ]
     },
     {
       "id": "hell",
-      "t0": 18.203,
-      "t1": 19.385,
+      "t0": 19.968,
+      "t1": 21.15,
       "chunks": [
         "Er wird",
         "*heller*",
         "als die Sonne."
       ],
       "chunkStarts": [
-        18.203,
-        18.477,
-        18.739
+        19.968,
+        20.241,
+        20.503
       ]
     },
     {
       "id": "einschlag",
-      "t0": 19.557,
-      "t1": 21.162,
+      "t0": 21.321,
+      "t1": 22.926,
       "chunks": [
         "Er *explodiert*",
         "über der Stadt."
       ],
       "chunkStarts": [
-        19.557,
-        20.395
+        21.321,
+        22.159
       ]
     },
     {
       "id": "feuer",
-      "t0": 21.423,
-      "t1": 24.179,
+      "t0": 23.187,
+      "t1": 25.943,
       "chunks": [
         "Ein Feuerball,",
         "so heiß",
@@ -131,31 +146,31 @@ window.TIMING = {
         "der Sonne."
       ],
       "chunkStarts": [
-        21.423,
-        22.584,
-        22.927,
-        23.695
+        23.187,
+        24.349,
+        24.691,
+        25.459
       ]
     },
     {
       "id": "wucht",
-      "t0": 24.35,
-      "t1": 27.156,
+      "t0": 26.115,
+      "t1": 28.92,
       "chunks": [
         "Die Wucht",
         "von mehreren",
         "^tausend Atombomben.^"
       ],
       "chunkStarts": [
-        24.35,
-        25.187,
-        25.923
+        26.115,
+        26.951,
+        27.688
       ]
     },
     {
       "id": "krater",
-      "t0": 27.417,
-      "t1": 30.749,
+      "t0": 29.181,
+      "t1": 32.513,
       "chunks": [
         "Einen Krater",
         "gibt es *nicht.*",
@@ -163,16 +178,16 @@ window.TIMING = {
         "bleibt *nichts* übrig."
       ],
       "chunkStarts": [
-        27.417,
-        28.023,
-        28.8,
-        29.779
+        29.181,
+        29.787,
+        30.564,
+        31.543
       ]
     },
     {
       "id": "druck",
-      "t0": 31.01,
-      "t1": 34.412,
+      "t0": 32.774,
+      "t1": 36.177,
       "chunks": [
         "Die Druckwelle",
         "walzt im Umkreis",
@@ -181,32 +196,32 @@ window.TIMING = {
         "*alles* platt."
       ],
       "chunkStarts": [
-        31.01,
-        31.605,
-        32.463,
-        33.241,
-        33.786
+        32.774,
+        33.37,
+        34.228,
+        35.005,
+        35.55
       ]
     },
     {
       "id": "potsdam",
-      "t0": 34.673,
-      "t1": 36.884,
+      "t0": 36.437,
+      "t1": 38.649,
       "chunks": [
         "Auch Potsdam",
         "liegt mitten",
         "in der *Zerstörung.*"
       ],
       "chunkStarts": [
-        34.673,
-        35.35,
-        35.945
+        36.437,
+        37.114,
+        37.71
       ]
     },
     {
       "id": "fenster",
-      "t0": 37.145,
-      "t1": 40.598,
+      "t0": 38.91,
+      "t1": 42.363,
       "chunks": [
         "Selbst hundert",
         "Kilometer entfernt",
@@ -214,16 +229,16 @@ window.TIMING = {
         "noch die *Fenster.*"
       ],
       "chunkStarts": [
-        37.145,
-        37.994,
-        39.144,
-        39.72
+        38.91,
+        39.758,
+        40.909,
+        41.484
       ]
     },
     {
       "id": "sicher",
-      "t0": 40.859,
-      "t1": 44.504,
+      "t0": 42.623,
+      "t1": 46.269,
       "chunks": [
         "Um sicher zu sein,",
         "müsstest du",
@@ -233,31 +248,31 @@ window.TIMING = {
         "weg sein."
       ],
       "chunkStarts": [
-        40.859,
-        42.02,
-        42.545,
-        43.081,
-        43.504,
-        43.949
+        42.623,
+        43.784,
+        44.31,
+        44.845,
+        45.269,
+        45.713
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 44.765,
-      "t1": 45.663,
+      "t0": 46.53,
+      "t1": 47.428,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        44.765,
-        45.058
+        46.53,
+        46.823
       ]
     },
     {
       "id": "nasa",
-      "t0": 46.098,
-      "t1": 50.346,
+      "t0": 47.863,
+      "t1": 52.11,
       "chunks": [
         "Die NASA",
         "hat schon getestet,",
@@ -267,36 +282,36 @@ window.TIMING = {
         "~funktioniert.~"
       ],
       "chunkStarts": [
-        46.098,
-        46.572,
-        47.39,
-        48.258,
-        49.196,
-        49.639
+        47.863,
+        48.337,
+        49.155,
+        50.023,
+        50.96,
+        51.403
       ]
     },
     {
       "id": "frage",
-      "t0": 50.607,
-      "t1": 52.192,
+      "t0": 52.371,
+      "t1": 53.957,
       "chunks": [
         "Was würdest du als Erstes tun?"
       ],
       "noCap": true,
       "chunkStarts": [
-        50.607
+        52.371
       ]
     },
     {
       "id": "komm",
-      "t0": 52.364,
-      "t1": 54.918,
+      "t0": 54.129,
+      "t1": 56.682,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        52.364
+        54.129
       ]
     }
   ],
@@ -433,6 +448,11 @@ window.TIMING = {
       "type": "ding",
       "at": "frage",
       "off": -0.2
+    },
+    {
+      "type": "boom",
+      "at": "kata",
+      "off": 2.08
     }
   ]
 };

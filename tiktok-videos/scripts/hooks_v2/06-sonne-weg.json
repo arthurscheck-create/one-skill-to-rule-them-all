@@ -1,0 +1,17 @@
+{
+ "hook": [
+  "Die Sonne verschwindet. Einfach so."
+ ],
+ "kata": [
+  "Und die Erde",
+  "wird zur *Eiskugel.*"
+ ],
+ "loop": [
+  "Aber an einem Ort",
+  "geht das Leben",
+  "^weiter.^"
+ ],
+ "key": 1,
+ "title": "DIE <span class=\"y\">SONNE</span><br/>IST<br/><span class=\"r\">WEG</span>",
+ "sub": "⚠ DU HAST NUR 8 MINUTEN"
+}

@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <div id="root" data-composition-id="main" data-start="0" data-duration="67.1" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="main" data-start="0" data-duration="68.77" data-width="1080" data-height="1920">
 
     <!-- S1 Hook: Alarm über der Stadt -->
     <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
@@ -117,8 +117,8 @@
     <div id="captions"></div>
     <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
     <div id="vignette"></div><div id="flash"></div>
-    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="64.84" data-volume="1"></audio>
-    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="67.1" data-volume="0.9"></audio>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="66.17" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="68.77" data-volume="0.9"></audio>
   </div>
 
   <script src="lib/cast.js"></script>
@@ -154,8 +154,8 @@
     E.person($("#s1-kid"), { x: 540, y: 1300, s: .85, face: "shock", arms: "phone" });
     tl.fromTo("#s1-pulse", { opacity: 0 }, { opacity: .3, duration: .4, yoyo: true, repeat: 17, ease: "sine.inOut" }, 0);
     tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
-    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, cs("hook", 0, 3.2));
-    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.5);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
 
     /* S2 Sirene */
     E.skyline($("#s2-city"), { seed: 21, base: 1240, wMin: 90, wMax: 170, hMin: 200, hMax: 420, fill: "#1b1838", gap: 6, lit: .3, win: 14 });
@@ -301,6 +301,7 @@
     E.buildEndcard(tl, "s13", at("frage", -0.3), at("komm", -0.1));
 
     E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookFx(tl, cs("kata", 2));
     // Countdown passend zum Sprechertext (9 / 5 / 1 Minute) + Beschriftung danach – reine Funktion der Zeit
     const hl = $("#hud .hud-label"), hn = $("#hud .hud-num");
     const K = [[at("sirene", -0.2), 600], [at("min9", 0), 540], [at("min5", 0), 300], [at("min1", 0), 60], [at("blitz", 0), 0]];

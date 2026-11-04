@@ -1,0 +1,20 @@
+{
+ "hook": [
+  "Ein Asteroid rast direkt auf Berlin zu."
+ ],
+ "kata": [
+  "Und der Fernsehturm",
+  "ist in Sekunden",
+  "*weg.*"
+ ],
+ "loop": [
+  "Am Ende",
+  "weißt du,",
+  "wie weit",
+  "du weg sein musst,",
+  "um zu ^überleben.^"
+ ],
+ "key": 2,
+ "title": "EIN <span class=\"r\">ASTEROID</span><br/>RAST AUF<br/>BERLIN ZU",
+ "sub": "⚠ EINSCHLAG IN 60 SEKUNDEN"
+}

@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <div id="root" data-composition-id="main" data-start="0" data-duration="48.81" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="main" data-start="0" data-duration="47.71" data-width="1080" data-height="1920">
 
     <!-- S1 Hook: Sonne verschwindet -->
     <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
@@ -26,7 +26,7 @@
         <circle id="s1-ghost" cx="540" cy="620" r="210" fill="none" stroke="#ffd23f" stroke-width="6" stroke-dasharray="20 18" opacity="0"/>
         <g id="s1-earth"></g>
       </svg>
-      <div class="title main">WAS WÄRE, WENN<br/>DIE <span class="y">SONNE</span><br/><span class="r">VERSCHWINDET?</span></div>
+      <div class="title main">DIE <span class="y">SONNE</span><br/>IST<br/><span class="r">WEG</span></div>
       <div class="title sub">⚠ DU HAST NUR 8 MINUTEN</div>
     </div></div></section>
 
@@ -129,8 +129,8 @@
     <div id="captions"></div>
     <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
     <div id="vignette"></div><div id="flash"></div>
-    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="46.21" data-volume="1"></audio>
-    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="48.81" data-volume="0.9"></audio>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="45.11" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="47.71" data-volume="0.9"></audio>
   </div>
 
   <script src="lib/cast.js"></script>
@@ -147,7 +147,7 @@
     tl.fromTo("#s1-ghost", { opacity: 0 }, { opacity: .8, duration: .3, immediateRender: false }, 2.0);
     tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
     tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
-    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
 
     /* S2 */
     E.globe($("#s2-earth"), { cx: 880, cy: 620, r: 70, id: "e2", seed: 4 });
@@ -217,6 +217,7 @@
     E.buildEndcard(tl, "s10", at("frage", -0.3), at("komm", -0.1));
 
     E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookFx(tl, cs("kata", 1));
     tl.set({}, {}, D);
     window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
   })();

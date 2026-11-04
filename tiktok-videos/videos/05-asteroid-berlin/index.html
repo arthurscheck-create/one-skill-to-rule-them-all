@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <div id="root" data-composition-id="main" data-start="0" data-duration="57.21" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="main" data-start="0" data-duration="58.96" data-width="1080" data-height="1920">
 
     <!-- S1 Hook -->
     <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
@@ -26,7 +26,7 @@
         <g id="s1-city"></g><g id="s1-tower"></g>
         <rect y="1100" width="1080" height="820" fill="#1b1838"/>
       </svg>
-      <div class="title main">WAS WÄRE, WENN<br/>EIN <span class="r">ASTEROID</span><br/>BERLIN TRIFFT?</div>
+      <div class="title main">EIN <span class="r">ASTEROID</span><br/>RAST AUF<br/>BERLIN ZU</div>
       <div class="title sub">⚠ EINSCHLAG IN 60 SEKUNDEN</div>
     </div></div></section>
 
@@ -133,8 +133,8 @@
     <div id="captions"></div>
     <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
     <div id="vignette"></div><div id="flash"></div>
-    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="54.96" data-volume="1"></audio>
-    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="57.21" data-volume="0.9"></audio>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="56.74" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="58.96" data-volume="0.9"></audio>
   </div>
 
   <script src="lib/cast.js"></script>
@@ -167,7 +167,7 @@
     tower($("#s1-tower"), 540, 1110, .75, "#1b1838");
     tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
     tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
-    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
 
     /* S2 */
     E.skyline($("#s2-city"), { seed: 4, base: 1260, wMin: 100, wMax: 190, hMin: 240, hMax: 520, fill: "#8a92b8", gap: 6 });
@@ -258,6 +258,7 @@
     E.buildEndcard(tl, "s10", at("frage", -0.3), at("komm", -0.1));
 
     E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookFx(tl, cs("kata", 2));
     tl.set({}, {}, D);
     window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
   })();

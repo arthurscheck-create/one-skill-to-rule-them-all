@@ -1,0 +1,16 @@
+{
+ "hook": [
+  "Die Erde bleibt für fünf Sekunden stehen."
+ ],
+ "kata": [
+  "Und alles auf ihr",
+  "fliegt *weg.*"
+ ],
+ "loop": [
+  "Und die fünfte Sekunde",
+  "ist die ^schlimmste.^"
+ ],
+ "key": 1,
+ "title": "DIE ERDE<br/><span class=\"r\">STOPPT</span><br/>5 SEKUNDEN",
+ "sub": "⚠ UND ALLES FLIEGT WEG"
+}
