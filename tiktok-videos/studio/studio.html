@@ -108,6 +108,8 @@
   ul.sources { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14.5px; }
   ul.sources a { color: var(--cyan); overflow-wrap: anywhere; }
   ul.sources .fact { color: var(--muted); }
+  .factcheck { margin: 8px 0 0; font-size: 14.5px; color: var(--green); }
+  .factcheck.bad { color: var(--red); font-weight: 600; }
   .empty { border: 2px dashed var(--line); border-radius: var(--r); padding: 36px 20px; text-align: center; color: var(--muted); display: grid; gap: 6px; }
   .empty b { color: var(--ink); font-family: var(--f-display); font-size: 18px; }
   .banner { border: 2px solid var(--red); border-radius: 12px; padding: 10px 14px; color: var(--ink); background: var(--panel); }
@@ -265,7 +267,10 @@
         if (q.fact) li.appendChild(el("span", { class: "fact", text: " – " + q.fact }));
         list.appendChild(li);
       });
-      const det = el("details", { class: "block" }, [el("summary", { class: "lbl", text: "Quellen (nur für dich, nicht posten) · " + v.sources.length }), list]);
+      const kids = [el("summary", { class: "lbl", text: "Quellen (nur für dich, nicht posten) · " + v.sources.length })];
+      if (v.factcheck) kids.push(el("p", { class: "factcheck" + (/^KORREKTUR/.test(v.factcheck) ? " bad" : ""), text: "Faktencheck: " + v.factcheck }));
+      kids.push(list);
+      const det = el("details", { class: "block" }, kids);
       body.appendChild(det);
     }
 
