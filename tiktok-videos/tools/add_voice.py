@@ -11,7 +11,7 @@ Danach: python3 tools/build_sfx.py <projekt>  und rendern.
 
 Aufruf: python3 tools/add_voice.py videos/<projekt> pfad/zur/stimme.wav [--min-duration 50] [--fit 50] [--tail 2.2]
 """
-import argparse, json, re, shutil, subprocess
+import argparse, json, re, shutil, subprocess, sys
 from pathlib import Path
 
 
@@ -60,28 +60,70 @@ def main():
     pauses = [(s, e) for s, e in sil if e and s > s_on + 0.05 and s < s_off - 0.05]
 
     lines = T["lines"]
-    text = lambda l: re.sub(r"[*^~]", "", " ".join(l["chunks"]))
-    w = [len(text(l)) + 6 for l in lines]
-    tot = sum(w); acc = 0; bounds = []
-    for i in range(len(lines) - 1):
-        acc += w[i]
-        exp = s_on + (s_off - s_on) * acc / tot
-        best = None
-        for (ps, pe) in pauses:
-            mid = (ps + pe) / 2
-            if abs(mid - exp) <= 0.8 and (best is None or abs(mid - exp) < abs((best[0] + best[1]) / 2 - exp)):
-                best = (ps, pe)
-        if best:
-            pauses.remove(best)
-            bounds.append(best)
-        else:
-            bounds.append((exp, exp))
-    # Monotonie sicherstellen
-    starts = [s_on] + [b[1] for b in bounds]
-    ends = [b[0] for b in bounds] + [s_off]
-    for i, l in enumerate(lines):
-        l["t0"] = round(max(starts[i], ends[i - 1] if i else 0), 3)
-        l["t1"] = round(max(ends[i], l["t0"] + 0.3), 3)
+    clean = lambda s: re.sub(r"[*^~]", "", s)
+    text = lambda l: clean(" ".join(l["chunks"]))
+
+    # Sprechsegmente zwischen den Pausen
+    segs, cur = [], s_on
+    for ps, pe in pauses:
+        if ps - cur > 0.05:
+            segs.append((cur, ps))
+        cur = pe
+    if s_off - cur > 0.05:
+        segs.append((cur, s_off))
+
+    # Segmente per dynamischer Programmierung auf Sätze verteilen:
+    # Sprechdauer jedes Satzes soll möglichst proportional zu seiner Zeichenzahl sein.
+    chars = [len(re.sub(r"[^\wäöüÄÖÜß]", "", text(l))) or 1 for l in lines]
+    n, m = len(segs), len(lines)
+    if n < m:
+        sys.exit(f"Nur {n} Sprechsegmente für {m} Sätze gefunden – Pausenschwelle anpassen.")
+    k = sum(b - a for a, b in segs) / sum(chars)
+    pre = [0.0]
+    for a_, b_ in segs:
+        pre.append(pre[-1] + (b_ - a_))
+    INF = float("inf")
+    cost = [[INF] * (n + 1) for _ in range(m + 1)]
+    back = [[0] * (n + 1) for _ in range(m + 1)]
+    cost[0][0] = 0.0
+    for i in range(1, m + 1):
+        e = k * chars[i - 1]
+        for j in range(i, n - (m - i) + 1):
+            for s in range(i - 1, j):
+                if cost[i - 1][s] == INF:
+                    continue
+                d = pre[j] - pre[s]
+                c = cost[i - 1][s] + ((d - e) / (e + 0.25)) ** 2
+                if c < cost[i][j]:
+                    cost[i][j], back[i][j] = c, s
+    groups, j = [], n
+    for i in range(m, 0, -1):
+        s = back[i][j]; groups.append((s, j)); j = s
+    groups.reverse()
+
+    for l, (s, j) in zip(lines, groups):
+        lsegs = segs[s:j]
+        l["t0"] = round(lsegs[0][0], 3)
+        l["t1"] = round(lsegs[-1][1], 3)
+        # Chunk-Starts: Zeichenposition -> Zeit über die reine Sprechzeit des Satzes
+        full = text(l); L = len(full) or 1
+        speech = sum(b - a for a, b in lsegs)
+        def t_at(frac):
+            rest = frac * speech
+            for a_, b_ in lsegs:
+                if rest <= (b_ - a_):
+                    return a_ + rest
+                rest -= (b_ - a_)
+            return lsegs[-1][1]
+        starts, pos = [], 0
+        for i, c in enumerate(l["chunks"]):
+            t = t_at(pos / L)
+            near = min((a_ for a_, _ in lsegs), key=lambda a_: abs(a_ - t))
+            if abs(near - t) < 0.3:
+                t = near  # an echte Sprechpause (Komma/Punkt) einrasten
+            starts.append(round(t, 3))
+            pos += len(clean(c)) + 1
+        l["chunkStarts"] = starts
     T["duration"] = round(max(a.min_duration, s_off + a.tail), 2)
     T["voice"] = "assets/" + dst.name
     (proj / "timing.js").write_text("window.TIMING = " + json.dumps(T, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
