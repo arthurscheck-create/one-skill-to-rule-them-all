@@ -1,0 +1,9 @@
+{
+  "name": "tiktok-videos",
+  "private": true,
+  "description": "Deutsche TikTok-Videos komplett im Code mit HyperFrames",
+  "dependencies": {
+    "gsap": "3.15.1",
+    "hyperframes": "0.9.11"
+  }
+}

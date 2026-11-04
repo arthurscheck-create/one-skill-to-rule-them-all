@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was würde passieren, wenn keiner mehr arbeiten würde?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    /* Szenen-spezifische Feinheiten */
+    #s1 .title.main { top: 1150px; font-size: 90px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 38px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; letter-spacing: .5px; }
+    #s9 .q { position: absolute; top: 300px; left: 40px; right: 40px; text-align: center; font-weight: 900; font-size: 86px; line-height: 1.02; text-transform: uppercase; color: #fff; -webkit-text-stroke: 14px #0d0b18; paint-order: stroke fill; }
+    #s9 .opt { position: absolute; left: 90px; right: 90px; height: 150px; border-radius: 22px; border: 5px solid; display: flex; align-items: center; padding: 0 34px; gap: 28px; font-weight: 900; text-transform: uppercase; }
+    #s9 .opt .k { font-size: 70px; width: 70px; text-align: center; }
+    #s9 .opt .t { font-size: 52px; color: #fff; line-height: 1.0; }
+    #s9 .opt .t small { display: block; font-size: 24px; font-weight: 800; letter-spacing: 1px; opacity: .85; margin-top: 6px; }
+    #s9 .o1 { top: 700px; border-color: #3fd4ff; background: rgba(8, 40, 60, .85); color: #3fd4ff; }
+    #s9 .o2 { top: 880px; border-color: #3ee08f; background: rgba(6, 40, 24, .85); color: #3ee08f; }
+    #s9 .o3 { top: 1060px; border-color: #ffd23f; background: rgba(46, 36, 4, .85); color: #ffd23f; }
+    #s9 .o4 { top: 1240px; border-color: #ff3b3b; background: rgba(50, 8, 10, .85); color: #ff3b3b; }
+    #s9 .cta { position: absolute; top: 1440px; left: 60px; right: 60px; text-align: center; font-weight: 900; font-size: 40px; line-height: 1.15; color: #3fd4ff; text-transform: uppercase; -webkit-text-stroke: 8px #0d0b18; paint-order: stroke fill; }
+    #s9 .ring { position: absolute; top: 120px; right: 70px; width: 130px; height: 130px; }
+    #s9 .ring .n { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 64px; color: #fff; }
+    .bubble { position: absolute; font-weight: 900; color: #fff; -webkit-text-stroke: 8px #0d0b18; paint-order: stroke fill; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="50" data-width="1080" data-height="1920">
+
+    <!-- S1 · Hook: Schlafzimmer, Wecker 6:00 -->
+    <section class="scene" id="s1" data-drift="1.07"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs>
+          <linearGradient id="g-wall1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c2556"/><stop offset="1" stop-color="#1c1838"/></linearGradient>
+          <linearGradient id="g-dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121a42"/><stop offset=".6" stop-color="#3b2d6b"/><stop offset="1" stop-color="#a0577a"/></linearGradient>
+          <radialGradient id="g-moon"><stop offset="0" stop-color="#fff3c0" stop-opacity=".7"/><stop offset="1" stop-color="#fff3c0" stop-opacity="0"/></radialGradient>
+          <clipPath id="c-win1"><rect x="270" y="330" width="540" height="500" rx="6"/></clipPath>
+        </defs>
+        <rect width="1080" height="1920" fill="url(#g-wall1)"/>
+        <rect x="70" y="390" width="130" height="170" rx="6" fill="#f2c14e"/><circle cx="135" cy="450" r="38" fill="#e8463c"/><rect x="95" y="510" width="80" height="10" fill="#3b2b63"/><rect x="95" y="528" width="56" height="10" fill="#3b2b63"/>
+        <rect x="880" y="520" width="170" height="14" fill="#4a3157"/>
+        <rect x="895" y="460" width="22" height="60" fill="#e8463c"/><rect x="920" y="470" width="20" height="50" fill="#3fd4ff"/><rect x="943" y="455" width="24" height="65" fill="#ffd23f"/><rect x="970" y="475" width="18" height="45" fill="#3ee08f"/>
+        <rect x="240" y="300" width="600" height="560" rx="16" fill="#3a2f5e"/>
+        <g clip-path="url(#c-win1)">
+          <rect x="270" y="330" width="540" height="500" fill="url(#g-dawn)"/>
+          <circle cx="720" cy="410" r="90" fill="url(#g-moon)"/><circle cx="720" cy="410" r="32" fill="#f7eab8"/>
+          <g id="s1-city"></g>
+        </g>
+        <rect x="536" y="330" width="8" height="500" fill="#3a2f5e"/><rect x="270" y="576" width="540" height="8" fill="#3a2f5e"/>
+        <path d="M200,280 L320,280 Q300,560 330,880 L190,880 Q220,560 200,280Z" fill="#5b3b8c"/><path d="M240,280 L270,280 Q262,560 280,880 L250,880 Q236,560 240,280Z" fill="rgba(0,0,0,.15)"/>
+        <path d="M880,280 L760,280 Q780,560 750,880 L890,880 Q860,560 880,280Z" fill="#5b3b8c"/><path d="M840,280 L810,280 Q818,560 800,880 L830,880 Q844,560 840,280Z" fill="rgba(0,0,0,.15)"/>
+        <rect x="180" y="268" width="720" height="18" rx="9" fill="#2a2046"/>
+        <rect x="0" y="1480" width="1080" height="440" fill="#211b3e"/>
+        <ellipse cx="540" cy="1740" rx="420" ry="90" fill="#33295e"/><ellipse cx="540" cy="1740" rx="330" ry="62" fill="none" stroke="#4a3d80" stroke-width="6"/>
+        <rect x="110" y="980" width="860" height="300" rx="34" fill="#6e4330"/><rect x="130" y="1000" width="820" height="40" rx="18" fill="#7e5039"/>
+        <g id="s1-kid"></g>
+        <path d="M80,1220 Q540,1150 1000,1220 L1000,1500 L80,1500Z" fill="#2f4a99"/>
+        <path d="M80,1220 Q540,1150 1000,1220 L1000,1270 Q540,1205 80,1270Z" fill="#3e60bd"/>
+        <path d="M300,1300 L330,1500 M560,1290 L560,1500 M800,1300 L770,1500" stroke="rgba(255,255,255,.08)" stroke-width="10"/>
+        <rect x="70" y="1470" width="940" height="120" rx="14" fill="#5a3526"/><rect x="70" y="1470" width="940" height="20" fill="#6e4330"/>
+        <circle cx="420" cy="1235" r="30" fill="#f3c6a0"/><circle cx="660" cy="1235" r="30" fill="#f3c6a0"/>
+        <rect x="860" y="1170" width="190" height="320" rx="10" fill="#4a3157"/><rect x="880" y="1260" width="150" height="8" fill="#3a2446"/><circle cx="955" cy="1320" r="8" fill="#f2c14e"/>
+        <g id="s1-clock" transform="translate(955,1100)">
+          <g class="ring-lines" stroke="#ffd23f" stroke-width="7" fill="none" stroke-linecap="round">
+            <path d="M-105,-60 Q-120,0 -105,50"/><path d="M-130,-80 Q-150,0 -130,70"/>
+            <path d="M105,-60 Q120,0 105,50"/><path d="M130,-80 Q150,0 130,70"/>
+          </g>
+          <g class="body">
+            <circle cx="-50" cy="-62" r="24" fill="#c9312b"/><circle cx="50" cy="-62" r="24" fill="#c9312b"/>
+            <rect x="-48" y="55" width="16" height="26" rx="6" fill="#c9312b" transform="rotate(25 -40 60)"/><rect x="32" y="55" width="16" height="26" rx="6" fill="#c9312b" transform="rotate(-25 40 60)"/>
+            <circle r="74" fill="#e8463c"/><circle r="58" fill="#fff6ee"/>
+            <text x="0" y="16" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="44" fill="#1b1936">6:00</text>
+          </g>
+        </g>
+      </svg>
+      <div class="title main">WAS WÄRE, WENN<br/><span class="r">KEINER</span> MEHR<br/>ARBEITET?</div>
+      <div class="title sub">⚠ WIE LANGE HÄLT DIE STADT DURCH?</div>
+    </div></div></section>
+
+    <!-- S2 · Stunde 1: Bushaltestelle, Bus fällt aus -->
+    <section class="scene" id="s2"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs>
+          <linearGradient id="g-sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#231f4d"/><stop offset=".55" stop-color="#5c3f78"/><stop offset="1" stop-color="#e08a6a"/></linearGradient>
+        </defs>
+        <rect width="1080" height="1200" fill="url(#g-sky2)"/>
+        <g id="s2-city"></g>
+        <rect y="1150" width="1080" height="240" fill="#57527a"/><rect y="1150" width="1080" height="14" fill="#7b76a0"/>
+        <rect y="1380" width="1080" height="24" fill="#8b86ae"/><rect y="1404" width="1080" height="516" fill="#34324a"/>
+        <g fill="#e9e6f5" opacity=".75"><rect x="20" y="1650" width="140" height="18" rx="4"/><rect x="300" y="1650" width="140" height="18" rx="4"/><rect x="580" y="1650" width="140" height="18" rx="4"/><rect x="860" y="1650" width="140" height="18" rx="4"/></g>
+        <rect x="90" y="610" width="580" height="44" rx="10" fill="#2a2843"/>
+        <rect x="110" y="650" width="16" height="720" fill="#3d3a5e"/><rect x="636" y="650" width="16" height="720" fill="#3d3a5e"/>
+        <rect x="128" y="800" width="506" height="420" fill="rgba(170,200,255,.14)" stroke="rgba(210,225,255,.45)" stroke-width="4"/>
+        <rect x="150" y="1180" width="460" height="22" rx="6" fill="#6b4a3a"/><rect x="180" y="1200" width="14" height="80" fill="#3d3a5e"/><rect x="566" y="1200" width="14" height="80" fill="#3d3a5e"/>
+        <g transform="translate(160,668)">
+          <rect width="440" height="120" rx="10" fill="#0c0d16" stroke="#2c2b44" stroke-width="4"/>
+          <text x="22" y="50" font-family="Montserrat" font-weight="800" font-size="36" fill="#ffb347">42</text>
+          <text x="90" y="50" font-family="Montserrat" font-weight="700" font-size="32" fill="#ffb347">Hauptbahnhof</text>
+          <text id="s2-ausfall" x="22" y="100" font-family="Montserrat" font-weight="900" font-size="34" fill="#ff3b3b">FÄLLT AUS</text>
+          <text x="418" y="100" text-anchor="end" font-family="Montserrat" font-weight="700" font-size="28" fill="#ffb347">--:--</text>
+        </g>
+        <rect x="846" y="600" width="14" height="780" fill="#9a97b5"/>
+        <circle cx="853" cy="610" r="82" fill="#f5c518" stroke="#1d7a44" stroke-width="10"/>
+        <text x="853" y="646" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="104" fill="#1d7a44">H</text>
+        <rect x="790" y="720" width="126" height="60" rx="6" fill="#f2f0f7"/><text x="853" y="760" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="26" fill="#1b1936">Linie 42</text>
+        <g id="s2-kid"></g>
+        <g id="s2-q" font-family="Montserrat" font-weight="900" fill="#ffd23f" stroke="#0d0b18" stroke-width="8" paint-order="stroke">
+          <text class="q1" x="510" y="590" font-size="90">?</text><text class="q2" x="610" y="540" font-size="70">?</text>
+        </g>
+      </svg>
+    </div></div></section>
+
+    <!-- S3 · Supermarkt: Kasse leer, Leute nehmen alles mit -->
+    <section class="scene" id="s3"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1100" fill="#3a3668"/>
+        <g fill="#e9f0ff"><rect x="80" y="150" width="300" height="22" rx="11" opacity=".85"/><rect x="700" y="150" width="300" height="22" rx="11" opacity=".25"/><rect x="390" y="230" width="300" height="22" rx="11" opacity=".85"/></g>
+        <g id="s3-shelves"></g>
+        <rect y="1040" width="1080" height="880" fill="#4a4573"/>
+        <g id="s3-floor" stroke="rgba(0,0,0,.18)" stroke-width="4"></g>
+        <rect x="60" y="1130" width="660" height="300" rx="16" fill="#2c2a48"/><rect x="40" y="1100" width="700" height="56" rx="14" fill="#5d5a86"/>
+        <rect x="70" y="1112" width="420" height="32" rx="10" fill="#14131f"/>
+        <rect x="560" y="960" width="16" height="150" fill="#24223a"/><rect x="500" y="900" width="140" height="90" rx="10" fill="#14131f" stroke="#5d5a86" stroke-width="5"/>
+        <text x="570" y="958" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="26" fill="#444260">-- ,--</text>
+        <g transform="translate(250,720)"><rect x="-6" y="-120" width="12" height="120" fill="#24223a"/><rect x="-90" y="-200" width="180" height="90" rx="12" fill="#2d2a4c" stroke="#59557f" stroke-width="5"/>
+          <text x="0" y="-140" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="50" fill="#5b587a">3</text>
+          <text x="0" y="-216" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="24" fill="#c9c3e6">KASSE</text></g>
+        <g transform="translate(840,1160)"><rect x="-70" y="-170" width="140" height="170" rx="26" fill="#2a283f"/><ellipse cx="0" cy="10" rx="100" ry="26" fill="#3b3858"/><rect x="-8" y="30" width="16" height="110" fill="#1e1d2d"/><path d="M-80,160 L80,160 M0,140 L0,170" stroke="#1e1d2d" stroke-width="14" stroke-linecap="round"/></g>
+        <text x="840" y="1000" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="80" fill="#ffd23f" stroke="#0d0b18" stroke-width="8" paint-order="stroke" id="s3-q">?</text>
+        <g id="s3-walkers"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S4 · Tag 2: LKWs stehen auf der Autobahn -->
+    <section class="scene" id="s4"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e1a40"/><stop offset=".7" stop-color="#5b3c6e"/><stop offset="1" stop-color="#b8606a"/></linearGradient></defs>
+        <rect width="1080" height="900" fill="url(#g-sky4)"/>
+        <g id="s4-hills"></g>
+        <rect y="880" width="1080" height="1040" fill="#1f1c33"/>
+        <path d="M500,880 L580,880 L1300,1920 L-220,1920Z" fill="#3a3850"/>
+        <path d="M500,880 L508,880 L-120,1920 L-170,1920Z" fill="#e9e6f5" opacity=".55"/><path d="M572,880 L580,880 L1250,1920 L1200,1920Z" fill="#e9e6f5" opacity=".55"/>
+        <g id="s4-dash" fill="#e9e6f5" opacity=".7"></g>
+        <g transform="translate(0,230)">
+          <rect x="100" y="360" width="16" height="330" fill="#6a6790"/><rect x="964" y="360" width="16" height="330" fill="#6a6790"/><rect x="100" y="360" width="880" height="16" fill="#6a6790"/>
+          <rect x="140" y="390" width="380" height="140" rx="10" fill="#1f5fbf" stroke="#fff" stroke-width="5"/>
+          <path d="M190,500 L190,430 L170,450 M190,430 L210,450" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <text x="240" y="450" font-family="Montserrat" font-weight="900" font-size="40" fill="#fff">A7</text><text x="240" y="500" font-family="Montserrat" font-weight="700" font-size="36" fill="#fff">Hamburg</text>
+          <rect x="560" y="390" width="380" height="140" rx="10" fill="#1f5fbf" stroke="#fff" stroke-width="5"/>
+          <text x="590" y="450" font-family="Montserrat" font-weight="700" font-size="34" fill="#fff">Zentrallager</text><text x="590" y="500" font-family="Montserrat" font-weight="700" font-size="34" fill="#fff">Nord</text>
+          <path d="M880,505 L910,420 M910,420 L880,430 M910,420 L918,450" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/>
+        </g>
+        <g id="s4-trucks"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S4b · Regale werden leer -->
+    <section class="scene" id="s4b" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-shelf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4d4880"/><stop offset="1" stop-color="#2b2850"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-shelf)"/>
+        <rect x="40" y="380" width="1000" height="1300" rx="14" fill="#25223f"/>
+        <g id="s4b-items"></g>
+        <g id="s4b-boards"></g>
+        <g id="s4b-sign" transform="translate(540,1000) rotate(-8)">
+          <rect x="-400" y="-80" width="800" height="160" rx="12" fill="#e8463c" stroke="#fff" stroke-width="8"/>
+          <text x="0" y="28" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="88" fill="#fff">AUSVERKAUFT</text>
+        </g>
+      </svg>
+    </div></div></section>
+
+    <!-- S5 · Tag 3: Kraftwerk + Stadt geht dunkel -->
+    <section class="scene" id="s5" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e0f2e"/><stop offset="1" stop-color="#33255a"/></linearGradient>
+          <radialGradient id="g-glow5" cx=".5" cy="1" r=".8"><stop offset="0" stop-color="#ffb347" stop-opacity=".45"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient></defs>
+        <g id="s5-zoom">
+          <rect width="1080" height="1920" fill="url(#g-sky5)"/>
+          <circle cx="860" cy="180" r="46" fill="#f4e6b0"/>
+          <g id="s5-skyglow"><rect y="700" width="1080" height="700" fill="url(#g-glow5)"/></g>
+          <g id="s5-city"></g>
+          <g id="s5-lights"></g>
+          <rect y="1380" width="1080" height="540" fill="#151327"/>
+          <g id="s5-towers"></g>
+          <g id="s5-steam" fill="#e6e2f2"></g>
+          <g id="s5-pylon" stroke="#3f3b62" stroke-width="10" fill="none">
+            <path d="M840,1400 L900,980 L960,1400 M865,1230 L935,1230 M880,1100 L920,1100 M820,1060 L980,1060 M840,1000 L960,1000"/>
+          </g>
+          <path d="M0,1040 Q450,1120 900,1000 Q1000,980 1080,1020" stroke="#2c2948" stroke-width="4" fill="none"/>
+          <g id="s5-lamps"></g>
+        </g>
+        <rect id="s5-dark" width="1080" height="1920" fill="#05040e" opacity="0"/>
+      </svg>
+    </div></div></section>
+
+    <!-- S6 · Wasserhahn: nichts kommt mehr -->
+    <section class="scene" id="s6"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="#1b1f3c"/>
+        <g id="s6-tiles" stroke="#262b50" stroke-width="6"></g>
+        <rect x="0" y="1000" width="1080" height="920" fill="#2a2d4d"/><rect x="0" y="980" width="1080" height="50" fill="#3a3e66"/>
+        <ellipse cx="540" cy="1080" rx="380" ry="80" fill="#111326"/><ellipse cx="540" cy="1080" rx="350" ry="64" fill="#1a1d35"/>
+        <ellipse cx="540" cy="1100" rx="40" ry="12" fill="#0a0b16"/>
+        <rect x="500" y="860" width="80" height="140" rx="16" fill="#8f97c2"/><rect x="515" y="870" width="20" height="120" fill="#b9c0e6" opacity=".6"/>
+        <path d="M540,880 L540,620 Q540,540 620,540 L700,540 Q760,540 760,600 L760,680" stroke="#8f97c2" stroke-width="64" fill="none"/>
+        <path d="M528,860 L528,630 Q528,560 600,556" stroke="#c9cff0" stroke-width="12" fill="none" opacity=".55"/>
+        <rect x="726" y="670" width="68" height="36" rx="8" fill="#6e76a3"/>
+        <g id="s6-handle" transform="translate(620,830)"><rect x="-26" y="-30" width="52" height="60" rx="10" fill="#7d86b4"/><rect x="-14" y="-150" width="28" height="130" rx="14" fill="#a2aad6"/></g>
+        <rect id="s6-stream" x="752" y="706" width="16" height="360" rx="8" fill="#7fd0ff" opacity=".75"/>
+        <ellipse id="s6-drop" cx="760" cy="726" rx="13" ry="18" fill="#9adcff"/>
+        <g id="s6-splash" fill="#9adcff"><circle cx="740" cy="1066" r="7"/><circle cx="782" cy="1060" r="6"/><circle cx="760" cy="1050" r="5"/></g>
+        <g id="s6-hand"><g transform="translate(800,1500)">
+          <path d="M-260,520 L-120,90 Q-100,30 -40,40 L120,70 Q170,80 160,130 Q150,170 100,165 L-10,150" fill="#4d5275"/>
+          <path d="M-110,100 Q-80,10 -10,20 L130,40 Q190,50 180,110 Q170,160 110,150 L0,140 Q-60,150 -110,100Z" fill="#f3c6a0"/>
+        </g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S6b · Handy: kein Netz -->
+    <section class="scene" id="s6b" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="#3a2a22"/>
+        <g opacity=".25" stroke="#22160f" stroke-width="10"><path d="M0,300 L1080,260 M0,700 L1080,680 M0,1200 L1080,1240 M0,1650 L1080,1620"/></g>
+        <circle cx="900" cy="280" r="130" fill="#5a4637"/><circle cx="900" cy="280" r="100" fill="#3b2c22"/>
+        <g transform="translate(540,1090) rotate(-6)">
+          <rect x="-300" y="-620" width="600" height="1240" rx="80" fill="#0d0d14"/>
+          <rect x="-276" y="-596" width="552" height="1192" rx="62" fill="#2a2150"/>
+          <rect x="-90" y="-576" width="180" height="44" rx="22" fill="#0d0d14"/>
+          <text x="-230" y="-540" font-family="Montserrat" font-weight="800" font-size="30" fill="#fff">Kein Netz</text>
+          <g transform="translate(160,-552)"><rect width="56" height="26" rx="6" fill="none" stroke="#fff" stroke-width="4"/><rect x="4" y="4" width="10" height="18" rx="2" fill="#ff3b3b"/><rect x="58" y="8" width="5" height="10" fill="#fff"/></g>
+          <text x="0" y="-470" text-anchor="middle" font-family="Montserrat" font-weight="600" font-size="34" fill="#d8d2f0">Donnerstag, 3. Tag</text>
+          <text x="0" y="-250" text-anchor="middle" font-family="Montserrat" font-weight="800" font-size="190" fill="#fff">18:42</text>
+          <g id="s6b-card" transform="translate(0,-40)">
+            <rect x="-236" y="-80" width="472" height="250" rx="34" fill="rgba(255,255,255,.12)"/>
+            <g transform="translate(0,-6)" id="s6b-bars">
+              <rect x="-60" y="10" width="20" height="24" rx="4" fill="#8c86a8"/><rect x="-30" y="-6" width="20" height="40" rx="4" fill="#8c86a8"/><rect x="0" y="-22" width="20" height="56" rx="4" fill="#8c86a8"/><rect x="30" y="-38" width="20" height="72" rx="4" fill="#8c86a8"/>
+              <path d="M-70,-48 L64,44" stroke="#ff3b3b" stroke-width="12" stroke-linecap="round"/>
+            </g>
+            <text x="0" y="100" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="46" fill="#fff">KEIN NETZ</text>
+            <text x="0" y="146" text-anchor="middle" font-family="Montserrat" font-weight="600" font-size="26" fill="#d8d2f0">Notruf nicht verfügbar</text>
+          </g>
+          <rect x="-110" y="560" width="220" height="10" rx="5" fill="#fff" opacity=".7"/>
+        </g>
+        <path d="M120,1920 L180,1420 Q200,1330 290,1350 L330,1370 Q370,1390 350,1440 L300,1600" fill="#f3c6a0"/>
+        <path d="M960,1920 L900,1480 Q880,1390 800,1420 L760,1450 Q730,1480 760,1520 L820,1640" fill="#f3c6a0"/>
+        <path d="M60,1920 L170,1560 L330,1600 L300,1920Z" fill="#4d5275"/><path d="M1020,1920 L910,1580 L760,1630 L790,1920Z" fill="#4d5275"/>
+      </svg>
+    </div></div></section>
+
+    <!-- S7 · Tag 7: Müll + Ratten -->
+    <section class="scene" id="s7"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55546b"/><stop offset="1" stop-color="#8b8670"/></linearGradient></defs>
+        <rect width="1080" height="1200" fill="url(#g-sky7)"/>
+        <g id="s7-houses"></g>
+        <rect y="1150" width="1080" height="250" fill="#5d5a62"/><rect y="1150" width="1080" height="14" fill="#7a7680"/>
+        <rect y="1390" width="1080" height="530" fill="#3a3940"/><rect y="1390" width="1080" height="22" fill="#6b6870"/>
+        <g id="s7-bins"></g>
+        <g id="s7-bags"></g>
+        <g id="s7-stink" stroke="#a6d65a" stroke-width="9" fill="none" stroke-linecap="round" opacity=".8"></g>
+        <g id="s7-flies" fill="#111"></g>
+        <g id="s7-rats"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S8 · "Und das Verrückte?" Nahaufnahme -->
+    <section class="scene" id="s8" data-drift="1.08"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-bg8" cx=".5" cy=".4" r=".7"><stop offset="0" stop-color="#5b3f9a"/><stop offset="1" stop-color="#1b1936"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-bg8)"/>
+        <g id="s8-rays" opacity=".18" fill="#fff"></g>
+        <g id="s8-kid"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S8b · Nach einer Woche: alle gehen freiwillig zurück -->
+    <section class="scene" id="s8b"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky8" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3a8a"/><stop offset=".55" stop-color="#d9728a"/><stop offset="1" stop-color="#ffc27a"/></linearGradient></defs>
+        <rect width="1080" height="1300" fill="url(#g-sky8)"/>
+        <circle id="s8b-sun" cx="820" cy="980" r="120" fill="#ffe28a"/>
+        <rect x="140" y="420" width="800" height="760" rx="12" fill="#2f2b5a"/><rect x="120" y="400" width="840" height="40" rx="10" fill="#3d3870"/>
+        <g id="s8b-win"></g>
+        <rect x="430" y="960" width="220" height="220" fill="#1c1a38"/><rect x="440" y="970" width="95" height="210" fill="#ffe7a3" opacity=".9" id="s8b-door1"/><rect x="545" y="970" width="95" height="210" fill="#ffe7a3" opacity=".9"/>
+        <g id="s8b-sign" transform="translate(540,880)"><rect x="-190" y="-50" width="380" height="96" rx="14" fill="#0e2a1c" stroke="#3ee08f" stroke-width="7"/><text x="0" y="20" text-anchor="middle" font-family="Montserrat" font-weight="900" font-size="54" fill="#3ee08f">GEÖFFNET</text></g>
+        <rect y="1180" width="1080" height="740" fill="#3a3660"/><path d="M430,1180 L650,1180 L900,1920 L180,1920Z" fill="#4c4778"/>
+        <g id="s8b-crowd"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S9 · CTA: Abstimmung -->
+    <section class="scene" id="s9" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-bg9" cx=".5" cy=".35" r=".8"><stop offset="0" stop-color="#2c2760"/><stop offset="1" stop-color="#12112a"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-bg9)"/>
+        <g id="s9-stars" fill="#fff"></g>
+      </svg>
+      <div class="q">WIE LANGE WÜRDEST <span style="color:var(--yellow)">DU</span> DURCHHALTEN?</div>
+      <div class="opt o1"><span class="k">A</span><span class="t">1 TAG<small>Ohne Bus &amp; Supermarkt</small></span></div>
+      <div class="opt o2"><span class="k">B</span><span class="t">3 TAGE<small>Bis der Strom weg ist</small></span></div>
+      <div class="opt o3"><span class="k">C</span><span class="t">1 WOCHE<small>Müll, Ratten, kein Netz</small></span></div>
+      <div class="opt o4"><span class="k">D</span><span class="t">LÄNGER<small>Ich bin vorbereitet</small></span></div>
+      <div class="cta">SCHREIB A, B, C ODER D<br/>IN DIE KOMMENTARE</div>
+      <div class="ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle id="s9-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" stroke-dashoffset="0" transform="rotate(-90 65 65)"/></svg><div class="n" id="s9-n">6</div></div>
+    </div></div></section>
+
+    <!-- Overlays -->
+    <div id="hud">
+      <div class="hud-panel">
+        <div class="hud-label"></div>
+        <div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div>
+        <div class="hud-sub"></div>
+        <div class="hud-delta"></div>
+      </div>
+      <div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div>
+    </div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div>
+    <div id="flash"></div>
+
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="50" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, svg = E.svg;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+
+    /* ---------- Helfer: Skyline mit Fenstern ---------- */
+    function skyline(g, opt) {
+      const r = E.rng(opt.seed);
+      const lights = opt.lightsInto || g;
+      let x = opt.x0 || 0;
+      const out = [];
+      while (x < (opt.x1 || 1080)) {
+        const w = opt.wMin + r() * (opt.wMax - opt.wMin);
+        const h = opt.hMin + r() * (opt.hMax - opt.hMin);
+        const y = opt.base - h;
+        svg("rect", { x, y, width: w, height: h + 4, fill: opt.fill }, g);
+        if (opt.windows) {
+          const cw = opt.win, gap = opt.win * 0.8;
+          for (let wy = y + gap; wy < opt.base - cw; wy += cw + gap)
+            for (let wx = x + gap; wx < x + w - cw; wx += cw + gap)
+              if (r() < opt.lit) out.push(svg("rect", { x: wx, y: wy, width: cw, height: cw * 1.2, fill: r() < 0.85 ? opt.litColor : "#ff8a5c" }, lights));
+        }
+        x += w + (opt.gap || 0);
+      }
+      return out;
+    }
+
+    /* ================= S1 ================= */
+    skyline($("#s1-city"), { seed: 3, x0: 270, x1: 810, base: 830, wMin: 40, wMax: 90, hMin: 90, hMax: 260, fill: "#1a1636", windows: true, win: 9, lit: 0.45, litColor: "#ffd27a" });
+    E.person($("#s1-kid"), { x: 540, y: 1560, s: 1.05, face: "shock", arms: "down" });
+    const clock = $("#s1-clock .body");
+    tl.fromTo(clock, { rotation: -10, svgOrigin: "0 0" }, { rotation: 10, duration: 0.08, repeat: 37, yoyo: true, ease: "none", svgOrigin: "0 0" }, 0);
+    tl.fromTo("#s1-clock .ring-lines", { opacity: 0.2 }, { opacity: 1, duration: 0.16, repeat: 18, yoyo: true, ease: "none" }, 0);
+    tl.fromTo("#s1-kid", { y: 30 }, { y: 0, duration: 0.35, ease: "back.out(3)" }, 0.2);
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2.4)" }, 0.15);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" }, 0.75);
+
+    /* ================= S2 ================= */
+    skyline($("#s2-city"), { seed: 11, base: 1160, wMin: 110, wMax: 200, hMin: 280, hMax: 640, fill: "#2a2550", gap: 8, windows: true, win: 18, lit: 0.22, litColor: "#ffcf7a" });
+    E.person($("#s2-kid"), { x: 470, y: 1330, s: 1.0, face: "worried", arms: "phone", shirt: "#5c6390" });
+    tl.fromTo("#s2-ausfall", { opacity: 1 }, { opacity: 0.15, duration: 0.3, repeat: 13, yoyo: true, ease: "steps(1)" }, at("h1", -0.2));
+    tl.fromTo("#s2-q .q1", { autoAlpha: 0, scale: 0, svgOrigin: "540 560" }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, at("bus", 0.8));
+    tl.fromTo("#s2-q .q2", { autoAlpha: 0, scale: 0, svgOrigin: "630 520" }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, at("bahn", 0.1));
+
+    /* ================= S3 ================= */
+    (function () {
+      const g = $("#s3-shelves"), r = E.rng(21);
+      const cols = ["#e8463c", "#ffd23f", "#3ee08f", "#6c8cff", "#f08a4b", "#e9e6f5", "#c26bff"];
+      for (let row = 0; row < 4; row++) {
+        const y = 420 + row * 150;
+        svg("rect", { x: 0, y: y + 110, width: 1080, height: 18, fill: "#24223a" }, g);
+        for (let x = 10; x < 1070; ) {
+          const w = 26 + r() * 30, h = 50 + r() * 55;
+          if (r() > 0.12) svg("rect", { x, y: y + 110 - h, width: w, height: h, rx: 4, fill: cols[Math.floor(r() * cols.length)], opacity: 0.85 }, g);
+          x += w + 6;
+        }
+      }
+      svg("rect", { x: 0, y: 400, width: 1080, height: 640, fill: "rgba(20,18,40,.35)" }, g);
+      const f = $("#s3-floor");
+      for (let i = -8; i <= 8; i++) svg("line", { x1: 540 + i * 70, y1: 1040, x2: 540 + i * 260, y2: 1920 }, f);
+      for (let k = 0; k < 7; k++) { const y = 1040 + Math.pow(k / 6, 1.6) * 880; svg("line", { x1: 0, y1: y, x2: 1080, y2: y }, f); }
+      const W = $("#s3-walkers");
+      const walkers = [
+        { y: 1880, s: 0.78, arms: "box", shirt: "#7a4a9a", hair: "#2b1d14", from: -200, to: 1300, t: at("nehmen", -0.2), d: 3.2 },
+        { y: 1760, s: 0.62, arms: "bag", shirt: "#2f7a8a", hair: "#c48a3a", from: 1280, to: -220, t: at("nehmen", 0.3), d: 3.2, flip: true },
+        { y: 1700, s: 0.52, arms: "box", shirt: "#8a3a3a", hair: "#1b1b1b", from: -180, to: 1260, t: at("nehmen", 1.0), d: 3.0 },
+      ];
+      walkers.forEach((w, i) => {
+        const wrap = svg("g", {}, W);
+        const bob = svg("g", {}, wrap);
+        E.person(bob, { x: 0, y: w.y, s: w.s, face: "worried", arms: w.arms, shirt: w.shirt, hair: w.hair, flip: w.flip });
+        tl.fromTo(wrap, { x: w.from }, { x: w.to, duration: w.d, ease: "none" }, w.t);
+        tl.fromTo(bob, { y: 0 }, { y: -14, duration: 0.18, repeat: Math.floor(w.d / 0.18), yoyo: true, ease: "sine.inOut" }, w.t);
+      });
+      tl.fromTo("#s3-q", { autoAlpha: 0, scale: 0, svgOrigin: "840 970" }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, at("kasse", 0.9));
+    })();
+
+    /* ================= S4 ================= */
+    (function () {
+      const h = $("#s4-hills");
+      svg("path", { d: "M0,880 Q200,780 380,840 Q560,760 760,830 Q920,780 1080,840 L1080,900 L0,900Z", fill: "#2a2546" }, h);
+      const d = $("#s4-dash");
+      for (let k = 0; k < 9; k++) {
+        const p0 = Math.pow(k / 9, 2), p1 = Math.pow((k + 0.45) / 9, 2);
+        const y0 = 880 + p0 * 1040, y1 = 880 + p1 * 1040, w0 = 3 + p0 * 26, w1 = 3 + p1 * 26;
+        svg("path", { d: `M${540 - w0 / 2},${y0} L${540 + w0 / 2},${y0} L${540 + w1 / 2},${y1} L${540 - w1 / 2},${y1}Z` }, d);
+      }
+      const T = $("#s4-trucks");
+      [["#3e8ad6", 640, 1000, 0.28], ["#3ee08f", 420, 1060, 0.36], ["#e8463c", 760, 1240, 0.62], ["#ffd23f", 300, 1660, 1.05]].forEach(([c, x, y, s]) => {
+        const g = E.use(T, "truck", x, y, s);
+        g.setAttribute("style", "--brand:" + c);
+      });
+      tl.fromTo("#s4-trucks", { y: 0 }, { y: 0, duration: 0.01 }, at("tag2"));
+    })();
+
+    /* ================= S4b ================= */
+    (function () {
+      const items = $("#s4b-items"), boards = $("#s4b-boards"), r = E.rng(5);
+      const cols = ["#e8463c", "#ffd23f", "#3ee08f", "#6c8cff", "#f08a4b", "#e9e6f5", "#c26bff", "#3fd4ff"];
+      const all = [];
+      for (let row = 0; row < 4; row++) {
+        const by = 680 + row * 300;
+        let x = 70;
+        while (x < 990) {
+          const kind = r(), w = kind < 0.5 ? 90 : 70, h = kind < 0.5 ? 170 + r() * 50 : 200 + r() * 40;
+          if (x + w > 1010) break;
+          const g = svg("g", {}, items);
+          const c = cols[Math.floor(r() * cols.length)];
+          if (kind < 0.5) {
+            svg("rect", { x, y: by - h, width: w, height: h, rx: 8, fill: c }, g);
+            svg("rect", { x: x + 10, y: by - h + 40, width: w - 20, height: 50, rx: 6, fill: "rgba(255,255,255,.75)" }, g);
+          } else {
+            svg("rect", { x: x + 18, y: by - h, width: w - 36, height: 40, rx: 6, fill: "#e9e6f5" }, g);
+            svg("rect", { x, y: by - h + 34, width: w, height: h - 34, rx: 22, fill: c }, g);
+            svg("rect", { x: x + 8, y: by - h + 90, width: w - 16, height: 44, rx: 6, fill: "rgba(255,255,255,.7)" }, g);
+          }
+          all.push({ g, cx: x + w / 2, cy: by });
+          x += w + 14;
+        }
+        svg("rect", { x: 40, y: by, width: 1000, height: 30, fill: "#6d6a9a" }, boards);
+        svg("rect", { x: 40, y: by + 30, width: 1000, height: 12, fill: "#1a1830" }, boards);
+        for (let px = 110; px < 1000; px += 220) { svg("rect", { x: px, y: by + 2, width: 80, height: 26, rx: 3, fill: "#ffd23f" }, boards); }
+      }
+      const order = all.map((a, i) => ({ a, k: r() })).sort((p, q) => p.k - q.k).map((p) => p.a);
+      const t0 = at("regale", 0.0), span = end("regale") - t0 - 0.4;
+      order.forEach((it, i) => tl.to(it.g, { scale: 0, autoAlpha: 0, svgOrigin: `${it.cx} ${it.cy}`, duration: 0.18, ease: "back.in(2)" }, t0 + (i / order.length) * span));
+      tl.fromTo("#s4b-sign", { autoAlpha: 0, scale: 2.2, svgOrigin: "540 1000" }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2)", svgOrigin: "540 1000" }, end("regale", -0.35));
+    })();
+
+    /* ================= S5 ================= */
+    (function () {
+      const lights = skyline($("#s5-city"), { seed: 42, base: 1390, wMin: 90, wMax: 170, hMin: 260, hMax: 880, fill: "#1b1838", gap: 6, windows: true, win: 16, lit: 0.55, litColor: "#ffd27a", lightsInto: $("#s5-lights") });
+      const tw = $("#s5-towers");
+      E.use(tw, "tower", 200, 1560, 1.0); E.use(tw, "tower", 470, 1600, 0.8);
+      const st = $("#s5-steam"), r = E.rng(9);
+      const puffs = [];
+      [[200, 1150, 1.0], [470, 1270, 0.8]].forEach(([x, y, s]) => {
+        for (let i = 0; i < 6; i++) {
+          const c = svg("circle", { cx: x + (r() - 0.5) * 120 * s, cy: y - i * 70 * s, r: (60 + r() * 40) * s, opacity: 0.85 - i * 0.12 }, st);
+          puffs.push(c);
+        }
+      });
+      const lamps = $("#s5-lamps");
+      [120, 380, 640, 900].forEach((x) => {
+        svg("rect", { x: x - 5, y: 1500, width: 10, height: 300, fill: "#2c2948" }, lamps);
+        svg("rect", { x: x - 40, y: 1494, width: 80, height: 14, rx: 7, fill: "#2c2948" }, lamps);
+        svg("ellipse", { class: "lamp", cx: x + 28, cy: 1516, rx: 18, ry: 8, fill: "#ffe7a3" }, lamps);
+        svg("path", { class: "lamp", d: `M${x + 12},1516 L${x - 60},1800 L${x + 116},1800 L${x + 44},1516Z`, fill: "#ffe7a3", opacity: 0.12 }, lamps);
+      });
+      tl.fromTo("#s5-zoom", { scale: 1.18, svgOrigin: "540 1100" }, { scale: 1.08, duration: end("kraft") - at("tag3"), ease: "none", svgOrigin: "540 1100" }, at("tag3", -0.2));
+      tl.to("#s5-steam", { y: -120, duration: 3, ease: "none" }, at("tag3", -0.2));
+      tl.to(puffs, { autoAlpha: 0, scale: 0.4, duration: 0.6, stagger: 0.08, ease: "power2.in" }, at("kraft", 0.8));
+      // Flackern (deterministische Abfolge)
+      const fl = [1, 0.15, 0.9, 0.05, 0.7, 0.25, 1, 0.0, 0.5, 0.1, 0.8, 0.05];
+      const t0 = at("flacker"), dt = (at("weg") - t0) / fl.length;
+      fl.forEach((v, i) => { tl.set("#s5-lights", { opacity: v }, t0 + i * dt); tl.set(".lamp", { opacity: v }, t0 + i * dt); tl.set("#s5-skyglow", { opacity: v }, t0 + i * dt); });
+      tl.set("#s5-lights", { opacity: 0 }, at("weg")); tl.set(".lamp", { opacity: 0 }, at("weg")); tl.set("#s5-skyglow", { opacity: 0 }, at("weg"));
+      tl.fromTo("#s5-dark", { opacity: 0 }, { opacity: 0.45, duration: 0.2 }, at("weg"));
+      tl.fromTo("#s5 .cam", { x: -14 }, { x: 0, duration: 0.05, repeat: 7, yoyo: true, ease: "none", immediateRender: false }, at("weg"));
+      tl.to("#s5-zoom", { scale: 0.96, duration: 1.4, ease: "power2.inOut", svgOrigin: "540 1100" }, at("stadt", -0.1));
+    })();
+
+    /* ================= S6 ================= */
+    (function () {
+      const g = $("#s6-tiles");
+      for (let y = 0; y < 1000; y += 120) svg("line", { x1: 0, y1: y, x2: 1080, y2: y }, g);
+      for (let x = 0; x < 1080; x += 120) svg("line", { x1: x, y1: 0, x2: x, y2: 990 }, g);
+      const t0 = at("pumpen", -0.2);
+      tl.fromTo("#s6-stream", { scaleX: 1, svgOrigin: "760 706" }, { scaleX: 0.35, duration: 1.2, ease: "power1.in", svgOrigin: "760 706" }, t0);
+      tl.to("#s6-stream", { opacity: 0.2, duration: 0.15, repeat: 5, yoyo: true, ease: "steps(1)" }, t0 + 1.2);
+      tl.set("#s6-stream", { autoAlpha: 0 }, at("hahn"));
+      tl.fromTo("#s6-hand", { x: 360, y: 520 }, { x: 0, y: 0, duration: 0.5, ease: "power3.out" }, at("hahn", -0.1));
+      tl.fromTo("#s6-handle", { rotation: 0, svgOrigin: "620 830" }, { rotation: -55, duration: 0.5, ease: "power2.inOut", svgOrigin: "620 830" }, at("hahn", 0.3));
+      tl.set("#s6-drop", { autoAlpha: 0 }, 0);
+      tl.fromTo("#s6-drop", { autoAlpha: 1, scale: 0.2, y: 0, svgOrigin: "760 712" }, { scale: 1, duration: 0.6, ease: "power1.out", svgOrigin: "760 712" }, at("hahn", 0.3));
+      tl.to("#s6-drop", { y: 330, duration: 0.35, ease: "power2.in" }, at("hahn", 0.9));
+      tl.set("#s6-drop", { autoAlpha: 0 }, at("hahn", 1.25));
+      tl.set("#s6-splash", { autoAlpha: 0 }, 0);
+      tl.fromTo("#s6-splash", { autoAlpha: 1, y: 0, scale: 0.5, svgOrigin: "760 1066" }, { y: -30, scale: 1.4, autoAlpha: 0, duration: 0.4, ease: "power2.out", svgOrigin: "760 1066" }, at("hahn", 1.25));
+    })();
+
+    /* ================= S6b ================= */
+    tl.fromTo("#s6b-card", { scale: 0.6, autoAlpha: 0, svgOrigin: "0 40" }, { scale: 1, autoAlpha: 1, duration: 0.35, ease: "back.out(2.4)" }, at("handy", 0.5));
+    tl.fromTo("#s6b-bars", { x: -6 }, { x: 6, duration: 0.05, repeat: 9, yoyo: true, ease: "none" }, at("handy", 0.9));
+
+    /* ================= S7 ================= */
+    (function () {
+      const H = $("#s7-houses"), r = E.rng(77);
+      let x = -20;
+      ["#5a4f60", "#6b5d55", "#4f4d63", "#665a5a", "#575468"].forEach((c, i) => {
+        const w = 230, h = 520 + r() * 220, y = 1160 - h;
+        svg("rect", { x, y, width: w, height: h, fill: c }, H);
+        svg("rect", { x: x - 8, y: y - 20, width: w + 16, height: 26, fill: "rgba(0,0,0,.25)" }, H);
+        for (let wy = y + 50; wy < 1080; wy += 140) for (let wx = x + 34; wx < x + w - 60; wx += 90) svg("rect", { x: wx, y: wy, width: 56, height: 80, rx: 4, fill: "#2c2a36" }, H);
+        x += w;
+      });
+      const B = $("#s7-bins");
+      [[160, 1400], [880, 1400]].forEach(([bx, by]) => {
+        svg("rect", { x: bx - 80, y: by - 230, width: 160, height: 230, rx: 10, fill: "#2f6b4f" }, B);
+        svg("rect", { x: bx - 92, y: by - 250, width: 184, height: 30, rx: 8, fill: "#25573f", transform: `rotate(-14 ${bx} ${by - 240})` }, B);
+      });
+      const G = $("#s7-bags");
+      const spots = [];
+      for (let i = 0; i < 26; i++) {
+        const row = Math.floor(i / 7);
+        const bx = 80 + (i % 7) * 150 + (row % 2) * 70 + (r() - 0.5) * 40;
+        const by = 1520 - row * 95 + (r() - 0.5) * 20;
+        spots.push([bx, by, 0.9 + r() * 0.5, (r() - 0.5) * 30]);
+      }
+      const t0 = at("tag7", -0.2), span = end("muell") - t0;
+      spots.forEach(([bx, by, s, rot], i) => {
+        const g = E.use(G, "bag", bx, by, s);
+        g.setAttribute("transform", `translate(${bx},${by}) scale(${s}) rotate(${rot})`);
+        const wrap = svg("g", {}, G); wrap.appendChild(g);
+        tl.fromTo(wrap, { scale: 0, autoAlpha: 0, svgOrigin: `${bx} ${by}` }, { scale: 1, autoAlpha: 1, duration: 0.2, ease: "back.out(2.6)", svgOrigin: `${bx} ${by}` }, t0 + (i / spots.length) * span * 0.9);
+      });
+      const S = $("#s7-stink");
+      [[260, 1250], [540, 1180], [820, 1250]].forEach(([sx, sy], i) => {
+        const p = svg("path", { d: `M${sx},${sy} q-30,-40 0,-80 q30,-40 0,-80 q-30,-40 0,-80` }, S);
+        tl.fromTo(p, { y: 30, autoAlpha: 0 }, { y: -40, autoAlpha: 1, duration: 1.2, repeat: 3, ease: "sine.inOut" }, at("muell", 0.3 + i * 0.25));
+      });
+      const F = $("#s7-flies");
+      [[300, 1150], [700, 1120], [520, 1240]].forEach(([fx, fy], i) => {
+        const swarm = svg("g", {}, F);
+        for (let k = 0; k < 5; k++) svg("circle", { cx: fx + Math.cos(k * 1.3) * 45, cy: fy + Math.sin(k * 1.7) * 30, r: 6 }, swarm);
+        tl.fromTo(swarm, { rotation: 0, svgOrigin: `${fx} ${fy}` }, { rotation: 360 * (i % 2 ? -1 : 1), duration: 1.6, repeat: 3, ease: "none", svgOrigin: `${fx} ${fy}` }, at("tag7"));
+      });
+      const R = $("#s7-rats");
+      [[1700, 1.1, 0], [1830, 0.9, 0.25], [1600, 0.7, 0.5]].forEach(([ry, s, dl]) => {
+        const wrap = svg("g", {}, R);
+        E.use(wrap, "rat", 0, ry, s);
+        tl.fromTo(wrap, { x: -260 }, { x: 1300, duration: 1.3, ease: "none" }, at("ratten", -0.2 + dl));
+      });
+    })();
+
+    /* ================= S8 ================= */
+    (function () {
+      const rays = $("#s8-rays");
+      for (let i = 0; i < 12; i++) svg("path", { d: "M540,800 L500,-400 L580,-400Z", transform: `rotate(${i * 30} 540 800)` }, rays);
+      tl.fromTo("#s8-rays", { rotation: 0, svgOrigin: "540 800" }, { rotation: 25, duration: 2.5, ease: "none", svgOrigin: "540 800" }, at("verrueckt", -0.2));
+      E.person($("#s8-kid"), { x: 540, y: 2350, s: 2.6, face: "smirk", arms: "down" });
+      tl.fromTo("#s8-kid", { y: 200 }, { y: 0, duration: 0.4, ease: "back.out(2)" }, at("verrueckt", -0.2));
+    })();
+
+    /* ================= S8b ================= */
+    (function () {
+      const W = $("#s8b-win"), r = E.rng(13);
+      const wins = [];
+      for (let row = 0; row < 4; row++) for (let col = 0; col < 6; col++)
+        wins.push(svg("rect", { x: 190 + col * 122, y: 480 + row * 112, width: 80, height: 74, rx: 6, fill: "#ffe7a3", opacity: 0.12 }, W));
+      const order = wins.map((w) => ({ w, k: r() })).sort((a, b) => a.k - b.k).map((x) => x.w);
+      const t0 = at("woche", 0.4);
+      order.forEach((w, i) => tl.to(w, { opacity: 0.95, duration: 0.12 }, t0 + i * 0.12));
+      tl.fromTo("#s8b-sun", { y: 260 }, { y: 0, duration: 4.4, ease: "power1.out" }, at("woche", -0.1));
+      tl.fromTo("#s8b-sign", { scale: 0, svgOrigin: "540 880" }, { scale: 1, duration: 0.35, ease: "back.out(3)", svgOrigin: "540 880" }, at("woche", 1.8));
+      const C = $("#s8b-crowd");
+      const shirts = ["#e8463c", "#3fd4ff", "#3ee08f", "#ffd23f", "#c26bff", "#f08a4b", "#6c8cff", "#e9e6f5"];
+      const hairs = ["#5b3a22", "#1b1b1b", "#c48a3a", "#7a2e1e"];
+      for (let i = 0; i < 8; i++) {
+        const lane = i % 4;
+        const sx = i < 4 ? -120 - lane * 90 : 1200 + lane * 90;
+        const fy = 1890 - lane * 130, s = 0.56 - lane * 0.07;
+        const wrap = svg("g", {}, C); const bob = svg("g", {}, wrap);
+        E.person(bob, { x: 0, y: fy, s, face: "neutral", arms: "down", shirt: shirts[i], hair: hairs[i % 4], flip: i >= 4 });
+        const tx = 540 + (i < 4 ? -1 : 1) * [330, 235, 150, 80][lane];
+        tl.fromTo(wrap, { x: sx }, { x: tx, duration: 3.4, ease: "power1.out" }, at("woche", 0.2 + lane * 0.15));
+        tl.fromTo(bob, { y: 0 }, { y: -10, duration: 0.2, repeat: 15, yoyo: true, ease: "sine.inOut" }, at("woche", 0.2 + lane * 0.15));
+      }
+    })();
+
+    /* ================= S9 ================= */
+    (function () {
+      const st = $("#s9-stars"), r = E.rng(99);
+      for (let i = 0; i < 70; i++) svg("circle", { cx: r() * 1080, cy: r() * 1920, r: 1 + r() * 2.5, opacity: 0.2 + r() * 0.5 }, st);
+      const t0 = at("durch", -0.3);
+      tl.fromTo("#s9 .q", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, t0 + 0.05);
+      ["o1", "o2", "o3", "o4"].forEach((o, i) => tl.fromTo("#s9 ." + o, { autoAlpha: 0, x: i % 2 ? 300 : -300 }, { autoAlpha: 1, x: 0, duration: 0.35, ease: "back.out(1.8)" }, t0 + 0.5 + i * 0.18));
+      tl.fromTo("#s9 .cta", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.3 }, at("komm", -0.1));
+      tl.fromTo("#s9 .cta", { scale: 1 }, { scale: 1.06, duration: 0.4, repeat: 4, yoyo: true, ease: "sine.inOut" }, at("komm", 0.3));
+      const ringT0 = t0 + 0.4, D = E.T.duration - ringT0;
+      tl.fromTo("#s9-arc", { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": 352 }, duration: D, ease: "none" }, ringT0);
+      const nEl = $("#s9-n");
+      E.clock(tl, (t) => { nEl.textContent = String(Math.max(1, Math.min(6, 6 - Math.floor((t - ringT0) / (D / 6))))); });
+      tl.fromTo("#s9 .ring", { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, ringT0);
+    })();
+
+    /* ---------- Engine: Szenen, Untertitel, HUD ---------- */
+    E.buildScenes(tl);
+    E.buildCaptions(tl);
+    E.buildHud(tl);
+    tl.set({}, {}, E.T.duration);
+
+    window.__timelines = window.__timelines || {};
+    window.__timelines["main"] = tl;
+    tl.seek(0);
+  })();
+  </script>
+</body>
+</html>
