@@ -88,14 +88,24 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    `E.rng(seed)` erzeugen. Bildkomposition: wichtige Motive zwischen y≈450 und 1200,
    Untertitel-Zone 1255–1515 und HUD-Zone 200–430 frei von wichtigen Texten halten.
    Das Referenzprojekt `videos/01-keiner-arbeitet/index.html` zeigt jede Technik.
-3. **Stimme** (deutsch) über **ElevenLabs**, Standardstimme **`bFv4VX9jlZxtKnEa6UWs`**
-   ("Arthur Holm – German", vom Nutzer festgelegt), Modell `eleven_multilingual_v2`.
-   **Weg A – ElevenLabs-Connector (11LBS, Credits des Nutzers):** `creative_create_flow`,
-   dann `creative_generate_speech` (voice_id oben, Skript als prompt, 2 Takes à ~710 Credits),
-   `creative_get_flow_run_status` pollen, den Take nehmen, der am besten in die Zieldauer passt,
-   `content_url` herunterladen (braucht Netzfreigabe für `elevenlabsusercontent.com`; sonst
-   lädt der Nutzer die MP3 im Chat hoch) und dann
-   `python3 tools/add_voice.py videos/<slug> take.mp3 --min-duration 50 --fit 50`.
+3. **Stimme** (deutsch) über **ElevenLabs**, aktuelle Standardstimme
+   **`rDmv3mOhK6TnhYWckFaD`** ("Felix Serenitas – German Top Voice", vom Nutzer gewählt;
+   frühere Stimme `bFv4VX9jlZxtKnEa6UWs` "Arthur Holm"). Modell `eleven_multilingual_v2`.
+   Eine andere Stimme nur, wenn der Nutzer es sagt.
+   **Weg A – ElevenLabs-Connector (11LBS, Credits des Nutzers), Standard:**
+   1. `creative_create_flow` → `creative_generate_speech` (voice_id, Skript als prompt;
+      2 Takes à ~710 Credits pro 50 s) → `creative_get_flow_run_status` pollen.
+   2. Take wählen, der am besten in die Zieldauer passt; `content_url` mit curl nach
+      `assets/` laden (Netzfreigabe `elevenlabsusercontent.com` ist eingerichtet).
+   3. `python3 tools/add_voice.py videos/<slug> assets/take.mp3 --min-duration 50 --fit 50 --tail 1.8`
+      (kopiert nach voice.*, beschleunigt bei Bedarf max. 1,15x, trägt `<audio>` ein).
+   4. **Wortgenau synchronisieren (immer machen, kostet 0 Credits):** gewählten Take mit
+      `creative_add_flow_asset_node` (modality audio, generation_id) auf den Flow legen,
+      `creative_transcribe_audio` (eleven_scribe_v1, connect_from = diese node_id), pollen,
+      `words_download_url` nach `assets/<take>_words.json` laden, dann
+      `python3 tools/align_words.py videos/<slug> assets/<take>_words.json --source assets/take.mp3`.
+      Muss "0 Abweichungen" melden; sonst Skript-Chunks an den gesprochenen Text anpassen.
+      (Die reine Pausen-Erkennung von add_voice.py ordnet bei manchen Stimmen falsch zu.)
    **Weg B – API-Schlüssel (`ELEVENLABS_API_KEY`), wortgenau:**
    ```bash
    python3 tools/elevenlabs_tts.py videos/<slug> --min-duration 50 --fit 50
@@ -126,12 +136,21 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
   die Translation und das Element springt. In ein leeres `<g>` wrappen und den Wrapper animieren.
 - Kein `Math.random`/`Date.now`, nur `E.rng(seed)`. Alles muss seekbar sein.
 - Texte im Hook: max. 3 Zeilen à ~14 Zeichen bei 90 px, sonst bricht es um und überlappt.
-- Fehlt `ELEVENLABS_API_KEY` oder ist `api.elevenlabs.io` gesperrt: Video ohne Stimme rendern
-  und den Nutzer bitten, Schlüssel/Freigabe in den Umgebungs-Einstellungen zu ergänzen
-  (nie den Schlüssel im Chat erfragen).
+- Ist ein Download-Host gesperrt (z. B. `elevenlabsusercontent.com`): den Nutzer Schritt für
+  Schritt durch Umgebungsmenü → Edit → Network access → Allowed domains führen; die Freigabe
+  greift sofort in der laufenden Session. Nie nach Schlüsseln im Chat fragen.
+- `tools/render.sh` mit eigenem Ausgabepfad: absolute Pfade oder relativ zum Aufrufort.
 - Container ist flüchtig: fertige Videos und Projekte dem Nutzer schicken bzw. in ein Repo pushen.
 
-## 5. Abgabe
+## 5. Abgabe (immer alles davon)
 
-Dem Nutzer schicken: MP4 aus `output/` (SendUserFile), kurze Liste der Szenen, das Skript
-als Text (für die TikTok-Beschreibung) und 3–5 deutsche Hashtags. Auf Deutsch antworten.
+1. MP4 aus `output/` per SendUserFile schicken.
+2. **Immer eine Posting-Beschreibung + Hashtags** mitliefern (vom Nutzer gewünscht), direkt
+   kopierbar im Chat und als `output/<slug>_posting.txt` (+ Kopie `videos/<slug>/posting.txt`):
+   - Beschreibung: 2–3 Zeilen, Deutsch, Hook-Frage + 1–2 Eskalations-Details als Teaser
+     (Auflösung nicht verraten) + Kommentar-Aufruf passend zur CTA (A/B/C/D), 2–4 Emojis.
+   - Hashtags: 8–10, gemischt aus Nische (#waswärewenn #gedankenexperiment #szenario),
+     Thema (z. B. #stromausfall) und Reichweite (#wissen #lernenmittiktok #fakten #fürdich #fyp).
+3. Kurz: welche Stimme/welcher Take, wie viele Credits verbraucht, Dauer.
+4. Projekt in den Branch `tiktok-videos` von `one-skill-to-rule-them-all` pushen.
+Auf Deutsch antworten.

@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was würde passieren, wenn keiner mehr arbeiten würde?",
-  "duration": 50.06,
+  "duration": 50.0,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 2.838,
+      "t1": 2.907,
       "noCap": true,
       "chunks": [
         "Was würde passieren, wenn ab morgen keiner mehr arbeitet?"
@@ -17,60 +17,60 @@ window.TIMING = {
     },
     {
       "id": "h1",
-      "t0": 3.361,
-      "t1": 4.126,
+      "t0": 4.083,
+      "t1": 4.877,
       "chunks": [
         "^Stunde eins.^"
       ],
       "chunkStarts": [
-        3.361
+        4.083
       ]
     },
     {
       "id": "bus",
-      "t0": 4.314,
-      "t1": 5.218,
+      "t0": 5.509,
+      "t1": 6.619,
       "chunks": [
         "Dein Bus",
         "kommt *nicht.*"
       ],
       "chunkStarts": [
-        4.314,
-        4.701
+        5.509,
+        5.944
       ]
     },
     {
       "id": "bahn",
-      "t0": 5.472,
-      "t1": 6.993,
+      "t0": 7.021,
+      "t1": 8.905,
       "chunks": [
         "*Keine* Bahn.",
         "*Kein* Taxi."
       ],
       "chunkStarts": [
-        5.472,
-        6.356
+        7.021,
+        8.088
       ]
     },
     {
       "id": "kasse",
-      "t0": 7.583,
-      "t1": 9.705,
+      "t0": 9.308,
+      "t1": 11.572,
       "chunks": [
         "Im Supermarkt",
         "sitzt *niemand*",
         "an der Kasse."
       ],
       "chunkStarts": [
-        7.583,
-        8.308,
-        9.033
+        9.308,
+        10.005,
+        10.799
       ]
     },
     {
       "id": "nehmen",
-      "t0": 10.331,
-      "t1": 12.518,
+      "t0": 11.975,
+      "t1": 14.359,
       "chunks": [
         "Die Leute",
         "nehmen einfach mit,",
@@ -78,42 +78,42 @@ window.TIMING = {
         "tragen können."
       ],
       "chunkStarts": [
-        10.331,
-        10.752,
-        11.593,
-        11.929
+        11.975,
+        12.421,
+        13.303,
+        13.575
       ]
     },
     {
       "id": "tag2",
-      "t0": 13.0,
-      "t1": 13.576,
+      "t0": 15.534,
+      "t1": 16.351,
       "chunks": [
         "^Tag zwei.^"
       ],
       "chunkStarts": [
-        13.0
+        15.534
       ]
     },
     {
       "id": "lkw",
-      "t0": 14.068,
-      "t1": 16.309,
+      "t0": 16.896,
+      "t1": 18.79,
       "chunks": [
         "Kein einziger",
         "^LKW^",
         "fährt mehr."
       ],
       "chunkStarts": [
-        14.068,
-        15.15,
-        15.459
+        16.896,
+        17.614,
+        18.126
       ]
     },
     {
       "id": "regale",
-      "t0": 16.923,
-      "t1": 19.296,
+      "t0": 19.247,
+      "t1": 21.718,
       "chunks": [
         "Die Regale",
         "sind *leer,*",
@@ -121,174 +121,174 @@ window.TIMING = {
         "füllt sie auf."
       ],
       "chunkStarts": [
-        16.923,
-        17.479,
-        18.034,
-        18.589
+        19.247,
+        19.824,
+        20.553,
+        21.043
       ]
     },
     {
       "id": "tag3",
-      "t0": 19.991,
-      "t1": 20.567,
+      "t0": 22.121,
+      "t1": 22.839,
       "chunks": [
         "^Tag drei.^"
       ],
       "chunkStarts": [
-        19.991
+        22.121
       ]
     },
     {
       "id": "kraft",
-      "t0": 21.175,
-      "t1": 22.97,
+      "t0": 23.383,
+      "t1": 25.191,
       "chunks": [
         "Kraftwerke",
         "laufen *nicht*",
         "von alleine."
       ],
       "chunkStarts": [
-        21.175,
-        21.724,
-        22.372
+        23.383,
+        24.015,
+        24.559
       ]
     },
     {
       "id": "flacker",
-      "t0": 23.573,
-      "t1": 24.817,
+      "t0": 25.485,
+      "t1": 26.889,
       "chunks": [
         "Erst flackert",
         "das Licht."
       ],
       "chunkStarts": [
-        23.573,
-        24.299
+        25.485,
+        26.268
       ]
     },
     {
       "id": "weg",
-      "t0": 25.377,
-      "t1": 26.117,
+      "t0": 27.14,
+      "t1": 28.075,
       "chunks": [
         "Dann ist es",
         "*weg.*"
       ],
       "chunkStarts": [
-        25.377,
-        25.932
+        27.14,
+        27.706
       ]
     },
     {
       "id": "stadt",
-      "t0": 26.724,
-      "t1": 27.603,
+      "t0": 28.37,
+      "t1": 29.513,
       "chunks": [
         "In der",
         "*ganzen* Stadt."
       ],
       "chunkStarts": [
-        26.724,
-        27.032
+        28.37,
+        28.653
       ]
     },
     {
       "id": "pumpen",
-      "t0": 28.141,
-      "t1": 29.478,
+      "t0": 29.861,
+      "t1": 31.287,
       "chunks": [
         "Ohne Strom",
         "*keine* Pumpen."
       ],
       "chunkStarts": [
-        28.141,
-        28.754
+        29.861,
+        30.514
       ]
     },
     {
       "id": "hahn",
-      "t0": 30.068,
-      "t1": 31.724,
+      "t0": 31.473,
+      "t1": 33.171,
       "chunks": [
         "Aus dem",
         "Wasserhahn",
         "kommt *nichts* mehr."
       ],
       "chunkStarts": [
-        30.068,
-        30.426,
-        30.918
+        31.473,
+        31.766,
+        32.278
       ]
     },
     {
       "id": "handy",
-      "t0": 32.297,
-      "t1": 33.905,
+      "t0": 33.715,
+      "t1": 35.478,
       "chunks": [
         "Dein Handy:",
         "*kein Netz.*"
       ],
       "chunkStarts": [
-        32.297,
-        33.269
+        33.715,
+        34.684
       ]
     },
     {
       "id": "tag7",
-      "t0": 34.542,
-      "t1": 35.118,
+      "t0": 35.936,
+      "t1": 36.698,
       "chunks": [
         "^Tag sieben.^"
       ],
       "chunkStarts": [
-        34.542
+        35.936
       ]
     },
     {
       "id": "muell",
-      "t0": 35.657,
-      "t1": 37.348,
+      "t0": 37.046,
+      "t1": 38.777,
       "chunks": [
         "Der Müll",
         "türmt sich",
         "auf den Straßen."
       ],
       "chunkStarts": [
-        35.657,
-        36.08,
-        36.597
+        37.046,
+        37.547,
+        38.004
       ]
     },
     {
       "id": "ratten",
-      "t0": 37.74,
-      "t1": 38.625,
+      "t0": 38.93,
+      "t1": 40.051,
       "chunks": [
         "*Ratten*",
         "überall."
       ],
       "chunkStarts": [
-        37.74,
-        38.153
+        38.93,
+        39.386
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 39.229,
-      "t1": 39.996,
+      "t0": 40.508,
+      "t1": 41.422,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        39.229,
-        39.57
+        40.508,
+        40.824
       ]
     },
     {
       "id": "woche",
-      "t0": 40.634,
-      "t1": 43.707,
+      "t0": 41.967,
+      "t1": 44.884,
       "chunks": [
         "Nach einer Woche",
         "würden fast alle",
@@ -297,35 +297,35 @@ window.TIMING = {
         "~arbeiten~ gehen."
       ],
       "chunkStarts": [
-        40.634,
-        41.414,
-        42.193,
-        42.698,
-        43.019
+        41.967,
+        42.555,
+        43.306,
+        43.785,
+        44.035
       ]
     },
     {
       "id": "durch",
-      "t0": 44.322,
-      "t1": 45.718,
+      "t0": 45.341,
+      "t1": 46.724,
       "noCap": true,
       "chunks": [
         "Wie lange würdest du durchhalten?"
       ],
       "chunkStarts": [
-        44.322
+        45.341
       ]
     },
     {
       "id": "komm",
-      "t0": 46.204,
-      "t1": 47.856,
+      "t0": 46.833,
+      "t1": 48.291,
       "noCap": true,
       "chunks": [
         "Schreib es in die Kommentare."
       ],
       "chunkStarts": [
-        46.204
+        46.833
       ]
     }
   ],

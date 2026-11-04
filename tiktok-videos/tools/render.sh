@@ -4,7 +4,7 @@
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 P="$(cd "$1" && pwd)"; SLUG="$(basename "$P")"
-OUT="${2:-$ROOT/output/$SLUG.mp4}"
+OUT="${2:-$ROOT/output/$SLUG.mp4}"; case "$OUT" in /*) ;; *) OUT="$PWD/$OUT";; esac
 mkdir -p "$(dirname "$OUT")"
 cp -r "$ROOT/shared/lib/." "$P/lib/"
 python3 -I "$ROOT/tools/build_sfx.py" "$P"
