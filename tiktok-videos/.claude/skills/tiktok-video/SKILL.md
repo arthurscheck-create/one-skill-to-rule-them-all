@@ -53,6 +53,22 @@ Alternativstile nur auf Wunsch: *Erklär-Flat* (Strichmännchen, Nachtblau, Kurv
 zweizeilige Überschrift oben weiß + farbig) oder *Low-Poly-3D* (Three.js, Serifenschrift,
 kursive Untertitel, Millisekunden-Countdown links). Dann nach der Beschreibung oben bauen.
 
+## 1b. Recherche (Pflicht, vor jedem Skript)
+
+Jedes Szenario zuerst mit **mehreren Quellen (mindestens 3–5, unabhängig voneinander)** recherchieren
+(WebSearch; bei dünnen Ergebnissen `mode: "extended"`), damit die Videos informativer und
+spannender werden:
+- Bevorzugt: NASA/ESA, Universitäten, Fachmagazine (Spektrum, Quarks, Scientific American,
+  National Geographic), Behörden/Statistikämter, Wikipedia (de/en) als Einstieg.
+- Daraus 6–10 **konkrete, überraschende Fakten mit Zahlen** sammeln (Zeitpunkte, Temperaturen,
+  Geschwindigkeiten, Anteile) und die besten 2–3 für Eskalation und Wendung nutzen.
+- Widersprechen sich Quellen, die vorsichtigere Zahl oder "etwa/bis zu" verwenden. Spekulatives
+  als Szenario formulieren; das HUD trägt ohnehin "FIKTION".
+- **Quellen NIEMALS im Video nennen** – nicht im Sprechertext, nicht in Untertiteln, Schildern,
+  Beschreibung oder Hashtags. Sie gehen **nur an den Nutzer**: als Liste im Chat (Titel + Link +
+  welcher Fakt daher stammt) und im Studio-Feld `sources: [{title, url, fact}]` (nur der Nutzer
+  sieht das Studio).
+
 ## 2. Skript-Aufbau (Pflicht)
 
 **Länge flexibel:** so lang, wie die Geschichte trägt – typisch 35–75 s (≈2,4 Wörter/s).
@@ -220,7 +236,7 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
      `file_paths: [studio/upload/<slug>.mp4, studio/upload/<slug>.jpg]` → liefert `/_blob/<id>`.
    - ArtifactData `set` in Collection `videos`, doc_id = `<slug>`, Felder: `slug, title,
      status: "pruefen", createdAt (ms), duration (s), voice, hook, description, hashtags,
-     pollOptions[], videoAssetId, videoUrl, thumbAssetId, thumbUrl`.
+     pollOptions[], sources[{title,url,fact}], videoAssetId, videoUrl, thumbAssetId, thumbUrl`.
    - Reiter: **Zu prüfen** (neu) → Nutzer setzt **Geprüft** → nach dem Posten **Online**
      (`postedAt`). Feedback des Nutzers steht in `feedback` – vor jedem neuen Video lesen.
 2. **Immer eine Posting-Beschreibung + Hashtags** (stehen im Studio mit Kopier-Knopf und
@@ -230,7 +246,7 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    - Hashtags: 8–10, gemischt aus Nische (#waswärewenn #gedankenexperiment #szenario),
      Thema und Reichweite (#wissen #lernenmittiktok #fakten #fürdich #fyp).
 3. MP4 zusätzlich per SendUserFile schicken.
-4. Kurz: welche Stimme, wie viele Credits verbraucht, Dauer.
+4. Kurz: welche Stimme, wie viele Credits verbraucht, Dauer – und die **Quellenliste** (nur im Chat/Studio).
 5. Projekt in den Branch `tiktok-videos` von `one-skill-to-rule-them-all` pushen.
 
 ## 6. Auswertung (Reiter „Online“)

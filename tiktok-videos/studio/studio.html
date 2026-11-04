@@ -104,6 +104,10 @@
   td { font-family: var(--f-mono); } td:first-child { font-family: var(--f-body); font-weight: 600; }
   tr:last-child td { border-bottom: 0; }
 
+  details.block summary { cursor: pointer; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  ul.sources { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 6px; font-size: 14.5px; }
+  ul.sources a { color: var(--cyan); overflow-wrap: anywhere; }
+  ul.sources .fact { color: var(--muted); }
   .empty { border: 2px dashed var(--line); border-radius: var(--r); padding: 36px 20px; text-align: center; color: var(--muted); display: grid; gap: 6px; }
   .empty b { color: var(--ink); font-family: var(--f-display); font-size: 18px; }
   .banner { border: 2px solid var(--red); border-radius: 12px; padding: 10px 14px; color: var(--ink); background: var(--panel); }
@@ -252,6 +256,18 @@
     if (v.hook) body.appendChild(el("div", { class: "block" }, [el("span", { class: "lbl", text: "Hook" }), el("div", { text: v.hook })]));
     body.appendChild(copyBlock("Beschreibung", v.description || ""));
     body.appendChild(copyBlock("Hashtags", v.hashtags || "", "tags"));
+    if (Array.isArray(v.sources) && v.sources.length) {
+      const list = el("ul", { class: "sources" });
+      v.sources.forEach((q) => {
+        if (!q || !q.url) return;
+        const safe = /^https?:\/\//i.test(q.url) ? q.url : null;
+        const li = el("li", {}, [safe ? el("a", { href: safe, target: "_blank", rel: "noopener noreferrer", text: q.title || q.url }) : el("span", { text: q.title || q.url })]);
+        if (q.fact) li.appendChild(el("span", { class: "fact", text: " – " + q.fact }));
+        list.appendChild(li);
+      });
+      const det = el("details", { class: "block" }, [el("summary", { class: "lbl", text: "Quellen (nur für dich, nicht posten) · " + v.sources.length }), list]);
+      body.appendChild(det);
+    }
 
     if (tab === "pruefen") {
       const fb = el("textarea", { id: "fb-" + v.id, placeholder: "z. B. Hook kürzer, andere Abstimmungsfrage, Szene 3 heller …" });
