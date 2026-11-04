@@ -91,6 +91,15 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
      einlösen (sonst fühlen sich Zuschauer betrogen und die Watchtime sinkt beim nächsten Video).
    - Ab Sekunde 3 alle 3–5 s ein neuer Reiz (Schnitt, Zahl springt, Sound), nie zwei ruhige
      Sätze hintereinander.
+   - **VOR JEDEM NEUEN VIDEO FRAGEN (Nutzerwunsch):** „Soll der Einstieg **dramatisch** sein (roter Blitz, Wackeln, Boom
+     auf dem Schlüsselwort) oder **klassisch** (spannender Hook wie früher, ohne rotes Aufblitzen)?“ – AskUserQuestion,
+     bei mehreren Videos einmal pro Video oder einmal für alle. Spannend muss der Hook IMMER sein (Behauptung/Frage +
+     Watch-to-End-Versprechen); nur der rote Effekt ist optional.
+     - dramatisch: 3-Satz-Hook (Behauptung / Wendung mit *rotem* Schlüsselwort / Versprechen),
+       `E.hookFx(tl, cs("kata", <idx>))` + `{type:"boom", at:"kata", off:<Wort>}` in sfx.
+     - klassisch: Hook wie früher (z. B. „Was wäre, wenn …?“ + offene Schleife, auch 2 Sätze hook/loop möglich),
+       nur `E.hookFx(tl, null, { dramatic: false })` (Punch-in ab Frame 0), KEIN roter Blitz, kein Boom am Hook.
+       Die übrigen v2-Regeln (Frame 0 in Bewegung, kurzer Titel, Versprechen) gelten trotzdem.
    - **Hook-Regeln v2 (Nutzerwunsch: niemand darf wegscrollen):**
      - **Erster Satz ≤ 2,5 s und eine Behauptung statt einer langen Frage.** Schlecht: „Was wäre, wenn jeder in Deutschland
        über Nacht eine Million Euro auf dem Konto hätte?“ (4,5 s). Gut: „Jeder in Deutschland bekommt über Nacht eine Million Euro.“
