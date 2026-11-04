@@ -124,6 +124,17 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
    - Optional **Speichern/Teilen** bei Tipps oder Fakten-Listen ("SCHICK'S DEINEM BESTEN FREUND").
    - Auch im Sprechertext kurz ansprechen ("Folg mir, damit du Teil 2 nicht verpasst."),
      aber max. 2 Aufforderungen im gesprochenen Text, sonst wirkt es billig.
+5a. **Folgen-Satz am Ende (Pflicht in JEDEM Video, Nutzerwunsch):** Als letzter gesprochener Satz (nach dem
+   Kommentar-Aufruf, eigene Zeile `{"id": "folg", noCap: true}`) ein Folgen-Aufruf, am besten **themenspezifisch** statt
+   generisch, sonst schlicht „Folg für mehr.“ Gute Muster:
+   - Teaser aufs nächste Szenario: „Folg mir – als Nächstes verschwindet der Mond.“
+   - Thema weiterdrehen: „Folg mir, sonst verpasst du, was passiert, wenn die Erde zehn Sekunden stoppt.“
+   - Bezug zum Video: „Folg mir, bevor die Schwerkraft wieder weg ist.“ · „Folg für mehr Szenarien, die du nicht erleben willst.“
+   - Survival-Videos: „Folg mir – das nächste Szenario könnte dir das Leben retten.“
+   Gleichzeitig im Bild: `.ec-cta` zweite Zeile mit dem Folgen-Text (gelb) und eine `follow`-Pille bei `at("folg")`.
+   Höchstens ein kurzer Satz (≤ 2,5 s), Teaser nur ankündigen, was wirklich als Video geplant ist oder ganz allgemein bleibt.
+   Zusammen mit dem Kommentar-Aufruf zählt er zu den max. 2 gesprochenen Aufforderungen (sonst die Folgen-Bitte in der
+   Videomitte weglassen und nur die Pille zeigen).
 5. **Ende (letzte 5–7 s) – passend zum Video wählen, nicht immer eine Abstimmung:**
    - **Abstimmung A/B/C** bei Entscheidungs-/Überlebensszenarien: Frage + 3 Optionen (je 1–2 Wörter +
      Zusatz, eine überraschend/lustig) + "SCHREIB A, B ODER C" + Countdown-Ring (`.ec-opt a/b/c`, `.ec-ring`).
