@@ -16,11 +16,11 @@
     #s9 .opt .k { font-size: 70px; width: 70px; text-align: center; }
     #s9 .opt .t { font-size: 52px; color: #fff; line-height: 1.0; }
     #s9 .opt .t small { display: block; font-size: 24px; font-weight: 800; letter-spacing: 1px; opacity: .85; margin-top: 6px; }
-    #s9 .o1 { top: 700px; border-color: #3fd4ff; background: rgba(8,40,60,.85); color: #3fd4ff; }
-    #s9 .o2 { top: 880px; border-color: #3ee08f; background: rgba(6,40,24,.85); color: #3ee08f; }
-    #s9 .o3 { top: 1060px; border-color: #ffd23f; background: rgba(46,36,4,.85); color: #ffd23f; }
+    #s9 .o1 { top: 720px; border-color: #3fd4ff; background: rgba(8,40,60,.85); color: #3fd4ff; }
+    #s9 .o2 { top: 930px; border-color: #3ee08f; background: rgba(6,40,24,.85); color: #3ee08f; }
+    #s9 .o3 { top: 1140px; border-color: #ffd23f; background: rgba(46,36,4,.85); color: #ffd23f; }
     #s9 .o4 { top: 1240px; border-color: #ff3b3b; background: rgba(50,8,10,.85); color: #ff3b3b; }
-    #s9 .cta { position: absolute; top: 1440px; left: 60px; right: 60px; text-align: center; font-weight: 900; font-size: 40px; line-height: 1.15; color: #3fd4ff; text-transform: uppercase; -webkit-text-stroke: 8px #0d0b18; paint-order: stroke fill; }
+    #s9 .cta { position: absolute; top: 1340px; left: 60px; right: 60px; text-align: center; font-weight: 900; font-size: 40px; line-height: 1.15; color: #3fd4ff; text-transform: uppercase; -webkit-text-stroke: 8px #0d0b18; paint-order: stroke fill; }
   </style>
 </head>
 <body>
@@ -51,8 +51,7 @@
       <div class="opt o1"><span class="k">A</span><span class="t">OPTION A<small>Kurzer Zusatz</small></span></div>
       <div class="opt o2"><span class="k">B</span><span class="t">OPTION B<small>Kurzer Zusatz</small></span></div>
       <div class="opt o3"><span class="k">C</span><span class="t">OPTION C<small>Kurzer Zusatz</small></span></div>
-      <div class="opt o4"><span class="k">D</span><span class="t">OPTION D<small>Kurzer Zusatz</small></span></div>
-      <div class="cta">SCHREIB A, B, C ODER D<br/>IN DIE KOMMENTARE</div>
+      <div class="cta">SCHREIB A, B ODER C<br/>IN DIE KOMMENTARE</div>
     </div></div></section>
 
     <!-- Overlays (nicht ändern) -->
@@ -86,7 +85,7 @@
 
     const t9 = at("cta", -0.3);
     tl.fromTo("#s9 .q", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, t9 + 0.05);
-    ["o1", "o2", "o3", "o4"].forEach((o, i) => tl.fromTo("#s9 ." + o, { autoAlpha: 0, x: i % 2 ? 300 : -300 }, { autoAlpha: 1, x: 0, duration: 0.35, ease: "back.out(1.8)" }, t9 + 0.5 + i * 0.18));
+    ["o1", "o2", "o3"].forEach((o, i) => tl.fromTo("#s9 ." + o, { autoAlpha: 0, x: i % 2 ? 300 : -300 }, { autoAlpha: 1, x: 0, duration: 0.35, ease: "back.out(1.8)" }, t9 + 0.5 + i * 0.18));
     tl.fromTo("#s9 .cta", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.3 }, t9 + 1.4);
 
     E.buildScenes(tl);

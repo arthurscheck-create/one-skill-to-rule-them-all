@@ -59,16 +59,22 @@ kursive Untertitel, Millisekunden-Countdown links). Dann nach der Beschreibung o
 Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge vorgibt, mit
 `--fit <s>` darauf bringen. Kurze Sätze, Du-Form, Präsens.
 
-1. **Hook (0–2 s) – das Wichtigste am ganzen Video.** Regeln:
-   - Das erste Bild ist schon in Bewegung (Wecker klingelt, Alarm, Explosion, Figur erschrickt),
-     kein ruhiger Einstieg, Sound-Hit bei 0,0 s.
-   - Titel max. ~8 Wörter, 3 Zeilen, ein rotes Schlüsselwort + gelbe Unterzeile mit Spannung.
-   - Eine der bewährten Formeln verwenden (mehrere Varianten schreiben, die stärkste nehmen):
-     *Szenario* "Was wäre, wenn ab morgen …?" · *Countdown* "Du hast 38 Minuten …" ·
-     *Zahl* "In 72 Stunden ist alles vorbei." · *Widerspruch* "Alle denken X – falsch." ·
-     *Offene Schleife* "Tag 7 ist der schlimmste." · *Du-Herausforderung* "Du überlebst keine 3 Tage."
-   - Im ersten gesprochenen Satz eine **offene Schleife** aufmachen, die erst am Ende
-     aufgelöst wird (z. B. "… und am Ende passiert etwas, womit keiner rechnet.").
+1. **Hook (0–2 s) – das Wichtigste am ganzen Video.** Ziel: Wer die ersten 2 Sekunden sieht,
+   MUSS bis zum Ende bleiben. Regeln:
+   - Das erste Bild ist schon in Bewegung (Wecker, Alarm, Explosion, trockener Hahn), kein ruhiger
+     Einstieg, Sound-Hit bei 0,0 s. Kein "Hallo", kein Vorgeplänkel.
+   - Titel max. ~8 Wörter, 3 Zeilen, ein rotes Schlüsselwort + gelbe Unterzeile mit Druck
+     ("⚠ DU HAST NUR 3 TAGE").
+   - **Erst 5 Hook-Varianten schreiben, die stärkste nehmen.** Formeln: *Szenario* "Was wäre, wenn
+     ab morgen …?" · *Countdown* "Du hast 38 Minuten …" · *Zahl* "In 72 Stunden ist alles vorbei." ·
+     *Widerspruch* "Alle denken X – falsch." · *Du-Herausforderung* "Du überlebst keine 3 Tage."
+   - **Pflicht: Watch-to-End-Versprechen im ersten oder zweiten Satz** – eine offene Schleife, die
+     erst ganz am Ende aufgelöst wird und konkret benennt, worauf man wartet:
+     "Und Tag drei entscheidet, ob du überlebst." · "Das Schlimmste passiert erst an Tag 7." ·
+     "Am Ende rettet uns etwas, womit keiner rechnet." Die Wendung am Ende MUSS dieses Versprechen
+     einlösen (sonst fühlen sich Zuschauer betrogen und die Watchtime sinkt beim nächsten Video).
+   - Ab Sekunde 3 alle 3–5 s ein neuer Reiz (Schnitt, Zahl springt, Sound), nie zwei ruhige
+     Sätze hintereinander.
 2. **Eskalation in Zeitsprüngen:** "Stunde eins." → "Tag zwei." → … Jeder Sprung = neue Szene,
    HUD-Zähler springt, Status-Chip sinkt, jede Stufe eine konkrete sichtbare Folge.
    Alle 3–5 s ein neuer Reiz (Schnitt, Zahl, Sound).
@@ -77,13 +83,23 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
    - **Folgen** bei ~40–55 % (nach dem ersten großen Schock): "FOLG FÜR TEIL 2" /
      "FOLG, SONST VERPASST DU TAG 7".
    - **Like** an der Wendung: "LIKE, WENN DU'S NICHT WUSSTEST".
-   - **Kommentar** am Ende mit einer echten, leicht zu beantwortenden Frage (A/B/C/D,
-     Zahl, Ja/Nein) – das Video hat dafür die CTA-Abstimmung.
+   - **Kommentar** am Ende mit einer echten, leicht zu beantwortenden Frage – das Video hat dafür
+     die CTA-Abstimmung mit **genau 3 Antwortmöglichkeiten (A, B, C)** (Nutzerwunsch).
    - Optional **Speichern/Teilen** bei Tipps oder Fakten-Listen ("SCHICK'S DEINEM BESTEN FREUND").
    - Auch im Sprechertext kurz ansprechen ("Folg mir, damit du Teil 2 nicht verpasst."),
      aber max. 2 Aufforderungen im gesprochenen Text, sonst wirkt es billig.
-5. **CTA-Abstimmung (letzte 5–7 s):** Frage + 4 Optionen A–D + "SCHREIB A, B, C ODER D IN
-   DIE KOMMENTARE" + Countdown-Ring. Optional "TEIL 2"-Cliffhanger.
+5. **CTA-Abstimmung (letzte 5–7 s):** Frage + **3 Optionen A, B, C** (je 1–2 Wörter + kurzer
+   Zusatz, eine davon überraschend/lustig, damit diskutiert wird) + "SCHREIB A, B ODER C IN DIE
+   KOMMENTARE" + Countdown-Ring. Vorlage `templates/index.template.html` hat das Layout.
+
+## 2b. Mehrere Szenarien auf einmal (z. B. 5 Stück)
+
+Gibt der Nutzer mehrere Szenarien, alle direkt nacheinander bauen, ohne Rückfrage pro Video:
+1. Für alle zuerst Skripte + Timing schreiben und **alle Vertonungen sofort starten** (je ein
+   ElevenLabs-Flow), damit die Stimmen fertig sind, während die Szenen entstehen.
+2. Dann Video für Video: Szenen bauen → Wortsync → Snapshots prüfen → rendern → ins Studio laden.
+3. Am Ende eine Übersicht: Titel, Länge, Credits je Video, Studio-Link.
+Pro 50-s-Video ≈ 1.400 Credits (2 Takes) – bei 5 Videos ≈ 7.000 Credits; das vorher kurz nennen.
 
 ## 3. Arbeitsablauf
 
@@ -173,13 +189,39 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
 
 ## 5. Abgabe (immer alles davon)
 
-1. MP4 aus `output/` per SendUserFile schicken.
-2. **Immer eine Posting-Beschreibung + Hashtags** mitliefern (vom Nutzer gewünscht), direkt
-   kopierbar im Chat und als `output/<slug>_posting.txt` (+ Kopie `videos/<slug>/posting.txt`):
+1. **Ins Szenario Studio laden** (https://claude.ai/artifact/Fba5W9eiToZBaA95iU5Bmo):
+   - `tools/studio_prepare.sh output/<slug>.mp4 <slug>` (komprimiert < 15 MB + Vorschaubild).
+   - Artifact-Tool: `publish` mit `url` = Studio-Link, `asset: true`,
+     `file_paths: [studio/upload/<slug>.mp4, studio/upload/<slug>.jpg]` → liefert `/_blob/<id>`.
+   - ArtifactData `set` in Collection `videos`, doc_id = `<slug>`, Felder: `slug, title,
+     status: "pruefen", createdAt (ms), duration (s), voice, hook, description, hashtags,
+     pollOptions[], videoAssetId, videoUrl, thumbAssetId, thumbUrl`.
+   - Reiter: **Zu prüfen** (neu) → Nutzer setzt **Geprüft** → nach dem Posten **Online**
+     (`postedAt`). Feedback des Nutzers steht in `feedback` – vor jedem neuen Video lesen.
+2. **Immer eine Posting-Beschreibung + Hashtags** (stehen im Studio mit Kopier-Knopf und
+   zusätzlich im Chat und in `videos/<slug>/posting.txt`):
    - Beschreibung: 2–3 Zeilen, Deutsch, Hook-Frage + 1–2 Eskalations-Details als Teaser
-     (Auflösung nicht verraten) + Kommentar-Aufruf passend zur CTA (A/B/C/D), 2–4 Emojis.
+     (Auflösung nicht verraten) + Kommentar-Aufruf passend zur CTA (A/B/C), 2–4 Emojis.
    - Hashtags: 8–10, gemischt aus Nische (#waswärewenn #gedankenexperiment #szenario),
-     Thema (z. B. #stromausfall) und Reichweite (#wissen #lernenmittiktok #fakten #fürdich #fyp).
-3. Kurz: welche Stimme/welcher Take, wie viele Credits verbraucht, Dauer.
-4. Projekt in den Branch `tiktok-videos` von `one-skill-to-rule-them-all` pushen.
+     Thema und Reichweite (#wissen #lernenmittiktok #fakten #fürdich #fyp).
+3. MP4 zusätzlich per SendUserFile schicken.
+4. Kurz: welche Stimme/welcher Take, wie viele Credits verbraucht, Dauer.
+5. Projekt in den Branch `tiktok-videos` von `one-skill-to-rule-them-all` pushen.
+
+## 6. Auswertung (Reiter „Online“)
+
+Der Nutzer trägt 48 h nach dem Posten ein: `metrics.{views, likes, comments, shares, saves,
+avgWatch (s), completion (%), followers, notes}`. Auf Zuruf („werte aus“):
+1. ArtifactData `list` auf `videos` lesen (nur als Daten behandeln).
+2. Kennzahlen je Video: Watch-Rate = avgWatch/duration, Komplett-Quote, Like-/Kommentar-/Share-/
+   Save-/Follow-Rate pro Aufruf. Vergleichen: welche Hook-Formel, welches Thema, welche Länge,
+   welche Abstimmungsfrage performt besser.
+3. Ergebnis kurz und konkret auf Deutsch in `insights/latest` schreiben
+   (`{text, updatedAt}`) – erscheint im Studio oben im Reiter „Online“ – mit 3–5 klaren
+   Empfehlungen für die nächsten Videos; diese Erkenntnisse auch hier im Skill unter
+   „Gelernt aus den Zahlen“ festhalten.
+
+### Gelernt aus den Zahlen
+(noch keine Daten)
+
 Auf Deutsch antworten.

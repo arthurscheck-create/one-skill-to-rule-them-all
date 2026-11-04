@@ -4,3 +4,4 @@ output/
 __pycache__/
 package-lock.json
 videos/*/assets/sfx.wav
+studio/upload/

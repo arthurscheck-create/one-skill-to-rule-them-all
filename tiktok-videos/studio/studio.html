@@ -1,0 +1,371 @@
+<title>Szenario Studio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+  /* Layout: Kopfzeile mit Kennzahlen → drei Reiter wie ein Produktionsband → Karten (Hochformat-Player links, Daten rechts). Bewusst nur dunkel: die Nacht-Palette der Videos. */
+  :root {
+    color-scheme: dark;
+    --night: #14122b;      /* Seitengrund */
+    --panel: #1d1a3c;      /* Karten */
+    --panel-2: #262250;    /* Felder, Chips */
+    --line: #36316a;       /* Linien */
+    --ink: #f3f1fb;        /* Text */
+    --muted: #a7a2c9;      /* Nebentext */
+    --red: #ff4b4b;        /* Signal (wie das HUD) */
+    --yellow: #ffd23f;     /* Zahlen, Hervorhebung */
+    --green: #3ee08f;      /* gut */
+    --cyan: #3fd4ff;       /* Aktion */
+    --f-display: "Montserrat", "Arial Black", system-ui, sans-serif;
+    --f-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+    --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+    --r: 14px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--night); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.5;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 20px 48px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 22px; }
+  h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; margin: 0; }
+  button, input, textarea { font: inherit; color: inherit; }
+  :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+
+  /* Kopf */
+  header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; }
+  .brand { display: grid; gap: 2px; }
+  .brand .eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .14em; color: var(--red); text-transform: uppercase; }
+  .brand h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 900; letter-spacing: -.01em; text-transform: uppercase; }
+  .brand h1 span { color: var(--yellow); }
+  .hud { display: flex; gap: 10px; flex-wrap: wrap; }
+  .hud .cell { border: 2px solid var(--line); border-radius: 12px; padding: 8px 14px; min-width: 104px; background: var(--panel); }
+  .hud .cell b { display: block; font-family: var(--f-mono); font-size: 22px; font-variant-numeric: tabular-nums; }
+  .hud .cell small { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .hud .cell.pruefen b { color: var(--yellow); } .hud .cell.geprueft b { color: var(--cyan); } .hud .cell.online b { color: var(--green); }
+
+  /* Reiter */
+  nav.tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 2px solid var(--line); border-radius: 16px; overflow: hidden; background: var(--panel); }
+  nav.tabs a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 8px; text-decoration: none; color: var(--muted); font-family: var(--f-display); font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .04em; border-right: 2px solid var(--line); }
+  nav.tabs a:last-child { border-right: 0; }
+  nav.tabs a .n { font-family: var(--f-mono); font-size: 13px; padding: 2px 8px; border-radius: 999px; background: var(--panel-2); color: var(--ink); }
+  nav.tabs a[aria-current="page"] { color: var(--night); background: var(--yellow); }
+  nav.tabs a[aria-current="page"] .n { background: var(--night); color: var(--yellow); }
+  nav.tabs a[data-tab="online"][aria-current="page"] { background: var(--green); }
+  nav.tabs a[data-tab="geprueft"][aria-current="page"] { background: var(--cyan); }
+  .hint { color: var(--muted); margin: -8px 0 0; font-size: 15px; }
+
+  /* Karten */
+  .list { display: grid; gap: 18px; }
+  .card { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 22px; padding: 18px; border-radius: var(--r); background: var(--panel); border: 2px solid var(--line); }
+  .player { width: 240px; max-width: 100%; aspect-ratio: 9 / 16; border-radius: 12px; overflow: hidden; background: #000; border: 2px solid var(--line); }
+  .player video { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .body { min-width: 0; display: grid; gap: 14px; align-content: start; }
+  .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .card h2 { font-size: 22px; font-weight: 800; line-height: 1.2; }
+  .meta { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+  .chip { font-family: var(--f-mono); font-size: 12px; padding: 3px 10px; border-radius: 999px; border: 2px solid currentColor; text-transform: uppercase; letter-spacing: .06em; }
+  .chip.pruefen { color: var(--yellow); } .chip.geprueft { color: var(--cyan); } .chip.online { color: var(--green); } .chip.wait { color: var(--muted); } .chip.due { color: var(--red); }
+  .block { display: grid; gap: 6px; }
+  .block > label, .block > .lbl { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .copybox { position: relative; background: var(--panel-2); border-radius: 10px; padding: 12px 14px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 15px; }
+  .copybox.tags { color: var(--cyan); font-family: var(--f-mono); font-size: 13.5px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; border: 2px solid var(--line); background: var(--panel-2); border-radius: 10px; padding: 8px 14px; cursor: pointer; font-weight: 600; }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--yellow); border-color: var(--yellow); color: var(--night); font-family: var(--f-display); font-weight: 800; text-transform: uppercase; font-size: 14px; letter-spacing: .03em; }
+  .btn.go { background: var(--green); border-color: var(--green); color: var(--night); font-family: var(--f-display); font-weight: 800; text-transform: uppercase; font-size: 14px; }
+  .btn.cyan { background: var(--cyan); border-color: var(--cyan); color: var(--night); font-family: var(--f-display); font-weight: 800; text-transform: uppercase; font-size: 14px; }
+  .btn.ghost { background: transparent; }
+  .btn[disabled] { opacity: .5; cursor: default; }
+  .btn svg { width: 16px; height: 16px; }
+  textarea, input[type="number"], input[type="date"] { width: 100%; background: var(--night); border: 2px solid var(--line); border-radius: 10px; padding: 9px 12px; }
+  textarea { min-height: 70px; resize: vertical; }
+  .metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .metrics .f { display: grid; gap: 4px; min-width: 0; }
+  .metrics .f label { font-size: 12px; color: var(--muted); }
+  .metrics input { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+  .kpi { background: var(--panel-2); border-radius: 10px; padding: 8px 12px; }
+  .kpi b { display: block; font-family: var(--f-mono); font-size: 18px; font-variant-numeric: tabular-nums; }
+  .kpi small { font-size: 11px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+  .kpi.good b { color: var(--green); } .kpi.mid b { color: var(--yellow); } .kpi.low b { color: var(--red); }
+  .status { font-size: 13.5px; color: var(--muted); min-height: 1.2em; }
+  .status.ok { color: var(--green); } .status.err { color: var(--red); }
+
+  /* Auswertung */
+  .insight { border: 2px solid var(--green); border-radius: var(--r); padding: 18px 20px; background: var(--panel); display: grid; gap: 10px; }
+  .insight h3 { font-size: 18px; text-transform: uppercase; letter-spacing: .03em; }
+  .insight .txt { white-space: pre-wrap; max-width: 75ch; }
+  .tablewrap { overflow-x: auto; border: 2px solid var(--line); border-radius: var(--r); background: var(--panel); }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 640px; }
+  th, td { padding: 10px 12px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  td { font-family: var(--f-mono); } td:first-child { font-family: var(--f-body); font-weight: 600; }
+  tr:last-child td { border-bottom: 0; }
+
+  .empty { border: 2px dashed var(--line); border-radius: var(--r); padding: 36px 20px; text-align: center; color: var(--muted); display: grid; gap: 6px; }
+  .empty b { color: var(--ink); font-family: var(--f-display); font-size: 18px; }
+  .banner { border: 2px solid var(--red); border-radius: 12px; padding: 10px 14px; color: var(--ink); background: var(--panel); }
+
+  @media (max-width: 720px) {
+    .card { grid-template-columns: 1fr; }
+    .player { width: 100%; max-width: 320px; justify-self: center; }
+    .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    nav.tabs a { font-size: 12.5px; flex-direction: column; gap: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <span class="eyebrow">⚠ Was wäre wenn · Produktion</span>
+      <h1>Szenario <span>Studio</span></h1>
+    </div>
+    <div class="hud" id="hud">
+      <div class="cell pruefen"><b id="c-pruefen">0</b><small>zu prüfen</small></div>
+      <div class="cell geprueft"><b id="c-geprueft">0</b><small>geprüft</small></div>
+      <div class="cell online"><b id="c-online">0</b><small>online</small></div>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <nav class="tabs" aria-label="Status">
+    <a href="#pruefen" data-tab="pruefen">Zu prüfen <span class="n" id="t-pruefen">0</span></a>
+    <a href="#geprueft" data-tab="geprueft">Geprüft <span class="n" id="t-geprueft">0</span></a>
+    <a href="#online" data-tab="online">Online <span class="n" id="t-online">0</span></a>
+  </nav>
+  <p class="hint" id="hint"></p>
+
+  <section id="insights" hidden></section>
+  <section class="list" id="list">
+    <div class="empty"><b>Studio lädt …</b><span>Neue Videos landen hier im Reiter „Zu prüfen“, sobald Claude sie fertig hat.</span></div>
+  </section>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const TABS = {
+    pruefen: { hint: "Neu erstellte Videos. Ansehen, Beschreibung prüfen, bei Bedarf Feedback für Claude notieren – dann auf „Geprüft“ setzen." },
+    geprueft: { hint: "Freigegeben. Herunterladen, auf TikTok posten und mit dem Posting-Datum auf „Online“ setzen." },
+    online: { hint: "Live auf TikTok. 48 Stunden nach dem Posten die Zahlen aus TikTok Analytics eintragen – Claude wertet sie aus." },
+  };
+  const METRICS = [
+    ["views", "Aufrufe"], ["likes", "Likes"], ["comments", "Kommentare"], ["shares", "Geteilt"],
+    ["saves", "Gespeichert"], ["avgWatch", "Ø Wiedergabe (s)"], ["completion", "Komplett angesehen (%)"], ["followers", "Neue Follower"],
+  ];
+  const H48 = 48 * 3600 * 1000;
+  let db = null, user = null, downloads = null, canWrite = true;
+  let videos = [], insight = null, loaded = false, failed = false;
+  const $ = (s, r = document) => r.querySelector(s);
+  const el = (tag, attrs = {}, kids = []) => {
+    const e = document.createElement(tag);
+    for (const k in attrs) { if (k === "text") e.textContent = attrs[k]; else if (k === "class") e.className = attrs[k]; else if (attrs[k] !== undefined && attrs[k] !== null) e.setAttribute(k, attrs[k]); }
+    (Array.isArray(kids) ? kids : [kids]).forEach((c) => c && e.appendChild(typeof c === "string" ? document.createTextNode(c) : c));
+    return e;
+  };
+  const fmtDate = (ms) => ms ? new Date(ms).toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" }) : "–";
+  const fmtDT = (ms) => ms ? new Date(ms).toLocaleString("de-DE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) : "–";
+  const num = (v) => (typeof v === "number" && isFinite(v) ? v : null);
+  const pct = (a, b) => (num(a) !== null && num(b) ? (a / b) * 100 : null);
+  const fmtPct = (v) => (v === null ? "–" : v.toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " %");
+  const fmtN = (v) => (num(v) === null ? "–" : v.toLocaleString("de-DE"));
+
+  function currentTab() { const h = (location.hash || "").slice(1); return TABS[h] ? h : "pruefen"; }
+  window.addEventListener("hashchange", render);
+
+  function showBanner(msg) { const b = $("#banner"); b.textContent = msg; b.hidden = !msg; }
+
+  /* ---------- Aktionen ---------- */
+  async function write(id, data, statusEl, okMsg) {
+    if (!db) return;
+    try {
+      if (statusEl) { statusEl.className = "status"; statusEl.textContent = "Speichert …"; }
+      await db.doc("videos/" + id).update(data);
+      if (statusEl) { statusEl.className = "status ok"; statusEl.textContent = okMsg || "Gespeichert"; }
+    } catch (e) {
+      if (e && e.code === "invalid_argument") canWrite = false;
+      if (statusEl) { statusEl.className = "status err"; statusEl.textContent = e && e.code === "invalid_argument" ? "Du hast hier nur Lesezugriff." : "Speichern hat nicht geklappt. Bitte gleich nochmal versuchen."; }
+    }
+  }
+  async function copy(text, btn) {
+    try { await navigator.clipboard.writeText(text); flash(btn, "Kopiert"); }
+    catch { const box = btn.closest(".block").querySelector(".copybox"); const r = document.createRange(); r.selectNodeContents(box); const s = getSelection(); s.removeAllRanges(); s.addRange(r); flash(btn, "Markiert – jetzt kopieren"); }
+  }
+  function flash(btn, msg) { const t = btn.dataset.label || btn.textContent; btn.dataset.label = t; btn.textContent = msg; setTimeout(() => (btn.textContent = t), 1600); }
+  async function download(v, btn, statusEl) {
+    if (!downloads || !v.videoUrl) return;
+    btn.disabled = true; statusEl.className = "status"; statusEl.textContent = "Lädt Video …";
+    try {
+      const res = await fetch(v.videoUrl); if (!res.ok) throw new Error("fetch");
+      const blob = await res.blob();
+      statusEl.textContent = "Bitte den Download bestätigen.";
+      await downloads.save({ filename: (v.slug || v.id) + ".mp4", data: blob });
+      statusEl.className = "status ok"; statusEl.textContent = "Heruntergeladen";
+    } catch (e) {
+      statusEl.className = e && e.code === "declined" ? "status" : "status err";
+      statusEl.textContent = e && e.code === "declined" ? "Download abgebrochen." : "Download hat nicht geklappt. Bitte erneut versuchen.";
+    } finally { btn.disabled = false; }
+  }
+
+  /* ---------- Karten ---------- */
+  function copyBlock(label, text, cls) {
+    const btn = el("button", { class: "btn ghost", type: "button", text: "Kopieren" });
+    btn.addEventListener("click", () => copy(text, btn));
+    return el("div", { class: "block" }, [el("div", { class: "row" }, [el("span", { class: "lbl", text: label }), btn]), el("div", { class: "copybox " + (cls || ""), text: text || "–" })]);
+  }
+
+  function kpiTiles(v) {
+    const m = v.metrics || {}, dur = num(v.duration);
+    const watch = dur && num(m.avgWatch) !== null ? (m.avgWatch / dur) * 100 : null;
+    const eng = num(m.views) ? (((m.likes || 0) + (m.comments || 0) + (m.shares || 0) + (m.saves || 0)) / m.views) * 100 : null;
+    const tiles = [
+      ["Watch-Rate", watch, watch === null ? "" : watch >= 70 ? "good" : watch >= 45 ? "mid" : "low"],
+      ["Komplett", num(m.completion), num(m.completion) === null ? "" : m.completion >= 40 ? "good" : m.completion >= 20 ? "mid" : "low"],
+      ["Like-Rate", pct(m.likes, m.views), ""],
+      ["Engagement", eng, eng === null ? "" : eng >= 10 ? "good" : eng >= 5 ? "mid" : "low"],
+      ["Follow-Rate", pct(m.followers, m.views), ""],
+    ];
+    return el("div", { class: "kpis" }, tiles.map(([l, val, c]) => el("div", { class: "kpi " + c }, [el("b", { text: fmtPct(val) }), el("small", { text: l })])));
+  }
+
+  function card(v) {
+    const status = el("div", { class: "status", role: "status" });
+    const vid = el("video", { controls: "", preload: "metadata", playsinline: "", poster: v.thumbUrl || null, src: v.videoUrl || null });
+    const actions = el("div", { class: "row" });
+    const dl = el("button", { class: "btn cyan", type: "button", text: "Video herunterladen" });
+    dl.addEventListener("click", () => download(v, dl, status));
+    if (downloads && v.videoUrl) actions.appendChild(dl);
+
+    const tab = v.status || "pruefen";
+    const chips = el("div", { class: "row" }, [el("span", { class: "chip " + tab, text: tab === "pruefen" ? "Zu prüfen" : tab === "geprueft" ? "Geprüft" : "Online" })]);
+    const meta = el("div", { class: "meta" }, [
+      el("span", { text: "Erstellt " + fmtDate(v.createdAt) }),
+      el("span", { text: (num(v.duration) ? v.duration.toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " s" : "–") }),
+      v.voice ? el("span", { text: "Stimme: " + v.voice }) : null,
+      v.postedAt ? el("span", { text: "Online seit " + fmtDate(v.postedAt) }) : null,
+    ]);
+    const body = el("div", { class: "body" }, [chips, el("h2", { text: v.title || v.id }), meta]);
+    if (v.hook) body.appendChild(el("div", { class: "block" }, [el("span", { class: "lbl", text: "Hook" }), el("div", { text: v.hook })]));
+    body.appendChild(copyBlock("Beschreibung", v.description || ""));
+    body.appendChild(copyBlock("Hashtags", v.hashtags || "", "tags"));
+
+    if (tab === "pruefen") {
+      const fb = el("textarea", { id: "fb-" + v.id, placeholder: "z. B. Hook kürzer, andere Abstimmungsfrage, Szene 3 heller …" });
+      fb.value = v.feedback || "";
+      const saveFb = el("button", { class: "btn", type: "button", text: "Feedback speichern" });
+      saveFb.addEventListener("click", () => write(v.id, { feedback: fb.value.trim(), feedbackAt: Date.now() }, status, "Feedback gespeichert – Claude sieht es beim nächsten Mal."));
+      body.appendChild(el("div", { class: "block" }, [el("label", { for: "fb-" + v.id, text: "Feedback für Claude (optional)" }), fb, el("div", { class: "row" }, [saveFb])]));
+      const ok = el("button", { class: "btn primary", type: "button", text: "Als geprüft markieren" });
+      ok.addEventListener("click", () => write(v.id, { status: "geprueft", reviewedAt: Date.now(), feedback: fb.value.trim() }, status, "Verschoben nach „Geprüft“"));
+      actions.appendChild(ok);
+    } else if (tab === "geprueft") {
+      const d = el("input", { type: "date", id: "pd-" + v.id });
+      d.value = new Date().toISOString().slice(0, 10);
+      const on = el("button", { class: "btn go", type: "button", text: "Ist online" });
+      on.addEventListener("click", () => { const ms = d.value ? new Date(d.value + "T12:00:00").getTime() : Date.now(); write(v.id, { status: "online", postedAt: ms }, status, "Verschoben nach „Online“"); });
+      const back = el("button", { class: "btn ghost", type: "button", text: "Zurück zu „Zu prüfen“" });
+      back.addEventListener("click", () => write(v.id, { status: "pruefen" }, status, "Zurückgestellt"));
+      body.appendChild(el("div", { class: "block" }, [el("label", { for: "pd-" + v.id, text: "Auf TikTok gepostet am" }), d]));
+      actions.appendChild(on); actions.appendChild(back);
+    } else {
+      const due = v.postedAt ? v.postedAt + H48 : null, now = Date.now();
+      const has = v.metrics && num(v.metrics.views) !== null;
+      chips.appendChild(el("span", { class: "chip " + (has ? "online" : due && now >= due ? "due" : "wait"), text: has ? "Daten eingetragen" : due && now >= due ? "Daten fällig" : "Daten ab " + fmtDT(due) }));
+      const grid = el("div", { class: "metrics" });
+      METRICS.forEach(([k, label]) => {
+        const inp = el("input", { type: "number", min: "0", step: k === "avgWatch" || k === "completion" ? "0.1" : "1", id: "m-" + v.id + "-" + k, inputmode: "decimal" });
+        if (v.metrics && num(v.metrics[k]) !== null) inp.value = v.metrics[k];
+        grid.appendChild(el("div", { class: "f" }, [el("label", { for: inp.id, text: label }), inp]));
+      });
+      const notes = el("textarea", { id: "mn-" + v.id, placeholder: "Auffälligkeiten: z. B. viele Kommentare zu Option B, Abbruch bei Sekunde 12 …" });
+      notes.value = (v.metrics && v.metrics.notes) || "";
+      const save = el("button", { class: "btn primary", type: "button", text: "Zahlen speichern" });
+      save.addEventListener("click", () => {
+        const m = {};
+        METRICS.forEach(([k]) => { const x = $("#m-" + v.id + "-" + k).value; m[k] = x === "" ? null : Number(x); });
+        m.notes = notes.value.trim();
+        write(v.id, { metrics: m, metricsAt: Date.now() }, status, "Zahlen gespeichert – Claude kann jetzt auswerten.");
+      });
+      body.appendChild(el("div", { class: "block" }, [el("span", { class: "lbl", text: "Zahlen nach 48 Stunden (TikTok Analytics)" }), grid]));
+      body.appendChild(el("div", { class: "block" }, [el("label", { for: notes.id, text: "Notizen" }), notes]));
+      if (has) body.appendChild(kpiTiles(v));
+      actions.appendChild(save);
+      const back = el("button", { class: "btn ghost", type: "button", text: "Zurück zu „Geprüft“" });
+      back.addEventListener("click", () => write(v.id, { status: "geprueft" }, status, "Zurückgestellt"));
+      actions.appendChild(back);
+    }
+    if (!canWrite) actions.querySelectorAll(".btn:not(.cyan)").forEach((b) => (b.disabled = true));
+    body.appendChild(actions); body.appendChild(status);
+    return el("article", { class: "card" }, [el("div", { class: "player" }, vid), body]);
+  }
+
+  function onlineSummary(list) {
+    const wrap = $("#insights"); wrap.textContent = "";
+    if (currentTab() !== "online") { wrap.hidden = true; return; }
+    wrap.hidden = false; wrap.style.display = "grid"; wrap.style.gap = "14px";
+    const box = el("div", { class: "insight" }, [el("h3", { text: "Auswertung von Claude" })]);
+    if (insight && insight.text) { box.appendChild(el("div", { class: "txt", text: insight.text })); box.appendChild(el("div", { class: "meta", text: "Stand " + fmtDT(insight.updatedAt) })); }
+    else box.appendChild(el("div", { class: "txt", text: "Noch keine Auswertung. Trag bei mindestens einem Video die Zahlen nach 48 Stunden ein und sag Claude im Chat Bescheid – die Auswertung erscheint dann hier." }));
+    wrap.appendChild(box);
+    const rows = list.filter((v) => v.metrics && num(v.metrics.views) !== null);
+    if (rows.length) {
+      const head = ["Video", "Aufrufe", "Watch-Rate", "Komplett", "Like-Rate", "Kommentare", "Follower"];
+      const t = el("table", {}, [el("thead", {}, el("tr", {}, head.map((h) => el("th", { text: h })))), el("tbody", {}, rows.map((v) => {
+        const m = v.metrics, w = num(v.duration) && num(m.avgWatch) !== null ? (m.avgWatch / v.duration) * 100 : null;
+        return el("tr", {}, [el("td", { text: v.title || v.id }), el("td", { text: fmtN(m.views) }), el("td", { text: fmtPct(w) }), el("td", { text: fmtPct(num(m.completion)) }), el("td", { text: fmtPct(pct(m.likes, m.views)) }), el("td", { text: fmtN(m.comments) }), el("td", { text: fmtN(m.followers) })]);
+      }))]);
+      wrap.appendChild(el("div", { class: "tablewrap" }, t));
+    }
+  }
+
+  function render() {
+    const tab = currentTab();
+    document.querySelectorAll("nav.tabs a").forEach((a) => a.setAttribute("aria-current", a.dataset.tab === tab ? "page" : "false"));
+    $("#hint").textContent = TABS[tab].hint;
+    const counts = { pruefen: 0, geprueft: 0, online: 0 };
+    videos.forEach((v) => { counts[v.status in counts ? v.status : "pruefen"]++; });
+    for (const k in counts) { $("#c-" + k).textContent = counts[k]; $("#t-" + k).textContent = counts[k]; }
+    const list = videos.filter((v) => (v.status in counts ? v.status : "pruefen") === tab).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+    onlineSummary(list);
+    const L = $("#list");
+    if (!loaded) { L.textContent = ""; L.appendChild(el("div", { class: "empty" }, [el("b", { text: failed ? "Studio-Daten nicht erreichbar" : "Studio lädt …" }), el("span", { text: failed ? "Öffne die Seite in claude.ai und melde dich an. Die Videos liegen dort sicher gespeichert." : "Neue Videos landen hier im Reiter „Zu prüfen“, sobald Claude sie fertig hat." })])); return; }
+    if (!list.length) {
+      L.textContent = "";
+      const msg = { pruefen: ["Nichts zu prüfen", "Schick Claude im Chat neue Szenarien – die fertigen Videos erscheinen dann hier."], geprueft: ["Keine geprüften Videos", "Setze Videos im Reiter „Zu prüfen“ auf geprüft."], online: ["Noch nichts online", "Wenn ein Video auf TikTok ist, setze es im Reiter „Geprüft“ auf online."] }[tab];
+      L.appendChild(el("div", { class: "empty" }, [el("b", { text: msg[0] }), el("span", { text: msg[1] })])); return;
+    }
+    // Karten nur neu bauen, wenn sich ihre Daten geändert haben (Eingaben und laufende Videos bleiben erhalten)
+    const nodes = list.map((v) => {
+      const sig = JSON.stringify(v) + "|" + canWrite + "|" + !!downloads;
+      const old = cache.get(v.id);
+      const node = old && old.sig === sig ? old.node : card(v);
+      cache.set(v.id, { sig, node });
+      return node;
+    });
+    const same = nodes.length === L.children.length && nodes.every((n, i) => L.children[i] === n);
+    if (!same) L.replaceChildren(...nodes);
+  }
+  const cache = new Map();
+
+  /* ---------- Start ---------- */
+  render();
+  (async () => {
+    const c = window.claude;
+    if (!c || !c.use) { failed = true; render(); return; }
+    [db, user, downloads] = await Promise.all([c.use("db"), c.use("user"), c.use("downloads")]);
+    if (user) { const w = await user.can("data.write"); if (w === false) { canWrite = false; showBanner("Du siehst das Studio nur zum Ansehen. Status und Zahlen kann nur der Account-Besitzer ändern."); } }
+    if (!db) { failed = true; render(); return; }
+    const timer = setTimeout(() => { if (!loaded) { failed = true; render(); } }, 10000);
+    db.collection("videos").onSnapshot((snap) => {
+      videos = snap.docs.map((d) => Object.assign({ id: d.id }, d.data()));
+      if (!snap.metadata.fromCache) { loaded = true; failed = false; clearTimeout(timer); } else if (videos.length) loaded = true;
+      render();
+    }, () => { clearTimeout(timer); failed = !loaded; render(); });
+    db.doc("insights/latest").onSnapshot((s) => { insight = s.exists ? s.data() : null; render(); }, () => {});
+  })();
+})();
+</script>
