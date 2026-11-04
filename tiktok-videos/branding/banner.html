@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>YouTube-Banner</title>
+<link rel="stylesheet" href="lib/style.css" />
+<style>
+  html, body { width: 2560px; height: 1440px; margin: 0; overflow: hidden; background: #14122c; }
+  svg { display: block; }
+</style>
+<script>window.TIMING = { duration: 1, lines: [], scenes: [] };</script>
+<script src="lib/engine.js"></script>
+</head>
+<body>
+<!-- YouTube-Kanalbanner 2560x1440. Sicherer Bereich (alle Geräte): 1546x423 mittig = x 507–2053, y 508–931.
+     #guide zeigt die Zonen zur Kontrolle an. -->
+<svg id="pic" width="2560" height="1440" viewBox="0 0 2560 1440">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0f1236"/><stop offset=".55" stop-color="#2a2258"/><stop offset=".85" stop-color="#5b3f7a"/><stop offset="1" stop-color="#a0577a"/>
+    </linearGradient>
+    <radialGradient id="glowR" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff3b3b" stop-opacity=".5"/><stop offset="1" stop-color="#ff3b3b" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff9a3c" stop-opacity=".75"/><stop offset="1" stop-color="#ff7a2f" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowY" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd23f" stop-opacity=".55"/><stop offset="1" stop-color="#ffd23f" stop-opacity="0"/></radialGradient>
+    <linearGradient id="tail" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd23f" stop-opacity="0"/><stop offset=".55" stop-color="#ff9a3c" stop-opacity=".55"/><stop offset="1" stop-color="#fff3c4" stop-opacity=".95"/>
+    </linearGradient>
+    <radialGradient id="rock" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#9b8f86"/><stop offset="1" stop-color="#4a3f3c"/></radialGradient>
+  </defs>
+  <g id="stage"></g>
+</svg>
+<script src="lib/cast.js"></script>
+<script>
+(function () {
+  const E = window.Engine, svg = E.svg, g = document.getElementById("stage");
+  const r = E.rng(11);
+  const W = 2560, H = 1440;
+  const txt = (x, y, size, s, fill, o = {}) => {
+    const t = svg("text", Object.assign({ x, y, "text-anchor": "start", "font-family": "Montserrat", "font-weight": 900, "font-size": size, fill,
+      stroke: "#0d0b18", "stroke-width": size * 0.1, "paint-order": "stroke", "stroke-linejoin": "round" }, o), g);
+    t.textContent = s; return t;
+  };
+
+  // Himmel + Sterne
+  svg("rect", { width: W, height: H, fill: "url(#sky)" }, g);
+  for (let i = 0; i < 260; i++) svg("circle", { cx: r() * W, cy: r() * 900, r: .8 + r() * 2.6, fill: "#fff", opacity: .25 + r() * .6 }, g);
+
+  // Asteroid oben rechts (außerhalb des Handy-Bereichs, sichtbar auf TV/Desktop)
+  const ax = 2300, ay = 300;
+  svg("circle", { cx: ax, cy: ay, r: 260, fill: "url(#glowO)" }, g);
+  svg("path", { d: `M${ax + 40},${ay - 70} L${ax + 470},${ay - 560} L${ax + 560},${ay - 470} L${ax + 70},${ay + 40} Z`, fill: "url(#tail)" }, g);
+  svg("circle", { cx: ax, cy: ay, r: 92, fill: "url(#rock)", stroke: "#0d0b18", "stroke-width": 10 }, g);
+  [[-30, -22, 20], [28, 18, 16], [-10, 40, 11], [36, -36, 9]].forEach(([dx, dy, cr]) =>
+    svg("circle", { cx: ax + dx, cy: ay + dy, r: cr, fill: "rgba(0,0,0,.28)" }, g));
+  svg("path", { d: `M${ax - 92},${ay + 10} A92,92 0 0 0 ${ax + 10},${ay + 92}`, fill: "none", stroke: "#ffb36b", "stroke-width": 14, "stroke-linecap": "round" }, g);
+
+  // Mond oben links
+  svg("circle", { cx: 140, cy: 200, r: 170, fill: "url(#glowY)" }, g);
+  svg("circle", { cx: 140, cy: 200, r: 66, fill: "#ffe7a3" }, g);
+  svg("circle", { cx: 170, cy: 182, r: 58, fill: "#1a1a45" }, g);
+
+  // Roter Warnschein hinter dem Text
+  svg("ellipse", { cx: 1280, cy: 720, rx: 900, ry: 420, fill: "url(#glowR)" }, g);
+
+  // Skyline hinten + vorne
+  function skyline(base, lit, fill, hMin, hMax, win) {
+    let x = -20;
+    while (x < W) {
+      const w = 80 + r() * 110, h = hMin + r() * (hMax - hMin), y = base - h;
+      svg("rect", { x, y, width: w, height: h + 4, fill }, g);
+      for (let wy = y + 18; wy < base - win; wy += win * 2) for (let wx = x + 14; wx < x + w - win; wx += win * 1.9)
+        if (r() < lit) svg("rect", { x: wx, y: wy, width: win, height: win * 1.2, fill: r() < .85 ? "#ffd27a" : "#ff8a5c" }, g);
+      x += w + 8;
+    }
+  }
+  skyline(H, .25, "#2b2552", 380, 640, 14);
+
+  // Fernsehturm links (Berlin-Bezug)
+  const tx = 360;
+  svg("path", { d: `M${tx - 26},${H} L${tx - 14},560 L${tx + 14},560 L${tx + 26},${H} Z`, fill: "#3d3870" }, g);
+  svg("circle", { cx: tx, cy: 520, r: 70, fill: "#4d4977", stroke: "#2b2552", "stroke-width": 6 }, g);
+  svg("rect", { x: tx - 74, y: 512, width: 148, height: 16, rx: 6, fill: "#ffd27a", opacity: .8 }, g);
+  svg("rect", { x: tx - 9, y: 300, width: 18, height: 160, fill: "#3d3870" }, g);
+  svg("rect", { x: tx - 4, y: 220, width: 8, height: 90, fill: "#3d3870" }, g);
+  svg("circle", { cx: tx, cy: 218, r: 9, fill: "#ff3b3b" }, g);
+
+  skyline(H, .45, "#1b1838", 180, 380, 14);
+
+  // Figuren (im sicheren Bereich, Körper unten angeschnitten)
+  E.person(g, { x: 1815, y: 1180, s: .82, face: "shock", arms: "down", shirt: "#e8463c" });
+  E.person(g, { x: 1975, y: 1130, s: .64, face: "worried", arms: "phone", shirt: "#5c6390", hair: "#2b1a12", flip: true });
+
+  // Titel
+  const X = 560;
+  txt(X, 660, 150, "WAS WÄRE,", "#ffffff");
+  const l2 = txt(X, 815, 150, "", "#ffd23f");
+  l2.innerHTML = 'WENN <tspan fill="#ff3b3b">…?</tspan>';
+  txt(X + 6, 892, 50, "Szenarien, die du nicht erleben willst", "#ffffff", { "font-weight": 800, "stroke-width": 7 });
+
+  // HUD-Pill wie in den Videos
+  const p = svg("g", { transform: "translate(1385,763)" }, g);
+  svg("rect", { x: 0, y: -44, width: 300, height: 88, rx: 44, fill: "rgba(18,8,16,.94)", stroke: "#ff3b3b", "stroke-width": 6 }, p);
+  svg("path", { d: "M44,22 L70,-24 L96,22 Z", fill: "#ffd23f", stroke: "#0d0b18", "stroke-width": 4, "stroke-linejoin": "round" }, p);
+  const pt = svg("text", { x: 116, y: 17, "font-family": "Montserrat", "font-weight": 900, "font-size": 42, fill: "#ff3b3b" }, p);
+  pt.textContent = "ALARM";
+
+  // Kontrollansicht
+  if (location.hash === "#guide") {
+    svg("rect", { x: 507, y: 508, width: 1546, height: 423, fill: "none", stroke: "#3ee08f", "stroke-width": 6, "stroke-dasharray": "20 12" }, g);
+    svg("rect", { x: 0, y: 509, width: W, height: 423, fill: "none", stroke: "#4fc3ff", "stroke-width": 4, "stroke-dasharray": "10 10" }, g);
+  }
+})();
+</script>
+</body>
+</html>
