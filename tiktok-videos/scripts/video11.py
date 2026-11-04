@@ -1,0 +1,38 @@
+# Skript + Timing für Video 11 (Million für jeden). Nutzt build() aus batch2.py.
+import importlib.util, sys
+spec = importlib.util.spec_from_file_location("b2", "/home/user/tiktok-videos/scripts/batch2_lib.py"); b2 = importlib.util.module_from_spec(spec); spec.loader.exec_module(b2)
+build, F = b2.build, b2.F
+build("11-million-fuer-alle", "Was wäre, wenn jeder in Deutschland über Nacht 1 Million Euro hätte?", [
+ ("hook", ["Was wäre, wenn jeder in Deutschland über Nacht eine Million Euro auf dem Konto hätte?"], True),
+ ("loop", ["Und am Ende", "sind ganz andere", "reich,", "als du ^denkst.^"], False),
+ ("morgen", ["^Sieben Uhr morgens.^"], False),
+ ("app", ["Du öffnest", "deine Banking-App.", "^Eine Million Euro.^"], False),
+ ("alle", ["Das Gleiche", "sehen gerade", "^dreiundachtzig^", "^Millionen^", "Menschen."], False),
+ ("summe", ["Zusammen sind das", "über", "^achtzig Billionen^", "Euro."], False),
+ ("vergleich", ["Fast ^zwanzig Mal^", "so viel,", "wie ganz Deutschland", "in einem Jahr", "*erwirtschaftet.*"], False),
+ ("tag1", ["^Tag eins.^"], False),
+ ("kuendigen", ["Millionen Menschen", "*kündigen*", "ihren Job."], False),
+ ("kaufen", ["Autohäuser", "sind in Stunden", "*ausverkauft.*"], False),
+ ("tag3", ["^Tag drei.^"], False),
+ ("preise", ["Die Läden merken:", "Alle haben Geld.", "Also steigen", "die *Preise.*"], False),
+ ("regale", ["Und weil kaum", "noch jemand arbeitet,", "bleiben die Regale", "*leer.*"], False),
+ ("woche", ["^Eine Woche später.^"], False),
+ ("haus", ["Jeder will", "ein Haus kaufen.", "Aber es gibt", "*kein einziges*", "Haus mehr", "als gestern."], False),
+ ("geschichte", ["Zu viel Geld", "gab es", "schon einmal.", "Vor gut", "^hundert Jahren^", "kostete ein Brot", "in Deutschland", "über ^zweihundert^", "^Milliarden^ Mark."], False),
+ ("euro", ["Und sogar", "in Frankreich", "und Italien", "wird alles *teurer.*", "Denn dort gilt", "der gleiche ^Euro.^"], False),
+ ("verrueckt", ["Und das", "^Verrückte?^"], False),
+ ("reich", ["Wenn jeder", "Millionär ist,", "ist *keiner*", "reich."], False),
+ ("dinge", ["Reich ist,", "wer echte", "~Dinge~ hat:", "~Häuser,~", "~Gold,~", "~Essen.~"], False),
+ ("frage", ["Was würdest du mit der Million als Erstes machen?"], True),
+ ("komm", ["Schreib A, B oder C in die Kommentare."], True),
+], [("s1","hook",-0.3),("s2","morgen",-0.2),("s3","alle",-0.2),("s4","vergleich",-0.2),("s5","tag1",-0.2),("s6","kaufen",-0.2),("s7","tag3",-0.2),
+    ("s8","regale",-0.2),("s9","woche",-0.2),("s10","geschichte",-0.2),("s11","euro",-0.2),("s12","verrueckt",-0.2),("s13","dinge",-0.2),("s14","frage",-0.3)],
+ {"show": F("morgen",-0.2), "hide": F("frage",-0.3), "label": "DEIN KONTOSTAND", "unit": "", "sub": "WAS WÄRE WENN · FIKTION", "chipLabel": "KAUFKRAFT",
+  "steps": [{"at":"morgen","off":-0.2,"value":0,"chip":100},{"at":"preise","off":1.0,"value":0,"chip":75},{"at":"regale","off":0.6,"value":0,"chip":60},
+            {"at":"haus","off":0.8,"value":0,"chip":45},{"at":"euro","off":1.0,"value":0,"chip":28},{"at":"reich","off":0.6,"value":0,"chip":12}]},
+ [{"type":"follow","at":"kaufen","off":0.2,"dur":2.8,"text":"FOLG FÜR MEHR <span class='y'>SZENARIEN</span>"},
+  {"type":"like","at":"euro","off":0.4,"dur":2.6,"text":"LIKE, WENN DU'S NICHT WUSSTEST"},
+  {"type":"comment","at":"komm","off":0,"dur":2.2,"text":"SCHREIB A, B ODER C"}],
+ [{"type":"ding","at":"app","off":1.0},{"type":"riser","at":"summe","off":-0.4},{"type":"boom","at":"vergleich","off":1.2},{"type":"glitch","at":"kuendigen","off":0.6},
+  {"type":"alarm","at":"preise","off":1.2},{"type":"heartbeat","at":"geschichte","off":1.5,"dur":2.5},{"type":"glitch","at":"euro","off":1.2},
+  {"type":"rise","at":"dinge","off":0,"dur":3},{"type":"ding","at":"frage","off":-0.2}])
