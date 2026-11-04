@@ -88,9 +88,14 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
    - Optional **Speichern/Teilen** bei Tipps oder Fakten-Listen ("SCHICK'S DEINEM BESTEN FREUND").
    - Auch im Sprechertext kurz ansprechen ("Folg mir, damit du Teil 2 nicht verpasst."),
      aber max. 2 Aufforderungen im gesprochenen Text, sonst wirkt es billig.
-5. **CTA-Abstimmung (letzte 5–7 s):** Frage + **3 Optionen A, B, C** (je 1–2 Wörter + kurzer
-   Zusatz, eine davon überraschend/lustig, damit diskutiert wird) + "SCHREIB A, B ODER C IN DIE
-   KOMMENTARE" + Countdown-Ring. Vorlage `templates/index.template.html` hat das Layout.
+5. **Ende (letzte 5–7 s) – passend zum Video wählen, nicht immer eine Abstimmung:**
+   - **Abstimmung A/B/C** bei Entscheidungs-/Überlebensszenarien: Frage + 3 Optionen (je 1–2 Wörter +
+     Zusatz, eine überraschend/lustig) + "SCHREIB A, B ODER C" + Countdown-Ring (`.ec-opt a/b/c`, `.ec-ring`).
+   - **Offene Frage** bei Erklär-/Faktenvideos ("Was würdest du in deinen letzten 8 Minuten Licht
+     machen?", "Hättest du das gewusst?") – nur `.ec-q` + `.ec-cta`, ohne Optionen.
+   - Optional "FOLG FÜR TEIL 2" in `.ec-cta`. Animation immer über
+     `E.buildEndcard(tl, "s10", at("frage", -0.3), at("komm", -0.1))`.
+   In einer Serie abwechseln (z. B. 3× Abstimmung, 2× offene Frage).
 
 ## 2b. Mehrere Szenarien auf einmal (z. B. 5 Stück)
 
@@ -99,7 +104,11 @@ Gibt der Nutzer mehrere Szenarien, alle direkt nacheinander bauen, ohne Rückfra
    ElevenLabs-Flow), damit die Stimmen fertig sind, während die Szenen entstehen.
 2. Dann Video für Video: Szenen bauen → Wortsync → Snapshots prüfen → rendern → ins Studio laden.
 3. Am Ende eine Übersicht: Titel, Länge, Credits je Video, Studio-Link.
-Pro 50-s-Video ≈ 1.400 Credits (2 Takes) – bei 5 Videos ≈ 7.000 Credits; das vorher kurz nennen.
+Pro Video ≈ 1.500–1.700 Credits (2 Takes à ~750–850 bei 55–60 s); Transkription 0 Credits.
+Ablauf, der sich bewährt hat (Serie 1, 5 Videos): `scripts/batch1.py` als Vorlage für Skripte +
+Timing aller Videos → 5 Flows + 5 Vertonungen parallel → kürzeren Take wählen → 5 Transkriptionen
+→ `align_words.py` für alle → je Video Szenen bauen, `tools/prepare.sh`, check, Snapshots,
+korrigieren → `tools/render.sh` **im Hintergrund** starten und währenddessen das nächste Video bauen.
 
 ## 3. Arbeitsablauf
 
@@ -123,7 +132,12 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    `<section class="scene" id="sX"><div class="cam"><div class="drift"><svg class="art" viewBox="0 0 1080 1920">…`.
    Wiederverwendbar aus `cast.js`: `E.person(g,{x,y,s,face,arms,shirt,hair,pants,flip})`
    (faces: worried, shock, smirk, neutral · arms: down, phone, box, bag) und
-   `E.use(g,"rat"|"bag"|"truck"|"tower",x,y,s)`. Effekte auf ein bestimmtes Wort legen mit
+   `E.use(g,"rat"|"bag"|"truck"|"tower",x,y,s)`, Frauen mit `long: true`, Gesicht `happy`.
+   Bausatz: `E.skyline(g,{seed,base,wMin,wMax,hMin,hMax,fill,gap,lit,win,litColor})`,
+   `E.stars(g,n,seed,h)`, `E.globe(g,{cx,cy,r,id})` → `{land, period}` (drehen:
+   `tl.fromTo(land,{x:0},{x:-period*k,…})`). HUD-Countdown statt Zähler:
+   `hud.countdown = {from: 5, fmt: "s.mmm"|"mm:ss", start:{at,off}, end:{at,off}}` (gestreckt);
+   `hud.steps: []` blendet den Chip aus. Effekte auf ein bestimmtes Wort legen mit
    `E.cs("<zeile>", <chunk-index>, off)` (wortgenau nach align_words.py). Skylines/Regale/Fenster per Schleife mit
    `E.rng(seed)` erzeugen. Bildkomposition: wichtige Motive zwischen y≈450 und 1200,
    Untertitel-Zone 1255–1515 und HUD-Zone 200–430 frei von wichtigen Texten halten.
@@ -137,7 +151,8 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
       2 Takes à ~710 Credits pro 50 s) → `creative_get_flow_run_status` pollen.
    2. Take wählen (bei gleicher Qualität den lebendigeren/kürzeren); `content_url` mit curl nach
       `assets/` laden (Netzfreigabe `elevenlabsusercontent.com` ist eingerichtet).
-   3. `python3 tools/add_voice.py videos/<slug> assets/take.mp3 --copy-only --tail 2.4`
+   3. Take als `assets/take.mp3` speichern; nach dem Wortsync (Schritt 4) `tools/prepare.sh <slug>`
+      (setzt die Stimme ein, aktualisiert lib/, baut den Sound). Ohne Wortsync: `add_voice.py` ohne `--copy-only`.
       (kopiert nach voice.*, trägt `<audio>` ein; Videolänge = Sprache + Nachlauf.
       Nur bei vorgegebener Länge `--fit <s>` ergänzen – beschleunigt max. 1,15x).
    4. **Wortgenau synchronisieren (immer machen, kostet 0 Credits):** gewählten Take mit
@@ -176,6 +191,14 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
 - **SVG mit `transform`-Attribut nicht direkt mit x/y animieren**, sonst überschreibt GSAP
   die Translation und das Element springt. In ein leeres `<g>` wrappen und den Wrapper animieren.
 - Kein `Math.random`/`Date.now`, nur `E.rng(seed)`. Alles muss seekbar sein.
+- Jede Hook-Szene braucht die drei Titel-Zeilen (einblenden, Unterzeile, bei `at("loop",-0.15)`
+  ausblenden) – sonst überlappt der Titel mit den ersten Untertiteln (einmal vergessen).
+- Schilder/Badges nie in die HUD-Zone (y 200–430) oder Untertitel-Zone (1255–1515) legen;
+  `npx hyperframes check` meldet das als `content_overlap` – immer beheben.
+- Rotation von Teilen in einer `<g transform="translate(...)">`: `svgOrigin` in deren lokalen
+  Koordinaten angeben (z. B. Uhrzeiger `"0 0"`), sonst kreisen sie aus dem Bild.
+- Fliegende Objekte mit `ease: "none"` und ausreichend Dauer animieren, sonst sind sie in den
+  meisten Frames außerhalb des Bildes.
 - `clip-path` nie auf das animierte Element selbst setzen (die Maske wandert mit): Element in ein
   `<g clip-path=…>` legen und nur das Innere bewegen.
 - GSAP-`fill`/`stroke`-Tweens nur auf Elemente, die die Farbe wirklich haben sollen (ein Umriss mit

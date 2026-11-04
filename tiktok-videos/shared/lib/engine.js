@@ -140,9 +140,11 @@
     tl.set(hud, { autoAlpha: 0 }, ref(H.hide));
 
     // Werte als reine Funktion der Zeit -> korrekt bei jedem Seek (auch rückwärts / Sprünge)
-    const steps = H.steps.map((s) => ({ t: ref(s), v: s.value, c: s.chip }));
+    const steps = (H.steps || []).map((s) => ({ t: ref(s), v: s.value, c: s.chip }));
+    if (!steps.length) chip.style.display = "none";
     const ease = (x) => 1 - Math.pow(1 - x, 3);
     function valueAt(t, key) {
+      if (!steps.length) return 0;
       let val = steps[0][key];
       for (let i = 1; i < steps.length; i++) {
         const s = steps[i], p = steps[i - 1];
@@ -150,19 +152,28 @@
       }
       return val;
     }
+    // Countdown-Modus: {from, fmt:"s.mmm"|"mm:ss", start:{at,off}, end:{at,off}} – gestreckt über die Szene
+    const CD = H.countdown;
+    const cdT0 = CD ? ref(CD.start) : 0, cdT1 = CD ? ref(CD.end) : 0;
+    function fmtCd(v) {
+      v = Math.max(0, v);
+      if (CD.fmt === "mm:ss") { const s = Math.ceil(v - 1e-6); return String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }
+      const sec = Math.floor(v), ms = Math.floor((v - sec) * 1000);
+      return "0:" + String(sec).padStart(2, "0") + "." + String(ms).padStart(3, "0");
+    }
+    if (CD) num.classList.add("cd");
     const render = (t) => {
-      const v = valueAt(t, "v"), c = valueAt(t, "c");
-      num.textContent = pad(v);
-      chipVal.textContent = Math.round(c) + "%";
-      chip.className = "chip " + chipClass(c);
+      if (CD) num.textContent = fmtCd(CD.from * (1 - Math.max(0, Math.min(1, (t - cdT0) / Math.max(0.01, cdT1 - cdT0)))));
+      else num.textContent = pad(valueAt(t, "v"));
+      if (steps.length) { const c = valueAt(t, "c"); chipVal.textContent = Math.round(c) + "%"; chip.className = "chip " + chipClass(c); }
     };
     clock(tl, render);
-    let prev = H.steps[0];
-    H.steps.forEach((s, i) => {
+    let prev = steps.length ? H.steps[0] : null;
+    (H.steps || []).forEach((s, i) => {
       const t = ref(s);
       if (i === 0) return;
       const dv = s.value - prev.value;
-      if (dv >= 3) {
+      if (!CD && dv >= 3) {
         tl.set(delta, { textContent: "+" + dv + " " + H.unit }, t);
         tl.fromTo(delta, { autoAlpha: 1, scale: 1.4 }, { scale: 1, duration: 0.25, ease: "back.out(3)" }, t);
         tl.to(delta, { autoAlpha: 0, duration: 0.25 }, t + 1.3);
@@ -202,6 +213,24 @@
     });
   }
 
+  /** Endkarte animieren (Abstimmung oder offene Frage). Erwartet in der Szene:
+   *  .ec-q, optional .ec-opt (A/B/C), .ec-cta, optional .ec-ring mit .ec-arc (circle) und .ec-n */
+  function buildEndcard(tl, sceneId, t0, ctaT) {
+    const S = document.getElementById(sceneId);
+    if (!S) return;
+    const q = S.querySelector(".ec-q"), opts = S.querySelectorAll(".ec-opt"), cta = S.querySelector(".ec-cta");
+    if (q) tl.fromTo(q, { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, t0 + 0.05);
+    opts.forEach((o, i) => tl.fromTo(o, { autoAlpha: 0, x: i % 2 ? 300 : -300 }, { autoAlpha: 1, x: 0, duration: 0.35, ease: "back.out(1.8)" }, t0 + 0.5 + i * 0.18));
+    if (cta) tl.fromTo(cta, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.3 }, ctaT);
+    const ring = S.querySelector(".ec-ring");
+    if (ring) {
+      const rT = t0 + 0.4, RD = T.duration - rT, arc = ring.querySelector(".ec-arc"), n = ring.querySelector(".ec-n");
+      tl.fromTo(arc, { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": 352 }, duration: RD, ease: "none" }, rT);
+      clock(tl, (t) => { n.textContent = String(Math.max(1, Math.min(6, 6 - Math.floor((t - rT) / (RD / 6))))); });
+      tl.fromTo(ring, { autoAlpha: 0, scale: 0.5 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(3)" }, rT);
+    }
+  }
+
   /** Ruft fn(t) bei jedem Frame mit der absoluten Videozeit auf (seek-sicher).
    *  Für Text-Zähler, Uhren usw. — niemals Zustand zwischen Frames speichern. */
   function clock(tl, fn) {
@@ -210,5 +239,5 @@
     fn(0);
   }
 
-  window.Engine = { T, at, end, ref, cs, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract };
+  window.Engine = { T, at, end, ref, cs, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract, buildEndcard };
 })();

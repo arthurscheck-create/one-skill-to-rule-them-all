@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn die Erde für 5 Sekunden aufhört, sich zu drehen?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 90px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="63.99" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Erde dreht sich im All -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0b0b22"/><g id="s1-stars"></g><g id="s1-globe"></g>
+        <g class="lbl" fill="#ffd23f" stroke="#0d0b18" stroke-width="9" paint-order="stroke"><text id="s1-arrow" x="540" y="320" text-anchor="middle" font-size="64">1.670 KM/H AM ÄQUATOR</text></g></svg>
+      <div class="title main">WAS WÄRE, WENN<br/>DIE ERDE<br/><span class="r">STEHEN BLEIBT?</span></div>
+      <div class="title sub">⚠ NUR FÜR 5 SEKUNDEN</div>
+    </div></div></section>
+
+    <!-- S2 Straße + Tempo -->
+    <section class="scene" id="s2"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a6fc4"/><stop offset="1" stop-color="#bfe0ff"/></linearGradient></defs>
+        <rect width="1080" height="1200" fill="url(#g-sky2)"/>
+        <g id="s2-city"></g>
+        <rect y="1160" width="1080" height="240" fill="#8a86a6"/><rect y="1390" width="1080" height="530" fill="#4a4866"/>
+        <g fill="#e9e6f5" opacity=".7"><rect x="40" y="1640" width="140" height="18" rx="4"/><rect x="320" y="1640" width="140" height="18" rx="4"/><rect x="600" y="1640" width="140" height="18" rx="4"/><rect x="880" y="1640" width="140" height="18" rx="4"/></g>
+        <g id="s2-lines" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity="0"></g>
+        <g id="s2-kid"></g>
+        <g id="s2-badge"><g transform="translate(540,640)"><rect x="-300" y="-90" width="600" height="180" rx="90" fill="#ff3b3b" stroke="#fff" stroke-width="10"/><text class="lbl" x="0" y="34" text-anchor="middle" font-size="96" fill="#fff">1.000 KM/H</text></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S3 Sekunde 1: Stopp -->
+    <section class="scene" id="s3" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0b0b22"/><g id="s3-stars"></g><g id="s3-globe"></g>
+        <g id="s3-stop"><circle cx="540" cy="820" r="430" fill="none" stroke="#ff3b3b" stroke-width="22" stroke-dasharray="60 30"/><g transform="translate(540,540)"><rect x="-180" y="-70" width="360" height="140" rx="20" fill="#ff3b3b" stroke="#fff" stroke-width="8"/><text class="lbl" x="0" y="34" text-anchor="middle" font-size="92" fill="#fff">STOPP</text></g></g>
+        <g id="s3-flyer"><g id="s3-mini"></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S4 Alles fliegt nach Osten -->
+    <section class="scene" id="s4"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1200" fill="#7fa8dc"/>
+        <g id="s4-city"></g>
+        <rect y="1160" width="1080" height="760" fill="#4a4866"/>
+        <g id="s4-streaks" stroke="rgba(255,255,255,.7)" stroke-width="8" stroke-linecap="round"></g>
+        <g id="s4-fly"></g>
+        <g class="lbl" fill="#fff" stroke="#0d0b18" stroke-width="9" paint-order="stroke"><text x="540" y="560" text-anchor="middle" font-size="80">OSTEN ➜</text></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S5 Sturm -->
+    <section class="scene" id="s5"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-st" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2f4a"/><stop offset="1" stop-color="#6b6f8a"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-st)"/>
+        <g id="s5-clouds" fill="#9a9fb8" opacity=".8"></g>
+        <g id="s5-city"></g>
+        <rect y="1250" width="1080" height="670" fill="#3a3d52"/>
+        <g id="s5-trees"></g>
+        <g id="s5-wind" stroke="rgba(255,255,255,.55)" stroke-width="9" fill="none" stroke-linecap="round"></g>
+        <g id="s5-debris" fill="#c9c3e6"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S6 Tsunami -->
+    <section class="scene" id="s6"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-wave" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b3568"/><stop offset="1" stop-color="#2a8ad6"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="#5a6a90"/>
+        <g id="s6-city"></g>
+        <rect y="1250" width="1080" height="670" fill="#3a3d52"/>
+        <g id="s6-wavewrap"><path d="M-1400,1920 L-1400,700 Q-900,380 -420,560 Q-150,660 -60,900 Q-160,820 -300,860 Q-120,1000 -40,1920Z" fill="url(#g-wave)"/>
+          <path d="M-420,560 Q-150,660 -60,900 Q-160,820 -300,860" fill="none" stroke="#e9f5ff" stroke-width="26" stroke-linecap="round"/>
+          <g fill="#e9f5ff" opacity=".9"><circle cx="-70" cy="890" r="26"/><circle cx="-110" cy="850" r="18"/><circle cx="-40" cy="940" r="20"/></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S7 Erdbeben + Vulkane -->
+    <section class="scene" id="s7"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1020"/><stop offset="1" stop-color="#a8443a"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-red)"/>
+        <path d="M120,1150 L430,520 L520,520 L860,1150Z" fill="#3a2630"/><path d="M430,520 L520,520 L560,600 L390,600Z" fill="#ff7a2f"/>
+        <g id="s7-lava" fill="#ff9f1c"></g>
+        <g id="s7-smoke" fill="#4a3a44" opacity=".85"></g>
+        <g id="s7-city"></g>
+        <rect y="1250" width="1080" height="670" fill="#2c2028"/>
+        <g id="s7-cracks" stroke="#ff7a2f" stroke-width="10" fill="none" stroke-linecap="round"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S8 Sekunde 5: Erde dreht wieder -->
+    <section class="scene" id="s8" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0b0b22"/><g id="s8-stars"></g><g id="s8-globe"></g>
+        <g id="s8-debris" fill="#c9c3e6"></g>
+        <g class="lbl" fill="#ff3b3b" stroke="#0d0b18" stroke-width="10" paint-order="stroke"><text id="s8-x2" x="540" y="560" text-anchor="middle" font-size="84">2× GESCHLEUDERT</text></g></svg>
+    </div></div></section>
+
+    <!-- S9 Fakt: Tage werden länger -->
+    <section class="scene" id="s9" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-bg9" cx=".5" cy=".42" r=".8"><stop offset="0" stop-color="#1f6f5a"/><stop offset="1" stop-color="#0b1a22"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-bg9)"/>
+        <g transform="translate(540,800)">
+          <circle r="330" fill="#f2f0f7" stroke="#0d0b18" stroke-width="16"/><circle r="300" fill="none" stroke="#c9c3e6" stroke-width="6"/>
+          <g id="s9-ticks" stroke="#1b1936" stroke-width="10" stroke-linecap="round"></g>
+          <g id="s9-hour"><rect x="-10" y="-180" width="20" height="200" rx="10" fill="#1b1936"/></g>
+          <g id="s9-min"><rect x="-7" y="-260" width="14" height="280" rx="7" fill="#ff3b3b"/></g>
+          <circle r="22" fill="#1b1936"/>
+        </g>
+        <g id="s9-plus"><g transform="translate(540,1215)"><rect x="-340" y="-60" width="680" height="120" rx="60" fill="#3ee08f" stroke="#0d0b18" stroke-width="8"/><text class="lbl" x="0" y="26" text-anchor="middle" font-size="64" fill="#0d0b18">+2 MS / 100 JAHRE</text></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S10 Endkarte: offene Frage -->
+    <section class="scene" id="s10" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0d0d28"/><g id="s10-stars"></g><g id="s10-globe"></g></svg>
+      <div class="ec-q">HÄTTEST <span class="y">DU</span><br/>DAS GEWUSST?</div>
+      <div class="ec-cta" style="top:1380px">SCHREIB'S IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG FÜR TEIL 2</span></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="61.39" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="63.99" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const spin = (land, period, t0, dur, speed) => tl.fromTo(land, { x: 0 }, { x: -period * speed, duration: dur, ease: "none", immediateRender: false }, t0);
+
+    /* S1 */
+    E.stars($("#s1-stars"), 90, 2);
+    const g1 = E.globe($("#s1-globe"), { cx: 540, cy: 760, r: 330, id: "g1", seed: 4 });
+    tl.set(g1.land, { x: 0 }, 0); spin(g1.land, g1.period, 0, at("strasse"), 0.25);
+    tl.fromTo("#s1-arrow", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .4 }, 0.5);
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+
+    /* S2 */
+    E.skyline($("#s2-city"), { seed: 5, base: 1170, wMin: 100, wMax: 190, hMin: 260, hMax: 620, fill: "#5d6a9a", gap: 6, lit: .25, win: 16, litColor: "#e9f0ff" });
+    E.person($("#s2-kid"), { x: 540, y: 1420, s: 1.0, face: "neutral", arms: "down" });
+    const L2 = $("#s2-lines"); for (let i = 0; i < 9; i++) svg("line", { x1: 1100, y1: 300 + i * 110, x2: 1300, y2: 300 + i * 110 }, L2);
+    tl.to(L2, { opacity: 1, duration: .3 }, cs("speed", 1)); tl.fromTo(L2, { x: 0 }, { x: -1600, duration: .5, repeat: 6, ease: "none", immediateRender: false }, cs("speed", 1));
+    tl.fromTo("#s2-badge", { autoAlpha: 0, scale: 0, svgOrigin: "540 640" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)" }, cs("speed", 3));
+    tl.set("#s2-badge", { autoAlpha: 0 }, 0);
+
+    /* S3 */
+    E.stars($("#s3-stars"), 90, 9);
+    const g3 = E.globe($("#s3-globe"), { cx: 540, cy: 820, r: 360, id: "g3", seed: 4 });
+    tl.fromTo(g3.land, { x: 0 }, { x: -g3.period * .12, duration: Math.max(.5, at("stop") - at("sek1", -0.2)), ease: "none" }, at("sek1", -0.2));
+    tl.set("#s3-stop", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s3-stop", { autoAlpha: 0, scale: 1.4, svgOrigin: "540 820" }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2)", immediateRender: false }, cs("stop", 1));
+    tl.fromTo("#s3 .cam", { x: -16 }, { x: 0, duration: .05, repeat: 9, yoyo: true, ease: "none", immediateRender: false }, cs("stop", 1));
+    E.person($("#s3-mini"), { x: 860, y: 900, s: .32, face: "shock", arms: "down" });
+    tl.fromTo("#s3-flyer", { x: 0, y: 0, rotation: 0, svgOrigin: "860 840" }, { x: 420, y: -260, rotation: 220, duration: 1.4, ease: "power1.in" }, cs("stop", 2, -0.1));
+
+    /* S4 */
+    E.skyline($("#s4-city"), { seed: 7, base: 1170, wMin: 100, wMax: 190, hMin: 260, hMax: 620, fill: "#4d5a8a", gap: 6 });
+    const S4 = $("#s4-streaks"), r4 = E.rng(4); for (let i = 0; i < 22; i++) { const x = -1100 + r4() * 2200, y = 260 + r4() * 1500, l = 120 + r4() * 260; svg("line", { x1: x, y1: y, x2: x + l, y2: y }, S4); }
+    tl.fromTo(S4, { x: 0 }, { x: 1100, duration: .45, repeat: 12, ease: "none" }, at("fliegen", -0.2));
+    const F4 = $("#s4-fly");
+    const flyer = (y, delay, make, rot) => { const w = svg("g", {}, F4); make(w); tl.fromTo(w, { x: -300, rotation: 0, svgOrigin: `0 ${y}` }, { x: 1500, rotation: rot, duration: 1.9, ease: "none" }, cs("fliegen", 2, delay - 0.4)); };
+    flyer(1500, 0, (w) => E.person(w, { x: 0, y: 1500, s: .7, face: "shock", arms: "down" }), 200);
+    flyer(1300, .5, (w) => E.person(w, { x: 0, y: 1300, s: .55, face: "shock", arms: "down", shirt: "#8a3a3a" }), -160);
+    flyer(1700, cs("fliegen", 3) - cs("fliegen", 2), (w) => { svg("rect", { x: -170, y: 1600, width: 340, height: 110, rx: 30, fill: "#e8463c" }, w); svg("rect", { x: -100, y: 1540, width: 200, height: 80, rx: 20, fill: "#c9312b" }, w); svg("circle", { cx: -100, cy: 1712, r: 36, fill: "#14141b" }, w); svg("circle", { cx: 100, cy: 1712, r: 36, fill: "#14141b" }, w); }, 120);
+    flyer(900, cs("fliegen", 4) - cs("fliegen", 2), (w) => { svg("rect", { x: -150, y: 820, width: 300, height: 220, fill: "#f2c14e" }, w); svg("path", { d: "M-180,830 L0,700 L180,830Z", fill: "#c9312b" }, w); svg("rect", { x: -40, y: 940, width: 80, height: 100, fill: "#6b4a2e" }, w); }, 90);
+
+    /* S5 */
+    const C5 = $("#s5-clouds"); for (let i = 0; i < 6; i++) { const c = svg("ellipse", { cx: 200 + i * 220, cy: 200 + (i % 3) * 120, rx: 170, ry: 50 }, C5); }
+    tl.fromTo(C5, { x: 0 }, { x: 900, duration: 4, ease: "none" }, at("sek2", -0.2));
+    E.skyline($("#s5-city"), { seed: 11, base: 1260, wMin: 100, wMax: 180, hMin: 300, hMax: 700, fill: "#23263a", gap: 6, lit: .3, win: 16, litColor: "#ffd27a" });
+    const T5 = $("#s5-trees");
+    [140, 420, 700, 960].forEach((x, i) => { const g = svg("g", {}, T5); svg("rect", { x: x - 14, y: 1250, width: 28, height: 220, fill: "#4a3424" }, g); svg("circle", { cx: x, cy: 1220, r: 90, fill: "#2e8a47" }, g); tl.fromTo(g, { rotation: 0, svgOrigin: `${x} 1470` }, { rotation: 28, duration: .3, repeat: 9, yoyo: true, ease: "sine.inOut" }, at("wind", i * .05)); });
+    const W5 = $("#s5-wind"); for (let i = 0; i < 10; i++) svg("path", { d: `M-300,${350 + i * 140} q150,-40 300,0 t300,0` }, W5);
+    tl.fromTo(W5, { x: 0 }, { x: 1600, duration: .7, repeat: 6, ease: "none" }, at("sek2", -0.2));
+    const D5 = $("#s5-debris"); for (let i = 0; i < 12; i++) { const r = svg("rect", { x: -60, y: 400 + i * 90, width: 40 + (i % 3) * 20, height: 20, rx: 4 }, D5); tl.fromTo(r, { x: 0, rotation: 0, svgOrigin: `-40 ${410 + i * 90}` }, { x: 1300, rotation: 360, duration: .9 + (i % 4) * .15, ease: "none", repeat: 2 }, at("wind", .1 + i * .1)); }
+
+    /* S6 */
+    E.skyline($("#s6-city"), { seed: 13, base: 1260, wMin: 100, wMax: 170, hMin: 250, hMax: 600, fill: "#2c3250", gap: 6, lit: .25, win: 16, litColor: "#ffd27a" });
+    tl.fromTo("#s6-wavewrap", { x: 0 }, { x: 1700, duration: Math.max(2, end("meer") - at("sek3")), ease: "power1.in" }, at("sek3", -0.1));
+
+    /* S7 */
+    E.skyline($("#s7-city"), { seed: 17, base: 1260, wMin: 100, wMax: 180, hMin: 240, hMax: 520, fill: "#1e1620", gap: 6 });
+    const L7 = $("#s7-lava"); for (let i = 0; i < 16; i++) { const x = 475 + (i % 2 ? 1 : -1) * (i * 6); const b = svg("circle", { cx: 475, cy: 520, r: 12 + (i % 3) * 6 }, L7); tl.fromTo(b, { x: 0, y: 0, opacity: 1 }, { x: (i % 2 ? 1 : -1) * (80 + i * 14), y: -260 - (i % 4) * 60, opacity: 0, duration: 1.1, repeat: 2, ease: "power1.out" }, at("beben", i * .06)); }
+    const S7 = $("#s7-smoke"); [[470, 380, 80], [520, 280, 110], [430, 200, 90]].forEach(([x, y, r], i) => { const c = svg("circle", { cx: x, cy: y, r }, S7); tl.fromTo(c, { scale: .3, svgOrigin: `${x} ${y}` }, { scale: 1.2, duration: 1.8, ease: "power1.out" }, at("sek4", i * .2)); });
+    const K7 = $("#s7-cracks"); ["M80,1400 l100,60 l-40,90 l120,70", "M500,1320 l-80,110 l90,70 l-60,120", "M820,1450 l120,40 l-30,100 l90,80"].forEach((d) => { const p = svg("path", { d, "stroke-dasharray": 500, "stroke-dashoffset": 500 }, K7); tl.to(p, { attr: { "stroke-dashoffset": 0 }, duration: .8 }, at("beben", .2)); });
+    tl.fromTo("#s7 .cam", { x: -14, y: 6 }, { x: 14, y: -6, duration: .06, repeat: 25, yoyo: true, ease: "none", immediateRender: false }, at("beben"));
+
+    /* S8 */
+    E.stars($("#s8-stars"), 90, 21);
+    const g8 = E.globe($("#s8-globe"), { cx: 540, cy: 860, r: 360, id: "g8", seed: 4 });
+    tl.fromTo(g8.land, { x: 0 }, { x: -g8.period * 1.5, duration: 3, ease: "power2.in" }, cs("dreht", 1));
+    tl.fromTo("#s8 .cam", { x: -18 }, { x: 18, duration: .05, repeat: 21, yoyo: true, ease: "none", immediateRender: false }, cs("dreht", 3));
+    const D8 = $("#s8-debris"); for (let i = 0; i < 14; i++) { const a = (i / 14) * Math.PI * 2; const x = 540 + Math.cos(a) * 360, y = 860 + Math.sin(a) * 360; const r = svg("rect", { x: x - 10, y: y - 10, width: 20, height: 20 }, D8); tl.fromTo(r, { x: 0, y: 0, opacity: 1 }, { x: Math.cos(a) * 500, y: Math.sin(a) * 500, opacity: 0, duration: 1.2, ease: "power2.out" }, cs("dreht", 3, i * .03)); }
+    tl.set("#s8-x2", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s8-x2", { autoAlpha: 0, scale: .5, svgOrigin: "540 530" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)", immediateRender: false }, cs("dreht", 3));
+
+    /* S9 */
+    const tk = $("#s9-ticks"); for (let i = 0; i < 12; i++) svg("line", { x1: 0, y1: -270, x2: 0, y2: -240, transform: `rotate(${i * 30})` }, tk);
+    tl.fromTo("#s9-min", { rotation: 0, svgOrigin: "0 0" }, { rotation: 720, duration: 6, ease: "none" }, at("verrueckt", -0.2));
+    tl.fromTo("#s9-hour", { rotation: 0, svgOrigin: "0 0" }, { rotation: 60, duration: 6, ease: "none" }, at("verrueckt", -0.2));
+    tl.set("#s9-plus", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s9-plus", { autoAlpha: 0, scale: .4, svgOrigin: "540 1215" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)", immediateRender: false }, cs("fakt", 3));
+
+    /* S10 */
+    E.stars($("#s10-stars"), 70, 33);
+    const g10 = E.globe($("#s10-globe"), { cx: 540, cy: 960, r: 220, id: "g10", seed: 4 });
+    tl.fromTo(g10.land, { x: 0 }, { x: -g10.period * .2, duration: 6, ease: "none" }, at("frage", -0.3));
+    E.buildEndcard(tl, "s10", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>

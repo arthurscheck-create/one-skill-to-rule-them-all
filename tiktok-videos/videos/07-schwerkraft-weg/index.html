@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn die Schwerkraft für 5 Sekunden verschwindet?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 88px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="58.47" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Dinge heben ab -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a6fc4"/><stop offset="1" stop-color="#cfe6ff"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-sky)"/><g id="s1-city"></g><rect y="1100" width="1080" height="820" fill="#4caf50"/>
+        <g id="s1-kid"></g><g id="s1-float"></g>
+      </svg>
+      <div class="title main">WAS WÄRE, WENN<br/>DIE <span class="r">SCHWERKRAFT</span><br/>WEG IST?</div>
+      <div class="title sub">⚠ NUR FÜR 5 SEKUNDEN</div>
+    </div></div></section>
+
+    <!-- S2 Sofa -->
+    <section class="scene" id="s2" data-drift="1.07"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><g id="s2-room"></g><g id="s2-kid"></g><g id="s2-sofafront"></g></svg>
+    </div></div></section>
+
+    <!-- S3 Luft strömt nach oben, Ohren knacken -->
+    <section class="scene" id="s3"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-air" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05040e"/><stop offset=".45" stop-color="#1f3b7a"/><stop offset="1" stop-color="#8fc9ff"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-air)"/><g id="s3-stars"></g>
+        <g id="s3-arrows" fill="#e9f5ff" opacity=".85"></g>
+        <g id="s3-head"></g>
+        <g id="s3-knack" class="lbl" fill="#ffd23f" stroke="#0d0b18" stroke-width="10" paint-order="stroke"><text x="140" y="1080" font-size="90" transform="rotate(-14 140 1080)">KNACK!</text><text x="700" y="1040" font-size="90" transform="rotate(12 700 1040)">KNACK!</text></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S4 Du hebst ab -->
+    <section class="scene" id="s4" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><g id="s4-room"></g><g id="s4-flywrap"><g id="s4-kid"></g></g><g id="s4-sofafront"></g></svg>
+    </div></div></section>
+
+    <!-- S5 Trampolin -->
+    <section class="scene" id="s5"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="url(#g-sky)"/><rect y="1350" width="1080" height="570" fill="#4caf50"/>
+        <g transform="translate(800,1360)"><rect x="-200" y="-520" width="400" height="520" fill="#f2c14e"/><path d="M-240,-500 L0,-760 L240,-500Z" fill="#c9312b"/><rect x="-60" y="-200" width="120" height="200" fill="#6b4a2e"/><rect x="-150" y="-420" width="100" height="100" fill="#bfe6ff"/><rect x="50" y="-420" width="100" height="100" fill="#bfe6ff"/></g>
+        <line x1="20" y1="590" x2="560" y2="590" stroke="#fff" stroke-width="5" stroke-dasharray="20 14"/>
+        <text class="lbl" x="30" y="575" font-size="34" fill="#fff" stroke="#0d0b18" stroke-width="6" paint-order="stroke">HÖHE DACH</text>
+        <g transform="translate(300,1520)"><ellipse cx="0" cy="0" rx="220" ry="40" fill="#1b1936"/><ellipse cx="0" cy="-6" rx="200" ry="30" fill="#3fd4ff"/><path d="M-200,0 L-190,120 M200,0 L190,120 M0,30 L0,130" stroke="#6a6790" stroke-width="12"/></g>
+        <g id="s5-jumpwrap"><g id="s5-kid"></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S6 Alles treibt nach oben -->
+    <section class="scene" id="s6"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="url(#g-sky)"/><g id="s6-city"></g><rect y="1300" width="1080" height="620" fill="#8a86a6"/>
+        <g transform="translate(540,1420)"><ellipse cx="0" cy="0" rx="260" ry="50" fill="#5d5a86"/><ellipse cx="0" cy="-8" rx="230" ry="36" fill="#3f7fd6"/><rect x="-20" y="-120" width="40" height="110" fill="#9aa3cf"/></g>
+        <g id="s6-up"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S7 Sekunde fünf: alles kracht runter -->
+    <section class="scene" id="s7"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="url(#g-sky)"/><g id="s7-city"></g><rect y="1300" width="1080" height="620" fill="#8a86a6"/>
+        <g id="s7-down"></g>
+        <g id="s7-krach" class="lbl" fill="#ff3b3b" stroke="#fff" stroke-width="10" paint-order="stroke"><text x="540" y="820" text-anchor="middle" font-size="150">KRACH!</text></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S8 ISS: fällt ständig -->
+    <section class="scene" id="s8" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#05040e"/><g id="s8-stars"></g>
+        <g id="s8-earth"></g>
+        <circle cx="540" cy="1900" r="1080" fill="none" stroke="#3fd4ff" stroke-width="6" stroke-dasharray="18 16" opacity=".6"/>
+        <g id="s8-isswrap"><g id="s8-iss" transform="translate(540,820)">
+          <rect x="-200" y="-10" width="400" height="20" fill="#c9cff0"/>
+          <g fill="#1f5fbf" stroke="#9fc6e8" stroke-width="3"><rect x="-200" y="-90" width="70" height="70"/><rect x="-200" y="20" width="70" height="70"/><rect x="130" y="-90" width="70" height="70"/><rect x="130" y="20" width="70" height="70"/></g>
+          <rect x="-50" y="-30" width="100" height="60" rx="16" fill="#f2f0f7"/><rect x="-14" y="-60" width="28" height="120" rx="10" fill="#e9e6f5"/>
+        </g></g>
+        <g id="s8-badge"><g transform="translate(540,600)"><rect x="-350" y="-64" width="700" height="128" rx="64" fill="#ffd23f" stroke="#0d0b18" stroke-width="8"/><text class="lbl" x="0" y="22" text-anchor="middle" font-size="56" fill="#0d0b18">FAST 90 % SCHWERKRAFT</text></g></g>
+        <g id="s8-fall"><path d="M380,880 Q540,1060 760,900" fill="none" stroke="#3ee08f" stroke-width="10" stroke-linecap="round"/><path d="M760,900 l-40,0 m40,0 l-6,40" stroke="#3ee08f" stroke-width="10" stroke-linecap="round" fill="none"/><text class="lbl" x="560" y="1120" text-anchor="middle" font-size="48" fill="#3ee08f" stroke="#0d0b18" stroke-width="8" paint-order="stroke">FÄLLT – UND VERFEHLT DIE ERDE</text></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S10 Abstimmung -->
+    <section class="scene" id="s10" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s10-stars"></g></svg>
+      <div class="ec-q" style="font-size:80px">WAS WÜRDEST <span class="y">DU</span> IN DEN 5 SEKUNDEN MACHEN?</div>
+      <div class="ec-opt a"><span class="k">A</span><span class="t">RUMSCHWEBEN<small>Einmal Astronaut sein</small></span></div>
+      <div class="ec-opt b"><span class="k">B</span><span class="t">FESTHALTEN<small>Sicher ist sicher</small></span></div>
+      <div class="ec-opt c"><span class="k">C</span><span class="t">EIN SALTO<small>Und danach: Aua</small></span></div>
+      <div class="ec-cta">SCHREIB A, B ODER C<br/>IN DIE KOMMENTARE</div>
+      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="56.24" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="58.47" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    function room(g, sofaFront) {
+      svg("rect", { width: 1080, height: 1920, fill: "#3b3768" }, g);
+      svg("rect", { y: 0, width: 1080, height: 470, fill: "#2b2850" }, g); svg("rect", { y: 460, width: 1080, height: 16, fill: "#1e1c3a" }, g);
+      svg("rect", { x: 520, y: 476, width: 40, height: 80, fill: "#1e1c3a" }, g); svg("path", { d: "M470,556 L610,556 L580,620 L500,620Z", fill: "#ffd23f" }, g);
+      svg("rect", { x: 90, y: 640, width: 300, height: 360, rx: 10, fill: "#1f3b7a", stroke: "#4a4580", "stroke-width": 14 }, g);
+      svg("rect", { y: 1400, width: 1080, height: 520, fill: "#5a4a6a" }, g);
+      svg("rect", { x: 700, y: 880, width: 280, height: 180, rx: 10, fill: "#14131f", stroke: "#4a4580", "stroke-width": 10 }, g);
+      svg("rect", { x: 150, y: 1140, width: 780, height: 220, rx: 50, fill: "#8a3a5a" }, g);
+      const f = svg("g", {}, sofaFront);
+      svg("rect", { x: 110, y: 1300, width: 860, height: 180, rx: 50, fill: "#a64a6e" }, f); svg("rect", { x: 80, y: 1200, width: 110, height: 280, rx: 40, fill: "#8a3a5a" }, f); svg("rect", { x: 890, y: 1200, width: 110, height: 280, rx: 40, fill: "#8a3a5a" }, f);
+      svg("rect", { x: 150, y: 1480, width: 30, height: 60, fill: "#2b2030" }, f); svg("rect", { x: 900, y: 1480, width: 30, height: 60, fill: "#2b2030" }, f);
+    }
+
+    /* S1 */
+    E.skyline($("#s1-city"), { seed: 2, base: 1110, wMin: 100, wMax: 190, hMin: 220, hMax: 560, fill: "#7a8ac0", gap: 6 });
+    E.person($("#s1-kid"), { x: 300, y: 1480, s: .9, face: "shock", arms: "down" });
+    const F1 = $("#s1-float");
+    [[640, 1380, "#e8463c", 34], [800, 1420, "#ffd23f", 26], [920, 1370, "#3fd4ff", 30], [560, 1440, "#3ee08f", 22]].forEach(([x, y, c, r], i) => { const b = svg("circle", { cx: x, cy: y, r, fill: c, stroke: "#0d0b18", "stroke-width": 5 }, F1); tl.fromTo(b, { y: 0 }, { y: -700 - i * 80, duration: 6, ease: "power1.in" }, 0.3 + i * .15); });
+
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+
+    /* S2 */
+    room($("#s2-room"), $("#s2-sofafront"));
+    E.person($("#s2-kid"), { x: 540, y: 1430, s: 1.0, face: "neutral", arms: "down" });
+    tl.fromTo("#s2 .cam", { scale: 1 }, { scale: 1.12, duration: .3, ease: "power2.out", immediateRender: false }, cs("sofa", 3));
+
+    /* S3 */
+    E.stars($("#s3-stars"), 50, 4, 700);
+    const A3 = $("#s3-arrows");
+    for (let i = 0; i < 18; i++) { const x = 60 + (i % 6) * 190, y = 900 + Math.floor(i / 6) * 260; const a = svg("path", { d: `M${x},${y} l-26,0 l40,-60 l40,60 l-26,0 l0,70 l-28,0Z` }, A3); tl.fromTo(a, { y: 0, opacity: .9 }, { y: -700, opacity: 0, duration: 1.8, repeat: 2, ease: "power1.in" }, at("luft", (i % 6) * .1)); }
+    E.person($("#s3-head"), { x: 540, y: 2250, s: 2.4, face: "shock", arms: "down" });
+    tl.set("#s3-head", { autoAlpha: 0 }, 0); tl.set("#s3-knack", { autoAlpha: 0 }, 0);
+    tl.to("#s3-head", { autoAlpha: 1, duration: .2 }, at("ohren", -0.2));
+    tl.to(A3, { opacity: .25, duration: .2 }, at("ohren", -0.2));
+    tl.fromTo("#s3-knack", { autoAlpha: 1, scale: .4, transformOrigin: "50% 50%" }, { scale: 1, duration: .25, ease: "back.out(3)", immediateRender: false }, cs("ohren", 1));
+    tl.fromTo("#s3 .cam", { x: -10 }, { x: 10, duration: .05, repeat: 7, yoyo: true, ease: "none", immediateRender: false }, cs("ohren", 1));
+
+    /* S4 */
+    room($("#s4-room"), $("#s4-sofafront"));
+    E.person($("#s4-kid"), { x: 540, y: 1430, s: 1.0, face: "shock", arms: "down" });
+    tl.fromTo("#s4-flywrap", { y: 0, rotation: 0, svgOrigin: "540 1100" }, { y: -560, rotation: -14, duration: Math.max(2, end("aufstehen") - cs("aufstehen", 1)), ease: "power1.out" }, cs("aufstehen", 1));
+
+    /* S5 */
+    E.person($("#s5-kid"), { x: 300, y: 1510, s: .6, face: "happy", arms: "down", shirt: "#e8463c", hair: "#c48a3a" });
+    tl.fromTo("#s5-jumpwrap", { y: 0 }, { y: 30, duration: .2, repeat: 1, yoyo: true, ease: "sine.inOut" }, at("sek3", -0.2));
+    tl.fromTo("#s5-jumpwrap", { y: 0, rotation: 0, svgOrigin: "300 1300" }, { y: -1080, rotation: 25, duration: Math.max(2.2, end("trampolin") - at("trampolin") + .8), ease: "power1.out", immediateRender: false }, at("trampolin", -0.1));
+
+    /* S6 */
+    E.skyline($("#s6-city"), { seed: 8, base: 1310, wMin: 100, wMax: 190, hMin: 220, hMax: 560, fill: "#7a8ac0", gap: 6 });
+    const U6 = $("#s6-up"), r6 = E.rng(9);
+    for (let i = 0; i < 14; i++) { const c = svg("ellipse", { cx: 520 + (r6() - .5) * 120, cy: 1300, rx: 10, ry: 16, fill: "#7fd0ff" }, U6); tl.fromTo(c, { y: 0, opacity: 1 }, { y: -900 - r6() * 300, x: (r6() - .5) * 300, opacity: .4, duration: 3, ease: "none" }, cs("alles", 0, i * .08)); }
+    [[200, "#e8463c"], [860, "#ffd23f"], [700, "#3ee08f"]].forEach(([x, c], i) => { const b = svg("circle", { cx: x, cy: 1500, r: 44, fill: c, stroke: "#0d0b18", "stroke-width": 6 }, U6); tl.fromTo(b, { y: 0, rotation: 0, svgOrigin: `${x} 1500` }, { y: -1000, rotation: 180, duration: 3, ease: "power1.in" }, cs("alles", 1, i * .15)); });
+    for (let i = 0; i < 5; i++) { const x = 150 + i * 190, y = 1100 - (i % 2) * 120; const b = svg("path", { d: `M${x - 30},${y} q15,-20 30,0 q15,-20 30,0`, stroke: "#1b1936", "stroke-width": 8, fill: "none", "stroke-linecap": "round" }, U6); tl.fromTo(b, { y: 0 }, { y: -700, duration: 3, ease: "none" }, cs("alles", 2, i * .1)); }
+    for (let i = 0; i < 40; i++) { const d = svg("circle", { cx: r6() * 1080, cy: 1300 + r6() * 500, r: 3 + r6() * 4, fill: "#c9c3e6" }, U6); tl.fromTo(d, { y: 0 }, { y: -600 - r6() * 400, duration: 3, ease: "power1.in" }, cs("alles", 3, r6() * .5)); }
+
+    /* S7 */
+    E.skyline($("#s7-city"), { seed: 8, base: 1310, wMin: 100, wMax: 190, hMin: 220, hMax: 560, fill: "#7a8ac0", gap: 6 });
+    const D7 = $("#s7-down");
+    [[200, "#e8463c", 44], [860, "#ffd23f", 44], [700, "#3ee08f", 44], [420, "#3fd4ff", 34]].forEach(([x, c, r], i) => { const b = svg("circle", { cx: x, cy: 600, r, fill: c, stroke: "#0d0b18", "stroke-width": 6 }, D7); tl.fromTo(b, { y: 0 }, { y: 1000 - r, duration: .7, ease: "power2.in" }, cs("zurueck", 0, i * .1)); tl.to(b, { y: 860 - r, duration: .25, ease: "power2.out", yoyo: true, repeat: 1 }, cs("zurueck", 0, .7 + i * .1)); });
+    const k7 = svg("g", {}, D7); E.person(k7, { x: 540, y: 700, s: .7, face: "shock", arms: "down" });
+    tl.fromTo(k7, { y: 0, rotation: -20, svgOrigin: "540 500" }, { y: 880, rotation: 0, duration: .8, ease: "power2.in" }, cs("zurueck", 2));
+    tl.set("#s7-krach", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s7-krach", { autoAlpha: 1, scale: .3, svgOrigin: "540 780" }, { scale: 1, duration: .3, ease: "back.out(3)", immediateRender: false }, cs("zurueck", 4));
+    tl.fromTo("#s7 .cam", { x: -18, y: 8 }, { x: 18, y: -8, duration: .05, repeat: 13, yoyo: true, ease: "none", immediateRender: false }, cs("zurueck", 4));
+
+    /* S8 */
+    E.stars($("#s8-stars"), 90, 31);
+    E.globe($("#s8-earth"), { cx: 540, cy: 1900, r: 760, id: "e8", seed: 4 });
+    tl.fromTo("#s8-isswrap", { rotation: -18, svgOrigin: "540 1900" }, { rotation: 18, duration: Math.max(4, D - at("verrueckt")), ease: "none" }, at("verrueckt", -0.2));
+    tl.set(["#s8-badge", "#s8-fall"], { autoAlpha: 0 }, 0);
+    tl.fromTo("#s8-badge", { autoAlpha: 0, scale: .4, svgOrigin: "540 600" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)", immediateRender: false }, cs("iss", 3));
+    tl.fromTo("#s8-fall", { autoAlpha: 0 }, { autoAlpha: 1, duration: .3, immediateRender: false }, cs("fallen", 2));
+
+    /* S10 */
+    E.stars($("#s10-stars"), 60, 43);
+    E.buildEndcard(tl, "s10", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>

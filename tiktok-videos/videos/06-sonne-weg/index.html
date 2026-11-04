@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn die Sonne plötzlich verschwindet?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 90px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="59.26" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Sonne verschwindet -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-sun"><stop offset="0" stop-color="#fffbe6"/><stop offset=".45" stop-color="#ffd23f"/><stop offset=".75" stop-color="#ff9f1c"/><stop offset="1" stop-color="#ff7a2f" stop-opacity="0"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="#0b0b22"/><g id="s1-stars"></g>
+        <g id="s1-sun"><circle cx="540" cy="620" r="360" fill="url(#g-sun)"/><circle cx="540" cy="620" r="210" fill="#ffe28a"/></g>
+        <circle id="s1-ghost" cx="540" cy="620" r="210" fill="none" stroke="#ffd23f" stroke-width="6" stroke-dasharray="20 18" opacity="0"/>
+        <g id="s1-earth"></g>
+      </svg>
+      <div class="title main">WAS WÄRE, WENN<br/>DIE <span class="y">SONNE</span><br/><span class="r">VERSCHWINDET?</span></div>
+      <div class="title sub">⚠ DU HAST NUR 8 MINUTEN</div>
+    </div></div></section>
+
+    <!-- S2 Licht unterwegs, du merkst nichts -->
+    <section class="scene" id="s2"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f9be8"/><stop offset="1" stop-color="#cfe9ff"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-day)"/>
+        <g transform="translate(0,0)">
+          <rect x="60" y="470" width="960" height="300" rx="30" fill="rgba(11,11,34,.85)"/>
+          <circle cx="190" cy="620" r="80" fill="none" stroke="#ffd23f" stroke-width="6" stroke-dasharray="16 14"/>
+          <text class="lbl" x="190" y="740" text-anchor="middle" font-size="30" fill="#ffd23f">WEG</text>
+          <line x1="290" y1="620" x2="800" y2="620" stroke="#ffd23f" stroke-width="6" stroke-dasharray="10 14" opacity=".5"/>
+          <g id="s2-pulse"><rect x="290" y="604" width="140" height="32" rx="16" fill="#ffd23f"/></g>
+          <g id="s2-earth"></g>
+          <text class="lbl" x="545" y="560" text-anchor="middle" font-size="40" fill="#fff">8 MIN 20 SEK</text>
+        </g>
+        <circle cx="900" cy="320" r="70" fill="#fff6cf"/>
+        <rect y="1250" width="1080" height="670" fill="#4caf50"/>
+        <g id="s2-kid"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S3 Minute acht: Dunkelheit, Mond aus -->
+    <section class="scene" id="s3" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="url(#g-day)"/>
+        <circle id="s3-sun" cx="900" cy="320" r="70" fill="#fff6cf"/>
+        <rect y="1250" width="1080" height="670" fill="#4caf50"/>
+        <g id="s3-kid"></g>
+        <rect id="s3-dark" width="1080" height="1920" fill="#05040e" opacity="0"/>
+        <g id="s3-moon"><circle cx="300" cy="560" r="110" fill="#e9f0ff"/><circle cx="260" cy="530" r="20" fill="#c9cfe6"/><circle cx="330" cy="600" r="14" fill="#c9cfe6"/></g>
+        <g id="s3-stars"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S4 Erde fliegt geradeaus -->
+    <section class="scene" id="s4" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#05040e"/><g id="s4-stars"></g>
+        <circle cx="540" cy="900" r="360" fill="none" stroke="#3a3560" stroke-width="6" stroke-dasharray="22 16"/>
+        <circle cx="540" cy="900" r="40" fill="none" stroke="#ffd23f" stroke-width="5" stroke-dasharray="10 10"/>
+        <path id="s4-line" d="M900,900 L900,120" stroke="#3fd4ff" stroke-width="8" stroke-dasharray="20 14"/>
+        <g id="s4-earthwrap"><g id="s4-earth"></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S5 Tag eins: Pflanzen sterben -->
+    <section class="scene" id="s5" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0a0d24"/><g id="s5-stars"></g>
+        <rect y="1150" width="1080" height="770" fill="#1b2a24"/><g id="s5-plants"></g></svg>
+    </div></div></section>
+
+    <!-- S6 Eine Woche: −15 °C -->
+    <section class="scene" id="s6"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0a1030"/><g id="s6-stars"></g><g id="s6-city"></g>
+        <rect y="1230" width="1080" height="690" fill="#cfe2f5"/><g id="s6-snow" fill="#fff"></g>
+        <g transform="translate(880,0)"><rect x="-40" y="470" width="80" height="560" rx="40" fill="#f2f0f7" stroke="#0d0b18" stroke-width="8"/><circle cx="0" cy="1040" r="66" fill="#f2f0f7" stroke="#0d0b18" stroke-width="8"/><rect id="s6-merc" x="-20" y="800" width="40" height="240" rx="20" fill="#3fd4ff"/><circle cx="0" cy="1040" r="46" fill="#3fd4ff"/></g>
+        <text id="s6-temp" class="lbl" x="880" y="445" text-anchor="middle" font-size="72" fill="#fff" stroke="#0d0b18" stroke-width="12" paint-order="stroke">+15°C</text>
+      </svg>
+    </div></div></section>
+
+    <!-- S7 Ein Jahr: Ozeane frieren zu -->
+    <section class="scene" id="s7"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sea7" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f5fa6"/><stop offset="1" stop-color="#071c3a"/></linearGradient></defs>
+        <rect width="1080" height="700" fill="#05040e"/><g id="s7-stars"></g>
+        <rect y="700" width="1080" height="1220" fill="url(#g-sea7)"/>
+        <g id="s7-ice"><rect y="700" width="1080" height="260" fill="#e9f5ff"/><g stroke="#9fc6e8" stroke-width="6" fill="none"><path d="M60,760 l120,60 l-40,70 M400,730 l-60,110 l90,60 M720,780 l110,40 l-20,90 M980,740 l-80,80"/></g></g>
+        <g id="s7-fish" fill="#9fb7c9"></g>
+        <text id="s7-temp" class="lbl" x="540" y="560" text-anchor="middle" font-size="110" fill="#3fd4ff" stroke="#0d0b18" stroke-width="14" paint-order="stroke">−15°C</text>
+      </svg>
+    </div></div></section>
+
+    <!-- S8 Tiefsee: heiße Quellen -->
+    <section class="scene" id="s8" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-deep" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b2a5a"/><stop offset="1" stop-color="#02040c"/></linearGradient>
+          <radialGradient id="g-glow"><stop offset="0" stop-color="#ff9f1c" stop-opacity=".8"/><stop offset="1" stop-color="#ff9f1c" stop-opacity="0"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-deep)"/>
+        <g id="s8-down" fill="#3fd4ff" opacity=".35"></g>
+        <path d="M0,1180 Q300,1120 540,1170 T1080,1150 L1080,1920 L0,1920Z" fill="#1a1410"/>
+        <g id="s8-vents"></g><g id="s8-smoke" fill="#2a2228"></g><g id="s8-worms"></g>
+        <g id="s8-badge"><g transform="translate(540,620)"><rect x="-330" y="-70" width="660" height="140" rx="70" fill="#3ee08f" stroke="#0d0b18" stroke-width="8"/><text class="lbl" x="0" y="24" text-anchor="middle" font-size="58" fill="#0d0b18">LEBEN OHNE SONNE</text></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S10 Endkarte: offene Frage -->
+    <section class="scene" id="s10" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-sun10"><stop offset="0" stop-color="#fffbe6"/><stop offset=".5" stop-color="#ffd23f"/><stop offset="1" stop-color="#ff7a2f" stop-opacity="0"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="#14122b"/><g id="s10-stars"></g>
+        <circle cx="540" cy="1000" r="260" fill="url(#g-sun10)"/>
+        <text class="lbl" x="540" y="1030" text-anchor="middle" font-size="110" fill="#0d0b18">08:20</text>
+      </svg>
+      <div class="ec-q" style="font-size:76px">WAS WÜRDEST <span class="y">DU</span> IN DEINEN LETZTEN 8 MINUTEN LICHT MACHEN?</div>
+      <div class="ec-cta" style="top:1360px">SCHREIB'S IN DIE KOMMENTARE</div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="56.66" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="59.26" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+
+    /* S1 */
+    E.stars($("#s1-stars"), 90, 3);
+    const e1 = E.globe($("#s1-earth"), { cx: 900, cy: 1020, r: 70, id: "e1", seed: 4 });
+    tl.fromTo("#s1-sun", { scale: 1, svgOrigin: "540 620" }, { scale: 0, duration: .4, ease: "back.in(2)" }, 1.7);
+    tl.fromTo("#s1-ghost", { opacity: 0 }, { opacity: .8, duration: .3, immediateRender: false }, 2.0);
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+
+    /* S2 */
+    E.globe($("#s2-earth"), { cx: 880, cy: 620, r: 70, id: "e2", seed: 4 });
+    E.person($("#s2-kid"), { x: 540, y: 1720, s: 1.05, face: "happy", arms: "down" });
+    tl.fromTo("#s2-pulse", { x: 0 }, { x: 330, duration: Math.max(1, at("min8") - at("nichts")), ease: "none" }, at("nichts", -0.2));
+
+    /* S3 */
+    E.person($("#s3-kid"), { x: 540, y: 1720, s: 1.05, face: "shock", arms: "down" });
+    E.stars($("#s3-stars"), 70, 7, 1100);
+    tl.set(["#s3-moon", "#s3-stars"], { autoAlpha: 0 }, 0);
+    tl.to("#s3-dark", { opacity: .93, duration: .15 }, cs("dunkel", 1));
+    tl.set("#s3-sun", { autoAlpha: 0 }, cs("dunkel", 1));
+    tl.to(["#s3-moon", "#s3-stars"], { autoAlpha: 1, duration: .3 }, cs("dunkel", 1, .2));
+    tl.to("#s3-moon", { autoAlpha: 0, duration: .6 }, cs("dunkel", 3));
+
+    /* S4 */
+    E.stars($("#s4-stars"), 90, 13);
+    E.globe($("#s4-earth"), { cx: 900, cy: 900, r: 60, id: "e4", seed: 4 });
+    tl.fromTo("#s4-line", { attr: { "stroke-dashoffset": 0 }, autoAlpha: 0 }, { autoAlpha: 1, duration: .3 }, at("schleuder", .2));
+    tl.fromTo("#s4-earthwrap", { y: 0 }, { y: -780, duration: Math.max(2, end("schleuder") - at("schleuder") + .5), ease: "power1.in" }, at("schleuder", .3));
+
+    /* S5 */
+    E.stars($("#s5-stars"), 60, 17, 1100);
+    const P5 = $("#s5-plants");
+    for (let i = 0; i < 7; i++) { const x = 110 + i * 145, h = 260 + (i % 3) * 60, g = svg("g", {}, P5), head = svg("g", {}, g);
+      svg("path", { d: `M${x},1400 Q${x - 20},${1400 - h / 2} ${x},${1400 - h}`, stroke: "#3fae5a", "stroke-width": 12, fill: "none" }, g);
+      svg("ellipse", { cx: x - 30, cy: 1400 - h * .45, rx: 34, ry: 14, fill: "#3fae5a", transform: `rotate(-30 ${x - 30} ${1400 - h * .45})` }, g);
+      for (let k = 0; k < 6; k++) { const a = (k / 6) * Math.PI * 2; svg("ellipse", { cx: x + Math.cos(a) * 30, cy: 1400 - h + Math.sin(a) * 30, rx: 22, ry: 14, fill: ["#ffd23f", "#ff7f9e", "#c26bff"][i % 3], transform: `rotate(${(a * 180) / Math.PI} ${x + Math.cos(a) * 30} ${1400 - h + Math.sin(a) * 30})` }, head); }
+      svg("circle", { cx: x, cy: 1400 - h, r: 18, fill: "#7a4a1a" }, head);
+      tl.to(g, { rotation: i % 2 ? 38 : -38, svgOrigin: `${x} 1400`, duration: 1.6, ease: "power2.in" }, cs("pflanzen", 3, i * .08));
+      tl.to(head.querySelectorAll("ellipse"), { fill: "#6b5a3a", duration: 1.2 }, cs("pflanzen", 1, i * .06));
+      tl.to(g.querySelectorAll("path, g > ellipse"), { stroke: "#6b5a3a", fill: "#6b5a3a", duration: 1.2 }, cs("pflanzen", 1, i * .06)); }
+
+    /* S6 */
+    E.stars($("#s6-stars"), 70, 23, 1000);
+    E.skyline($("#s6-city"), { seed: 31, base: 1240, wMin: 100, wMax: 180, hMin: 220, hMax: 600, fill: "#141a38", gap: 6 });
+    const S6 = $("#s6-snow"), r6 = E.rng(5);
+    for (let i = 0; i < 70; i++) { const x = r6() * 1080, y = r6() * 1300, c = svg("circle", { cx: x, cy: y, r: 3 + r6() * 5, opacity: .8 }, S6); tl.fromTo(c, { y: -200 }, { y: 600, x: (r6() - .5) * 120, duration: 4 + r6() * 2, ease: "none" }, at("woche", -0.2)); }
+    const m6 = $("#s6-merc"), t6 = $("#s6-temp"), tK = at("kalt");
+    E.clock(tl, (t) => { const k = Math.max(0, Math.min(1, (t - tK) / 1.2)), v = 15 + (-15 - 15) * k, h = 40 + (v + 25) * 6;
+      m6.setAttribute("y", 1040 - h); m6.setAttribute("height", h); t6.textContent = (v >= 0 ? "+" : "−") + Math.abs(Math.round(v)) + "°C"; });
+
+    /* S7 */
+    E.stars($("#s7-stars"), 50, 29, 680);
+    const F7 = $("#s7-fish"); [[260, 1300], [700, 1450], [480, 1650]].forEach(([x, y], i) => { const g = svg("g", {}, F7); svg("ellipse", { cx: x, cy: y, rx: 46, ry: 20 }, g); svg("path", { d: `M${x - 44},${y} l-30,-20 l0,40z` }, g); tl.fromTo(g, { x: -80 }, { x: 80, duration: 2, repeat: 2, yoyo: true, ease: "sine.inOut" }, at("jahr", i * .3)); });
+    tl.fromTo("#s7-ice", { scaleY: 0, svgOrigin: "540 700" }, { scaleY: 1, duration: Math.max(1.2, end("eis") - cs("eis", 2)), ease: "power1.out" }, cs("eis", 2));
+    const t7 = $("#s7-temp"), tE = cs("eis", 1);
+    E.clock(tl, (t) => { const k = Math.max(0, Math.min(1, (t - tE) / 1.0)); t7.textContent = "−" + Math.round(15 + 55 * k) + "°C"; });
+
+    /* S8 */
+    const D8 = $("#s8-down"); for (let i = 0; i < 30; i++) { const c = svg("circle", { cx: (i * 137) % 1080, cy: (i * 233) % 1100, r: 3 }, D8); tl.fromTo(c, { y: 0 }, { y: 120, duration: 4, ease: "none" }, at("aber", -0.2)); }
+    const V8 = $("#s8-vents"), M8 = $("#s8-smoke"), W8 = $("#s8-worms");
+    [[300, 1180, 1.0], [720, 1160, 1.25]].forEach(([x, base, s], i) => {
+      svg("circle", { cx: x, cy: base - 260 * s, r: 180 * s, fill: "url(#g-glow)" }, V8);
+      svg("path", { d: `M${x - 70 * s},${base + 40} L${x - 34 * s},${base - 260 * s} L${x + 34 * s},${base - 260 * s} L${x + 70 * s},${base + 40}Z`, fill: "#3a2a22" }, V8);
+      svg("ellipse", { cx: x, cy: base - 258 * s, rx: 40 * s, ry: 12 * s, fill: "#ff7a2f" }, V8);
+      for (let k = 0; k < 6; k++) { const c = svg("circle", { cx: x, cy: base - 280 * s, r: 40 * s }, M8); tl.fromTo(c, { y: 0, scale: .4, opacity: .9, svgOrigin: `${x} ${base - 280 * s}` }, { y: -420, x: (k - 2.5) * 30, scale: 1.6, opacity: 0, duration: 2.2, repeat: 2, ease: "power1.out" }, at("aber", k * .35 + i * .2)); }
+      for (let k = 0; k < 5; k++) { const wx = x - 130 * s + k * 34 * s + (k > 2 ? 140 * s : 0), wy = base + 10, h = (90 + (k % 3) * 30) * s;
+        const w = svg("g", {}, W8); svg("rect", { x: wx - 7, y: wy - h, width: 14, height: h, rx: 7, fill: "#f2f0f7" }, w); svg("circle", { cx: wx, cy: wy - h, r: 13, fill: "#ff3b3b" }, w);
+        tl.fromTo(w, { rotation: -6, svgOrigin: `${wx} ${wy}` }, { rotation: 6, duration: .8, repeat: 5, yoyo: true, ease: "sine.inOut" }, at("quellen", k * .1)); }
+    });
+    tl.set("#s8-badge", { autoAlpha: 0 }, 0);
+    tl.fromTo("#s8-badge", { autoAlpha: 0, scale: .4, svgOrigin: "540 620" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)", immediateRender: false }, cs("quellen", 2));
+
+    /* S10 */
+    E.stars($("#s10-stars"), 60, 37);
+    E.buildEndcard(tl, "s10", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>

@@ -85,3 +85,21 @@ html, body {
 #flash { position: absolute; inset: 0; background: #fff; opacity: 0; z-index: 60; pointer-events: none; }
 #vignette { position: absolute; inset: 0; z-index: 30; pointer-events: none; background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(5,3,15,.55) 100%); }
 #grain { position: absolute; inset: 0; z-index: 31; pointer-events: none; opacity: .07; mix-blend-mode: overlay; }
+
+/* ---------- Countdown im HUD ---------- */
+.hud-num.cd { font-size: 84px; letter-spacing: 1px; }
+
+/* ---------- Endkarte (Abstimmung A/B/C oder offene Frage) ---------- */
+.ec-q { position: absolute; top: 300px; left: 40px; right: 40px; text-align: center; font-weight: 900; font-size: 86px; line-height: 1.02; text-transform: uppercase; color: #fff; -webkit-text-stroke: 14px #0d0b18; paint-order: stroke fill; }
+.ec-q .y { color: var(--yellow); } .ec-q .r { color: var(--red); } .ec-q .g { color: var(--green); }
+.ec-opt { position: absolute; left: 90px; right: 90px; height: 150px; border-radius: 22px; border: 5px solid; display: flex; align-items: center; padding: 0 34px; gap: 28px; font-weight: 900; text-transform: uppercase; }
+.ec-opt .k { font-size: 70px; width: 70px; text-align: center; }
+.ec-opt .t { font-size: 52px; color: #fff; line-height: 1.0; }
+.ec-opt .t small { display: block; font-size: 24px; font-weight: 800; letter-spacing: 1px; opacity: .85; margin-top: 6px; }
+.ec-opt.a { top: 720px; border-color: #3fd4ff; background: rgba(8,40,60,.85); color: #3fd4ff; }
+.ec-opt.b { top: 930px; border-color: #3ee08f; background: rgba(6,40,24,.85); color: #3ee08f; }
+.ec-opt.c { top: 1140px; border-color: #ffd23f; background: rgba(46,36,4,.85); color: #ffd23f; }
+.ec-cta { position: absolute; top: 1340px; left: 60px; right: 60px; text-align: center; font-weight: 900; font-size: 40px; line-height: 1.15; color: #3fd4ff; text-transform: uppercase; -webkit-text-stroke: 8px #0d0b18; paint-order: stroke fill; }
+.ec-ring { position: absolute; top: 120px; right: 70px; width: 130px; height: 130px; }
+.ec-ring .ec-n { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 64px; color: #fff; }
+.ec-big { position: absolute; left: 0; right: 0; text-align: center; font-weight: 900; text-transform: uppercase; color: #fff; -webkit-text-stroke: 12px #0d0b18; paint-order: stroke fill; }

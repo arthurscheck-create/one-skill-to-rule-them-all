@@ -25,6 +25,15 @@
       <circle cx="60" cy="-452" r="15" fill="#ff7f86" opacity=".45"/>
     </g>
 
+    <g id="p-hairlong">
+      <path d="M-108,-500 C-118,-612 118,-612 108,-500 L126,-372 Q60,-344 0,-352 Q-60,-344 -126,-372Z" fill="var(--hair,#5b3a22)"/>
+    </g>
+    <g id="f-happy">
+      <circle cx="-32" cy="-490" r="9" fill="#1a1726"/><circle cx="32" cy="-490" r="9" fill="#1a1726"/>
+      <path d="M-56,-524 Q-34,-536 -14,-526" stroke="#3b2614" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M56,-524 Q34,-536 14,-526" stroke="#3b2614" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M-30,-446 Q0,-414 30,-446" stroke="#5a2a2a" stroke-width="7" fill="#fff" stroke-linecap="round"/>
+    </g>
     <g id="f-worried">
       <circle cx="-34" cy="-492" r="18" fill="#fff"/><circle cx="34" cy="-492" r="18" fill="#fff"/>
       <circle cx="-32" cy="-488" r="8.5" fill="#1a1726"/><circle cx="32" cy="-488" r="8.5" fill="#1a1726"/>
@@ -136,6 +145,7 @@
     if (o.skin) style += `--skin:${o.skin};`;
     if (style) g.setAttribute("style", style);
     const inner = window.Engine.svg("g", {}, g);
+    if (o.long) window.Engine.svg("use", { href: "#p-hairlong" }, inner);
     window.Engine.svg("use", { href: "#p-body" }, inner);
     window.Engine.svg("use", { href: "#a-" + (o.arms || "down") }, inner);
     window.Engine.svg("use", { href: "#f-" + (o.face || "worried") }, inner);
@@ -146,5 +156,50 @@
     const g = window.Engine.svg("g", { transform: `translate(${x},${y}) scale(${s || 1})` }, parent);
     window.Engine.svg("use", Object.assign({ href: "#" + ref }, extra || {}), g);
     return g;
+  };
+})();
+
+/* ---------- Bausatz: Skyline, Sterne, Erdkugel ---------- */
+(function () {
+  const E = window.Engine, svg = E.svg;
+  /** Skyline mit Fenstern. o: {seed, base, x0, x1, wMin, wMax, hMin, hMax, fill, gap, lit, win, litColor, lightsInto} → Liste der Fenster */
+  E.skyline = function (g, o) {
+    const r = E.rng(o.seed || 1); let x = o.x0 || 0; const out = [];
+    const L = o.lightsInto || g;
+    while (x < (o.x1 || 1080)) {
+      const w = o.wMin + r() * (o.wMax - o.wMin), h = o.hMin + r() * (o.hMax - o.hMin), y = o.base - h;
+      svg("rect", { x, y, width: w, height: h + 4, fill: o.fill }, g);
+      if (o.lit) { const c = o.win || 14; for (let wy = y + c; wy < o.base - c; wy += c * 2) for (let wx = x + c * .8; wx < x + w - c; wx += c * 1.8) if (r() < o.lit) out.push(svg("rect", { x: wx, y: wy, width: c, height: c * 1.2, fill: r() < .85 ? (o.litColor || "#ffd27a") : "#ff8a5c" }, L)); }
+      x += w + (o.gap || 0);
+    }
+    return out;
+  };
+  /** Sternenhimmel */
+  E.stars = function (g, n, seed, h) { const r = E.rng(seed || 3); for (let i = 0; i < n; i++) svg("circle", { cx: r() * 1080, cy: r() * (h || 1920), r: 1 + r() * 2.6, fill: "#fff", opacity: .25 + r() * .6 }, g); };
+  /** Erdkugel mit drehbaren Kontinenten. Rückgabe {land, period}: tl.fromTo(land,{x:0},{x:-period,...}) dreht sie. */
+  E.globe = function (g, o) {
+    const cx = o.cx, cy = o.cy, R = o.r, id = o.id || "gl" + Math.round(cx + cy);
+    const defs = svg("defs", {}, g);
+    const cp = svg("clipPath", { id: id + "-c" }, defs); svg("circle", { cx, cy, r: R }, cp);
+    const rg = svg("radialGradient", { id: id + "-o", cx: ".35", cy: ".3", r: ".8" }, defs);
+    svg("stop", { offset: "0", "stop-color": "#4fa8ff" }, rg); svg("stop", { offset: "1", "stop-color": "#123a86" }, rg);
+    const sh = svg("radialGradient", { id: id + "-s", cx: ".3", cy: ".3", r: ".9" }, defs);
+    svg("stop", { offset: ".55", "stop-color": "#000", "stop-opacity": "0" }, sh); svg("stop", { offset: "1", "stop-color": "#000", "stop-opacity": ".6" }, sh);
+    svg("circle", { cx, cy, r: R * 1.08, fill: "#6fd6ff", opacity: .18 }, g);
+    const body = svg("g", { "clip-path": `url(#${id}-c)` }, g);
+    svg("circle", { cx, cy, r: R, fill: `url(#${id}-o)` }, body);
+    const land = svg("g", {}, body);
+    const W = R * 4, r = E.rng(o.seed || 7);
+    const blobs = [];
+    for (let i = 0; i < 7; i++) blobs.push({ x: (i / 7) * W + r() * R * .3, y: cy - R * .7 + r() * R * 1.4, s: R * (.18 + r() * .28) });
+    [0, W].forEach((dx) => blobs.forEach((b) => {
+      const p = [];
+      for (let k = 0; k < 9; k++) { const a = (k / 9) * Math.PI * 2, rr = b.s * (.7 + ((k * 37 + b.x) % 7) / 14); p.push([cx - R + b.x + dx + Math.cos(a) * rr * 1.3, b.y + Math.sin(a) * rr]); }
+      svg("path", { d: "M" + p.map((q) => q.map((v) => v.toFixed(1)).join(",")).join(" L") + "Z", fill: "#3fae5a", stroke: "#2e8a47", "stroke-width": 6, "stroke-linejoin": "round" }, land);
+    }));
+    svg("ellipse", { cx, cy: cy - R * .92, rx: R * .55, ry: R * .14, fill: "#eef6ff", opacity: .9 }, body);
+    svg("ellipse", { cx, cy: cy + R * .94, rx: R * .5, ry: R * .12, fill: "#eef6ff", opacity: .9 }, body);
+    svg("circle", { cx, cy, r: R, fill: `url(#${id}-s)` }, body);
+    return { land, period: W };
   };
 })();
