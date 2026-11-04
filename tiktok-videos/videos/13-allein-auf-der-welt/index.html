@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn es keine Menschen mehr gibt – außer dir?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 92px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="67.49" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: leere Straße -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2258"/><stop offset=".7" stop-color="#8a4a6a"/><stop offset="1" stop-color="#e08a5a"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-dusk)"/><g id="s1-city"></g><rect y="1100" width="1080" height="820" fill="#3a3a48"/><g id="s1-road" fill="#ffd23f"></g>
+        <g id="s1-cars"></g><g id="s1-light"></g><g id="s1-kid"></g><g id="s1-leaves"></g>
+      </svg>
+      <div class="title main">DU BIST<br/>DER <span class="r">LETZTE</span><br/>MENSCH</div>
+      <div class="title sub">⚠ ALLE ANDEREN SIND WEG</div>
+    </div></div></section>
+
+    <!-- S2 Stunde eins: Stille -->
+    <section class="scene" id="s2" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="url(#g-dusk)"/><g id="s2-city"></g><rect y="1000" width="1080" height="920" fill="#3a3a48"/>
+        <g id="s2-cars"></g><g transform="translate(0,110)"><g id="s2-plane"></g></g><g id="s2-meter"></g></svg>
+    </div></div></section>
+
+    <!-- S3 Niemand geht ran -->
+    <section class="scene" id="s3" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/><g id="s3-rings" fill="none" stroke="#3ee08f" stroke-width="8"></g><g id="s3-phone"></g></svg>
+    </div></div></section>
+
+    <!-- S4 Strom aus -->
+    <section class="scene" id="s4"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122c"/><g id="s4-plant"></g><g id="s4-steam"></g><g id="s4-city"></g><g id="s4-lights"></g>
+        <rect id="s4-dark" width="1080" height="1920" fill="#05040e" opacity="0"/></svg>
+    </div></div></section>
+
+    <!-- S5 U-Bahn New York flutet -->
+    <section class="scene" id="s5" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14131f"/><g id="s5-tunnel"></g>
+        <defs><clipPath id="c5"><rect x="0" y="420" width="1080" height="800"/></clipPath></defs>
+        <g clip-path="url(#c5)"><g id="s5-water"><rect x="0" y="1180" width="1080" height="900" fill="#2a8fd6" opacity=".75"/><path d="M0,1180 q60,-20 120,0 q60,20 120,0 q60,-20 120,0 q60,20 120,0 q60,-20 120,0 q60,20 120,0 q60,-20 120,0 q60,20 120,0 q60,-20 120,0 L1080,1200 L0,1200Z" fill="#7fc3ff"/></g></g>
+        <g id="s5-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S6 Supermarkt: Obst fault, Dosen halten -->
+    <section class="scene" id="s6" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#e9e4d8"/><g id="s6-shelf"></g><g id="s6-fresh"></g><g id="s6-flies"></g><g id="s6-cans"></g><g id="s6-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S7 Tankstelle -->
+    <section class="scene" id="s7" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="url(#g-dusk)"/><rect y="1180" width="1080" height="740" fill="#5a5a66"/><g id="s7-station"></g><g id="s7-badge"></g><g id="s7-walk"><g id="s7-kid"></g></g></svg>
+    </div></div></section>
+
+    <!-- S8 Natur holt sich alles zurück -->
+    <section class="scene" id="s8" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#8fc9a8"/><g id="s8-city"></g><g id="s8-vines"></g><rect y="1150" width="1080" height="770" fill="#5a7a4a"/><g id="s8-wolves"></g><g id="s8-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S9 Einsamkeit -->
+    <section class="scene" id="s9" data-drift="1.1"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0d0b1e"/><g id="s9-stars"></g><g id="s9-city"></g><rect y="1180" width="1080" height="740" fill="#1b1838"/>
+        <g id="s9-lamp"></g><g id="s9-kid"></g></svg>
+    </div></div></section>
+
+    <!-- S10 15 Zigaretten -->
+    <section class="scene" id="s10" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/><g id="s10-cigs"></g><g id="s10-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S11 Endkarte -->
+    <section class="scene" id="s11" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s11-stars"></g></svg>
+      <div class="ec-q" style="font-size:80px">WAS WÜRDEST <span class="y">DU</span> ALS ERSTES TUN?</div>
+      <div class="ec-opt a"><span class="k">A</span><span class="t">ALLES PLÜNDERN<small>Endlich ist alles gratis</small></span></div>
+      <div class="ec-opt b"><span class="k">B</span><span class="t">EINEN HUND SUCHEN<small>Damit ich nicht allein bin</small></span></div>
+      <div class="ec-opt c"><span class="k">C</span><span class="t">FUNKSPRUCH SENDEN<small>Vielleicht hört mich wer</small></span></div>
+      <div class="ec-cta">SCHREIB A, B ODER C IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG MIR – DU BIST NICHT ALLEIN</span></div>
+      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="65.2" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="67.49" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const SHIRTS = ["#e8463c", "#5c6390", "#3ee08f", "#ffd23f", "#3fd4ff", "#b05cd6", "#ff8a5c"];
+    function badge(g, x, y, text, color, size, sub) {
+      const b = svg("g", { transform: `translate(${x},${y})` }, g);
+      const fs = size || 64, w = text.length * fs * .66 + 80, h = fs * 1.6 + (sub ? 50 : 0);
+      svg("rect", { x: -w / 2, y: -h / 2, width: w, height: h, rx: 24, fill: "rgba(18,8,16,.94)", stroke: color, "stroke-width": 8 }, b);
+      const t = svg("text", { x: 0, y: sub ? -6 : fs * .36, "text-anchor": "middle", class: "lbl", "font-size": fs, fill: color }, b); t.textContent = text;
+      if (sub) { const s = svg("text", { x: 0, y: h / 2 - 26, "text-anchor": "middle", class: "lbl", "font-size": 30, fill: "#fff" }, b); s.textContent = sub; }
+      return b;
+    }
+    const pop = (el, t, origin) => { tl.set(el, { autoAlpha: 0 }, 0); tl.fromTo(el, { autoAlpha: 1, scale: .3, svgOrigin: origin }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, t); };
+    const cross = (g, cx, cy, s) => { const d = `M${cx - s},${cy - s} L${cx + s},${cy + s} M${cx + s},${cy - s} L${cx - s},${cy + s}`; svg("path", { d, stroke: "#0d0b18", "stroke-width": s * .42, "stroke-linecap": "round" }, g); svg("path", { d, stroke: "#ff3b3b", "stroke-width": s * .27, "stroke-linecap": "round" }, g); };
+    const car = (g, x, y, c, s) => { const k = svg("g", { transform: `translate(${x},${y}) scale(${s || 1})` }, g);
+      svg("rect", { x: -95, y: -40, width: 190, height: 70, rx: 22, fill: c, stroke: "#0d0b18", "stroke-width": 6 }, k); svg("path", { d: "M-60,-40 L-35,-85 L45,-85 L70,-40Z", fill: c, stroke: "#0d0b18", "stroke-width": 6 }, k);
+      svg("path", { d: "M-48,-44 L-30,-76 L40,-76 L58,-44Z", fill: "#bfe6ff" }, k); svg("circle", { cx: -55, cy: 32, r: 22, fill: "#14131f" }, k); svg("circle", { cx: 55, cy: 32, r: 22, fill: "#14131f" }, k); return k; };
+    const wolf = (g, x, y, s, flip) => { const w = svg("g", { transform: `translate(${x},${y}) scale(${(flip ? -1 : 1) * s},${s})` }, g);
+      svg("path", { d: "M-90,-20 Q-130,-60 -150,-30", fill: "none", stroke: "#6a6a76", "stroke-width": 18, "stroke-linecap": "round" }, w);
+      svg("ellipse", { cx: 0, cy: -40, rx: 100, ry: 42, fill: "#7a7a86", stroke: "#0d0b18", "stroke-width": 5 }, w);
+      [-70, -40, 40, 70].forEach((lx) => svg("rect", { x: lx - 9, y: -10, width: 18, height: 60, rx: 6, fill: "#6a6a76" }, w));
+      svg("circle", { cx: 100, cy: -80, r: 34, fill: "#7a7a86", stroke: "#0d0b18", "stroke-width": 5 }, w);
+      svg("path", { d: "M120,-80 L165,-68 L120,-58Z", fill: "#7a7a86", stroke: "#0d0b18", "stroke-width": 4 }, w);
+      svg("path", { d: "M84,-108 L92,-140 L106,-110Z M104,-110 L118,-138 L124,-104Z", fill: "#6a6a76", stroke: "#0d0b18", "stroke-width": 4 }, w);
+      svg("circle", { cx: 112, cy: -86, r: 5, fill: "#ffd23f" }, w); return w; };
+
+    /* S1 Hook – Frame 0 in Bewegung: Blätter/Papier treiben, Ampel blinkt */
+    E.skyline($("#s1-city"), { seed: 13, base: 1110, wMin: 90, wMax: 170, hMin: 260, hMax: 620, fill: "#2b2552", gap: 6, lit: 0 });
+    for (let i = 0; i < 8; i++) svg("rect", { x: 30 + i * 140, y: 1480, width: 80, height: 14 }, $("#s1-road"));
+    const CA = $("#s1-cars"); car(CA, 180, 1250, "#e8463c", .9); car(CA, 900, 1300, "#3fd4ff", 1); car(CA, 700, 1650, "#ffd23f", 1.2);
+    const LT = $("#s1-light"); svg("rect", { x: 96, y: 880, width: 14, height: 380, fill: "#2b2a38" }, LT); svg("rect", { x: 70, y: 800, width: 66, height: 150, rx: 14, fill: "#14131f" }, LT);
+    const amb = svg("circle", { cx: 103, cy: 875, r: 22, fill: "#ffb300" }, LT);
+    E.clock(tl, (t) => amb.setAttribute("opacity", Math.floor(t * 1.6) % 2 ? .15 : 1));
+    E.person($("#s1-kid"), { x: 540, y: 1180, s: .62, face: "shock", arms: "down", shirt: "#3ee08f" });
+    { const r = E.rng(17), LV = $("#s1-leaves"), ls = [];
+      for (let i = 0; i < 24; i++) { const c = ["#c48a3a", "#8a5a2e", "#e8d8b0", "#ffd23f"][i % 4]; const p = svg("path", { d: "M0,0 q12,-14 24,0 q-12,14 -24,0Z", fill: c }, LV); ls.push([p, r() * 1300, 400 + r() * 1300, 120 + r() * 160, r() * 6]); }
+      E.clock(tl, (t) => ls.forEach(([p, x0, y0, v, ph]) => { const x = ((x0 + v * t) % 1300) - 120, y = y0 + Math.sin(t * 2 + ph) * 40; p.setAttribute("transform", `translate(${x.toFixed(1)},${y.toFixed(1)}) rotate(${((t * 140 + ph * 60) % 360).toFixed(0)})`); })); }
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.05);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.5);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
+
+    /* S2 Stille */
+    E.skyline($("#s2-city"), { seed: 21, base: 1010, wMin: 90, wMax: 170, hMin: 220, hMax: 520, fill: "#2b2552", gap: 6, lit: 0 });
+    const C2 = $("#s2-cars"); [[160, 1120, "#5c6390"], [460, 1150, "#e8463c"], [800, 1110, "#3ee08f"], [300, 1350, "#ffd23f"], [760, 1380, "#b05cd6"]].forEach(([x, y, c]) => car(C2, x, y, c, 1));
+    const PL = $("#s2-plane"); svg("path", { d: "M700,560 L900,560 L940,540 L900,520 L700,520Z M780,520 L740,460 L780,460 L830,520Z", fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 5 }, PL);
+    cross(PL, 820, 540, 70); pop(PL, cs("stille", 1), "820 540");
+    const ME = $("#s2-meter"); svg("rect", { x: 240, y: 700, width: 600, height: 170, rx: 24, fill: "rgba(18,8,16,.9)", stroke: "#3fd4ff", "stroke-width": 6 }, ME);
+    svg("line", { x1: 280, y1: 785, x2: 800, y2: 785, stroke: "#3fd4ff", "stroke-width": 8 }, ME);
+    { const t = svg("text", { x: 540, y: 740, class: "lbl", "font-size": 32, fill: "#3fd4ff", "text-anchor": "middle" }, ME); t.textContent = "LAUTSTÄRKE"; const u = svg("text", { x: 540, y: 850, class: "lbl", "font-size": 40, fill: "#fff", "text-anchor": "middle" }, ME); u.textContent = "0 dB"; }
+    pop(ME, cs("stille", 3), "540 785");
+
+    /* S3 Niemand geht ran */
+    const R3 = $("#s3-rings"); for (let i = 0; i < 3; i++) { const c = svg("circle", { cx: 540, cy: 640, r: 90 }, R3); tl.fromTo(c, { attr: { r: 90 }, opacity: .9 }, { attr: { r: 330 }, opacity: 0, duration: 1.3, repeat: 1, ease: "power1.out", immediateRender: false }, at("handy", i * .35)); }
+    const PH = $("#s3-phone");
+    svg("rect", { x: 270, y: 470, width: 540, height: 760, rx: 60, fill: "#0d0b18", stroke: "#c9c3e6", "stroke-width": 10 }, PH);
+    svg("rect", { x: 300, y: 530, width: 480, height: 640, rx: 30, fill: "#2b2850" }, PH);
+    svg("circle", { cx: 540, cy: 660, r: 70, fill: "#5c6390" }, PH);
+    { const a = svg("text", { x: 540, y: 685, class: "lbl", "font-size": 70, fill: "#fff", "text-anchor": "middle" }, PH); a.textContent = "M"; const b = svg("text", { x: 540, y: 790, class: "lbl", "font-size": 52, fill: "#fff", "text-anchor": "middle" }, PH); b.textContent = "MAMA"; }
+    const st = svg("text", { x: 540, y: 850, class: "lbl", "font-size": 34, fill: "#3ee08f", "text-anchor": "middle" }, PH);
+    [["PAPA", 930], ["LISA", 1000], ["TIM", 1070]].forEach(([n, y], i) => { const g = svg("g", {}, PH); const t = svg("text", { x: 330, y, class: "lbl", "font-size": 34, fill: "#c9c3e6" }, g); t.textContent = n; const x = svg("text", { x: 755, y, class: "lbl", "font-size": 34, fill: "#ff3b3b", "text-anchor": "end" }, g); x.textContent = "✕ VERPASST"; pop(g, cs("handy", 1, i * .2), `540 ${y - 12}`); });
+    const tn = cs("handy", 2); E.clock(tl, (t) => { st.textContent = t < tn ? "ANRUF …" : "KEINE ANTWORT"; st.setAttribute("fill", t < tn ? "#3ee08f" : "#ff3b3b"); });
+    svg("rect", { x: 380, y: 1100, width: 320, height: 50, rx: 25, fill: "#e8463c" }, PH);
+
+    /* S4 Kraftwerk + Stadt */
+    const P4 = $("#s4-plant");
+    [[700, 260], [900, 220]].forEach(([x, w]) => svg("path", { d: `M${x - w / 2},1000 C${x - w / 3},800 ${x - w / 3},700 ${x - w / 2.6},560 L${x + w / 2.6},560 C${x + w / 3},700 ${x + w / 3},800 ${x + w / 2},1000Z`, fill: "#5c5890", stroke: "#0d0b18", "stroke-width": 6 }, P4));
+    const S4 = $("#s4-steam"), steam = [];
+    for (let i = 0; i < 10; i++) { const x = (i % 2 ? 900 : 700) + (i % 3 - 1) * 30; const c = svg("circle", { cx: x, cy: 540, r: 50, fill: "#e9e4f2", opacity: .7 }, S4); steam.push(c); tl.fromTo(c, { y: 0, opacity: .7 }, { y: -260, opacity: 0, duration: 1.6, repeat: 3, ease: "none", immediateRender: false }, at("strom", -0.2 + i * .15)); }
+    tl.to(S4, { opacity: 0, duration: .5 }, cs("strom", 2, .4));
+    const L4 = E.skyline($("#s4-city"), { seed: 41, base: 1240, wMin: 80, wMax: 150, hMin: 200, hMax: 440, fill: "#2e2a58", gap: 6, lit: .8, win: 14, lightsInto: $("#s4-lights") });
+    const td = cs("strom", 4);
+    tl.fromTo(L4, { opacity: 1 }, { opacity: 0, duration: .05, stagger: { each: .003, from: "random" }, immediateRender: false }, td - .4);
+    tl.fromTo("#s4-dark", { opacity: 0 }, { opacity: .55, duration: .5, immediateRender: false }, td);
+
+    /* S5 U-Bahn */
+    const TU = $("#s5-tunnel");
+    svg("path", { d: "M60,1240 L60,700 Q60,430 540,430 Q1020,430 1020,700 L1020,1240Z", fill: "#3b3768", stroke: "#0d0b18", "stroke-width": 10 }, TU);
+    svg("path", { d: "M140,1240 L140,720 Q140,520 540,520 Q940,520 940,720 L940,1240Z", fill: "#2b2850" }, TU);
+    svg("rect", { x: 200, y: 820, width: 680, height: 300, rx: 30, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 8 }, TU);
+    for (let i = 0; i < 4; i++) svg("rect", { x: 240 + i * 160, y: 860, width: 120, height: 110, rx: 10, fill: "#7fc3ff" }, TU);
+    svg("rect", { x: 200, y: 1010, width: 680, height: 30, fill: "#e8463c" }, TU);
+    const sign = svg("g", {}, TU); svg("rect", { x: 380, y: 600, width: 320, height: 90, rx: 12, fill: "#14131f", stroke: "#fff", "stroke-width": 5 }, sign);
+    { const t = svg("text", { x: 540, y: 660, class: "lbl", "font-size": 46, fill: "#fff", "text-anchor": "middle" }, sign); t.textContent = "NEW YORK"; }
+    tl.fromTo("#s5-water", { y: 0 }, { y: -560, duration: Math.max(3, end("ubahn") - at("ubahn")), ease: "power1.in", immediateRender: true }, at("ubahn", 0));
+    const b5 = badge($("#s5-badge"), 540, 1170, "NACH 2 TAGEN ÜBERFLUTET", "#3fd4ff", 44); pop(b5, cs("ubahn", 5), "540 1170");
+
+    /* S6 Supermarkt */
+    const SH = $("#s6-shelf");
+    svg("rect", { x: 60, y: 470, width: 960, height: 760, rx: 20, fill: "#cfc6b0", stroke: "#0d0b18", "stroke-width": 8 }, SH);
+    [740, 1000].forEach((y) => svg("rect", { x: 60, y, width: 960, height: 24, fill: "#8a6a44" }, SH));
+    const FR = $("#s6-fresh"), fresh = [];
+    for (let i = 0; i < 10; i++) { const x = 130 + i * 86, c = ["#e8463c", "#3ee08f", "#ffd23f", "#ff8a5c", "#ff9ab0"][i % 5]; fresh.push(svg("circle", { cx: x, cy: 700, r: 36, fill: c, stroke: "#0d0b18", "stroke-width": 4 }, FR)); }
+    for (let i = 0; i < 5; i++) fresh.push(svg("rect", { x: 120 + i * 175, y: 905, width: 140, height: 80, rx: 20, fill: "#ff9ab0", stroke: "#0d0b18", "stroke-width": 4 }, FR));
+    const tr = cs("supermarkt", 4);
+    tl.to(fresh, { attr: { fill: "#6b5a3a" }, duration: .6, stagger: .03 }, tr);
+    const FL = $("#s6-flies"); for (let i = 0; i < 8; i++) { const f = svg("circle", { cx: 200 + i * 90, cy: 640, r: 7, fill: "#0d0b18" }, FL); tl.set(f, { autoAlpha: 0 }, 0); tl.fromTo(f, { autoAlpha: 1, x: 0, y: 0 }, { x: 30, y: -30, duration: .25, yoyo: true, repeat: 15, ease: "sine.inOut", immediateRender: false }, tr + .3 + i * .05); }
+    const CN = $("#s6-cans"), cans = [];
+    for (let i = 0; i < 7; i++) { const g = svg("g", {}, CN), x = 140 + i * 130; svg("rect", { x: x - 45, y: 1080, width: 90, height: 120, rx: 10, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 5 }, g); svg("rect", { x: x - 45, y: 1110, width: 90, height: 50, fill: ["#e8463c", "#3fd4ff", "#ffd23f"][i % 3] }, g); cans.push(g); }
+    const glow = svg("rect", { x: 80, y: 1060, width: 920, height: 160, rx: 20, fill: "none", stroke: "#3ee08f", "stroke-width": 10 }, CN); pop(glow, cs("dosen", 1), "540 1140");
+    const b6 = badge($("#s6-badge"), 540, 1290 - 90, "HÄLT JAHRELANG", "#3ee08f", 50); pop(b6, cs("dosen", 1, .2), "540 1200");
+    tl.to(fresh, { opacity: .5, duration: .3 }, at("dosen", 0));
+
+    /* S7 Tankstelle */
+    const TS = $("#s7-station");
+    svg("rect", { x: 80, y: 560, width: 920, height: 90, fill: "#e8463c", stroke: "#0d0b18", "stroke-width": 7 }, TS);
+    [200, 880].forEach((x) => svg("rect", { x: x - 20, y: 650, width: 40, height: 530, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 5 }, TS));
+    [420, 660].forEach((x) => { svg("rect", { x: x - 70, y: 860, width: 140, height: 320, rx: 16, fill: "#f2f0f7", stroke: "#0d0b18", "stroke-width": 6 }, TS); svg("rect", { x: x - 50, y: 890, width: 100, height: 70, rx: 8, fill: "#14131f" }, TS); svg("path", { d: `M${x + 70},960 q50,0 50,80 l0,80`, fill: "none", stroke: "#0d0b18", "stroke-width": 10 }, TS); });
+    { const t = svg("text", { x: 540, y: 622, class: "lbl", "font-size": 50, fill: "#fff", "text-anchor": "middle" }, TS); t.textContent = "TANKSTELLE"; }
+    const b7 = badge($("#s7-badge"), 540, 760, "HALTBAR: ~1 JAHR", "#ffd23f", 56); pop(b7, cs("benzin", 2), "540 760");
+    E.person($("#s7-kid"), { x: 120, y: 1300, s: .55, face: "worried", arms: "bag" });
+    tl.fromTo("#s7-walk", { x: -200 }, { x: 900, duration: 4, ease: "none", immediateRender: false }, cs("benzin", 5, -0.3));
+    tl.set("#s7-walk", { x: -400 }, 0);
+
+    /* S8 Natur */
+    const BL = E.skyline($("#s8-city"), { seed: 81, base: 1160, wMin: 110, wMax: 200, hMin: 300, hMax: 640, fill: "#8a8796", gap: 10, lit: 0 });
+    const VN = $("#s8-vines"), rv = E.rng(83);
+    for (let i = 0; i < 40; i++) { const x = rv() * 1080, y = 600 + rv() * 560, c = svg("circle", { cx: x, cy: y, r: 20 + rv() * 40, fill: rv() < .5 ? "#3a8a4a" : "#4caf50", opacity: .95 }, VN); tl.set(c, { scale: 0, svgOrigin: `${x} ${y}` }, 0); tl.to(c, { scale: 1, duration: .5, ease: "back.out(2)" }, at("natur", rv() * 2.5)); }
+    for (let i = 0; i < 6; i++) { const x = 90 + i * 180; svg("rect", { x: x - 14, y: 1050, width: 28, height: 130, fill: "#6b4a2e" }, VN); svg("circle", { cx: x, cy: 1020, r: 70, fill: "#2f7a3a" }, VN); }
+    const WO = $("#s8-wolves"); [[170, 1215, .9, 0], [500, 1240, 1.05, .3], [840, 1220, .85, .6]].forEach(([x, y, s, d]) => { const g = svg("g", {}, WO); wolf(g, x, y, s, false); tl.fromTo(g, { x: -700 }, { x: 0, duration: 1.6, ease: "power2.out", immediateRender: true }, cs("natur", 3, d)); });
+    const b8 = badge($("#s8-badge"), 540, 600, "BIS ZU 7× MEHR WÖLFE", "#3ee08f", 54); pop(b8, cs("natur", 5), "540 600");
+
+    /* S9 Einsamkeit */
+    E.stars($("#s9-stars"), 80, 91, 900);
+    E.skyline($("#s9-city"), { seed: 92, base: 1190, wMin: 90, wMax: 180, hMin: 260, hMax: 620, fill: "#15132c", gap: 6, lit: 0 });
+    const LA = $("#s9-lamp"); svg("path", { d: "M540,1180 L380,700 L700,700Z", fill: "#ffd27a", opacity: .18 }, LA); svg("rect", { x: 530, y: 660, width: 20, height: 520, fill: "#2b2a38" }, LA); svg("rect", { x: 500, y: 640, width: 80, height: 40, rx: 10, fill: "#ffd27a" }, LA);
+    svg("rect", { x: 380, y: 1100, width: 320, height: 26, rx: 8, fill: "#6b4a2e" }, LA); svg("rect", { x: 400, y: 1126, width: 16, height: 60, fill: "#3a2414" }, LA); svg("rect", { x: 664, y: 1126, width: 16, height: 60, fill: "#3a2414" }, LA);
+    E.person($("#s9-kid"), { x: 470, y: 1180, s: .55, face: "worried", arms: "down", shirt: "#3ee08f" });
+    tl.fromTo("#s9 .cam", { scale: 1 }, { scale: 1.25, duration: Math.max(3, end("einsam") - at("einsam") + 1), ease: "power1.inOut", immediateRender: false }, at("einsam", 0));
+
+    /* S10 Zigaretten */
+    const CG = $("#s10-cigs");
+    for (let i = 0; i < 15; i++) { const g = svg("g", {}, CG), x = 160 + (i % 5) * 190, y = 620 + Math.floor(i / 5) * 170, rot = (i * 37) % 21 - 10;
+      const c = svg("g", { transform: `rotate(${rot} ${x} ${y})` }, g); svg("rect", { x: x - 80, y: y - 16, width: 120, height: 32, rx: 6, fill: "#f2f0f7", stroke: "#0d0b18", "stroke-width": 4 }, c); svg("rect", { x: x + 40, y: y - 16, width: 45, height: 32, rx: 6, fill: "#e8a24a", stroke: "#0d0b18", "stroke-width": 4 }, c); svg("circle", { cx: x - 80, cy: y, r: 10, fill: "#ff6a3a" }, c);
+      pop(g, cs("zigaretten", 3, i * .09), `${x} ${y}`); }
+    const b10 = badge($("#s10-badge"), 540, 1170, "BIS ZU 15 ZIGARETTEN / TAG", "#ff3b3b", 44); pop(b10, cs("zigaretten", 5), "540 1170");
+
+    /* S11 */
+    E.stars($("#s11-stars"), 60, 111);
+    E.buildEndcard(tl, "s11", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookFx(tl, cs("kata", 2));
+    // HUD: Zeit seit dem Verschwinden (reine Funktion der Zeit)
+    const hn = $("#hud .hud-num"), K = [[at("tag2", -0.2), "2 TAGE"], [cs("supermarkt", 5), "3 WOCHEN"], [cs("benzin", 2), "1 JAHR"], [at("jahre", -0.2), "5 JAHRE"]];
+    E.clock(tl, (t) => { let v = "1 STD"; K.forEach(([a, s]) => { if (t >= a) v = s; }); hn.textContent = v; });
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>

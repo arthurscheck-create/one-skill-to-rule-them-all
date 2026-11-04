@@ -1,0 +1,36 @@
+# Skript + Timing für Video 13 (allein auf der Welt). Dramatischer Hook (hook/kata/loop), Folgen-Satz am Ende.
+import importlib.util
+spec = importlib.util.spec_from_file_location("b2", "/home/user/tiktok-videos/scripts/batch2_lib.py"); b2 = importlib.util.module_from_spec(spec); spec.loader.exec_module(b2)
+build, F = b2.build, b2.F
+build("13-allein-auf-der-welt", "Was wäre, wenn es keine Menschen mehr gibt – außer dir?", [
+ ("hook", ["Du wachst auf, und jeder Mensch auf der Erde ist verschwunden."], True),
+ ("kata", ["Klingt nach Freiheit.", "Doch schon bald", "wird es *gefährlich.*"], False),
+ ("loop", ["Und am Ende", "entscheidet ein Gefühl,", "ob du ^überlebst.^"], False),
+ ("std1", ["^Stunde eins.^"], False),
+ ("stille", ["Kein Auto,", "kein Flugzeug,", "kein Mensch.", "Nur *Stille.*"], False),
+ ("handy", ["Du rufst", "jeden an.", "*Niemand*", "geht ran."], False),
+ ("strom", ["Ohne Menschen", "schalten sich", "die Kraftwerke ab.", "Nach wenigen Stunden", "ist es *dunkel.*"], False),
+ ("tag2", ["^Tag zwei.^"], False),
+ ("ubahn", ["In New York", "läuft die U-Bahn", "voll Wasser.", "Ohne Pumpen", "ist sie nach ^zwei Tagen^", "*überflutet.*"], False),
+ ("supermarkt", ["Alle Supermärkte", "der Welt", "gehören dir.", "Aber Obst und Fleisch", "*verfaulen*", "in wenigen Wochen."], False),
+ ("dosen", ["Konserven", "halten ~jahrelang.~", "Die werden", "dein Essen."], False),
+ ("benzin", ["Und Benzin?", "Ist nach etwa", "^einem Jahr^", "unbrauchbar.", "Dann gehst du", "*zu Fuß.*"], False),
+ ("jahre", ["^Ein paar Jahre später.^"], False),
+ ("natur", ["Die Natur", "holt sich", "~alles~ zurück.", "In Tschernobyl", "leben heute", "bis zu ^siebenmal^", "mehr Wölfe", "als in Schutzgebieten."], False),
+ ("verrueckt", ["Und das", "^Verrückte?^"], False),
+ ("einsam", ["Das Gefährlichste", "ist nicht", "der Hunger.", "Sondern die", "*Einsamkeit.*"], False),
+ ("zigaretten", ["Studien zeigen:", "Sie schadet", "so sehr wie", "bis zu ^fünfzehn^", "^Zigaretten^", "am Tag."], False),
+ ("frage", ["Was würdest du als Erstes tun?"], True),
+ ("komm", ["Schreib A, B oder C in die Kommentare."], True),
+ ("folg", ["Und folg mir. Dann bist du wenigstens nicht allein."], True),
+], [("s1","hook",-0.3),("s2","std1",-0.2),("s3","handy",-0.2),("s4","strom",-0.2),("s5","tag2",-0.2),("s6","supermarkt",-0.2),("s7","benzin",-0.2),
+    ("s8","jahre",-0.2),("s9","verrueckt",-0.2),("s10","zigaretten",-0.2),("s11","frage",-0.3)],
+ {"show": F("std1",-0.2), "hide": F("frage",-0.3), "label": "ALLEIN SEIT", "unit": "", "sub": "WAS WÄRE WENN · FIKTION", "chipLabel": "VORRÄTE",
+  "steps": [{"at":"std1","off":-0.2,"value":0,"chip":100},{"at":"strom","off":1.5,"value":0,"chip":92},{"at":"supermarkt","off":2.5,"value":0,"chip":60},
+            {"at":"benzin","off":2.0,"value":0,"chip":38},{"at":"jahre","off":0.0,"value":0,"chip":22},{"at":"einsam","off":1.5,"value":0,"chip":12}]},
+ [{"type":"follow","at":"ubahn","off":0.4,"dur":2.8,"text":"FOLG FÜR MEHR <span class='y'>SZENARIEN</span>"},
+  {"type":"like","at":"natur","off":2.4,"dur":2.6,"text":"LIKE, WENN DU'S NICHT WUSSTEST"},
+  {"type":"comment","at":"komm","off":0,"dur":2.2,"text":"SCHREIB A, B ODER C"},
+  {"type":"follow","at":"folg","off":0,"dur":2.6,"text":"FOLG MIR – <span class='y'>DU BIST NICHT ALLEIN</span>"}],
+ [{"type":"riser","at":"hook","off":0.0},{"type":"flicker","at":"strom","off":2.0},{"type":"drip","at":"ubahn","off":0.6},{"type":"glitch","at":"supermarkt","off":2.4},
+  {"type":"heartbeat","at":"einsam","off":0.6,"dur":3},{"type":"rise","at":"zigaretten","off":0,"dur":3},{"type":"ding","at":"frage","off":-0.2}])
