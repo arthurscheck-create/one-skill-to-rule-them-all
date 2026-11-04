@@ -104,9 +104,9 @@ Gibt der Nutzer mehrere Szenarien, alle direkt nacheinander bauen, ohne Rückfra
    ElevenLabs-Flow), damit die Stimmen fertig sind, während die Szenen entstehen.
 2. Dann Video für Video: Szenen bauen → Wortsync → Snapshots prüfen → rendern → ins Studio laden.
 3. Am Ende eine Übersicht: Titel, Länge, Credits je Video, Studio-Link.
-Pro Video ≈ 1.500–1.700 Credits (2 Takes à ~750–850 bei 55–60 s); Transkription 0 Credits.
+Pro Video ≈ 750–850 Credits (**nur 1 Take**, 55–60 s); Transkription 0 Credits.
 Ablauf, der sich bewährt hat (Serie 1, 5 Videos): `scripts/batch1.py` als Vorlage für Skripte +
-Timing aller Videos → 5 Flows + 5 Vertonungen parallel → kürzeren Take wählen → 5 Transkriptionen
+Timing aller Videos → 5 Flows + 5 Vertonungen parallel (je 1 Take) → 5 Transkriptionen
 → `align_words.py` für alle → je Video Szenen bauen, `tools/prepare.sh`, check, Snapshots,
 korrigieren → `tools/render.sh` **im Hintergrund** starten und währenddessen das nächste Video bauen.
 
@@ -148,8 +148,10 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    Eine andere Stimme nur, wenn der Nutzer es sagt.
    **Weg A – ElevenLabs-Connector (11LBS, Credits des Nutzers), Standard:**
    1. `creative_create_flow` → `creative_generate_speech` (voice_id, Skript als prompt;
-      2 Takes à ~710 Credits pro 50 s) → `creative_get_flow_run_status` pollen.
-   2. Take wählen (bei gleicher Qualität den lebendigeren/kürzeren); `content_url` mit curl nach
+      **`generations_count: 1` – immer nur EIN Take** (Nutzerwunsch: Credits sparen; ~710 Credits
+      pro 50 s). Nie einen zweiten Take erzeugen, außer der Nutzer verlangt es ausdrücklich.
+      → `creative_get_flow_run_status` pollen.
+   2. `content_url` des Takes mit curl nach
       `assets/` laden (Netzfreigabe `elevenlabsusercontent.com` ist eingerichtet).
    3. Take als `assets/take.mp3` speichern; nach dem Wortsync (Schritt 4) `tools/prepare.sh <slug>`
       (setzt die Stimme ein, aktualisiert lib/, baut den Sound). Ohne Wortsync: `add_voice.py` ohne `--copy-only`.
@@ -228,7 +230,7 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    - Hashtags: 8–10, gemischt aus Nische (#waswärewenn #gedankenexperiment #szenario),
      Thema und Reichweite (#wissen #lernenmittiktok #fakten #fürdich #fyp).
 3. MP4 zusätzlich per SendUserFile schicken.
-4. Kurz: welche Stimme/welcher Take, wie viele Credits verbraucht, Dauer.
+4. Kurz: welche Stimme, wie viele Credits verbraucht, Dauer.
 5. Projekt in den Branch `tiktok-videos` von `one-skill-to-rule-them-all` pushen.
 
 ## 6. Auswertung (Reiter „Online“)
