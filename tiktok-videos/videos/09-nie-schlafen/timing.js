@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was wäre, wenn niemand mehr schlafen müsste?",
-  "duration": 74.87,
+  "duration": 60.14,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 3.181,
+      "t1": 2.766,
       "chunks": [
         "Was wäre, wenn kein Mensch mehr schlafen müsste?"
       ],
@@ -17,8 +17,8 @@ window.TIMING = {
     },
     {
       "id": "loop",
-      "t0": 3.669,
-      "t1": 8.173,
+      "t0": 3.19,
+      "t1": 6.944,
       "chunks": [
         "Klingt perfekt.",
         "Aber am Ende",
@@ -26,27 +26,27 @@ window.TIMING = {
         "an das ^keiner denkt.^"
       ],
       "chunkStarts": [
-        3.669,
-        5.224,
-        6.06,
-        6.989
+        3.19,
+        4.38,
+        5.107,
+        5.915
       ]
     },
     {
       "id": "nacht1",
-      "t0": 8.951,
-      "t1": 10.124,
+      "t0": 7.205,
+      "t1": 8.225,
       "chunks": [
         "^Die erste Nacht.^"
       ],
       "chunkStarts": [
-        8.951
+        7.205
       ]
     },
     {
       "id": "wach",
-      "t0": 10.704,
-      "t1": 14.083,
+      "t0": 8.486,
+      "t1": 11.099,
       "chunks": [
         "Es ist ^drei Uhr^",
         "morgens.",
@@ -54,16 +54,16 @@ window.TIMING = {
         "~hellwach.~"
       ],
       "chunkStarts": [
-        10.704,
-        11.529,
-        12.934,
-        13.433
+        8.486,
+        9.203,
+        10.1,
+        10.534
       ]
     },
     {
       "id": "zeit",
-      "t0": 14.756,
-      "t1": 17.914,
+      "t0": 11.36,
+      "t1": 14.106,
       "chunks": [
         "Plötzlich hast du",
         "jeden Tag",
@@ -71,16 +71,16 @@ window.TIMING = {
         "mehr."
       ],
       "chunkStarts": [
-        14.756,
-        15.743,
-        16.625,
-        17.391
+        11.36,
+        12.218,
+        12.985,
+        13.651
       ]
     },
     {
       "id": "jahr",
-      "t0": 18.587,
-      "t1": 21.234,
+      "t0": 14.367,
+      "t1": 16.669,
       "chunks": [
         "Das sind fast",
         "^dreitausend^",
@@ -88,16 +88,16 @@ window.TIMING = {
         "im Jahr."
       ],
       "chunkStarts": [
-        18.587,
-        19.353,
-        20.12,
-        20.549
+        14.367,
+        15.033,
+        15.7,
+        16.073
       ]
     },
     {
       "id": "leben",
-      "t0": 21.908,
-      "t1": 24.764,
+      "t0": 16.93,
+      "t1": 19.413,
       "chunks": [
         "Über dein Leben",
         "gewinnst du",
@@ -106,28 +106,28 @@ window.TIMING = {
         "^Jahre.^"
       ],
       "chunkStarts": [
-        21.908,
-        22.697,
-        23.15,
-        23.475,
-        24.218
+        16.93,
+        17.616,
+        18.01,
+        18.292,
+        18.938
       ]
     },
     {
       "id": "woche",
-      "t0": 25.251,
-      "t1": 26.424,
+      "t0": 19.674,
+      "t1": 20.694,
       "chunks": [
         "^Eine Woche später.^"
       ],
       "chunkStarts": [
-        25.251
+        19.674
       ]
     },
     {
       "id": "stadt",
-      "t0": 26.911,
-      "t1": 33.819,
+      "t0": 20.955,
+      "t1": 26.737,
       "chunks": [
         "Die Städte",
         "schlafen *nie mehr.*",
@@ -138,19 +138,19 @@ window.TIMING = {
         "offen."
       ],
       "chunkStarts": [
-        26.911,
-        27.411,
-        29.024,
-        29.895,
-        31.66,
-        32.345,
-        33.192
+        20.955,
+        21.39,
+        22.68,
+        23.437,
+        24.859,
+        25.455,
+        26.191
       ]
     },
     {
       "id": "strom",
-      "t0": 34.133,
-      "t1": 38.904,
+      "t0": 26.997,
+      "t1": 30.902,
       "chunks": [
         "Nachts brennt",
         "*überall* Licht.",
@@ -158,46 +158,46 @@ window.TIMING = {
         "*explodiert.*"
       ],
       "chunkStarts": [
-        34.133,
-        35.271,
-        36.896,
-        37.987
+        26.997,
+        27.987,
+        29.156,
+        30.104
       ]
     },
     {
       "id": "zimmer",
-      "t0": 39.392,
-      "t1": 42.086,
+      "t0": 31.163,
+      "t1": 33.505,
       "chunks": [
         "Und Schlafzimmer?",
         "Braucht *keiner*",
         "mehr."
       ],
       "chunkStarts": [
-        39.392,
-        40.959,
-        41.633
+        31.163,
+        32.525,
+        33.111
       ]
     },
     {
       "id": "heute",
-      "t0": 42.457,
-      "t1": 44.396,
+      "t0": 33.766,
+      "t1": 35.452,
       "chunks": [
         "Dabei wäre das",
         "heute",
         "*lebensgefährlich.*"
       ],
       "chunkStarts": [
-        42.457,
-        43.13,
-        43.421
+        33.766,
+        34.351,
+        34.604
       ]
     },
     {
       "id": "gardner",
-      "t0": 45.174,
-      "t1": 49.98,
+      "t0": 35.713,
+      "t1": 39.568,
       "chunks": [
         "Ein Schüler",
         "blieb",
@@ -209,20 +209,20 @@ window.TIMING = {
         "*da waren.*"
       ],
       "chunkStarts": [
-        45.174,
-        45.696,
-        45.987,
-        46.567,
-        47.693,
-        48.483,
-        48.75,
-        49.272
+        35.713,
+        36.167,
+        36.42,
+        36.924,
+        37.579,
+        38.266,
+        38.498,
+        38.952
       ]
     },
     {
       "id": "gehirn",
-      "t0": 50.41,
-      "t1": 54.648,
+      "t0": 39.829,
+      "t1": 43.514,
       "chunks": [
         "Denn im Schlaf",
         "*putzt* sich",
@@ -232,31 +232,31 @@ window.TIMING = {
         "raus."
       ],
       "chunkStarts": [
-        50.41,
-        51.165,
-        51.71,
-        52.802,
-        53.382,
-        54.114
+        39.829,
+        40.485,
+        40.959,
+        41.909,
+        42.413,
+        43.05
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 54.961,
-      "t1": 56.018,
+      "t0": 43.775,
+      "t1": 44.694,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        54.961,
-        55.275
+        43.775,
+        44.048
       ]
     },
     {
       "id": "gen",
-      "t0": 56.935,
-      "t1": 61.799,
+      "t0": 45.129,
+      "t1": 49.358,
       "chunks": [
         "Manche Menschen",
         "brauchen schon heute",
@@ -266,18 +266,18 @@ window.TIMING = {
         "~einzigen Gens.~"
       ],
       "chunkStarts": [
-        56.935,
-        57.631,
-        58.56,
-        58.792,
-        59.977,
-        60.662
+        45.129,
+        45.734,
+        46.542,
+        46.743,
+        47.774,
+        48.37
       ]
     },
     {
       "id": "traum",
-      "t0": 62.229,
-      "t1": 65.062,
+      "t0": 49.619,
+      "t1": 52.083,
       "chunks": [
         "Aber ohne Schlaf",
         "würdest du",
@@ -285,34 +285,34 @@ window.TIMING = {
         "träumen."
       ],
       "chunkStarts": [
-        62.229,
-        63.146,
-        63.715,
-        64.388
+        49.619,
+        50.417,
+        50.911,
+        51.497
       ]
     },
     {
       "id": "frage",
-      "t0": 65.979,
-      "t1": 68.254,
+      "t0": 52.343,
+      "t1": 54.322,
       "chunks": [
         "Wofür würdest du die acht Stunden nutzen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        65.979
+        52.343
       ]
     },
     {
       "id": "komm",
-      "t0": 68.742,
-      "t1": 72.678,
+      "t0": 54.746,
+      "t1": 57.892,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        68.742
+        54.746
       ]
     }
   ],

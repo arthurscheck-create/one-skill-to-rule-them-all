@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was wäre, wenn alle Menschen gleichzeitig springen?",
-  "duration": 70.7,
+  "duration": 58.07,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 3.181,
+      "t1": 2.766,
       "chunks": [
         "Was wäre, wenn alle Menschen auf der Erde gleichzeitig springen?"
       ],
@@ -17,23 +17,23 @@ window.TIMING = {
     },
     {
       "id": "loop",
-      "t0": 3.611,
-      "t1": 6.107,
+      "t0": 3.14,
+      "t1": 5.31,
       "chunks": [
         "Das Gefährlichste",
         "passiert erst",
         "^nach der Landung.^"
       ],
       "chunkStarts": [
-        3.611,
-        4.423,
-        5.108
+        3.14,
+        3.846,
+        4.442
       ]
     },
     {
       "id": "treffen",
-      "t0": 6.687,
-      "t1": 9.834,
+      "t0": 5.571,
+      "t1": 8.308,
       "chunks": [
         "Damit es wirkt,",
         "müssen alle",
@@ -41,16 +41,16 @@ window.TIMING = {
         "stehen."
       ],
       "chunkStarts": [
-        6.687,
-        7.848,
-        8.603,
-        9.323
+        5.571,
+        6.581,
+        7.237,
+        7.863
       ]
     },
     {
       "id": "mallorca",
-      "t0": 10.147,
-      "t1": 15.267,
+      "t0": 8.569,
+      "t1": 13.021,
       "chunks": [
         "Acht Milliarden",
         "Menschen",
@@ -60,74 +60,74 @@ window.TIMING = {
         "^Mallorca.^"
       ],
       "chunkStarts": [
-        10.147,
-        11.215,
-        11.656,
-        13.026,
-        13.862,
-        14.512
+        8.569,
+        9.497,
+        9.881,
+        11.072,
+        11.799,
+        12.364
       ]
     },
     {
       "id": "zaehlen",
-      "t0": 15.696,
-      "t1": 18.494,
+      "t0": 13.282,
+      "t1": 15.228,
       "chunks": [
         "^Drei.^",
         "^Zwei.^",
         "^Eins.^"
       ],
       "chunkStarts": [
-        15.696,
-        16.822,
-        17.902
+        13.282,
+        14.017,
+        14.713
       ]
     },
     {
       "id": "sprung",
-      "t0": 19.075,
-      "t1": 19.644,
+      "t0": 15.489,
+      "t1": 15.983,
       "chunks": [
         "*Sprung!*"
       ],
       "chunkStarts": [
-        19.075
+        15.489
       ]
     },
     {
       "id": "gewicht",
-      "t0": 20.317,
-      "t1": 22.952,
+      "t0": 16.418,
+      "t1": 18.71,
       "chunks": [
         "Zusammen wiegen wir",
         "rund ^fünfhundert^",
         "^Millionen Tonnen.^"
       ],
       "chunkStarts": [
-        20.317,
-        21.13,
-        21.977
+        16.418,
+        17.125,
+        17.862
       ]
     },
     {
       "id": "erde",
-      "t0": 23.382,
-      "t1": 26.076,
+      "t0": 18.97,
+      "t1": 21.313,
       "chunks": [
         "Aber die Erde",
         "ist ^zwölf Billionen^",
         "^Mal^ schwerer."
       ],
       "chunkStarts": [
-        23.382,
-        24.09,
-        25.17
+        18.97,
+        19.586,
+        20.525
       ]
     },
     {
       "id": "atom",
-      "t0": 26.563,
-      "t1": 29.547,
+      "t0": 21.574,
+      "t1": 24.169,
       "chunks": [
         "Sie bewegt sich",
         "weniger als",
@@ -135,42 +135,42 @@ window.TIMING = {
         "eines *Atoms.*"
       ],
       "chunkStarts": [
-        26.563,
-        27.318,
-        27.991,
-        28.537
+        21.574,
+        22.23,
+        22.816,
+        23.29
       ]
     },
     {
       "id": "landung",
-      "t0": 30.035,
-      "t1": 30.836,
+      "t0": 24.43,
+      "t1": 25.126,
       "chunks": [
         "^Die Landung.^"
       ],
       "chunkStarts": [
-        30.035
+        24.43
       ]
     },
     {
       "id": "knall",
-      "t0": 31.416,
-      "t1": 33.343,
+      "t0": 25.387,
+      "t1": 27.063,
       "chunks": [
         "Ein",
         "*ohrenbetäubender*",
         "Knall."
       ],
       "chunkStarts": [
-        31.416,
-        31.765,
-        32.728
+        25.387,
+        25.69,
+        26.528
       ]
     },
     {
       "id": "beben",
-      "t0": 33.924,
-      "t1": 38.127,
+      "t0": 27.323,
+      "t1": 30.966,
       "chunks": [
         "Messgeräte",
         "schlagen aus.",
@@ -179,32 +179,32 @@ window.TIMING = {
         "~kaum.~"
       ],
       "chunkStarts": [
-        33.924,
-        34.597,
-        35.805,
-        36.641,
-        37.616
+        27.323,
+        27.909,
+        28.947,
+        29.674,
+        30.522
       ]
     },
     {
       "id": "danach",
-      "t0": 38.556,
-      "t1": 40.124,
+      "t0": 31.227,
+      "t1": 32.59,
       "chunks": [
         "Und jetzt",
         "kommt das",
         "*Problem.*"
       ],
       "chunkStarts": [
-        38.556,
-        39.079,
-        39.462
+        31.227,
+        31.682,
+        32.015
       ]
     },
     {
       "id": "heim",
-      "t0": 40.797,
-      "t1": 43.142,
+      "t0": 32.851,
+      "t1": 34.89,
       "chunks": [
         "Acht Milliarden",
         "Menschen",
@@ -212,31 +212,31 @@ window.TIMING = {
         "^nach Hause.^"
       ],
       "chunkStarts": [
-        40.797,
-        41.738,
-        42.121,
-        42.411
+        32.851,
+        33.67,
+        34.003,
+        34.255
       ]
     },
     {
       "id": "netz",
-      "t0": 43.723,
-      "t1": 45.755,
+      "t0": 35.151,
+      "t1": 36.918,
       "chunks": [
         "Die Handynetze",
         "brechen *sofort*",
         "zusammen."
       ],
       "chunkStarts": [
-        43.723,
-        44.512,
-        45.197
+        35.151,
+        35.837,
+        36.433
       ]
     },
     {
       "id": "flug",
-      "t0": 45.987,
-      "t1": 49.772,
+      "t0": 37.12,
+      "t1": 40.411,
       "chunks": [
         "Flughafen und Fähren",
         "schaffen vielleicht",
@@ -244,16 +244,16 @@ window.TIMING = {
         "Menschen am Tag."
       ],
       "chunkStarts": [
-        45.987,
-        47.345,
-        48.054,
-        48.855
+        37.12,
+        38.301,
+        38.917,
+        39.614
       ]
     },
     {
       "id": "jahre",
-      "t0": 49.865,
-      "t1": 52.709,
+      "t0": 40.492,
+      "t1": 42.965,
       "chunks": [
         "Bis alle weg sind,",
         "dauert es",
@@ -261,16 +261,16 @@ window.TIMING = {
         "^Jahre.^"
       ],
       "chunkStarts": [
-        49.865,
-        50.84,
-        51.328,
-        52.245
+        40.492,
+        41.34,
+        41.764,
+        42.562
       ]
     },
     {
       "id": "hunger",
-      "t0": 52.907,
-      "t1": 56.808,
+      "t0": 43.137,
+      "t1": 46.53,
       "chunks": [
         "Und schon",
         "nach wenigen Tagen",
@@ -280,31 +280,31 @@ window.TIMING = {
         "mehr."
       ],
       "chunkStarts": [
-        52.907,
-        53.232,
-        54.393,
-        54.869,
-        55.647,
-        56.459
+        43.137,
+        43.42,
+        44.43,
+        44.843,
+        45.52,
+        46.226
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 57.295,
-      "t1": 58.421,
+      "t0": 46.79,
+      "t1": 47.77,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        57.295,
-        57.632
+        46.79,
+        47.083
       ]
     },
     {
       "id": "fakt",
-      "t0": 59.339,
-      "t1": 64.122,
+      "t0": 48.204,
+      "t1": 52.251,
       "chunks": [
         "Du bewegst",
         "die Erde",
@@ -315,37 +315,37 @@ window.TIMING = {
         "~winzig~ wenig."
       ],
       "chunkStarts": [
-        59.339,
-        59.896,
-        60.302,
-        60.755,
-        61.301,
-        62.728,
-        63.181
+        48.204,
+        48.689,
+        49.042,
+        49.436,
+        49.91,
+        51.039,
+        51.433
       ]
     },
     {
       "id": "frage",
-      "t0": 64.702,
-      "t1": 66.595,
+      "t0": 52.512,
+      "t1": 54.158,
       "chunks": [
         "Wie würdest du von Mallorca wegkommen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        64.702
+        52.512
       ]
     },
     {
       "id": "komm",
-      "t0": 66.862,
-      "t1": 68.406,
+      "t0": 54.39,
+      "t1": 55.733,
       "chunks": [
         "Schreib es in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        66.862
+        54.39
       ]
     }
   ],

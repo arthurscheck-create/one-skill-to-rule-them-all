@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was wäre, wenn alle Männer auf der Erde für immer verschwinden?",
-  "duration": 58.48,
+  "duration": 47.72,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 3.042,
+      "t1": 2.645,
       "chunks": [
         "Was wäre, wenn alle Männer auf der Erde für immer verschwinden?"
       ],
@@ -17,8 +17,8 @@ window.TIMING = {
     },
     {
       "id": "loop",
-      "t0": 3.413,
-      "t1": 6.664,
+      "t0": 2.968,
+      "t1": 5.795,
       "chunks": [
         "Und am Ende",
         "entscheidet sich,",
@@ -26,55 +26,55 @@ window.TIMING = {
         "^überlebt.^"
       ],
       "chunkStarts": [
-        3.413,
-        4.122,
-        4.946,
-        5.793
+        2.968,
+        3.584,
+        4.301,
+        5.037
       ]
     },
     {
       "id": "sek1",
-      "t0": 7.338,
-      "t1": 8.464,
+      "t0": 6.056,
+      "t1": 7.035,
       "chunks": [
         "^Sekunde eins.^"
       ],
       "chunkStarts": [
-        7.338
+        6.056
       ]
     },
     {
       "id": "weg",
-      "t0": 9.137,
-      "t1": 11.285,
+      "t0": 7.296,
+      "t1": 9.163,
       "chunks": [
         "Über ^vier Milliarden^",
         "Menschen",
         "sind *weg.*"
       ],
       "chunkStarts": [
-        9.137,
-        10.228,
-        10.623
+        7.296,
+        8.244,
+        8.588
       ]
     },
     {
       "id": "autos",
-      "t0": 11.865,
-      "t1": 14.489,
+      "t0": 9.424,
+      "t1": 11.706,
       "chunks": [
         "Autos ohne Fahrer",
         "*krachen* ineinander."
       ],
       "chunkStarts": [
-        11.865,
-        13.201
+        9.424,
+        10.586
       ]
     },
     {
       "id": "piloten",
-      "t0": 14.919,
-      "t1": 18.982,
+      "t0": 11.967,
+      "t1": 15.5,
       "chunks": [
         "Flugzeuge",
         "verlieren ihre Piloten.",
@@ -82,27 +82,27 @@ window.TIMING = {
         "sind Männer."
       ],
       "chunkStarts": [
-        14.919,
-        15.58,
-        17.066,
-        18.262
+        11.967,
+        12.542,
+        13.834,
+        14.874
       ]
     },
     {
       "id": "std1",
-      "t0": 19.412,
-      "t1": 20.317,
+      "t0": 15.761,
+      "t1": 16.548,
       "chunks": [
         "^Stunde eins.^"
       ],
       "chunkStarts": [
-        19.412
+        15.761
       ]
     },
     {
       "id": "bau",
-      "t0": 20.898,
-      "t1": 24.729,
+      "t0": 16.809,
+      "t1": 19.977,
       "chunks": [
         "Baustellen",
         "stehen *still.*",
@@ -110,27 +110,27 @@ window.TIMING = {
         "fährt mehr."
       ],
       "chunkStarts": [
-        20.898,
-        21.513,
-        22.86,
-        23.951
+        16.809,
+        17.343,
+        18.351,
+        19.3
       ]
     },
     {
       "id": "tag1",
-      "t0": 25.158,
-      "t1": 25.96,
+      "t0": 20.237,
+      "t1": 20.935,
       "chunks": [
         "^Tag eins.^"
       ],
       "chunkStarts": [
-        25.158
+        20.237
       ]
     },
     {
       "id": "jobs",
-      "t0": 26.389,
-      "t1": 32.287,
+      "t0": 21.196,
+      "t1": 25.885,
       "chunks": [
         "Strom, Müllabfuhr,",
         "Feuerwehr.",
@@ -139,28 +139,28 @@ window.TIMING = {
         "fast nur Männer."
       ],
       "chunkStarts": [
-        26.389,
-        28.549,
-        30.035,
-        30.72,
-        31.323
+        21.196,
+        23.05,
+        23.927,
+        24.523,
+        25.047
       ]
     },
     {
       "id": "woche",
-      "t0": 32.659,
-      "t1": 33.761,
+      "t0": 26.146,
+      "t1": 27.104,
       "chunks": [
         "^Eine Woche später.^"
       ],
       "chunkStarts": [
-        32.659
+        26.146
       ]
     },
     {
       "id": "frauen",
-      "t0": 34.435,
-      "t1": 36.815,
+      "t0": 27.365,
+      "t1": 29.435,
       "chunks": [
         "Die Frauen",
         "übernehmen.",
@@ -168,16 +168,16 @@ window.TIMING = {
         "läuft ~wieder.~"
       ],
       "chunkStarts": [
-        34.435,
-        34.887,
-        35.688,
-        36.199
+        27.365,
+        27.758,
+        28.455,
+        28.899
       ]
     },
     {
       "id": "monate",
-      "t0": 37.395,
-      "t1": 40.553,
+      "t0": 29.696,
+      "t1": 32.442,
       "chunks": [
         "Aber in",
         "^neun Monaten^",
@@ -186,30 +186,30 @@ window.TIMING = {
         "zur Welt."
       ],
       "chunkStarts": [
-        37.395,
-        37.767,
-        38.637,
-        39.009,
-        39.88
+        29.696,
+        30.019,
+        30.776,
+        31.099,
+        31.857
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 40.983,
-      "t1": 42.004,
+      "t0": 32.703,
+      "t1": 33.59,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        40.983,
-        41.284
+        32.703,
+        32.964
       ]
     },
     {
       "id": "samen",
-      "t0": 42.492,
-      "t1": 47.937,
+      "t0": 34.015,
+      "t1": 38.737,
       "chunks": [
         "In Samenbanken",
         "lagern",
@@ -219,18 +219,18 @@ window.TIMING = {
         "~weitermachen.~"
       ],
       "chunkStarts": [
-        42.492,
-        43.595,
-        43.978,
-        45.685,
-        46.555,
-        47.159
+        34.015,
+        34.974,
+        35.307,
+        36.779,
+        37.536,
+        38.061
       ]
     },
     {
       "id": "jungs",
-      "t0": 48.134,
-      "t1": 50.886,
+      "t0": 38.909,
+      "t1": 41.302,
       "chunks": [
         "Und die Hälfte",
         "dieser Babys",
@@ -238,34 +238,34 @@ window.TIMING = {
         "^Jungs.^"
       ],
       "chunkStarts": [
-        48.134,
-        48.819,
-        49.55,
-        50.235
+        38.909,
+        39.504,
+        40.14,
+        40.736
       ]
     },
     {
       "id": "frage",
-      "t0": 51.803,
-      "t1": 53.428,
+      "t0": 41.563,
+      "t1": 42.976,
       "chunks": [
         "Würde die Menschheit überleben?"
       ],
       "noCap": true,
       "chunkStarts": [
-        51.803
+        41.563
       ]
     },
     {
       "id": "komm",
-      "t0": 53.66,
-      "t1": 56.238,
+      "t0": 43.177,
+      "t1": 45.419,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        53.66
+        43.177
       ]
     }
   ],

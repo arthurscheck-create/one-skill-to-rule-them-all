@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was wäre, wenn die Schwerkraft für 5 Sekunden verschwindet?",
-  "duration": 58.47,
+  "duration": 49.1,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 3.146,
+      "t1": 2.736,
       "chunks": [
         "Was wäre, wenn die Schwerkraft für fünf Sekunden verschwindet?"
       ],
@@ -17,34 +17,34 @@ window.TIMING = {
     },
     {
       "id": "loop",
-      "t0": 3.634,
-      "t1": 5.979,
+      "t0": 3.16,
+      "t1": 5.199,
       "chunks": [
         "Gefährlich wird es",
         "erst,",
         "wenn sie ^zurückkommt.^"
       ],
       "chunkStarts": [
-        3.634,
-        4.54,
-        4.923
+        3.16,
+        3.948,
+        4.281
       ]
     },
     {
       "id": "sek1",
-      "t0": 6.351,
-      "t1": 7.43,
+      "t0": 5.46,
+      "t1": 6.398,
       "chunks": [
         "^Sekunde eins.^"
       ],
       "chunkStarts": [
-        6.351
+        5.46
       ]
     },
     {
       "id": "sofa",
-      "t0": 7.918,
-      "t1": 11.041,
+      "t0": 6.659,
+      "t1": 9.363,
       "chunks": [
         "Du sitzt",
         "auf dem Sofa.",
@@ -52,16 +52,16 @@ window.TIMING = {
         "*Noch.*"
       ],
       "chunkStarts": [
-        7.918,
-        8.359,
-        9.288,
-        10.565
+        6.659,
+        7.043,
+        7.85,
+        8.95
       ]
     },
     {
       "id": "luft",
-      "t0": 11.529,
-      "t1": 15.72,
+      "t0": 9.624,
+      "t1": 13.257,
       "chunks": [
         "Aber die Luft",
         "wird nicht mehr",
@@ -71,42 +71,42 @@ window.TIMING = {
         "ins *All.*"
       ],
       "chunkStarts": [
-        11.529,
-        12.132,
-        12.701,
-        13.746,
-        14.454,
-        15.069
+        9.624,
+        10.149,
+        10.643,
+        11.541,
+        12.157,
+        12.691
       ]
     },
     {
       "id": "ohren",
-      "t0": 16.091,
-      "t1": 17.705,
+      "t0": 13.518,
+      "t1": 14.922,
       "chunks": [
         "Deine Ohren",
         "*knacken.*"
       ],
       "chunkStarts": [
-        16.091,
-        17.113
+        13.518,
+        14.407
       ]
     },
     {
       "id": "sek2",
-      "t0": 18.227,
-      "t1": 19.052,
+      "t0": 15.183,
+      "t1": 15.9,
       "chunks": [
         "^Sekunde zwei.^"
       ],
       "chunkStarts": [
-        18.227
+        15.183
       ]
     },
     {
       "id": "aufstehen",
-      "t0": 19.435,
-      "t1": 24.415,
+      "t0": 16.161,
+      "t1": 20.104,
       "chunks": [
         "Du stehst auf",
         "und *hebst ab.*",
@@ -115,28 +115,28 @@ window.TIMING = {
         "zur Decke."
       ],
       "chunkStarts": [
-        19.435,
-        20.735,
-        21.919,
-        23.278,
-        23.893
+        16.161,
+        17.027,
+        17.934,
+        19.116,
+        19.65
       ]
     },
     {
       "id": "sek3",
-      "t0": 24.799,
-      "t1": 25.634,
+      "t0": 20.365,
+      "t1": 21.091,
       "chunks": [
         "^Sekunde drei.^"
       ],
       "chunkStarts": [
-        24.799
+        20.365
       ]
     },
     {
       "id": "trampolin",
-      "t0": 26.076,
-      "t1": 28.572,
+      "t0": 21.352,
+      "t1": 23.523,
       "chunks": [
         "Ein Kind",
         "auf dem Trampolin",
@@ -144,27 +144,27 @@ window.TIMING = {
         "als das Haus."
       ],
       "chunkStarts": [
-        26.076,
-        26.528,
-        27.318,
-        27.829
+        21.352,
+        21.745,
+        22.432,
+        22.877
       ]
     },
     {
       "id": "sek4",
-      "t0": 28.85,
-      "t1": 29.884,
+      "t0": 23.764,
+      "t1": 24.663,
       "chunks": [
         "^Sekunde vier.^"
       ],
       "chunkStarts": [
-        28.85
+        23.764
       ]
     },
     {
       "id": "alles",
-      "t0": 30.325,
-      "t1": 34.76,
+      "t0": 24.924,
+      "t1": 28.781,
       "chunks": [
         "Wasser, Bälle,",
         "Vögel, Staub.",
@@ -172,27 +172,27 @@ window.TIMING = {
         "nach oben."
       ],
       "chunkStarts": [
-        30.325,
-        31.288,
-        32.739,
-        33.9
+        24.924,
+        25.762,
+        27.023,
+        28.033
       ]
     },
     {
       "id": "sek5",
-      "t0": 35.073,
-      "t1": 36.118,
+      "t0": 29.042,
+      "t1": 29.95,
       "chunks": [
         "^Sekunde fünf.^"
       ],
       "chunkStarts": [
-        35.073
+        29.042
       ]
     },
     {
       "id": "zurueck",
-      "t0": 36.489,
-      "t1": 40.448,
+      "t0": 30.211,
+      "t1": 33.654,
       "chunks": [
         "Die Schwerkraft",
         "ist zurück.",
@@ -201,30 +201,30 @@ window.TIMING = {
         "*kracht* wieder runter."
       ],
       "chunkStarts": [
-        36.489,
-        37.163,
-        38.115,
-        38.556,
-        39.345
+        30.211,
+        30.797,
+        31.625,
+        32.009,
+        32.695
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 40.82,
-      "t1": 41.784,
+      "t0": 33.915,
+      "t1": 34.753,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        40.82,
-        41.145
+        33.915,
+        34.197
       ]
     },
     {
       "id": "iss",
-      "t0": 42.457,
-      "t1": 46.021,
+      "t0": 35.188,
+      "t1": 38.287,
       "chunks": [
         "Auf der Raumstation",
         "gibt es fast",
@@ -233,17 +233,17 @@ window.TIMING = {
         "wie hier."
       ],
       "chunkStarts": [
-        42.457,
-        43.455,
-        44.059,
-        44.825,
-        45.417
+        35.188,
+        36.056,
+        36.581,
+        37.247,
+        37.762
       ]
     },
     {
       "id": "fallen",
-      "t0": 46.602,
-      "t1": 50.595,
+      "t0": 38.548,
+      "t1": 42.02,
       "chunks": [
         "Die Astronauten",
         "schweben nur,",
@@ -252,35 +252,35 @@ window.TIMING = {
         "~fallen.~"
       ],
       "chunkStarts": [
-        46.602,
-        47.414,
-        48.54,
-        49.434,
-        50.096
+        38.548,
+        39.254,
+        40.233,
+        41.01,
+        41.586
       ]
     },
     {
       "id": "frage",
-      "t0": 51.025,
-      "t1": 53.208,
+      "t0": 42.281,
+      "t1": 44.179,
       "chunks": [
         "Was würdest du in den fünf Sekunden machen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        51.025
+        42.281
       ]
     },
     {
       "id": "komm",
-      "t0": 53.637,
-      "t1": 56.191,
+      "t0": 44.552,
+      "t1": 46.773,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        53.637
+        44.552
       ]
     }
   ],

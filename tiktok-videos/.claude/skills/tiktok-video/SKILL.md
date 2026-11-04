@@ -120,7 +120,7 @@ Gibt der Nutzer mehrere Szenarien, alle direkt nacheinander bauen, ohne Rückfra
    ElevenLabs-Flow), damit die Stimmen fertig sind, während die Szenen entstehen.
 2. Dann Video für Video: Szenen bauen → Wortsync → Snapshots prüfen → rendern → ins Studio laden.
 3. Am Ende eine Übersicht: Titel, Länge, Credits je Video, Studio-Link.
-Pro Video ≈ 750–850 Credits (**nur 1 Take**, 55–60 s); Transkription 0 Credits.
+Pro Video ≈ 900–1.100 Credits (**nur 1 Take**, ~150–175 Wörter → nach speedup ~55–65 s); Transkription 0 Credits.
 Ablauf, der sich bewährt hat (Serie 1, 5 Videos): `scripts/batch1.py` als Vorlage für Skripte +
 Timing aller Videos → 5 Flows + 5 Vertonungen parallel (je 1 Take) → 5 Transkriptionen
 → `align_words.py` für alle → je Video Szenen bauen, `tools/prepare.sh`, check, Snapshots,
@@ -180,6 +180,11 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
       `python3 tools/align_words.py videos/<slug> assets/<take>_words.json --source assets/take.mp3`.
       Muss "0 Abweichungen" melden; sonst Skript-Chunks an den gesprochenen Text anpassen.
       (Die reine Pausen-Erkennung von add_voice.py ordnet bei manchen Stimmen falsch zu.)
+   5. **Tempo optimieren (immer, 0 Credits – Nutzerwunsch: nicht zu langsam):** Felix spricht roh nur ~2,2 Wörter/s.
+      Ziel **2,7–2,9 Wörter/s**. Nach der Transkription:
+      `python3 tools/speedup.py videos/<slug> --tempo 1.15 --maxpause 0.3 --qpause 0.5`
+      (kürzt Pausen, beschleunigt ohne Tonhöhenänderung, rechnet die Wortzeiten um; Original bleibt als take_orig.mp3),
+      dann `align_words.py videos/<slug> videos/<slug>/assets/take_words.json --tempo 1` und `tools/prepare.sh <slug>`.
    **Weg B – API-Schlüssel (`ELEVENLABS_API_KEY`), wortgenau:**
    ```bash
    python3 tools/elevenlabs_tts.py videos/<slug>

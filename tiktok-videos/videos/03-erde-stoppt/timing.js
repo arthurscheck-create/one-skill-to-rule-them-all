@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was wäre, wenn die Erde für 5 Sekunden aufhört, sich zu drehen?",
-  "duration": 63.99,
+  "duration": 52.89,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 3.646,
+      "t1": 3.17,
       "chunks": [
         "Was wäre, wenn die Erde für fünf Sekunden aufhört, sich zu drehen?"
       ],
@@ -17,36 +17,36 @@ window.TIMING = {
     },
     {
       "id": "loop",
-      "t0": 4.319,
-      "t1": 6.583,
+      "t0": 3.605,
+      "t1": 5.574,
       "chunks": [
         "Und die fünfte Sekunde",
         "ist die ^schlimmste.^"
       ],
       "chunkStarts": [
-        4.319,
-        5.492
+        3.605,
+        4.625
       ]
     },
     {
       "id": "strasse",
-      "t0": 7.07,
-      "t1": 9.195,
+      "t0": 5.835,
+      "t1": 7.683,
       "chunks": [
         "Du stehst",
         "ganz normal",
         "auf der Straße."
       ],
       "chunkStarts": [
-        7.07,
-        7.593,
-        8.382
+        5.835,
+        6.29,
+        6.976
       ]
     },
     {
       "id": "speed",
-      "t0": 9.509,
-      "t1": 14.687,
+      "t0": 7.943,
+      "t1": 12.446,
       "chunks": [
         "Aber in Wahrheit",
         "rast du gerade",
@@ -56,44 +56,44 @@ window.TIMING = {
         "durchs All."
       ],
       "chunkStarts": [
-        9.509,
-        10.553,
-        11.424,
-        12.411,
-        13.108,
-        13.793
+        7.943,
+        8.851,
+        9.609,
+        10.467,
+        11.073,
+        11.669
       ]
     },
     {
       "id": "sek1",
-      "t0": 15.604,
-      "t1": 16.637,
+      "t0": 12.707,
+      "t1": 13.605,
       "chunks": [
         "^Sekunde eins.^"
       ],
       "chunkStarts": [
-        15.604
+        12.707
       ]
     },
     {
       "id": "stop",
-      "t0": 17.125,
-      "t1": 19.934,
+      "t0": 13.866,
+      "t1": 16.206,
       "chunks": [
         "Die Erde",
         "bleibt *stehen.*",
         "Du *nicht.*"
       ],
       "chunkStarts": [
-        17.125,
-        17.787,
-        19.215
+        13.866,
+        14.442,
+        15.581
       ]
     },
     {
       "id": "fliegen",
-      "t0": 20.294,
-      "t1": 25.739,
+      "t0": 16.467,
+      "t1": 21.202,
       "chunks": [
         "Alles, was nicht",
         "festgeschraubt ist,",
@@ -102,28 +102,28 @@ window.TIMING = {
         "ganze Häuser."
       ],
       "chunkStarts": [
-        20.294,
-        21.154,
-        22.396,
-        23.777,
-        24.892
+        16.467,
+        17.215,
+        18.295,
+        19.496,
+        20.465
       ]
     },
     {
       "id": "sek2",
-      "t0": 26.041,
-      "t1": 27.272,
+      "t0": 21.463,
+      "t1": 22.533,
       "chunks": [
         "^Sekunde zwei.^"
       ],
       "chunkStarts": [
-        26.041
+        21.463
       ]
     },
     {
       "id": "wind",
-      "t0": 27.829,
-      "t1": 32.079,
+      "t0": 22.794,
+      "t1": 26.488,
       "chunks": [
         "Die Luft",
         "rast weiter.",
@@ -132,28 +132,28 @@ window.TIMING = {
         "jeder Hurrikan."
       ],
       "chunkStarts": [
-        27.829,
-        28.352,
-        29.466,
-        30.174,
-        30.906
+        22.794,
+        23.249,
+        24.216,
+        24.831,
+        25.468
       ]
     },
     {
       "id": "sek3",
-      "t0": 32.438,
-      "t1": 33.483,
+      "t0": 26.749,
+      "t1": 27.657,
       "chunks": [
         "^Sekunde drei.^"
       ],
       "chunkStarts": [
-        32.438
+        26.749
       ]
     },
     {
       "id": "meer",
-      "t0": 33.959,
-      "t1": 39.01,
+      "t0": 27.918,
+      "t1": 32.299,
       "chunks": [
         "Die Ozeane",
         "schwappen",
@@ -163,57 +163,57 @@ window.TIMING = {
         "die Küsten zu."
       ],
       "chunkStarts": [
-        33.959,
-        34.714,
-        35.144,
-        36.258,
-        37.466,
-        38.0
+        27.918,
+        28.575,
+        28.949,
+        29.906,
+        30.957,
+        31.421
       ]
     },
     {
       "id": "sek4",
-      "t0": 39.323,
-      "t1": 40.298,
+      "t0": 32.56,
+      "t1": 33.408,
       "chunks": [
         "^Sekunde vier.^"
       ],
       "chunkStarts": [
-        39.323
+        32.56
       ]
     },
     {
       "id": "beben",
-      "t0": 40.786,
-      "t1": 43.247,
+      "t0": 33.669,
+      "t1": 35.809,
       "chunks": [
         "*Erdbeben*",
         "und Vulkane",
         "auf der ganzen Welt."
       ],
       "chunkStarts": [
-        40.786,
-        41.483,
-        42.26
+        33.669,
+        34.275,
+        34.95
       ]
     },
     {
       "id": "sek5",
-      "t0": 43.561,
-      "t1": 45.987,
+      "t0": 36.07,
+      "t1": 37.763,
       "chunks": [
         "Und dann:",
         "^Sekunde fünf.^"
       ],
       "chunkStarts": [
-        43.561,
-        44.966
+        36.07,
+        36.876
       ]
     },
     {
       "id": "dreht",
-      "t0": 46.475,
-      "t1": 51.131,
+      "t0": 38.024,
+      "t1": 42.061,
       "chunks": [
         "Die Erde",
         "dreht sich wieder.",
@@ -222,30 +222,30 @@ window.TIMING = {
         "herumgeschleudert."
       ],
       "chunkStarts": [
-        46.475,
-        46.893,
-        48.182,
-        48.901,
-        50.074
+        38.024,
+        38.388,
+        39.497,
+        40.122,
+        41.142
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 51.711,
-      "t1": 52.733,
+      "t0": 42.322,
+      "t1": 43.21,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        51.711,
-        52.036
+        42.322,
+        42.604
       ]
     },
     {
       "id": "fakt",
-      "t0": 53.406,
-      "t1": 57.586,
+      "t0": 43.645,
+      "t1": 47.28,
       "chunks": [
         "Die Erde",
         "wird wirklich",
@@ -255,36 +255,36 @@ window.TIMING = {
         "bisschen ~länger.~"
       ],
       "chunkStarts": [
-        53.406,
-        53.847,
-        54.37,
-        55.287,
-        55.972,
-        56.785
+        43.645,
+        44.029,
+        44.483,
+        45.281,
+        45.877,
+        46.583
       ]
     },
     {
       "id": "frage",
-      "t0": 58.259,
-      "t1": 59.455,
+      "t0": 47.541,
+      "t1": 48.581,
       "chunks": [
         "Hättest du das gewusst?"
       ],
       "noCap": true,
       "chunkStarts": [
-        58.259
+        47.541
       ]
     },
     {
       "id": "komm",
-      "t0": 59.885,
-      "t1": 61.347,
+      "t0": 48.955,
+      "t1": 50.226,
       "chunks": [
         "Schreib es in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        59.885
+        48.955
       ]
     }
   ],
