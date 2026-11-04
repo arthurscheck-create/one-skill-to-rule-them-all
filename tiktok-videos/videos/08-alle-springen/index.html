@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn alle Menschen gleichzeitig springen?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 88px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="70.7" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Menschen springen auf der Erdkugel -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="#14122c"/><g id="s1-stars"></g><g id="s1-earth"></g><g id="s1-people"></g>
+      </svg>
+      <div class="title main">WAS WÄRE, WENN<br/>ALLE <span class="r">GLEICHZEITIG</span><br/>SPRINGEN?</div>
+      <div class="title sub">⚠ 8 MILLIARDEN MENSCHEN</div>
+    </div></div></section>
+
+    <!-- S2 Alle auf Mallorca -->
+    <section class="scene" id="s2" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-sea" cx=".5" cy=".45" r=".7"><stop offset="0" stop-color="#2a8fd6"/><stop offset="1" stop-color="#0d3a73"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-sea)"/><g id="s2-waves"></g>
+        <path id="s2-island" d="M190,760 C210,640 320,560 430,535 L570,495 C680,465 780,520 860,600 C920,665 900,770 845,830 C805,905 720,965 640,1005 L510,1065 C430,1095 345,1065 305,995 C260,925 290,880 235,850 C205,830 185,800 190,760Z" fill="#e8c77a" stroke="#fff3c4" stroke-width="10"/>
+        <g id="s2-crowd"></g>
+        <g id="s2-badge"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S3 Countdown: alle gehen in die Knie -->
+    <section class="scene" id="s3" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-day" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a6fc4"/><stop offset="1" stop-color="#ffd9a8"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-day)"/><rect y="1180" width="1080" height="740" fill="#e8c77a"/>
+        <g id="s3-squat"><g id="s3-crowd"></g></g>
+        <g id="s3-nums" class="lbl" font-size="300" text-anchor="middle" fill="#ffd23f" stroke="#0d0b18" stroke-width="22" paint-order="stroke">
+          <text id="s3-n3" x="540" y="760">3</text><text id="s3-n2" x="540" y="760">2</text><text id="s3-n1" x="540" y="760">1</text>
+        </g>
+      </svg>
+    </div></div></section>
+
+    <!-- S4 Sprung -->
+    <section class="scene" id="s4" data-punch="1.18" data-drift="1.02"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="url(#g-day)"/><rect y="1180" width="1080" height="740" fill="#e8c77a"/>
+        <g id="s4-lines" stroke="#fff" stroke-width="8" stroke-linecap="round" opacity=".8"></g>
+        <g id="s4-jump"><g id="s4-crowd"></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S5 Waage: Menschheit gegen Erde -->
+    <section class="scene" id="s5"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="#1b1936"/><g id="s5-stars"></g>
+        <path d="M540,520 L470,1180 L610,1180Z" fill="#4a4580"/><rect x="380" y="1170" width="320" height="40" rx="12" fill="#3b3768"/>
+        <g id="s5-beam">
+          <rect x="200" y="540" width="680" height="26" rx="13" fill="#c9c3e6"/>
+          <circle cx="540" cy="553" r="26" fill="#ffd23f" stroke="#0d0b18" stroke-width="6"/>
+        </g>
+        <g id="s5-left"><g id="s5-lpan"></g></g>
+        <g id="s5-right"><g id="s5-rpan"></g><g id="s5-earthwrap"><g id="s5-earth"></g></g></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S6 Atom -->
+    <section class="scene" id="s6" data-drift="1.08"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="#0f0d24"/><g id="s6-stars"></g>
+        <g id="s6-atom"></g>
+        <g id="s6-badge"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S7 Landung, Knall, Seismograph -->
+    <section class="scene" id="s7"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="url(#g-day)"/><rect y="1180" width="1080" height="740" fill="#e8c77a"/>
+        <g id="s7-rings" fill="none" stroke="#fff" stroke-width="10"></g>
+        <g id="s7-fall"><g id="s7-crowd"></g></g>
+        <g transform="translate(90,470)">
+          <rect width="900" height="300" rx="24" fill="#f4f1ea" stroke="#0d0b18" stroke-width="8"/>
+          <g id="s7-grid" stroke="#d9d2c4" stroke-width="3"></g>
+          <path id="s7-seis" d="" fill="none" stroke="#e8463c" stroke-width="7" stroke-linejoin="round"/>
+          <text class="lbl" x="24" y="44" font-size="30" fill="#5a5470">SEISMOGRAPH</text>
+        </g>
+        <g id="s7-wumms" class="lbl"><text x="540" y="960" font-size="150" text-anchor="middle" fill="#ffd23f" stroke="#0d0b18" stroke-width="16" paint-order="stroke" transform="rotate(-6 540 960)">WUMMS!</text></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S8 Kein Netz -->
+    <section class="scene" id="s8" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b2b63"/><stop offset=".6" stop-color="#c8607a"/><stop offset="1" stop-color="#ffb36b"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-dusk)"/><circle cx="760" cy="980" r="120" fill="#ffd27a" opacity=".85"/>
+        <rect y="960" width="1080" height="120" fill="#2a6fb0"/><rect y="1060" width="1080" height="860" fill="#e8c77a"/>
+        <g id="s8-crowd"></g>
+        <g id="s8-badge"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S9 Flughafen + Fähre, 200 Jahre -->
+    <section class="scene" id="s9" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="url(#g-day)"/>
+        <rect y="1000" width="1080" height="80" fill="#2a8fd6"/><rect y="1080" width="1080" height="840" fill="#8a8a96"/>
+        <rect y="1150" width="1080" height="70" fill="#4a4a56"/><g id="s9-stripes" fill="#fff"></g>
+        <g id="s9-ferrywrap"><g id="s9-ferry"></g></g>
+        <g id="s9-planewrap"><g id="s9-plane"></g></g>
+        <g id="s9-queue"></g>
+        <g id="s9-b1"></g><g id="s9-b2"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S10 Kein Essen, kein Wasser -->
+    <section class="scene" id="s10" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><radialGradient id="g-heat" cx=".5" cy=".25" r=".8"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#ff9a3c"/><stop offset="1" stop-color="#b8432e"/></radialGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-heat)"/><circle cx="540" cy="470" r="110" fill="#fff3c4"/>
+        <rect y="1180" width="1080" height="740" fill="#d9a55a"/>
+        <g id="s10-crowd"></g>
+        <g id="s10-food"></g><g id="s10-water"></g>
+        <g id="s10-x1"></g><g id="s10-x2"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S11 Du bewegst die Erde -->
+    <section class="scene" id="s11" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <rect width="1080" height="1920" fill="#14122c"/><g id="s11-stars"></g>
+        <g id="s11-earthwrap"><g id="s11-earth"></g></g>
+        <g id="s11-jump"><g id="s11-kid"></g></g>
+        <g id="s11-up"><path d="M860,720 l-50,0 l80,-110 l80,110 l-50,0 l0,140 l-60,0Z" fill="#3ee08f" stroke="#0d0b18" stroke-width="7"/></g>
+        <g id="s11-down"><path d="M160,1040 l50,0 l-80,110 l-80,-110 l50,0 l0,-140 l60,0Z" fill="#3ee08f" stroke="#0d0b18" stroke-width="7" transform="translate(40,0)"/>
+          <text class="lbl" x="170" y="1210" font-size="44" text-anchor="middle" fill="#3ee08f" stroke="#0d0b18" stroke-width="9" paint-order="stroke">WINZIG</text></g>
+        <g id="s11-badge"></g>
+      </svg>
+    </div></div></section>
+
+    <!-- S12 Endkarte: offene Frage -->
+    <section class="scene" id="s12" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="url(#g-sea)"/>
+        <g transform="translate(540,1000) scale(.55) translate(-540,-780)"><use href="#s2-island"/></g><g id="s12-dots"></g></svg>
+      <div class="ec-q">WIE WÜRDEST <span class="y">DU</span><br/>VON MALLORCA<br/><span class="r">WEGKOMMEN?</span></div>
+      <div class="ec-cta" style="top:1380px">SCHREIB'S IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG FÜR MEHR SZENARIEN</span></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="68.44" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="70.7" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const SHIRTS = ["#e8463c", "#5c6390", "#3ee08f", "#ffd23f", "#3fd4ff", "#b05cd6", "#ff8a5c"];
+    const HAIR = ["#5b3a22", "#2b1a12", "#c48a3a", "#1b1936", "#8a4a2a"];
+    function crowd(g, list, seed) {
+      const r = E.rng(seed || 1);
+      return list.sort((a, b) => a[1] - b[1]).map(([x, y, s, face, arms], i) => {
+        const w = svg("g", {}, g);
+        E.person(w, { x, y, s, face: face || "neutral", arms: arms || "down", shirt: SHIRTS[Math.floor(r() * SHIRTS.length)], hair: HAIR[Math.floor(r() * HAIR.length)], long: r() < .45, flip: r() < .5 });
+        return w;
+      });
+    }
+    function badge(g, x, y, text, color, size, sub) {
+      const b = svg("g", { transform: `translate(${x},${y})` }, g);
+      const fs = size || 64, w = text.length * fs * .66 + 80, h = fs * 1.6 + (sub ? 50 : 0);
+      svg("rect", { x: -w / 2, y: -h / 2, width: w, height: h, rx: 24, fill: "rgba(18,8,16,.94)", stroke: color, "stroke-width": 8 }, b);
+      const t = svg("text", { x: 0, y: sub ? -6 : fs * .36, "text-anchor": "middle", class: "lbl", "font-size": fs, fill: color }, b); t.textContent = text;
+      if (sub) { const s = svg("text", { x: 0, y: h / 2 - 26, "text-anchor": "middle", class: "lbl", "font-size": 30, fill: "#fff" }, b); s.textContent = sub; }
+      return b;
+    }
+    const pop = (el, t, origin) => { tl.set(el, { autoAlpha: 0 }, 0); tl.fromTo(el, { autoAlpha: 1, scale: .3, svgOrigin: origin }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, t); };
+
+    /* S1 Hook */
+    E.stars($("#s1-stars"), 90, 3, 1100);
+    E.globe($("#s1-earth"), { cx: 540, cy: 1980, r: 980, id: "e1", seed: 5 });
+    const P1 = [];
+    for (let i = 0; i < 9; i++) { const x = 110 + i * 107, y = 1980 - Math.sqrt(980 * 980 - (x - 540) * (x - 540)) + 8; P1.push([x, y, .34 + (i % 2) * .04, i % 3 ? "shock" : "happy"]); }
+    crowd($("#s1-people"), P1, 11).forEach((w, i) => tl.fromTo(w, { y: 0 }, { y: -120, duration: .32, ease: "power2.out", yoyo: true, repeat: 9, immediateRender: false }, .1 + (i % 3) * .08));
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+
+    /* S2 Mallorca füllt sich */
+    const W2 = $("#s2-waves");
+    for (let i = 0; i < 14; i++) svg("path", { d: `M${(i * 173) % 1000},${460 + (i * 97) % 900} q30,-20 60,0 q30,-20 60,0`, stroke: "#6fc3ff", "stroke-width": 6, fill: "none", opacity: .5 }, W2);
+    const isl = $("#s2-island"), C2 = $("#s2-crowd"), r2 = E.rng(21), dots = [];
+    while (dots.length < 520) { const x = 180 + r2() * 700, y = 480 + r2() * 600; const p = new DOMPoint(x, y); if (isl.isPointInFill(p)) dots.push(svg("circle", { cx: x, cy: y, r: 7, fill: SHIRTS[dots.length % SHIRTS.length], stroke: "#0d0b18", "stroke-width": 2 }, C2)); }
+    dots.sort((a, b) => (+a.getAttribute("cx")) - (+b.getAttribute("cx")));
+    tl.set(dots, { autoAlpha: 0 }, 0);
+    tl.to(dots, { autoAlpha: 1, duration: .05, stagger: { each: Math.max(.002, (cs("mallorca", 5) - at("mallorca")) / dots.length) } }, at("mallorca", 0));
+    const b2 = badge($("#s2-badge"), 540, 1135, "MALLORCA", "#ffd23f", 70, "≈ 2 MENSCHEN PRO m²");
+    pop(b2, cs("mallorca", 5), "540 1135");
+    tl.fromTo("#s2 .cam", { scale: 1.25 }, { scale: 1, duration: 2.5, ease: "power2.out", immediateRender: false }, at("treffen", -0.2));
+
+    /* S3 Countdown */
+    const P3 = [[160, 1360, .62], [380, 1330, .66], [600, 1370, .62], [820, 1340, .66], [270, 1480, .8], [700, 1500, .8], [960, 1480, .74], [40, 1500, .74]];
+    crowd($("#s3-crowd"), P3.map((p) => [p[0], p[1], p[2], "worried"]), 31);
+    ["#s3-n3", "#s3-n2", "#s3-n1"].forEach((id, i) => { tl.set(id, { autoAlpha: 0 }, 0); const t = cs("zaehlen", i); tl.fromTo(id, { autoAlpha: 1, scale: 1.8, svgOrigin: "540 660" }, { scale: 1, duration: .3, ease: "back.out(2)", immediateRender: false }, t); tl.set(id, { autoAlpha: 0 }, i < 2 ? cs("zaehlen", i + 1) : at("sprung", -0.15)); });
+    tl.fromTo("#s3-squat", { y: 0 }, { y: 30, duration: .25, ease: "power2.out", immediateRender: false }, cs("zaehlen", 2));
+
+    /* S4 Sprung */
+    crowd($("#s4-crowd"), P3.map((p) => [p[0], p[1], p[2], "happy"]), 31);
+    for (let i = 0; i < 10; i++) { const x = 60 + i * 110; svg("line", { x1: x, y1: 1450, x2: x, y2: 1650 }, $("#s4-lines")); }
+    tl.fromTo("#s4-jump", { y: 30 }, { y: -380, duration: .9, ease: "power2.out" }, at("sprung", -0.15));
+    tl.fromTo("#s4-lines", { y: 0, opacity: .8 }, { y: -500, opacity: 0, duration: .8, ease: "power1.out" }, at("sprung", -0.1));
+
+    /* S5 Waage */
+    E.stars($("#s5-stars"), 60, 51, 1200);
+    const L = $("#s5-lpan"), R = $("#s5-rpan");
+    const pan = (g, x) => { svg("path", { d: `M${x - 130},820 L${x},566 L${x + 130},820`, stroke: "#c9c3e6", "stroke-width": 6, fill: "none" }, g); svg("path", { d: `M${x - 160},820 L${x + 160},820 L${x + 120},860 L${x - 120},860Z`, fill: "#8a84b8", stroke: "#0d0b18", "stroke-width": 6 }, g); };
+    pan(L, 260); pan(R, 820);
+    const lc = svg("g", {}, L); for (let i = 0; i < 7; i++) E.person(lc, { x: 180 + i * 27, y: 818, s: .1, face: "happy", shirt: SHIRTS[i % 7] });
+    const lt = svg("text", { x: 260, y: 930, "text-anchor": "middle", class: "lbl", "font-size": 46, fill: "#fff", stroke: "#0d0b18", "stroke-width": 9, "paint-order": "stroke" }, L); lt.textContent = "500 MIO. t";
+    E.globe($("#s5-earth"), { cx: 820, cy: 690, r: 130, id: "e5", seed: 9 });
+    const rt = svg("text", { x: 820, y: 930, "text-anchor": "middle", class: "lbl", "font-size": 42, fill: "#ffd23f", stroke: "#0d0b18", "stroke-width": 9, "paint-order": "stroke" }, R); rt.textContent = "× 12 BILLIONEN";
+    tl.set([rt, "#s5-earthwrap"], { autoAlpha: 0 }, 0);
+    tl.fromTo("#s5-earthwrap", { autoAlpha: 1, y: -700 }, { y: 0, duration: .45, ease: "power2.in", immediateRender: false }, at("erde", 0));
+    const tt = cs("erde", 1);
+    tl.to("#s5-beam", { rotation: 21, svgOrigin: "540 553", duration: .6, ease: "back.out(1.6)" }, tt);
+    tl.to("#s5-left", { y: -122, duration: .6, ease: "back.out(1.6)" }, tt);
+    tl.to("#s5-right", { y: 122, duration: .6, ease: "back.out(1.6)" }, tt);
+    tl.fromTo(rt, { autoAlpha: 1, scale: .3, svgOrigin: "820 920" }, { scale: 1, duration: .35, ease: "back.out(2.5)", immediateRender: false }, cs("erde", 1, .2));
+
+    /* S6 Atom */
+    E.stars($("#s6-stars"), 70, 61);
+    const A = $("#s6-atom");
+    svg("circle", { cx: 540, cy: 800, r: 330, fill: "#3fd4ff", opacity: .08 }, A);
+    [0, 60, 120].forEach((rot, i) => { const o = svg("g", { transform: `rotate(${rot} 540 800)` }, A); svg("ellipse", { cx: 540, cy: 800, rx: 320, ry: 110, fill: "none", stroke: "#6fd6ff", "stroke-width": 8 }, o); const e = svg("g", {}, o); svg("circle", { cx: 860, cy: 800, r: 24, fill: "#3fd4ff", stroke: "#0d0b18", "stroke-width": 5 }, e); tl.fromTo(e, { rotation: 0, svgOrigin: "540 800" }, { rotation: 720, duration: 6, ease: "none" }, at("atom", -0.2 - i * .3)); });
+    [[0, 0, "#ff3b3b"], [30, 14, "#3fd4ff"], [-26, 18, "#ff3b3b"], [8, -28, "#3fd4ff"], [-10, 32, "#ff3b3b"], [26, -20, "#ff3b3b"], [-30, -14, "#3fd4ff"]].forEach(([dx, dy, c]) => svg("circle", { cx: 540 + dx, cy: 800 + dy, r: 30, fill: c, stroke: "#0d0b18", "stroke-width": 5 }, A));
+    const b6 = badge($("#s6-badge"), 540, 1150, "WENIGER ALS 1 ATOM", "#3fd4ff", 56);
+    pop(b6, cs("atom", 3), "540 1150");
+
+    /* S7 Landung */
+    const G7 = $("#s7-grid"); for (let i = 1; i < 9; i++) svg("line", { x1: i * 100, y1: 60, x2: i * 100, y2: 290 }, G7); for (let j = 1; j < 3; j++) svg("line", { x1: 0, y1: 60 + j * 77, x2: 900, y2: 60 + j * 77 }, G7);
+    let d = "M20,175"; const r7 = E.rng(71);
+    for (let x = 30; x <= 880; x += 12) { const k = Math.exp(-Math.pow((x - 420) / 60, 2)); const amp = 4 + k * 100; d += ` L${x},${(175 + (r7() - .5) * 2 * amp).toFixed(1)}`; }
+    const seis = $("#s7-seis"); seis.setAttribute("d", d); const len = seis.getTotalLength(); seis.setAttribute("stroke-dasharray", len);
+    tl.fromTo(seis, { attr: { "stroke-dashoffset": len } }, { attr: { "stroke-dashoffset": 0 }, duration: Math.max(2, end("beben") - at("landung")), ease: "none" }, at("landung", -0.2));
+    crowd($("#s7-crowd"), P3.map((p) => [p[0], p[1], p[2], "shock"]), 31);
+    tl.fromTo("#s7-fall", { y: -560 }, { y: 0, duration: .55, ease: "power2.in" }, at("landung", -0.2));
+    const RG = $("#s7-rings");
+    for (let i = 0; i < 3; i++) { const e = svg("ellipse", { cx: 540, cy: 1420, rx: 60, ry: 16, opacity: 0 }, RG); tl.fromTo(e, { attr: { rx: 60, ry: 16 }, opacity: .9 }, { attr: { rx: 900, ry: 200 }, opacity: 0, duration: 1.2, ease: "power2.out", immediateRender: false }, cs("knall", 2, i * .25)); }
+    pop($("#s7-wumms"), cs("knall", 2), "540 900");
+    tl.to("#s7-wumms", { autoAlpha: 0, duration: .2 }, at("beben", 0));
+    tl.fromTo("#s7 .cam", { x: -20, y: 10 }, { x: 20, y: -10, duration: .05, repeat: 15, yoyo: true, ease: "none", immediateRender: false }, cs("knall", 2));
+
+    /* S8 Kein Netz */
+    crowd($("#s8-crowd"), [[150, 1240, .72, "worried", "phone"], [400, 1210, .7, "shock", "phone"], [660, 1235, .72, "worried", "phone"], [910, 1215, .7, "worried", "phone"], [280, 1420, .9, "shock", "phone"], [800, 1440, .9, "worried", "phone"]], 81);
+    const b8 = svg("g", {}, $("#s8-badge"));
+    const bb = badge(b8, 540, 560, "KEIN NETZ", "#ff3b3b", 80);
+    pop(b8, cs("netz", 1), "540 560");
+    const hb = badge($("#s8-badge"), 540, 750, "ZIEL: NACH HAUSE", "#ffd23f", 52); pop(hb, cs("heim", 3), "540 750");
+    tl.fromTo("#s8-crowd", { x: -8 }, { x: 8, duration: .08, repeat: 9, yoyo: true, ease: "none", immediateRender: false }, cs("netz", 1));
+
+    /* S9 Flughafen + Fähre */
+    for (let i = 0; i < 9; i++) svg("rect", { x: 20 + i * 130, y: 1180, width: 70, height: 12, fill: "#fff" }, $("#s9-stripes"));
+    const PL = $("#s9-plane");
+    svg("path", { d: "M-150,0 C-150,-26 -120,-34 -80,-34 L120,-34 C160,-34 190,-18 200,0 C190,14 160,20 120,20 L-120,20 C-140,20 -150,12 -150,0Z", fill: "#f2f0f7", stroke: "#0d0b18", "stroke-width": 6 }, PL);
+    svg("path", { d: "M-20,-10 L-90,-110 L-50,-110 L60,-10Z", fill: "#3fd4ff", stroke: "#0d0b18", "stroke-width": 6 }, PL);
+    svg("path", { d: "M-130,-30 L-160,-100 L-120,-100 L-90,-30Z", fill: "#e8463c", stroke: "#0d0b18", "stroke-width": 6 }, PL);
+    for (let i = 0; i < 6; i++) svg("circle", { cx: -60 + i * 30, cy: -12, r: 8, fill: "#3b6fb0" }, PL);
+    const tp = at("flug", -0.2), pd = Math.max(2.4, (end("jahre") - tp) / 2);
+    for (let k = 0; k < 2; k++) tl.fromTo("#s9-planewrap", { x: -260, y: 1120, rotation: 0 }, { x: 1300, y: 640, rotation: -16, duration: pd, ease: "power1.in", immediateRender: k === 0 }, tp + k * pd);
+    const FE = $("#s9-ferry");
+    svg("path", { d: "M-150,0 L150,0 L120,50 L-120,50Z", fill: "#e8463c", stroke: "#0d0b18", "stroke-width": 6 }, FE); svg("rect", { x: -90, y: -50, width: 180, height: 50, fill: "#f2f0f7", stroke: "#0d0b18", "stroke-width": 6 }, FE);
+    tl.fromTo("#s9-ferrywrap", { x: 700, y: 960 }, { x: 1250, y: 960, duration: Math.max(3, end("jahre") - tp), ease: "none" }, tp);
+    const Q = $("#s9-queue"), rq = E.rng(91);
+    for (let i = 0; i < 46; i++) { const x = 1060 - i * 24, y = 1640 + (i % 2) * 14; svg("circle", { cx: x, cy: y - 40, r: 12, fill: "#f3c6a0" }, Q); svg("rect", { x: x - 12, y: y - 28, width: 24, height: 40, rx: 8, fill: SHIRTS[Math.floor(rq() * 7)] }, Q); }
+    for (let i = 0; i < 40; i++) { const x = 100 + i * 24, y = 1740 + (i % 2) * 14; svg("circle", { cx: x, cy: y - 40, r: 12, fill: "#f3c6a0" }, Q); svg("rect", { x: x - 12, y: y - 28, width: 24, height: 40, rx: 8, fill: SHIRTS[Math.floor(rq() * 7)] }, Q); }
+    const q1 = badge($("#s9-b1"), 540, 530, "100.000 PRO TAG", "#3fd4ff", 56); pop(q1, cs("flug", 2), "540 530");
+    const q2 = badge($("#s9-b2"), 540, 720, "200+ JAHRE", "#ff3b3b", 96); pop(q2, cs("jahre", 2), "540 720");
+
+    /* S10 Hunger */
+    crowd($("#s10-crowd"), [[300, 1230, .62, "worried"], [540, 1250, .7, "shock"], [780, 1230, .62, "worried"]], 101);
+    const FO = $("#s10-food");
+    svg("path", { d: "M170,700 C170,610 230,580 300,580 C370,580 430,610 430,700 L430,800 L170,800Z", fill: "#d99a4e", stroke: "#0d0b18", "stroke-width": 8 }, FO);
+    [210, 270, 330].forEach((x) => svg("path", { d: `M${x},640 q20,-20 40,0`, stroke: "#a66a2a", "stroke-width": 8, fill: "none" }, FO));
+    const WA = $("#s10-water");
+    svg("rect", { x: 720, y: 560, width: 160, height: 260, rx: 40, fill: "rgba(160,220,255,.45)", stroke: "#0d0b18", "stroke-width": 8 }, WA); svg("rect", { x: 760, y: 520, width: 80, height: 50, rx: 10, fill: "#3fd4ff", stroke: "#0d0b18", "stroke-width": 8 }, WA);
+    const X = (g, cx, cy) => { svg("path", { d: `M${cx - 120},${cy - 120} L${cx + 120},${cy + 120} M${cx + 120},${cy - 120} L${cx - 120},${cy + 120}`, stroke: "#0d0b18", "stroke-width": 50, "stroke-linecap": "round" }, g); svg("path", { d: `M${cx - 120},${cy - 120} L${cx + 120},${cy + 120} M${cx + 120},${cy - 120} L${cx - 120},${cy + 120}`, stroke: "#ff3b3b", "stroke-width": 32, "stroke-linecap": "round" }, g); };
+    X($("#s10-x1"), 300, 690); X($("#s10-x2"), 800, 690);
+    pop($("#s10-x1"), cs("hunger", 3), "300 690"); pop($("#s10-x2"), cs("hunger", 4), "800 690");
+
+    /* S11 Du bewegst die Erde */
+    E.stars($("#s11-stars"), 80, 111);
+    E.globe($("#s11-earth"), { cx: 540, cy: 1760, r: 760, id: "e11", seed: 3 });
+    E.person($("#s11-kid"), { x: 540, y: 1006, s: .62, face: "happy", arms: "down" });
+    const tj = at("fakt", -0.2), nj = Math.max(3, Math.floor((D - tj) / .9));
+    tl.fromTo("#s11-jump", { y: 0 }, { y: -190, duration: .45, ease: "power2.out", yoyo: true, repeat: nj * 2 - 1, immediateRender: false }, tj);
+    tl.fromTo("#s11-earthwrap", { y: 0 }, { y: 10, duration: .45, ease: "power2.out", yoyo: true, repeat: nj * 2 - 1, immediateRender: false }, tj);
+    tl.set(["#s11-up", "#s11-down"], { autoAlpha: 0 }, 0);
+    tl.to("#s11-up", { autoAlpha: 1, duration: .2 }, cs("fakt", 0)); tl.to("#s11-down", { autoAlpha: 1, duration: .2 }, cs("fakt", 6));
+    const b11 = badge($("#s11-badge"), 540, 1150, "DU BEWEGST DIE ERDE", "#3ee08f", 54); pop(b11, cs("fakt", 2), "540 1150");
+
+    /* S12 Endkarte */
+    const D12 = $("#s12-dots"), r12 = E.rng(121);
+    for (let i = 0; i < 90; i++) svg("circle", { cx: 400 + r12() * 280, cy: 920 + r12() * 160, r: 5, fill: SHIRTS[i % 7] }, D12);
+    E.buildEndcard(tl, "s12", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    // HUD nach der Landung umbeschriften (reine Funktion der Zeit)
+    const hl = $("#hud .hud-label"), hn = $("#hud .hud-num"), tL = at("landung", -0.2), tD = at("danach", -0.2), tJ = cs("jahre", 2);
+    E.clock(tl, (t) => {
+      if (t < tL) { hl.textContent = "⚠ SPRUNG IN"; return; }
+      if (t < tD) { hl.textContent = "⚠ GELANDET"; return; }
+      hl.textContent = "⚠ HEIMREISE DAUERT"; hn.textContent = t < tJ ? "???" : "200+ J";
+    });
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>

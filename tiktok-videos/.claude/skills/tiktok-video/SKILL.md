@@ -226,6 +226,11 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
   Schritt durch Umgebungsmenü → Edit → Network access → Allowed domains führen; die Freigabe
   greift sofort in der laufenden Session. Nie nach Schlüsseln im Chat fragen.
 - `tools/render.sh` mit eigenem Ausgabepfad: absolute Pfade oder relativ zum Aufrufort.
+- `E.cs("zeile", i)` nur mit vorhandenem Chunk-Index (0 … Anzahl Chunks − 1) aufrufen – ein zu großer Index liefert
+  keinen Zeitpunkt, die Animation läuft dann nie (Druckwelle in Video 10 war unsichtbar).
+- HUD-Beschriftung oder Zähler szenenweise ändern (z. B. Countdown passend zu „noch 5 Minuten“, danach „DRINNEN BLEIBEN
+  24 STD“): nach `E.buildHud(tl)` ein eigenes `E.clock(tl, t => …)` registrieren, das `.hud-label`/`.hud-num` als reine
+  Funktion der Zeit setzt (Beispiele: Videos 08 und 10).
 - Container ist flüchtig: fertige Videos und Projekte dem Nutzer schicken bzw. in ein Repo pushen.
 
 ## 5. Abgabe (immer alles davon)

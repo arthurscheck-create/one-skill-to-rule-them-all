@@ -1,0 +1,2 @@
+{ "name": "08-alle-springen", "private": true, "type": "module",
+  "scripts": { "check": "npx --yes hyperframes@0.9.11 check", "render": "npx --yes hyperframes@0.9.11 render" } }

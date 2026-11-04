@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was wäre, wenn niemand mehr schlafen müsste?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    #s1 .title.main { top: 1150px; font-size: 86px; line-height: 1.0; letter-spacing: -1px; }
+    #s1 .title.sub { top: 1445px; font-size: 40px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="74.87" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: hellwach neben dem Bett -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><g id="s1-room"></g><g id="s1-kid"></g><g id="s1-zzz"></g></svg>
+      <div class="title main">WAS WÄRE, WENN<br/><span class="r">NIEMAND</span> MEHR<br/>SCHLAFEN MÜSSTE?</div>
+      <div class="title sub">⚠ NIE WIEDER MÜDE</div>
+    </div></div></section>
+
+    <!-- S2 Erste Nacht, 03:00 -->
+    <section class="scene" id="s2" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><g id="s2-room"></g>
+        <g transform="translate(790,680)"><rect x="-210" y="-90" width="420" height="180" rx="28" fill="#0d0b18" stroke="#4a4580" stroke-width="12"/>
+          <text id="s2-time" class="lbl" x="0" y="44" font-size="124" text-anchor="middle" fill="#ff3b3b">03:00</text></g>
+        <g id="s2-kid"></g></svg>
+    </div></div></section>
+
+    <!-- S3 24-Stunden-Uhr: Schlaf wird Freizeit -->
+    <section class="scene" id="s3" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/><g id="s3-stars"></g>
+        <g id="s3-clock"></g><g id="s3-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S4 Lebens-Raster: 25 Jahre gewonnen -->
+    <section class="scene" id="s4" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/>
+        <text class="lbl" x="540" y="520" font-size="44" text-anchor="middle" fill="#c9c3e6">DEIN LEBEN IN JAHREN</text>
+        <g id="s4-grid"></g><g id="s4-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S5 Stadt rund um die Uhr offen -->
+    <section class="scene" id="s5" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122c"/><g id="s5-stars"></g><g id="s5-back"></g>
+        <g id="s5-shops"></g><rect y="1180" width="1080" height="740" fill="#2b2850"/><g id="s5-people"></g></svg>
+    </div></div></section>
+
+    <!-- S6 Stromverbrauch explodiert -->
+    <section class="scene" id="s6"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122c"/><g id="s6-city"></g><g id="s6-lights"></g>
+        <g id="s6-gauge" transform="translate(0,130)"></g></svg>
+    </div></div></section>
+
+    <!-- S7 Schlafzimmer überflüssig -->
+    <section class="scene" id="s7" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><g id="s7-room"></g><g id="s7-x"></g><g id="s7-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S8 Heute: 11 Tage wach, Halluzinationen -->
+    <section class="scene" id="s8" data-drift="1.07"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#241a3a"/><g id="s8-halo"></g>
+        <g id="s8-kid"></g>
+        <g transform="translate(800,620)"><rect x="-150" y="-150" width="300" height="300" rx="24" fill="#f2f0f7" stroke="#0d0b18" stroke-width="8"/><rect x="-150" y="-150" width="300" height="80" rx="24" fill="#e8463c"/><rect x="-150" y="-100" width="300" height="30" fill="#e8463c"/>
+          <text class="lbl" x="0" y="-92" font-size="44" text-anchor="middle" fill="#fff">TAG</text><text id="s8-day" class="lbl" x="0" y="100" font-size="150" text-anchor="middle" fill="#1b1936">1</text></g>
+        <g id="s8-hallu"></g><rect id="s8-red" width="1080" height="1920" fill="#ff3b3b" opacity="0"/></svg>
+    </div></div></section>
+
+    <!-- S9 Gehirn putzt sich -->
+    <section class="scene" id="s9" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#101a3a"/><g id="s9-stars"></g>
+        <g id="s9-brain"></g><g id="s9-junk"></g><g id="s9-water"></g><g id="s9-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S10 Ein einziges Gen -->
+    <section class="scene" id="s10" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0f1a2c"/><g id="s10-stars"></g>
+        <g id="s10-dna"></g><g id="s10-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S11 Nie wieder träumen -->
+    <section class="scene" id="s11" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/><g id="s11-stars"></g>
+        <g id="s11-dreamwrap"><g id="s11-dream"></g></g>
+        <g id="s11-kid"></g><g id="s11-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S12 Endkarte A/B/C -->
+    <section class="scene" id="s12" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s12-stars"></g></svg>
+      <div class="ec-q" style="font-size:78px">WOFÜR NUTZT <span class="y">DU</span> DIE 8 STUNDEN?</div>
+      <div class="ec-opt a"><span class="k">A</span><span class="t">MEHR GELD<small>Arbeiten und sparen</small></span></div>
+      <div class="ec-opt b"><span class="k">B</span><span class="t">ZOCKEN<small>Serien und Games ohne Ende</small></span></div>
+      <div class="ec-opt c"><span class="k">C</span><span class="t">LIEBER TRÄUMEN<small>Ich will mein Bett zurück</small></span></div>
+      <div class="ec-cta">SCHREIB A, B ODER C<br/>IN DIE KOMMENTARE</div>
+      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="72.72" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="74.87" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const SHIRTS = ["#e8463c", "#5c6390", "#3ee08f", "#ffd23f", "#3fd4ff", "#b05cd6", "#ff8a5c"];
+    function badge(g, x, y, text, color, size, sub) {
+      const b = svg("g", { transform: `translate(${x},${y})` }, g);
+      const fs = size || 64, w = text.length * fs * .66 + 80, h = fs * 1.6 + (sub ? 50 : 0);
+      svg("rect", { x: -w / 2, y: -h / 2, width: w, height: h, rx: 24, fill: "rgba(18,8,16,.94)", stroke: color, "stroke-width": 8 }, b);
+      const t = svg("text", { x: 0, y: sub ? -6 : fs * .36, "text-anchor": "middle", class: "lbl", "font-size": fs, fill: color }, b); t.textContent = text;
+      if (sub) { const s = svg("text", { x: 0, y: h / 2 - 26, "text-anchor": "middle", class: "lbl", "font-size": 30, fill: "#fff" }, b); s.textContent = sub; }
+      return b;
+    }
+    const pop = (el, t, origin) => { tl.set(el, { autoAlpha: 0 }, 0); tl.fromTo(el, { autoAlpha: 1, scale: .3, svgOrigin: origin }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, t); };
+    function room(g, withBed) {
+      svg("rect", { width: 1080, height: 1920, fill: "#2b2850" }, g);
+      svg("rect", { x: 120, y: 470, width: 340, height: 400, rx: 12, fill: "#0f1236", stroke: "#4a4580", "stroke-width": 16 }, g);
+      E.stars(svg("g", {}, g), 0, 1);
+      for (let i = 0; i < 14; i++) svg("circle", { cx: 140 + ((i * 97) % 300), cy: 500 + ((i * 61) % 340), r: 3, fill: "#fff", opacity: .7 }, g);
+      svg("circle", { cx: 360, cy: 570, r: 50, fill: "#ffe7a3" }, g); svg("circle", { cx: 382, cy: 556, r: 44, fill: "#0f1236" }, g);
+      svg("line", { x1: 290, y1: 470, x2: 290, y2: 870, stroke: "#4a4580", "stroke-width": 12 }, g);
+      svg("rect", { y: 1180, width: 1080, height: 740, fill: "#3b3058" }, g);
+      if (withBed) {
+        const b = svg("g", { id: withBed }, g);
+        svg("rect", { x: 520, y: 960, width: 520, height: 240, rx: 30, fill: "#5c6390" }, b);
+        svg("rect", { x: 1000, y: 820, width: 50, height: 420, rx: 16, fill: "#6b4a2e" }, b);
+        svg("rect", { x: 540, y: 920, width: 160, height: 80, rx: 30, fill: "#f2f0f7" }, b);
+        svg("rect", { x: 680, y: 940, width: 340, height: 120, rx: 30, fill: "#3fd4ff" }, b);
+        svg("rect", { x: 540, y: 1200, width: 30, height: 60, fill: "#2b2030" }, b); svg("rect", { x: 990, y: 1200, width: 30, height: 60, fill: "#2b2030" }, b);
+      }
+    }
+
+    /* S1 Hook */
+    room($("#s1-room"), "s1-bed");
+    E.person($("#s1-kid"), { x: 300, y: 1240, s: .95, face: "shock", arms: "down" });
+    const Z = $("#s1-zzz");
+    ["Z", "Z", "Z"].forEach((z, i) => { const t = svg("text", { x: 760 + i * 70, y: 860 - i * 80, class: "lbl", "font-size": 70 + i * 16, fill: "#c9c3e6", stroke: "#0d0b18", "stroke-width": 8, "paint-order": "stroke" }, Z); t.textContent = z; });
+    svg("path", { d: "M720,600 L1000,900 M1000,600 L720,900", stroke: "#ff3b3b", "stroke-width": 26, "stroke-linecap": "round" }, Z);
+    tl.fromTo(Z, { autoAlpha: 0, scale: .4, svgOrigin: "860 750" }, { autoAlpha: 1, scale: 1, duration: .35, ease: "back.out(2.5)" }, 0.4);
+    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: .6 }, { autoAlpha: 1, scale: 1, duration: .3, ease: "back.out(2.4)" }, 0.1);
+    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: .3 }, 0.7);
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+
+    /* S2 03:00 */
+    room($("#s2-room"), "s2-bed");
+    E.person($("#s2-kid"), { x: 330, y: 1250, s: .9, face: "happy", arms: "down", shirt: "#3ee08f" });
+    tl.fromTo("#s2-time", { opacity: 1 }, { opacity: .35, duration: .5, yoyo: true, repeat: 7, ease: "steps(1)" }, at("nacht1", 0));
+
+    /* S3 24-h-Uhr */
+    E.stars($("#s3-stars"), 60, 31);
+    const C = $("#s3-clock"), cx = 540, cy = 790, R = 300;
+    const arc = (a0, a1, r) => { const p = (a) => [cx + r * Math.sin(a * Math.PI / 12), cy - r * Math.cos(a * Math.PI / 12)]; const [x0, y0] = p(a0), [x1, y1] = p(a1); return `M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${a1 - a0 > 12 ? 1 : 0} 1 ${x1},${y1}Z`; };
+    svg("circle", { cx, cy, r: R + 22, fill: "#0d0b18" }, C);
+    svg("path", { d: arc(7, 23, R), fill: "#3fd4ff" }, C);
+    const sleep = svg("path", { d: arc(23, 31, R), fill: "#3b3768" }, C);
+    for (let h = 0; h < 24; h++) { const a = h * Math.PI / 12; svg("line", { x1: cx + (R - 30) * Math.sin(a), y1: cy - (R - 30) * Math.cos(a), x2: cx + R * Math.sin(a), y2: cy - R * Math.cos(a), stroke: "#0d0b18", "stroke-width": h % 6 ? 4 : 10 }, C); }
+    const t1 = svg("text", { x: cx + 40, y: cy - 150, class: "lbl", "font-size": 56, fill: "#c9c3e6", "text-anchor": "middle", stroke: "#0d0b18", "stroke-width": 8, "paint-order": "stroke" }, C); t1.textContent = "SCHLAF";
+    const t2 = svg("text", { x: cx + 40, y: cy - 150, class: "lbl", "font-size": 64, fill: "#ffd23f", "text-anchor": "middle", stroke: "#0d0b18", "stroke-width": 9, "paint-order": "stroke" }, C); t2.textContent = "+8 STD";
+    const t3 = svg("text", { x: cx - 40, y: cy + 140, class: "lbl", "font-size": 56, fill: "#0d0b18", "text-anchor": "middle" }, C); t3.textContent = "WACH";
+    svg("circle", { cx, cy, r: 26, fill: "#ffd23f", stroke: "#0d0b18", "stroke-width": 6 }, C);
+    tl.set(t2, { autoAlpha: 0 }, 0);
+    const tz = cs("zeit", 2);
+    tl.to(sleep, { fill: "#ffd23f", duration: .4 }, tz); tl.to(t1, { autoAlpha: 0, duration: .2 }, tz);
+    tl.fromTo(t2, { autoAlpha: 1, scale: .3, svgOrigin: `${cx + 40} ${cy - 170}` }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, tz + .1);
+    const b3 = badge($("#s3-badge"), 540, 1180, "≈ 2.900 STD / JAHR", "#ffd23f", 56); pop(b3, cs("jahr", 1), "540 1180");
+
+    /* S4 Lebensraster */
+    const G4 = $("#s4-grid"), cells = [];
+    for (let i = 0; i < 78; i++) { const c = i % 13, r = Math.floor(i / 13); cells.push(svg("rect", { x: 85 + c * 72, y: 570 + r * 72, width: 58, height: 58, rx: 12, fill: i % 3 === 2 ? "#3b3768" : "#3fd4ff" }, G4)); }
+    const sl = cells.filter((_, i) => i % 3 === 2);
+    tl.to(sl, { fill: "#ffd23f", duration: .2, stagger: .03 }, cs("leben", 3));
+    const b4 = badge($("#s4-badge"), 540, 1130, "+25 JAHRE", "#ffd23f", 90); pop(b4, cs("leben", 4), "540 1130");
+
+    /* S5 Stadt 24/7 */
+    E.stars($("#s5-stars"), 50, 51, 600);
+    E.skyline($("#s5-back"), { seed: 5, base: 1000, wMin: 90, wMax: 160, hMin: 200, hMax: 420, fill: "#2e2a58", gap: 6, lit: .9, win: 14 });
+    const SH = $("#s5-shops");
+    [["SUPERMARKT", "#3ee08f", 30], ["SCHULE", "#3fd4ff", 390], ["BÜRO", "#ffd23f", 730]].forEach(([n, c, x], i) => {
+      const g = svg("g", {}, SH);
+      svg("rect", { x, y: 720, width: 320, height: 460, fill: "#4a4580", stroke: "#0d0b18", "stroke-width": 6 }, g);
+      svg("rect", { x: x + 30, y: 900, width: 260, height: 180, fill: "#ffd27a", opacity: .9 }, g);
+      svg("rect", { x: x + 20, y: 750, width: 280, height: 90, rx: 14, fill: "#0d0b18", stroke: c, "stroke-width": 6 }, g);
+      const t = svg("text", { x: x + 160, y: 810, class: "lbl", "font-size": n.length > 8 ? 34 : 52, fill: c, "text-anchor": "middle" }, g); t.textContent = n;
+      const o = svg("g", {}, g); svg("rect", { x: x + 60, y: 1100, width: 200, height: 60, rx: 30, fill: "#ff3b3b", stroke: "#0d0b18", "stroke-width": 5 }, o);
+      const ot = svg("text", { x: x + 160, y: 1142, class: "lbl", "font-size": 40, fill: "#fff", "text-anchor": "middle" }, o); ot.textContent = "24/7";
+      pop(g, cs("stadt", 2 + i), `${x + 160} 950`); pop(o, cs("stadt", 5, i * .12), `${x + 160} 1130`);
+    });
+    const P5 = $("#s5-people"); [[190, 1245, .48], [540, 1255, .5], [880, 1245, .48]].forEach(([x, y, s], i) => E.person(P5, { x, y, s, face: "happy", arms: i === 1 ? "phone" : "bag", shirt: SHIRTS[i + 2], flip: i === 2 }));
+
+    /* S6 Strom */
+    const lights = E.skyline($("#s6-city"), { seed: 61, base: 1240, wMin: 90, wMax: 170, hMin: 260, hMax: 560, fill: "#2e2a58", gap: 6, lit: .95, win: 14, lightsInto: $("#s6-lights") });
+    tl.set(lights, { opacity: .15 }, 0);
+    tl.to(lights, { opacity: 1, duration: .05, stagger: { each: .004, from: "random" } }, cs("strom", 1));
+    const GA = $("#s6-gauge");
+    svg("path", { d: "M240,700 A300,300 0 0 1 840,700", fill: "none", stroke: "#3ee08f", "stroke-width": 40 }, GA);
+    svg("path", { d: "M540,400 A300,300 0 0 1 840,700", fill: "none", stroke: "#ffd23f", "stroke-width": 40 }, GA);
+    svg("path", { d: "M752,488 A300,300 0 0 1 840,700", fill: "none", stroke: "#ff3b3b", "stroke-width": 40 }, GA);
+    const nd = svg("g", {}, GA); svg("path", { d: "M530,700 L540,450 L550,700Z", fill: "#fff", stroke: "#0d0b18", "stroke-width": 5 }, nd); svg("circle", { cx: 540, cy: 700, r: 30, fill: "#0d0b18", stroke: "#fff", "stroke-width": 6 }, GA);
+    const gt = svg("text", { x: 540, y: 790, class: "lbl", "font-size": 48, fill: "#fff", "text-anchor": "middle", stroke: "#0d0b18", "stroke-width": 8, "paint-order": "stroke" }, GA); gt.textContent = "STROMVERBRAUCH";
+    tl.fromTo(nd, { rotation: -70, svgOrigin: "540 700" }, { rotation: -20, duration: 1, ease: "power1.out" }, at("strom", -0.2));
+    tl.to(nd, { rotation: 82, duration: .5, ease: "back.out(2)" }, cs("strom", 3));
+    tl.fromTo(nd, { rotation: 82 }, { rotation: 76, duration: .06, repeat: 13, yoyo: true, ease: "none", immediateRender: false }, cs("strom", 3, .5));
+
+    /* S7 Schlafzimmer */
+    room($("#s7-room"), "s7-bed");
+    const X7 = $("#s7-x");
+    svg("path", { d: "M560,880 L1000,1240 M1000,880 L560,1240", stroke: "#0d0b18", "stroke-width": 56, "stroke-linecap": "round" }, X7);
+    svg("path", { d: "M560,880 L1000,1240 M1000,880 L560,1240", stroke: "#ff3b3b", "stroke-width": 36, "stroke-linecap": "round" }, X7);
+    pop(X7, cs("zimmer", 1), "780 1060");
+    const b7 = badge($("#s7-badge"), 540, 560, "ÜBERFLÜSSIG", "#ff3b3b", 80); pop(b7, cs("zimmer", 2), "540 560");
+
+    /* S8 Gardner */
+    const H8 = $("#s8-halo"); svg("circle", { cx: 540, cy: 900, r: 420, fill: "#5b3f9a", opacity: .35 }, H8);
+    E.person($("#s8-kid"), { x: 400, y: 1300, s: 1.05, face: "worried", arms: "down", shirt: "#5c6390" });
+        const day = $("#s8-day"), tg0 = at("gardner", 0), tg1 = cs("gardner", 3);
+    E.clock(tl, (t) => { day.textContent = String(Math.max(1, Math.min(11, 1 + Math.floor(10 * (t - tg0) / Math.max(.1, tg1 - tg0))))); });
+    const HA = $("#s8-hallu"), rh = E.rng(81);
+    for (let i = 0; i < 6; i++) {
+      const [x, y] = [[170, 560], [250, 780], [160, 1020], [940, 1010], [700, 1070], [960, 880]][i], g = svg("g", {}, HA);
+      if (i % 2) { svg("ellipse", { cx: x, cy: y, rx: 60, ry: 36, fill: "#fff" }, g); svg("circle", { cx: x, cy: y, r: 22, fill: "#b05cd6" }, g); svg("circle", { cx: x, cy: y, r: 9, fill: "#0d0b18" }, g); }
+      else { let d = `M${x},${y}`; for (let k = 1; k < 40; k++) { const a = k * .5, rr = k * 2.2; d += ` L${(x + rr * Math.cos(a)).toFixed(1)},${(y + rr * Math.sin(a)).toFixed(1)}`; } svg("path", { d, fill: "none", stroke: "#3ee08f", "stroke-width": 8, opacity: .85 }, g); }
+      tl.set(g, { autoAlpha: 0 }, 0);
+      tl.fromTo(g, { autoAlpha: .9, scale: .2, svgOrigin: `${x} ${y}` }, { scale: 1, rotation: 40, duration: 1.8, ease: "power1.out", immediateRender: false }, cs("gardner", 4, i * .25));
+    }
+    tl.fromTo("#s8-red", { opacity: 0 }, { opacity: .18, duration: .3, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, cs("gardner", 4));
+
+    /* S9 Gehirn */
+    E.stars($("#s9-stars"), 50, 91);
+    const BR = $("#s9-brain");
+    svg("path", { d: "M300,820 C260,660 380,540 520,560 C600,480 760,520 790,620 C900,640 920,780 850,860 C880,960 780,1040 680,1010 C620,1080 470,1080 420,1010 C320,1020 250,930 300,820Z", fill: "#ff9ab0", stroke: "#0d0b18", "stroke-width": 10 }, BR);
+    ["M380,700 C430,660 470,720 520,680", "M560,640 C600,600 660,660 700,620", "M340,860 C400,820 440,900 500,860", "M560,800 C620,760 660,840 720,800", "M450,960 C500,920 560,980 620,940", "M760,720 C800,700 820,760 840,740", "M540,560 C520,700 560,850 540,1040"].forEach((d) => svg("path", { d, fill: "none", stroke: "#d9677f", "stroke-width": 10, "stroke-linecap": "round" }, BR));
+    const J = $("#s9-junk"), rj = E.rng(93), junk = [];
+    for (let i = 0; i < 22; i++) { const x = 340 + rj() * 460, y = 620 + rj() * 380; junk.push([svg("circle", { cx: x, cy: y, r: 10 + rj() * 8, fill: "#8a5a2e", stroke: "#0d0b18", "stroke-width": 3 }, J), x, y]); }
+    junk.forEach(([el, x, y], i) => { const dx = (x - 560) * 1.8, dy = (y - 800) * 1.8 + 200; tl.fromTo(el, { x: 0, y: 0, opacity: 1 }, { x: dx, y: dy, opacity: 0, duration: 1.6, ease: "power1.in", immediateRender: false }, cs("gehirn", 3, i * .04)); });
+    const WA = $("#s9-water");
+    for (let i = 0; i < 6; i++) { const w = svg("path", { d: `M200,${640 + i * 70} q60,-30 120,0 q60,30 120,0 q60,-30 120,0 q60,30 120,0 q60,-30 120,0 q60,30 120,0`, fill: "none", stroke: "#3fd4ff", "stroke-width": 8, opacity: 0 }, WA); tl.fromTo(w, { x: -200, opacity: 0 }, { x: 120, opacity: .8, duration: 2, ease: "none", immediateRender: false }, at("gehirn", i * .15)); }
+    const b9 = badge($("#s9-badge"), 540, 1180, "ABFALL RAUS", "#3fd4ff", 64); pop(b9, cs("gehirn", 4), "540 1180");
+
+    /* S10 DNA */
+    E.stars($("#s10-stars"), 50, 101);
+    const DN = $("#s10-dna"), rungs = [];
+    for (let i = 0; i < 14; i++) {
+      const y = 540 + i * 42, ph = i * .55, x1 = 540 + 170 * Math.sin(ph), x2 = 540 - 170 * Math.sin(ph);
+      const g = svg("g", {}, DN), hi = i >= 6 && i <= 8;
+      svg("line", { x1, y1: y, x2, y2: y, stroke: hi ? "#3ee08f" : "#5c6390", "stroke-width": 12, "stroke-linecap": "round" }, g);
+      svg("circle", { cx: x1, cy: y, r: 16, fill: "#3fd4ff", stroke: "#0d0b18", "stroke-width": 4 }, g); svg("circle", { cx: x2, cy: y, r: 16, fill: "#ff8a5c", stroke: "#0d0b18", "stroke-width": 4 }, g);
+      rungs.push(g); if (hi) g.classList.add("gene");
+    }
+    tl.fromTo(rungs, { scaleX: 1, svgOrigin: "540 800" }, { scaleX: -1, duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: 5, stagger: .05, immediateRender: false }, at("verrueckt", -0.2));
+    const hl = svg("rect", { x: 330, y: 760, width: 420, height: 150, rx: 30, fill: "none", stroke: "#3ee08f", "stroke-width": 10 }, DN);
+    pop(hl, cs("gen", 5), "540 835");
+    const b10 = badge($("#s10-badge"), 540, 1180, "NUR 6 STUNDEN", "#3ee08f", 64); pop(b10, cs("gen", 3), "540 1180");
+
+    /* S11 Träume */
+    E.stars($("#s11-stars"), 70, 111);
+    const DR = $("#s11-dream");
+    [[300, 1000, 22], [340, 920, 34]].forEach(([x, y, r]) => svg("circle", { cx: x, cy: y, r, fill: "#f2f0f7" }, DR));
+    svg("path", { d: "M380,820 C300,820 280,700 360,670 C350,560 480,520 540,580 C600,500 760,520 760,620 C860,620 880,760 790,800 C780,880 660,900 600,850 C540,900 420,880 380,820Z", fill: "#f2f0f7", stroke: "#0d0b18", "stroke-width": 8 }, DR);
+    [["#ff3b3b", 0], ["#ffd23f", 1], ["#3ee08f", 2], ["#3fd4ff", 3]].forEach(([c, i]) => svg("path", { d: `M${420 + i * 22},800 A${160 - i * 22},${160 - i * 22} 0 0 1 ${740 - i * 22},800`, fill: "none", stroke: c, "stroke-width": 20 }, DR));
+    svg("circle", { cx: 680, cy: 650, r: 36, fill: "#ffe7a3" }, DR); svg("circle", { cx: 696, cy: 640, r: 32, fill: "#f2f0f7" }, DR);
+    [[470, 640], [560, 610], [430, 720]].forEach(([x, y]) => svg("path", { d: `M${x},${y - 18} L${x + 6},${y - 4} L${x + 20},${y} L${x + 6},${y + 6} L${x},${y + 20} L${x - 6},${y + 6} L${x - 20},${y} L${x - 6},${y - 4}Z`, fill: "#ffd23f" }, DR));
+    E.person($("#s11-kid"), { x: 300, y: 1560, s: .9, face: "worried", arms: "down" });
+    const td = cs("traum", 2);
+    tl.to("#s11-dreamwrap", { opacity: .15, scale: .7, svgOrigin: "560 760", duration: .6, ease: "power2.in" }, td);
+    const b11 = badge($("#s11-badge"), 720, 1010, "KEINE TRÄUME", "#ff3b3b", 64); pop(b11, td + .3, "720 1010");
+
+    /* S12 Endkarte */
+    E.stars($("#s12-stars"), 60, 121);
+    E.buildEndcard(tl, "s12", at("frage", -0.3), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>
