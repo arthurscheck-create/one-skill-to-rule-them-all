@@ -1,14 +1,14 @@
 window.TIMING = {
   "title": "Was wäre, wenn jeder in Deutschland über Nacht 1 Million Euro hätte?",
-  "duration": 71.22,
+  "duration": 71.62,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 4.139,
+      "t1": 3.15,
       "chunks": [
-        "Was wäre, wenn jeder in Deutschland über Nacht eine Million Euro auf dem Konto hätte?"
+        "Jeder in Deutschland bekommt über Nacht eine Million Euro."
       ],
       "noCap": true,
       "chunkStarts": [
@@ -16,52 +16,67 @@ window.TIMING = {
       ]
     },
     {
-      "id": "loop",
-      "t0": 4.574,
-      "t1": 7.653,
+      "id": "kata",
+      "t0": 3.41,
+      "t1": 5.48,
       "chunks": [
-        "Und am Ende",
-        "sind ganz andere",
-        "reich,",
-        "als du ^denkst.^"
+        "Und genau das",
+        "wird zur",
+        "*Katastrophe.*"
       ],
       "chunkStarts": [
-        4.574,
-        5.412,
-        6.29,
-        6.683
+        3.41,
+        4.35,
+        4.692
+      ]
+    },
+    {
+      "id": "loop",
+      "t0": 5.741,
+      "t1": 8.043,
+      "chunks": [
+        "Am Ende",
+        "siehst du,",
+        "wer wirklich",
+        "^reich^ wird."
+      ],
+      "chunkStarts": [
+        5.741,
+        6.135,
+        6.67,
+        7.236
       ]
     },
     {
       "id": "morgen",
-      "t0": 7.914,
-      "t1": 8.903,
+      "t0": 8.303,
+      "t1": 9.293,
       "chunks": [
         "^Sieben Uhr morgens.^"
       ],
       "chunkStarts": [
-        7.914
+        8.303
       ]
     },
     {
       "id": "app",
-      "t0": 9.164,
-      "t1": 11.97,
+      "t0": 9.554,
+      "t1": 12.36,
       "chunks": [
         "Du öffnest",
         "deine Banking-App.",
         "^Eine Million Euro.^"
       ],
       "chunkStarts": [
-        9.164,
-        9.638,
-        10.83
+        9.554,
+        10.028,
+        11.219
       ]
     },
     {
       "id": "alle",
-      "t0": 12.203,
-      "t1": 14.98,
+      "t0": 12.592,
+      "t1": 15.37,
       "chunks": [
         "Das Gleiche",
         "sehen gerade",
@@ -70,17 +85,17 @@ window.TIMING = {
         "Menschen."
       ],
       "chunkStarts": [
-        12.203,
-        12.859,
-        13.415,
-        14.05,
-        14.505
+        12.592,
+        13.249,
+        13.804,
+        14.44,
+        14.895
       ]
     },
     {
       "id": "summe",
-      "t0": 15.241,
-      "t1": 17.977,
+      "t0": 15.63,
+      "t1": 18.366,
       "chunks": [
         "Zusammen sind das",
         "über",
@@ -88,16 +103,16 @@ window.TIMING = {
         "Euro."
       ],
       "chunkStarts": [
-        15.241,
-        16.099,
-        16.432,
-        17.543
+        15.63,
+        16.489,
+        16.822,
+        17.932
       ]
     },
     {
       "id": "vergleich",
-      "t0": 18.237,
-      "t1": 22.053,
+      "t0": 18.627,
+      "t1": 22.443,
       "chunks": [
         "Fast ^zwanzig Mal^",
         "so viel,",
@@ -106,69 +121,69 @@ window.TIMING = {
         "*erwirtschaftet.*"
       ],
       "chunkStarts": [
-        18.237,
-        19.217,
-        19.61,
-        20.458,
-        21.246
+        18.627,
+        19.606,
+        20.0,
+        20.848,
+        21.636
       ]
     },
     {
       "id": "tag1",
-      "t0": 22.314,
-      "t1": 23.062,
+      "t0": 22.703,
+      "t1": 23.451,
       "chunks": [
         "^Tag eins.^"
       ],
       "chunkStarts": [
-        22.314
+        22.703
       ]
     },
     {
       "id": "kuendigen",
-      "t0": 23.323,
-      "t1": 25.332,
+      "t0": 23.712,
+      "t1": 25.722,
       "chunks": [
         "Millionen Menschen",
         "*kündigen*",
         "ihren Job."
       ],
       "chunkStarts": [
-        23.323,
-        24.272,
-        24.726
+        23.712,
+        24.662,
+        25.116
       ]
     },
     {
       "id": "kaufen",
-      "t0": 25.593,
-      "t1": 27.683,
+      "t0": 25.983,
+      "t1": 28.073,
       "chunks": [
         "Autohäuser",
         "sind in Stunden",
         "*ausverkauft.*"
       ],
       "chunkStarts": [
-        25.593,
-        26.29,
-        26.946
+        25.983,
+        26.679,
+        27.336
       ]
     },
     {
       "id": "tag3",
-      "t0": 27.944,
-      "t1": 28.621,
+      "t0": 28.334,
+      "t1": 29.01,
       "chunks": [
         "^Tag drei.^"
       ],
       "chunkStarts": [
-        27.944
+        28.334
       ]
     },
     {
       "id": "preise",
-      "t0": 28.882,
-      "t1": 32.112,
+      "t0": 29.271,
+      "t1": 32.502,
       "chunks": [
         "Die Läden merken:",
         "Alle haben Geld.",
@@ -176,16 +191,16 @@ window.TIMING = {
         "die *Preise.*"
       ],
       "chunkStarts": [
-        28.882,
-        29.982,
-        30.991,
-        31.557
+        29.271,
+        30.371,
+        31.381,
+        31.946
       ]
     },
     {
       "id": "regale",
-      "t0": 32.373,
-      "t1": 36.027,
+      "t0": 32.763,
+      "t1": 36.417,
       "chunks": [
         "Und weil kaum",
         "noch jemand arbeitet,",
@@ -193,27 +208,27 @@ window.TIMING = {
         "*leer.*"
       ],
       "chunkStarts": [
-        32.373,
-        32.989,
-        34.563,
-        35.592
+        32.763,
+        33.378,
+        34.952,
+        35.982
       ]
     },
     {
       "id": "woche",
-      "t0": 36.288,
-      "t1": 37.247,
+      "t0": 36.677,
+      "t1": 37.637,
       "chunks": [
         "^Eine Woche später.^"
       ],
       "chunkStarts": [
-        36.288
+        36.677
       ]
     },
     {
       "id": "haus",
-      "t0": 37.508,
-      "t1": 41.383,
+      "t0": 37.897,
+      "t1": 41.772,
       "chunks": [
         "Jeder will",
         "ein Haus kaufen.",
@@ -223,18 +238,18 @@ window.TIMING = {
         "als gestern."
       ],
       "chunkStarts": [
-        37.508,
-        37.931,
-        38.97,
-        39.474,
-        40.182,
-        40.636
+        37.897,
+        38.321,
+        39.359,
+        39.863,
+        40.571,
+        41.025
       ]
     },
     {
       "id": "geschichte",
-      "t0": 41.643,
-      "t1": 48.294,
+      "t0": 42.033,
+      "t1": 48.683,
       "chunks": [
         "Zu viel Geld",
         "gab es",
@@ -247,21 +262,21 @@ window.TIMING = {
         "^Milliarden^ Mark."
       ],
       "chunkStarts": [
-        41.643,
-        42.33,
-        42.582,
-        43.58,
-        43.923,
-        44.68,
-        45.619,
-        46.386,
-        47.335
+        42.033,
+        42.719,
+        42.971,
+        43.97,
+        44.312,
+        45.07,
+        46.009,
+        46.776,
+        47.724
       ]
     },
     {
       "id": "euro",
-      "t0": 48.555,
-      "t1": 53.407,
+      "t0": 48.944,
+      "t1": 53.797,
       "chunks": [
         "Und sogar",
         "in Frankreich",
@@ -271,31 +286,31 @@ window.TIMING = {
         "der gleiche ^Euro.^"
       ],
       "chunkStarts": [
-        48.555,
-        48.979,
-        49.635,
-        50.21,
-        51.39,
-        52.408
+        48.944,
+        49.369,
+        50.024,
+        50.6,
+        51.779,
+        52.797
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 53.668,
-      "t1": 54.597,
+      "t0": 54.057,
+      "t1": 54.986,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        53.668,
-        53.97
+        54.057,
+        54.36
       ]
     },
     {
       "id": "reich",
-      "t0": 55.031,
-      "t1": 57.202,
+      "t0": 55.421,
+      "t1": 57.591,
       "chunks": [
         "Wenn jeder",
         "Millionär ist,",
@@ -303,16 +318,16 @@ window.TIMING = {
         "reich."
       ],
       "chunkStarts": [
-        55.031,
-        55.445,
-        56.172,
-        56.757
+        55.421,
+        55.835,
+        56.562,
+        57.147
       ]
     },
     {
       "id": "dinge",
-      "t0": 57.463,
-      "t1": 61.641,
+      "t0": 57.852,
+      "t1": 62.03,
       "chunks": [
         "Reich ist,",
         "wer echte",
@@ -322,36 +337,36 @@ window.TIMING = {
         "~Essen.~"
       ],
       "chunkStarts": [
-        57.463,
-        58.321,
-        58.816,
-        59.583,
-        60.279,
-        61.126
+        57.852,
+        58.71,
+        59.205,
+        59.972,
+        60.669,
+        61.516
       ]
     },
     {
       "id": "frage",
-      "t0": 61.902,
-      "t1": 64.588,
+      "t0": 62.291,
+      "t1": 64.977,
       "chunks": [
         "Was würdest du mit der Million als Erstes machen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        61.902
+        62.291
       ]
     },
     {
       "id": "komm",
-      "t0": 65.023,
-      "t1": 68.591,
+      "t0": 65.412,
+      "t1": 68.981,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        65.023
+        65.412
       ]
     }
   ],
@@ -503,6 +518,16 @@ window.TIMING = {
     }
   ],
   "sfx": [
+    {
+      "type": "ding",
+      "at": "hook",
+      "off": 0.0
+    },
+    {
+      "type": "boom",
+      "at": "kata",
+      "off": 1.15
+    },
     {
       "type": "ding",
       "at": "app",

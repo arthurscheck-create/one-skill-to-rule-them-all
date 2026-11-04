@@ -91,6 +91,17 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
      einlösen (sonst fühlen sich Zuschauer betrogen und die Watchtime sinkt beim nächsten Video).
    - Ab Sekunde 3 alle 3–5 s ein neuer Reiz (Schnitt, Zahl springt, Sound), nie zwei ruhige
      Sätze hintereinander.
+   - **Hook-Regeln v2 (Nutzerwunsch: niemand darf wegscrollen):**
+     - **Erster Satz ≤ 2,5 s und eine Behauptung statt einer langen Frage.** Schlecht: „Was wäre, wenn jeder in Deutschland
+       über Nacht eine Million Euro auf dem Konto hätte?“ (4,5 s). Gut: „Jeder in Deutschland bekommt über Nacht eine Million Euro.“
+     - **Zweiter Satz = Widerspruch oder Gefahr:** „Und genau das wird zur *Katastrophe.*“ (was gut klingt, wird schlimm),
+       visuell mit rotem Blitz, Wackeln und Boom genau auf dem Schlüsselwort (`cs("kata", 2)`).
+     - **Dritter Satz = konkretes Versprechen für das Ende:** „Am Ende siehst du, wer wirklich reich wird.“
+     - **Frame 0 ist schon voll in Bewegung:** Effekt-Elemente als reine Funktion der Zeit ab t = 0 (z. B. Geldregen über
+       `E.clock`, nicht erst nach Verzögerung einfliegen lassen), dazu ein Handy-/Push-/Alarm-Element, Punch-in und Sound bei 0,0 s.
+     - Titel nur 3 kurze Zeilen und ausblenden, bevor der erste Untertitel kommt (bei 3 Hook-Sätzen: `at("kata", -0.15)`).
+     - Hook nachträglich verbessern ohne komplette Neuvertonung: nur die neuen Hook-Sätze vertonen (~140 Credits), transkribieren,
+       vor die alte Aufnahme ab dem ersten Satz nach dem Hook schneiden (Video 11 als Beispiel), dann speedup/align/prepare.
 2. **Eskalation in Zeitsprüngen:** "Stunde eins." → "Tag zwei." → … Jeder Sprung = neue Szene,
    HUD-Zähler springt, Status-Chip sinkt, jede Stufe eine konkrete sichtbare Folge.
    Alle 3–5 s ein neuer Reiz (Schnitt, Zahl, Sound).

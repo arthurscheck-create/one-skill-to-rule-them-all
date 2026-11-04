@@ -3,8 +3,9 @@ import importlib.util, sys
 spec = importlib.util.spec_from_file_location("b2", "/home/user/tiktok-videos/scripts/batch2_lib.py"); b2 = importlib.util.module_from_spec(spec); spec.loader.exec_module(b2)
 build, F = b2.build, b2.F
 build("11-million-fuer-alle", "Was wäre, wenn jeder in Deutschland über Nacht 1 Million Euro hätte?", [
- ("hook", ["Was wäre, wenn jeder in Deutschland über Nacht eine Million Euro auf dem Konto hätte?"], True),
- ("loop", ["Und am Ende", "sind ganz andere", "reich,", "als du ^denkst.^"], False),
+ ("hook", ["Jeder in Deutschland bekommt über Nacht eine Million Euro."], True),
+ ("kata", ["Und genau das", "wird zur", "*Katastrophe.*"], False),
+ ("loop", ["Am Ende", "siehst du,", "wer wirklich", "^reich^ wird."], False),
  ("morgen", ["^Sieben Uhr morgens.^"], False),
  ("app", ["Du öffnest", "deine Banking-App.", "^Eine Million Euro.^"], False),
  ("alle", ["Das Gleiche", "sehen gerade", "^dreiundachtzig^", "^Millionen^", "Menschen."], False),
@@ -33,6 +34,6 @@ build("11-million-fuer-alle", "Was wäre, wenn jeder in Deutschland über Nacht 
  [{"type":"follow","at":"kaufen","off":0.2,"dur":2.8,"text":"FOLG FÜR MEHR <span class='y'>SZENARIEN</span>"},
   {"type":"like","at":"euro","off":0.4,"dur":2.6,"text":"LIKE, WENN DU'S NICHT WUSSTEST"},
   {"type":"comment","at":"komm","off":0,"dur":2.2,"text":"SCHREIB A, B ODER C"}],
- [{"type":"ding","at":"app","off":1.0},{"type":"riser","at":"summe","off":-0.4},{"type":"boom","at":"vergleich","off":1.2},{"type":"glitch","at":"kuendigen","off":0.6},
+ [{"type":"ding","at":"hook","off":0.0},{"type":"boom","at":"kata","off":1.15},{"type":"ding","at":"app","off":1.0},{"type":"riser","at":"summe","off":-0.4},{"type":"boom","at":"vergleich","off":1.2},{"type":"glitch","at":"kuendigen","off":0.6},
   {"type":"alarm","at":"preise","off":1.2},{"type":"heartbeat","at":"geschichte","off":1.5,"dur":2.5},{"type":"glitch","at":"euro","off":1.2},
   {"type":"rise","at":"dinge","off":0,"dur":3},{"type":"ding","at":"frage","off":-0.2}])
