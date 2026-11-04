@@ -166,6 +166,35 @@
     tl.set(delta, { autoAlpha: 0 }, 0);
   }
 
+  /** Interaktions-Einblendungen aus TIMING.interact:
+   *  [{type:"like"|"follow"|"comment"|"save"|"share", at:"<zeile>", off:0, dur:2.5, text:"…"}]
+   *  Pille unter den Untertiteln (y≈1570) mit animiertem Icon. */
+  const ICONS = {
+    like: '<path d="M50 84 C20 62 8 48 8 32 C8 19 18 10 30 10 C39 10 46 15 50 22 C54 15 61 10 70 10 C82 10 92 19 92 32 C92 48 80 62 50 84Z" fill="#ff3b5c"/>',
+    follow: '<circle cx="50" cy="50" r="42" fill="#ff3b5c"/><path d="M50 28 V72 M28 50 H72" stroke="#fff" stroke-width="12" stroke-linecap="round"/>',
+    comment: '<path d="M14 18 H86 Q92 18 92 24 V64 Q92 70 86 70 H44 L24 88 V70 H14 Q8 70 8 64 V24 Q8 18 14 18Z" fill="#3fd4ff"/><circle cx="32" cy="44" r="7" fill="#0d0b18"/><circle cx="50" cy="44" r="7" fill="#0d0b18"/><circle cx="68" cy="44" r="7" fill="#0d0b18"/>',
+    save: '<path d="M22 8 H78 V92 L50 72 L22 92Z" fill="#ffd23f"/>',
+    share: '<path d="M56 10 L94 44 L56 78 V58 C32 58 18 66 6 86 C10 58 24 36 56 30Z" fill="#3ee08f"/>',
+  };
+  const DEFAULT_TEXT = { like: "LIKE, WENN DU'S WUSSTEST", follow: "FOLG FÜR TEIL 2", comment: "SCHREIB'S IN DIE KOMMENTARE", save: "SPEICHERN FÜR SPÄTER", share: "SCHICK'S DEINEM BESTEN FREUND" };
+  function buildInteract(tl) {
+    const list = T.interact || [];
+    if (!list.length) return;
+    const root = document.getElementById("root");
+    list.forEach((it, i) => {
+      const el = document.createElement("div");
+      el.className = "interact " + it.type;
+      el.innerHTML = `<svg class="ico" viewBox="0 0 100 100">${ICONS[it.type] || ICONS.like}</svg><span>${fmt(it.text || DEFAULT_TEXT[it.type] || "")}</span>`;
+      root.appendChild(el);
+      const t = ref(it), d = it.dur || 2.6;
+      const ico = el.querySelector(".ico");
+      tl.set(el, { autoAlpha: 0, xPercent: -50 }, 0);
+      tl.fromTo(el, { autoAlpha: 0, y: 60, scale: 0.6 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.35, ease: "back.out(2.2)", immediateRender: false }, t);
+      tl.fromTo(ico, { scale: 1 }, { scale: 1.3, duration: 0.18, repeat: Math.max(1, Math.floor(d / 0.36) - 1), yoyo: true, ease: "sine.inOut", immediateRender: false }, t + 0.35);
+      tl.to(el, { autoAlpha: 0, y: 30, duration: 0.25, ease: "power2.in" }, t + d);
+    });
+  }
+
   /** Ruft fn(t) bei jedem Frame mit der absoluten Videozeit auf (seek-sicher).
    *  Für Text-Zähler, Uhren usw. — niemals Zustand zwischen Frames speichern. */
   function clock(tl, fn) {
@@ -174,5 +203,5 @@
     fn(0);
   }
 
-  window.Engine = { T, at, end, ref, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud };
+  window.Engine = { T, at, end, ref, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract };
 })();

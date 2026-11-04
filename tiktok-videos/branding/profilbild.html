@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<title>Profilbild</title>
+<link rel="stylesheet" href="lib/style.css" />
+<style>
+  html, body { width: 1080px; height: 1080px; margin: 0; overflow: hidden; background: #1b1936; }
+  svg { display: block; }
+</style>
+<script>window.TIMING = { duration: 1, lines: [], scenes: [] };</script>
+<script src="lib/engine.js"></script>
+</head>
+<body>
+<svg id="pic" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <radialGradient id="bg" cx=".5" cy=".42" r=".75"><stop offset="0" stop-color="#5b3f9a"/><stop offset=".6" stop-color="#2a2258"/><stop offset="1" stop-color="#14122c"/></radialGradient>
+    <radialGradient id="glowR" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff3b3b" stop-opacity=".55"/><stop offset="1" stop-color="#ff3b3b" stop-opacity="0"/></radialGradient>
+    <radialGradient id="glowY" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd23f" stop-opacity=".6"/><stop offset="1" stop-color="#ffd23f" stop-opacity="0"/></radialGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121a42"/><stop offset=".7" stop-color="#3b2d6b"/><stop offset="1" stop-color="#a0577a"/></linearGradient>
+  </defs>
+  <g id="stage"></g>
+</svg>
+<script src="lib/cast.js"></script>
+<script>
+(function () {
+  const E = window.Engine, svg = E.svg, g = document.getElementById("stage");
+  const v = (location.hash || "#a").slice(1);
+  const r = E.rng(5);
+  function skyline(base, lit, fill, x0 = 0, x1 = 1080, hMin = 120, hMax = 380, win = 14) {
+    let x = x0;
+    while (x < x1) {
+      const w = 70 + r() * 90, h = hMin + r() * (hMax - hMin), y = base - h;
+      svg("rect", { x, y, width: w, height: h + 4, fill }, g);
+      for (let wy = y + 16; wy < base - win; wy += win * 2) for (let wx = x + 12; wx < x + w - win; wx += win * 1.9)
+        if (r() < lit) svg("rect", { x: wx, y: wy, width: win, height: win * 1.2, fill: r() < .85 ? "#ffd27a" : "#ff8a5c" }, g);
+      x += w + 6;
+    }
+  }
+  const bubble = (x, y, size, txt, color) => {
+    const t = svg("text", { x, y, "text-anchor": "middle", "font-family": "Montserrat", "font-weight": 900, "font-size": size, fill: color, stroke: "#0d0b18", "stroke-width": size * 0.09, "paint-order": "stroke" }, g);
+    t.textContent = txt;
+  };
+
+  svg("rect", { width: 1080, height: 1080, fill: "url(#bg)" }, g);
+
+  if (v === "a") {            // Gesicht schockiert vor nächtlicher Stadt, rotes Warnlicht
+    svg("circle", { cx: 540, cy: 470, r: 470, fill: "url(#glowR)" }, g);
+    skyline(1000, .5, "#1b1838");
+    E.person(g, { x: 540, y: 2130, s: 3.0, face: "shock", arms: "down" });
+    svg("circle", { cx: 800, cy: 230, r: 150, fill: "url(#glowY)" }, g);
+    bubble(805, 310, 230, "?", "#ffd23f");
+  } else if (v === "b") {     // Figur mit Handy, Warn-Panel über dem Kopf
+    skyline(1080, .45, "#1b1838", 0, 1080, 200, 620, 16);
+    svg("circle", { cx: 540, cy: 560, r: 420, fill: "url(#glowR)" }, g);
+    E.person(g, { x: 540, y: 1560, s: 2.3, face: "worried", arms: "phone", shirt: "#5c6390" });
+    const p = svg("g", { transform: "translate(540,175)" }, g);
+    svg("rect", { x: -230, y: -95, width: 460, height: 190, rx: 26, fill: "rgba(18,8,16,.94)", stroke: "#ff3b3b", "stroke-width": 9 }, p);
+    const t = svg("text", { x: 0, y: 52, "text-anchor": "middle", "font-family": "Montserrat", "font-weight": 900, "font-size": 150, fill: "#ff3b3b" }, p);
+    t.textContent = "?!";
+  } else {                    // Icon: Warnschild mit Fragezeichen über Skyline
+    svg("circle", { cx: 540, cy: 540, r: 480, fill: "url(#sky)" }, g);
+    skyline(1080, .5, "#1b1838", 0, 1080, 160, 420);
+    svg("circle", { cx: 540, cy: 470, r: 380, fill: "url(#glowR)" }, g);
+    svg("path", { d: "M540,150 L880,740 L200,740 Z", fill: "#ff3b3b", stroke: "#0d0b18", "stroke-width": 26, "stroke-linejoin": "round" }, g);
+    svg("path", { d: "M540,215 L828,710 L252,710 Z", fill: "#ffd23f" }, g);
+    bubble(540, 680, 420, "?", "#1b1936");
+  }
+  // Vignette
+  
+})();
+</script>
+</body>
+</html>

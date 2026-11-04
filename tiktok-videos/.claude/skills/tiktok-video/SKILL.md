@@ -1,6 +1,6 @@
 ---
 name: tiktok-video
-description: Erstellt deutsche TikTok-Videos (9:16, 1080x1920, 40–90 s) im Flat-Vector-"Was wäre wenn"/Survival-Erklärstil komplett im Code mit HyperFrames (HTML + GSAP → MP4). Verwenden, wenn der Nutzer ein neues Video, ein Thema, einen Titel ("Was würde passieren, wenn…", "Du hast X Minuten…", "Warum…") oder eine Änderung an einem bestehenden Video im Ordner tiktok-videos/videos/ möchte.
+description: Erstellt deutsche TikTok-Videos (9:16, 1080x1920, flexible Länge ca. 30–90 s) im Flat-Vector-"Was wäre wenn"/Survival-Erklärstil komplett im Code mit HyperFrames (HTML + GSAP → MP4). Verwenden, wenn der Nutzer ein neues Video, ein Thema, einen Titel ("Was würde passieren, wenn…", "Du hast X Minuten…", "Warum…") oder eine Änderung an einem bestehenden Video im Ordner tiktok-videos/videos/ möchte.
 ---
 
 # TikTok-Videos im Code (HyperFrames)
@@ -19,7 +19,8 @@ Alle Pfade unten sind relativ zu diesem Ordner.
 ```
 shared/lib/        Engine (engine.js), Figuren (cast.js), Stil (style.css), gsap.min.js, fonts/
 templates/         index.template.html + timing.template.js  (Startpunkt für neue Videos)
-tools/             new_video.sh · build_sfx.py · add_voice.py · render.sh
+tools/             new_video.sh · build_sfx.py · add_voice.py · align_words.py · elevenlabs_tts.py · render.sh · render_image.js
+branding/          profilbild.html (Profilbild-Varianten #a #b #c → node tools/render_image.js)
 videos/<slug>/     ein Projekt pro Video (index.html, timing.js, lib/, assets/)
 videos/01-keiner-arbeitet/   ← REFERENZPROJEKT: vollständiges Beispiel mit 12 Szenen
 output/            fertige MP4s
@@ -54,17 +55,35 @@ kursive Untertitel, Millisekunden-Countdown links). Dann nach der Beschreibung o
 
 ## 2. Skript-Aufbau (Pflicht)
 
-Ziel-Länge laut Nutzer (Standard 50 s ≈ 110–125 Wörter). Kurze Sätze, Du-Form, Präsens.
+**Länge flexibel:** so lang, wie die Geschichte trägt – typisch 35–75 s (≈2,4 Wörter/s).
+Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge vorgibt, mit
+`--fit <s>` darauf bringen. Kurze Sätze, Du-Form, Präsens.
 
-1. **Hook (0–3,5 s):** Titelfrage als großer Titel in der Untertitel-Zone + gelbe Unterzeile
-   ("⚠ WIE LANGE HÄLT DIE STADT DURCH?"). Szene zeigt sofort das Problem.
-2. **Zeitsprünge mit Eskalation:** "Stunde eins." → "Tag zwei." → "Tag drei." → "Tag sieben."
-   Jeder Sprung = neue Szene + HUD-Zähler springt + Status-Chip sinkt.
-   Jede Stufe eine konkrete, sichtbare Folge (Bus fällt aus, Kasse leer, Regale leer,
-   Stromausfall, kein Wasser, kein Netz, Müll/Ratten).
+1. **Hook (0–2 s) – das Wichtigste am ganzen Video.** Regeln:
+   - Das erste Bild ist schon in Bewegung (Wecker klingelt, Alarm, Explosion, Figur erschrickt),
+     kein ruhiger Einstieg, Sound-Hit bei 0,0 s.
+   - Titel max. ~8 Wörter, 3 Zeilen, ein rotes Schlüsselwort + gelbe Unterzeile mit Spannung.
+   - Eine der bewährten Formeln verwenden (mehrere Varianten schreiben, die stärkste nehmen):
+     *Szenario* "Was wäre, wenn ab morgen …?" · *Countdown* "Du hast 38 Minuten …" ·
+     *Zahl* "In 72 Stunden ist alles vorbei." · *Widerspruch* "Alle denken X – falsch." ·
+     *Offene Schleife* "Tag 7 ist der schlimmste." · *Du-Herausforderung* "Du überlebst keine 3 Tage."
+   - Im ersten gesprochenen Satz eine **offene Schleife** aufmachen, die erst am Ende
+     aufgelöst wird (z. B. "… und am Ende passiert etwas, womit keiner rechnet.").
+2. **Eskalation in Zeitsprüngen:** "Stunde eins." → "Tag zwei." → … Jeder Sprung = neue Szene,
+   HUD-Zähler springt, Status-Chip sinkt, jede Stufe eine konkrete sichtbare Folge.
+   Alle 3–5 s ein neuer Reiz (Schnitt, Zahl, Sound).
 3. **Wendung (~75 %):** "Und das Verrückte?" + überraschende Erkenntnis (grün).
-4. **CTA-Abstimmung (letzte 6 s):** Frage + 4 Optionen A–D + "SCHREIB A, B, C ODER D IN DIE
-   KOMMENTARE" + Countdown-Ring. Optional "TEIL 2"-Cliffhanger.
+4. **Interaktion (Pflicht, über `TIMING.interact`, siehe unten):**
+   - **Folgen** bei ~40–55 % (nach dem ersten großen Schock): "FOLG FÜR TEIL 2" /
+     "FOLG, SONST VERPASST DU TAG 7".
+   - **Like** an der Wendung: "LIKE, WENN DU'S NICHT WUSSTEST".
+   - **Kommentar** am Ende mit einer echten, leicht zu beantwortenden Frage (A/B/C/D,
+     Zahl, Ja/Nein) – das Video hat dafür die CTA-Abstimmung.
+   - Optional **Speichern/Teilen** bei Tipps oder Fakten-Listen ("SCHICK'S DEINEM BESTEN FREUND").
+   - Auch im Sprechertext kurz ansprechen ("Folg mir, damit du Teil 2 nicht verpasst."),
+     aber max. 2 Aufforderungen im gesprochenen Text, sonst wirkt es billig.
+5. **CTA-Abstimmung (letzte 5–7 s):** Frage + 4 Optionen A–D + "SCHREIB A, B, C ODER D IN
+   DIE KOMMENTARE" + Countdown-Ring. Optional "TEIL 2"-Cliffhanger.
 
 ## 3. Arbeitsablauf
 
@@ -78,6 +97,10 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    - `scenes`: Szenenwechsel relativ zu Satz-IDs (`{"id":"s3","at":"kasse","off":-0.2}`).
    - `hud.steps`: Zählerwerte/Chip-Prozente relativ zu Satz-IDs.
    - `sfx`: Ereignis-Sounds (`alarm riser boom flicker drip glitch rats rise ding`).
+   - `interact`: Interaktions-Pillen unter den Untertiteln (y≈1560) mit animiertem Icon und
+     Doppel-Pop-Sound: `{"type":"follow|like|comment|save|share","at":"<zeile>","off":0.3,
+     "dur":2.6,"text":"FOLG FÜR <span class='y'>TEIL 2</span>"}`. In `index.html` muss
+     `E.buildInteract(tl)` nach `E.buildHud(tl)` stehen (Vorlage hat es). Text ≤ 28 Zeichen.
    **Alle Animationszeiten in index.html immer über `at("id", off)` / `end("id")` angeben**,
    nie als feste Sekunden. Dann synchronisiert sich alles automatisch, wenn die Stimme kommt.
 2. **Szenen** in `index.html` bauen: je Szene
@@ -95,10 +118,11 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    **Weg A – ElevenLabs-Connector (11LBS, Credits des Nutzers), Standard:**
    1. `creative_create_flow` → `creative_generate_speech` (voice_id, Skript als prompt;
       2 Takes à ~710 Credits pro 50 s) → `creative_get_flow_run_status` pollen.
-   2. Take wählen, der am besten in die Zieldauer passt; `content_url` mit curl nach
+   2. Take wählen (bei gleicher Qualität den lebendigeren/kürzeren); `content_url` mit curl nach
       `assets/` laden (Netzfreigabe `elevenlabsusercontent.com` ist eingerichtet).
-   3. `python3 tools/add_voice.py videos/<slug> assets/take.mp3 --min-duration 50 --fit 50 --tail 1.8`
-      (kopiert nach voice.*, beschleunigt bei Bedarf max. 1,15x, trägt `<audio>` ein).
+   3. `python3 tools/add_voice.py videos/<slug> assets/take.mp3 --tail 1.8`
+      (kopiert nach voice.*, trägt `<audio>` ein; Videolänge = Sprache + Nachlauf.
+      Nur bei vorgegebener Länge `--fit <s>` ergänzen – beschleunigt max. 1,15x).
    4. **Wortgenau synchronisieren (immer machen, kostet 0 Credits):** gewählten Take mit
       `creative_add_flow_asset_node` (modality audio, generation_id) auf den Flow legen,
       `creative_transcribe_audio` (eleven_scribe_v1, connect_from = diese node_id), pollen,
@@ -108,7 +132,7 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
       (Die reine Pausen-Erkennung von add_voice.py ordnet bei manchen Stimmen falsch zu.)
    **Weg B – API-Schlüssel (`ELEVENLABS_API_KEY`), wortgenau:**
    ```bash
-   python3 tools/elevenlabs_tts.py videos/<slug> --min-duration 50 --fit 50
+   python3 tools/elevenlabs_tts.py videos/<slug>
    ```
    Das liest den Sprechertext direkt aus `timing.js` (Text der `chunks` = gesprochener Text,
    also Zahlen/Abkürzungen so schreiben, wie sie gesprochen werden sollen), holt Audio +

@@ -142,6 +142,13 @@ def main(project: Path):
             n = int(1.4 * SR); tt = np.arange(n) / SR
             add((np.sin(2 * np.pi * 1318 * tt) + 0.5 * np.sin(2 * np.pi * 1975 * tt)) * np.exp(-tt * 3.5), t, 0.3)
 
+    # --- Interaktions-Einblendungen: doppelter "Pop"
+    for it in T.get("interact", []):
+        t = at(it)
+        for j, f in enumerate((880, 1320)):
+            n = int(0.12 * SR); tt = np.arange(n) / SR
+            add(np.sin(2 * np.pi * f * tt) * np.exp(-tt * 30), t + j * 0.09, 0.28)
+
     # Ende: sanft ausblenden
     fade = int(0.6 * SR)
     out[-fade:] *= np.linspace(1, 0, fade)

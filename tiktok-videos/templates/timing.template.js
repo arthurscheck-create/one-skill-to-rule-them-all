@@ -23,6 +23,11 @@ window.TIMING = {
       {"at": "b2", "off": 0.00,  "value": 24, "chip": 40}
     ]
   },
+  "interact": [
+    {"type": "follow",  "at": "b2",    "off": 0.3,  "dur": 2.6, "text": "FOLG FÜR <span class='y'>TEIL 2</span>"},
+    {"type": "like",    "at": "twist", "off": -0.2, "dur": 2.4, "text": "LIKE, WENN DU'S NICHT WUSSTEST"},
+    {"type": "comment", "at": "cta",   "off": 0.6,  "dur": 2.4, "text": "SCHREIB'S IN DIE KOMMENTARE"}
+  ],
   "sfx": [
     {"type": "riser", "at": "b1", "off": -1.20},
     {"type": "ding",  "at": "cta", "off": -0.20}

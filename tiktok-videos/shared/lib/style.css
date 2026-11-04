@@ -64,6 +64,20 @@ html, body {
 .chip.bad { border-color: var(--red); background: rgba(34, 6, 8, .9); }
 .chip.bad .chip-val { color: var(--red); }
 
+/* ---------- Interaktion (Like / Folgen / Kommentar) ---------- */
+.interact {
+  position: absolute; left: 50%; top: 1560px; z-index: 55;
+  display: flex; align-items: center; gap: 18px; white-space: nowrap;
+  padding: 14px 34px 14px 18px; border-radius: 999px;
+  background: rgba(13, 11, 24, .88); border: 4px solid #fff;
+  box-shadow: 0 10px 0 rgba(0,0,0,.35), 0 0 40px rgba(255,59,92,.35);
+  font-weight: 900; font-size: 44px; color: #fff; text-transform: uppercase; letter-spacing: .5px;
+  visibility: hidden;
+}
+.interact .ico { width: 76px; height: 76px; flex: none; overflow: visible; }
+.interact.comment { box-shadow: 0 10px 0 rgba(0,0,0,.35), 0 0 40px rgba(63,212,255,.4); }
+.interact .r { color: var(--red); } .interact .y { color: var(--yellow); } .interact .g { color: var(--green); }
+
 /* ---------- Titel / Hook ---------- */
 .title { position: absolute; left: 40px; right: 40px; text-align: center; text-transform: uppercase; font-weight: 900; color: #fff; -webkit-text-stroke: 14px #0d0b18; paint-order: stroke fill; text-shadow: 0 8px 0 rgba(0,0,0,.45); }
 
