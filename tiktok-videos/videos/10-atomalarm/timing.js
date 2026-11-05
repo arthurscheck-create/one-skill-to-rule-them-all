@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Atomalarm: Du hast 10 Minuten – was tust du?",
-  "duration": 68.77,
+  "duration": 68.52,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 2.394,
+      "t1": 2.179,
       "chunks": [
         "Atomalarm! Du hast nur zehn Minuten."
       ],
@@ -17,53 +17,53 @@ window.TIMING = {
     },
     {
       "id": "kata",
-      "t0": 2.655,
-      "t1": 4.704,
+      "t0": 2.276,
+      "t1": 4.379,
       "chunks": [
         "Und die meisten",
         "machen sofort",
         "den ersten *Fehler.*"
       ],
       "chunkStarts": [
-        2.655,
-        3.331,
-        3.866
+        2.276,
+        2.852,
+        3.438
       ]
     },
     {
       "id": "loop",
-      "t0": 4.965,
-      "t1": 7.408,
+      "t0": 4.504,
+      "t1": 6.78,
       "chunks": [
         "Die ^wichtigste Regel^",
         "kommt ganz",
         "am Ende."
       ],
       "chunkStarts": [
-        4.965,
-        6.116,
-        6.681
+        4.504,
+        5.454,
+        6.127
       ]
     },
     {
       "id": "sirene",
-      "t0": 7.669,
-      "t1": 10.656,
+      "t0": 6.981,
+      "t1": 10.312,
       "chunks": [
         "Die Sirenen heulen.",
         "^Eine Minute^ lang,",
         "auf und ab."
       ],
       "chunkStarts": [
-        7.669,
-        9.04,
-        10.01
+        6.981,
+        8.622,
+        9.678
       ]
     },
     {
       "id": "handy",
-      "t0": 10.917,
-      "t1": 13.561,
+      "t0": 10.456,
+      "t1": 12.989,
       "chunks": [
         "Dein Handy",
         "*schrillt.*",
@@ -71,27 +71,27 @@ window.TIMING = {
         "*Angriff.*"
       ],
       "chunkStarts": [
-        10.917,
-        11.411,
-        12.177,
-        12.915
+        10.456,
+        10.936,
+        11.637,
+        12.395
       ]
     },
     {
       "id": "min9",
-      "t0": 13.822,
-      "t1": 14.872,
+      "t0": 13.134,
+      "t1": 13.998,
       "chunks": [
         "^Noch neun Minuten.^"
       ],
       "chunkStarts": [
-        13.822
+        13.134
       ]
     },
     {
       "id": "auto",
-      "t0": 15.133,
-      "t1": 20.512,
+      "t0": 14.2,
+      "t1": 18.531,
       "chunks": [
         "Ins Auto springen?",
         "*Falsch.*",
@@ -102,19 +102,19 @@ window.TIMING = {
         "schützt dich *kaum.*"
       ],
       "chunkStarts": [
-        15.133,
-        16.294,
-        17.05,
-        17.534,
-        17.989,
-        18.685,
-        19.594
+        14.2,
+        14.997,
+        15.486,
+        15.996,
+        16.438,
+        17.11,
+        17.686
       ]
     },
     {
       "id": "keller",
-      "t0": 20.773,
-      "t1": 24.113,
+      "t0": 18.675,
+      "t1": 21.901,
       "chunks": [
         "Geh in den",
         "~Keller.~",
@@ -124,18 +124,18 @@ window.TIMING = {
         "~ab.~"
       ],
       "chunkStarts": [
-        20.773,
-        21.288,
-        21.963,
-        22.599,
-        23.043,
-        23.81
+        18.675,
+        19.069,
+        19.72,
+        20.239,
+        20.701,
+        21.613
       ]
     },
     {
       "id": "innen",
-      "t0": 24.374,
-      "t1": 27.847,
+      "t0": 22.149,
+      "t1": 25.567,
       "chunks": [
         "Kein Keller?",
         "Dann in einen Raum",
@@ -143,27 +143,27 @@ window.TIMING = {
         "im Gebäude."
       ],
       "chunkStarts": [
-        24.374,
-        25.475,
-        26.504,
-        27.191
+        22.149,
+        23.272,
+        24.184,
+        24.789
       ]
     },
     {
       "id": "min5",
-      "t0": 28.108,
-      "t1": 28.996,
+      "t0": 25.711,
+      "t1": 26.643,
       "chunks": [
         "^Noch fünf Minuten.^"
       ],
       "chunkStarts": [
-        28.108
+        25.711
       ]
     },
     {
       "id": "fenster",
-      "t0": 29.257,
-      "t1": 33.303,
+      "t0": 26.739,
+      "t1": 31.309,
       "chunks": [
         "Weg von den Fenstern.",
         "Die Druckwelle",
@@ -172,17 +172,17 @@ window.TIMING = {
         "durch den Raum fliegen."
       ],
       "chunkStarts": [
-        29.257,
-        30.527,
-        31.183,
-        31.778,
-        32.323
+        26.739,
+        27.997,
+        28.774,
+        29.399,
+        30.243
       ]
     },
     {
       "id": "zu",
-      "t0": 33.505,
-      "t1": 35.967,
+      "t0": 31.453,
+      "t1": 34.094,
       "chunks": [
         "Fenster und Türen",
         "^zu.^",
@@ -190,16 +190,16 @@ window.TIMING = {
         "^aus.^"
       ],
       "chunkStarts": [
-        33.505,
-        34.333,
-        34.977,
-        35.523
+        31.453,
+        32.653,
+        33.269,
+        33.672
       ]
     },
     {
       "id": "vorrat",
-      "t0": 36.228,
-      "t1": 38.85,
+      "t0": 34.238,
+      "t1": 37.061,
       "chunks": [
         "Nimm Wasser",
         "und ein ^Radio^",
@@ -207,83 +207,83 @@ window.TIMING = {
         "mit."
       ],
       "chunkStarts": [
-        36.228,
-        37.144,
-        37.881,
-        38.507
+        34.238,
+        34.959,
+        35.852,
+        36.61
       ]
     },
     {
       "id": "min1",
-      "t0": 39.111,
-      "t1": 40.05,
+      "t0": 37.309,
+      "t1": 38.356,
       "chunks": [
         "^Noch eine Minute.^"
       ],
       "chunkStarts": [
-        39.111
+        37.309
       ]
     },
     {
       "id": "blitz",
-      "t0": 40.311,
-      "t1": 42.289,
+      "t0": 38.557,
+      "t1": 40.536,
       "chunks": [
         "Ein *greller Blitz.*",
         "Schau *nicht* hin!"
       ],
       "chunkStarts": [
-        40.311,
-        41.551
+        38.557,
+        39.816
       ]
     },
     {
       "id": "flach",
-      "t0": 42.713,
-      "t1": 45.285,
+      "t0": 40.901,
+      "t1": 43.588,
       "chunks": [
         "Wirf dich ^flach^",
         "auf den Boden.",
         "Schütz deinen Kopf."
       ],
       "chunkStarts": [
-        42.713,
-        43.359,
-        44.286
+        40.901,
+        41.515,
+        42.532
       ]
     },
     {
       "id": "druck",
-      "t0": 45.546,
-      "t1": 48.03,
+      "t0": 43.836,
+      "t1": 46.602,
       "chunks": [
         "Die Druckwelle",
         "kommt oft erst",
         "^Sekunden später.^"
       ],
       "chunkStarts": [
-        45.546,
-        46.404,
-        47.041
+        43.836,
+        44.413,
+        45.344
       ]
     },
     {
       "id": "regel",
-      "t0": 48.291,
-      "t1": 49.816,
+      "t0": 46.803,
+      "t1": 48.484,
       "chunks": [
         "Und jetzt",
         "die ^wichtigste Regel:^"
       ],
       "chunkStarts": [
-        48.291,
-        48.665
+        46.803,
+        47.351
       ]
     },
     {
       "id": "drinnen",
-      "t0": 50.077,
-      "t1": 52.73,
+      "t0": 48.657,
+      "t1": 51.421,
       "chunks": [
         "Bleib ~drinnen.~",
         "Mindestens",
@@ -291,31 +291,31 @@ window.TIMING = {
         "^Stunden.^"
       ],
       "chunkStarts": [
-        50.077,
-        51.084,
-        51.59,
-        52.276
+        48.657,
+        49.654,
+        50.23,
+        50.883
       ]
     },
     {
       "id": "fallout",
-      "t0": 52.991,
-      "t1": 55.323,
+      "t0": 51.594,
+      "t1": 53.984,
       "chunks": [
         "Draußen fällt",
         "radioaktiver *Staub*",
         "vom Himmel."
       ],
       "chunkStarts": [
-        52.991,
-        53.79,
-        54.839
+        51.594,
+        52.391,
+        53.419
       ]
     },
     {
       "id": "sieben",
-      "t0": 55.584,
-      "t1": 60.026,
+      "t0": 54.186,
+      "t1": 58.508,
       "chunks": [
         "Aber schon nach",
         "^sieben Stunden^",
@@ -325,51 +325,51 @@ window.TIMING = {
         "~gesunken.~"
       ],
       "chunkStarts": [
-        55.584,
-        56.17,
-        56.907,
-        57.957,
-        58.583,
-        59.491
+        54.186,
+        54.801,
+        55.531,
+        56.328,
+        56.779,
+        57.922
       ]
     },
     {
       "id": "raus",
-      "t0": 60.287,
-      "t1": 62.265,
+      "t0": 58.756,
+      "t1": 61.175,
       "chunks": [
         "Wer zu früh",
         "rausgeht,",
         "riskiert *alles.*"
       ],
       "chunkStarts": [
-        60.287,
-        60.852,
-        61.387
+        58.756,
+        59.323,
+        60.052
       ]
     },
     {
       "id": "frage",
-      "t0": 62.467,
-      "t1": 63.73,
+      "t0": 61.423,
+      "t1": 62.835,
       "chunks": [
         "Wo wärst du in zehn Minuten?"
       ],
       "noCap": true,
       "chunkStarts": [
-        62.467
+        61.423
       ]
     },
     {
       "id": "komm",
-      "t0": 64.052,
-      "t1": 66.122,
+      "t0": 63.152,
+      "t1": 66.215,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        64.052
+        63.152
       ]
     }
   ],
@@ -567,7 +567,7 @@ window.TIMING = {
     {
       "type": "boom",
       "at": "kata",
-      "off": 1.211
+      "off": 1.162
     }
   ]
 };

@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was wäre, wenn du in einer Zombieapokalypse landest?",
-  "duration": 63.15,
+  "duration": 62.98,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 2.081,
+      "t1": 1.992,
       "chunks": [
         "Du landest mitten in einer Zombieapokalypse."
       ],
@@ -17,23 +17,23 @@ window.TIMING = {
     },
     {
       "id": "kata",
-      "t0": 2.25,
-      "t1": 4.313,
+      "t0": 2.162,
+      "t1": 4.309,
       "chunks": [
         "Und in deiner Stadt",
         "bleibt dir vielleicht",
         "nur ein *Tag.*"
       ],
       "chunkStarts": [
-        2.25,
-        2.928,
-        3.625
+        2.162,
+        2.862,
+        3.585
       ]
     },
     {
       "id": "loop",
-      "t0": 4.482,
-      "t1": 7.295,
+      "t0": 4.519,
+      "t1": 7.218,
       "chunks": [
         "Am Ende",
         "zeige ich dir den Ort,",
@@ -41,27 +41,27 @@ window.TIMING = {
         "am längsten ^überlebst.^"
       ],
       "chunkStarts": [
-        4.482,
-        4.822,
-        5.724,
-        6.09
+        4.519,
+        4.901,
+        5.877,
+        6.202
       ]
     },
     {
       "id": "std1",
-      "t0": 7.465,
-      "t1": 8.224,
+      "t0": 7.429,
+      "t1": 8.16,
       "chunks": [
         "^Stunde eins.^"
       ],
       "chunkStarts": [
-        7.465
+        7.429
       ]
     },
     {
       "id": "ausbruch",
-      "t0": 8.393,
-      "t1": 14.055,
+      "t0": 8.331,
+      "t1": 14.126,
       "chunks": [
         "Der Ausbruch beginnt.",
         "Und in Simulationen",
@@ -72,19 +72,19 @@ window.TIMING = {
         "springt es über."
       ],
       "chunkStarts": [
-        8.393,
-        9.527,
-        10.473,
-        11.197,
-        12.027,
-        12.706,
-        13.322
+        8.331,
+        9.412,
+        10.485,
+        11.298,
+        12.224,
+        12.842,
+        13.338
       ]
     },
     {
       "id": "regel1",
-      "t0": 14.224,
-      "t1": 19.234,
+      "t0": 14.336,
+      "t1": 19.529,
       "chunks": [
         "^Regel eins:^",
         "Weg von",
@@ -95,30 +95,30 @@ window.TIMING = {
         "alles *Fallen.*"
       ],
       "chunkStarts": [
-        14.224,
-        15.108,
-        15.465,
-        16.349,
-        17.01,
-        17.921,
-        18.591
+        14.336,
+        15.229,
+        15.619,
+        16.585,
+        17.284,
+        18.203,
+        18.91
       ]
     },
     {
       "id": "std6",
-      "t0": 19.403,
-      "t1": 20.358,
+      "t0": 19.739,
+      "t1": 20.779,
       "chunks": [
         "^Sechs Stunden später.^"
       ],
       "chunkStarts": [
-        19.403
+        19.739
       ]
     },
     {
       "id": "vorrat",
-      "t0": 20.528,
-      "t1": 26.315,
+      "t0": 20.989,
+      "t1": 26.559,
       "chunks": [
         "Pack nur",
         "das Nötigste:",
@@ -130,31 +130,31 @@ window.TIMING = {
         "Wasser am Tag."
       ],
       "chunkStarts": [
-        20.528,
-        20.832,
-        21.644,
-        22.662,
-        23.457,
-        24.323,
-        24.966,
-        25.574
+        20.989,
+        21.266,
+        22.062,
+        22.852,
+        23.624,
+        24.405,
+        25.12,
+        25.762
       ]
     },
     {
       "id": "tag1",
-      "t0": 26.485,
-      "t1": 27.253,
+      "t0": 26.705,
+      "t1": 27.421,
       "chunks": [
         "^Tag eins.^"
       ],
       "chunkStarts": [
-        26.485
+        26.705
       ]
     },
     {
       "id": "stadt",
-      "t0": 27.422,
-      "t1": 30.619,
+      "t0": 27.567,
+      "t1": 30.973,
       "chunks": [
         "Deine Stadt",
         "ist *überrannt.*",
@@ -162,16 +162,16 @@ window.TIMING = {
         "raus aufs Land."
       ],
       "chunkStarts": [
-        27.422,
-        27.922,
-        28.655,
-        29.869
+        27.567,
+        28.014,
+        28.819,
+        30.096
       ]
     },
     {
       "id": "regel2",
-      "t0": 30.788,
-      "t1": 36.217,
+      "t0": 31.183,
+      "t1": 36.054,
       "chunks": [
         "^Regel zwei:^",
         "Lass das Auto stehen.",
@@ -182,30 +182,30 @@ window.TIMING = {
         "und ~leiser.~"
       ],
       "chunkStarts": [
-        30.788,
-        31.645,
-        32.948,
+        31.183,
+        32.021,
+        33.021,
         33.493,
-        34.377,
-        35.029,
-        35.636
+        34.176,
+        34.769,
+        35.322
       ]
     },
     {
       "id": "woche",
-      "t0": 36.386,
-      "t1": 37.217,
+      "t0": 36.2,
+      "t1": 37.127,
       "chunks": [
         "^Eine Woche später.^"
       ],
       "chunkStarts": [
-        36.386
+        36.2
       ]
     },
     {
       "id": "land",
-      "t0": 37.386,
-      "t1": 42.003,
+      "t0": 37.298,
+      "t1": 41.355,
       "chunks": [
         "Auf dem Land",
         "breitet sich alles",
@@ -215,31 +215,31 @@ window.TIMING = {
         "^Wochen^ Zeit."
       ],
       "chunkStarts": [
-        37.386,
-        37.994,
-        38.86,
-        40.145,
-        40.663,
-        41.235
+        37.298,
+        37.802,
+        38.59,
+        39.835,
+        40.282,
+        40.632
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 42.172,
-      "t1": 43.021,
+      "t0": 41.565,
+      "t1": 42.451,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        42.172,
-        42.467
+        41.565,
+        41.809
       ]
     },
     {
       "id": "pilz",
-      "t0": 43.29,
-      "t1": 49.567,
+      "t0": 42.801,
+      "t1": 49.068,
       "chunks": [
         "Zombies",
         "gibt es wirklich.",
@@ -252,21 +252,21 @@ window.TIMING = {
         "und zu sterben."
       ],
       "chunkStarts": [
-        43.29,
-        43.647,
-        44.548,
-        45.281,
-        46.039,
-        47.058,
-        47.549,
-        48.102,
-        48.951
+        42.801,
+        43.208,
+        44.046,
+        44.663,
+        45.452,
+        46.273,
+        46.704,
+        47.297,
+        48.312
       ]
     },
     {
       "id": "ort",
-      "t0": 49.736,
-      "t1": 54.774,
+      "t0": 49.278,
+      "t1": 54.694,
       "chunks": [
         "Und der beste Ort",
         "zum Überleben?",
@@ -277,49 +277,49 @@ window.TIMING = {
         "ab in die ~Alpen.~"
       ],
       "chunkStarts": [
-        49.736,
-        50.504,
-        51.389,
-        52.202,
-        52.604,
-        53.327,
-        54.077
+        49.278,
+        49.985,
+        51.06,
+        51.995,
+        52.442,
+        53.133,
+        53.978
       ]
     },
     {
       "id": "frage",
-      "t0": 54.943,
-      "t1": 55.889,
+      "t0": 54.904,
+      "t1": 55.872,
       "chunks": [
         "Wohin würdest du fliehen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        54.943
+        54.904
       ]
     },
     {
       "id": "komm",
-      "t0": 56.095,
-      "t1": 58.122,
+      "t0": 56.181,
+      "t1": 58.246,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        56.095
+        56.181
       ]
     },
     {
       "id": "folg",
-      "t0": 58.292,
-      "t1": 60.497,
+      "t0": 58.456,
+      "t1": 60.633,
       "chunks": [
         "Und folg mir. Bevor dich die Zombies finden."
       ],
       "noCap": true,
       "chunkStarts": [
-        58.292
+        58.456
       ]
     }
   ],
@@ -505,7 +505,7 @@ window.TIMING = {
     {
       "type": "boom",
       "at": "kata",
-      "off": 1.375
+      "off": 1.423
     }
   ]
 };

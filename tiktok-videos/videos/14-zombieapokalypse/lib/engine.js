@@ -255,5 +255,12 @@
     }
   }
 
-  window.Engine = { T, at, end, ref, cs, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract, buildEndcard, hookFx };
+  /** Hook-Regeln v3: Titel ist ab Frame 0 voll sichtbar (Frame 0 = Thumbnail), nur ein kurzer Punch, kein Einblenden. */
+  function hookOpen(tl, sel) {
+    const m = (sel || "#s1") + " .title.main", sb = (sel || "#s1") + " .title.sub";
+    tl.set([m, sb], { autoAlpha: 1 }, 0);
+    tl.fromTo(m, { scale: 1.12 }, { scale: 1, duration: 0.35, ease: "power3.out", immediateRender: true }, 0);
+  }
+
+  window.Engine = { T, at, end, ref, cs, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract, buildEndcard, hookFx, hookOpen };
 })();

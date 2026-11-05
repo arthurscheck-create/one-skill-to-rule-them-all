@@ -124,6 +124,12 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
      - **Frame 0 ist schon voll in Bewegung:** Effekt-Elemente als reine Funktion der Zeit ab t = 0 (z. B. Geldregen über
        `E.clock`, nicht erst nach Verzögerung einfliegen lassen), dazu ein Handy-/Push-/Alarm-Element, Punch-in und Sound bei 0,0 s.
      - Titel nur 3 kurze Zeilen und ausblenden, bevor der erste Untertitel kommt (bei 3 Hook-Sätzen: `at("kata", -0.15)`).
+     - **Komplette Neuvertonung mit neuer Stimme (gleiches Skript):** Text aus `timing.js` (alle `chunks`, ohne `*^~`) als
+       prompt, 1 Take, Scribe, Dateien nach `assets/helmut/take.mp3` + `take_words.json`, dann
+       `python3 tools/revoice.py <slug> <alte Wörter/s> [--key <kata-Index>]` (Tempo wird automatisch auf die alte
+       Sprechgeschwindigkeit gerechnet, Boom neu gesetzt, prepare). Alte Aufnahme vorher nach `assets/felix/` sichern.
+       **VORHER im Studio-DB-Feld `status` prüfen: Videos mit `online` NIE neu vertonen** (sie sind schon gepostet;
+       Fehler vom 05.11.: 03, 04, 09 versehentlich neu vertont → nur als `output/<slug>_helmut.mp4` abgelegt).
      - Hook nachträglich verbessern ohne komplette Neuvertonung: nur die neuen Hook-Sätze vertonen (~140 Credits), transkribieren,
        vor die alte Aufnahme ab dem ersten Satz nach dem Hook schneiden (Video 11 als Beispiel), dann speedup/align/prepare.
 2. **Eskalation in Zeitsprüngen:** "Stunde eins." → "Tag zwei." → … Jeder Sprung = neue Szene,

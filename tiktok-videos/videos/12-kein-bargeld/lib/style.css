@@ -103,3 +103,7 @@ html, body {
 .ec-ring { position: absolute; top: 120px; right: 70px; width: 130px; height: 130px; }
 .ec-ring .ec-n { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 64px; color: #fff; }
 .ec-big { position: absolute; left: 0; right: 0; text-align: center; font-weight: 900; text-transform: uppercase; color: #fff; -webkit-text-stroke: 12px #0d0b18; paint-order: stroke fill; }
+
+/* Hook-Regeln v3: Titel oben (TikTok-UI verdeckt das untere Viertel), ab Frame 0 sichtbar */
+.title.main.top { top: 430px; font-size: 104px; line-height: .98; letter-spacing: -1px; }
+.title.sub.top { top: 800px; font-size: 46px; color: var(--yellow); -webkit-text-stroke: 10px #0d0b18; }

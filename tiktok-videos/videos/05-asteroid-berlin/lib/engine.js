@@ -239,19 +239,28 @@
     fn(0);
   }
 
-  /** Hook-Effekt (Hook-Regeln v2): Punch-in ab Frame 0 + roter Blitz und Wackeln auf dem Schlüsselwort (Zeit t). */
-  function hookFx(tl, t) {
+  /** Hook-Effekt (Hook-Regeln v2): Punch-in ab Frame 0 + (nur bei dramatic, Standard) roter Blitz und Wackeln auf dem Schlüsselwort (Zeit t).
+   *  Klassischer Einstieg ohne Rot: E.hookFx(tl, null, { dramatic: false }) – nur der Punch-in. */
+  function hookFx(tl, t, opts) {
+    const dramatic = !(opts && opts.dramatic === false);
     const root = document.getElementById("root");
     let red = document.getElementById("hookred");
     if (!red) { red = document.createElement("div"); red.id = "hookred"; red.style.cssText = "position:absolute;inset:0;background:#ff3b3b;opacity:0;z-index:35;pointer-events:none"; root.appendChild(red); }
     tl.set(red, { opacity: 0 }, 0);
     tl.fromTo("#s1 .cam", { scale: 1.15 }, { scale: 1, duration: 0.5, ease: "power3.out", immediateRender: true }, 0);
-    if (t != null && isFinite(t)) {
+    if (dramatic && t != null && isFinite(t)) {
       tl.fromTo(red, { opacity: 0 }, { opacity: 0.38, duration: 0.12, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, t);
       tl.fromTo("#s1 .drift", { x: -18, y: 8 }, { x: 18, y: -8, duration: 0.05, repeat: 11, yoyo: true, ease: "none", immediateRender: false }, t);
       tl.set("#s1 .drift", { x: 0, y: 0 }, t + 0.62);
     }
   }
 
-  window.Engine = { T, at, end, ref, cs, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract, buildEndcard, hookFx };
+  /** Hook-Regeln v3: Titel ist ab Frame 0 voll sichtbar (Frame 0 = Thumbnail), nur ein kurzer Punch, kein Einblenden. */
+  function hookOpen(tl, sel) {
+    const m = (sel || "#s1") + " .title.main", sb = (sel || "#s1") + " .title.sub";
+    tl.set([m, sb], { autoAlpha: 1 }, 0);
+    tl.fromTo(m, { scale: 1.12 }, { scale: 1, duration: 0.35, ease: "power3.out", immediateRender: true }, 0);
+  }
+
+  window.Engine = { T, at, end, ref, cs, rng, svg, fmt, clock, sceneWindows, buildScenes, buildCaptions, buildHud, buildInteract, buildEndcard, hookFx, hookOpen };
 })();

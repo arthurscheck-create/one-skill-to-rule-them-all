@@ -1,12 +1,12 @@
 window.TIMING = {
   "title": "Was passiert, wenn du bei 100 km/h in den Rückwärtsgang schaltest?",
-  "duration": 49.92,
+  "duration": 49.97,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
       "t0": 0.0,
-      "t1": 1.808,
+      "t1": 1.769,
       "chunks": [
         "Hundert Sachen. Rückwärtsgang rein."
       ],
@@ -17,23 +17,23 @@ window.TIMING = {
     },
     {
       "id": "kata",
-      "t0": 2.001,
-      "t1": 3.403,
+      "t0": 1.987,
+      "t1": 3.31,
       "chunks": [
         "Das kann",
         "dein Getriebe",
         "*zerfetzen.*"
       ],
       "chunkStarts": [
-        2.001,
-        2.376,
-        2.841
+        1.987,
+        2.299,
+        2.771
       ]
     },
     {
       "id": "loop",
-      "t0": 3.595,
-      "t1": 6.953,
+      "t0": 3.512,
+      "t1": 6.882,
       "chunks": [
         "Und am Ende",
         "zeige ich dir ein Auto,",
@@ -41,29 +41,29 @@ window.TIMING = {
         "fast ^dreihundert^ fährt."
       ],
       "chunkStarts": [
-        3.595,
-        4.024,
-        5.015,
-        5.658
+        3.512,
+        4.052,
+        5.18,
+        5.694
       ]
     },
     {
       "id": "fall1",
-      "t0": 7.145,
-      "t1": 8.659,
+      "t0": 7.059,
+      "t1": 8.517,
       "chunks": [
         "^Fall eins:^",
         "Automatik."
       ],
       "chunkStarts": [
-        7.145,
-        7.972
+        7.059,
+        7.877
       ]
     },
     {
       "id": "auto",
-      "t0": 8.852,
-      "t1": 14.962,
+      "t0": 8.694,
+      "t1": 15.12,
       "chunks": [
         "Du ziehst den Hebel",
         "auf R.",
@@ -74,19 +74,19 @@ window.TIMING = {
         "auf ~Neutral.~"
       ],
       "chunkStarts": [
-        8.852,
-        9.628,
-        10.303,
-        11.469,
-        12.358,
-        13.207,
-        13.948
+        8.694,
+        9.637,
+        10.436,
+        11.633,
+        12.366,
+        13.267,
+        14.084
       ]
     },
     {
       "id": "fall2",
-      "t0": 15.155,
-      "t1": 17.798,
+      "t0": 15.247,
+      "t1": 18.414,
       "chunks": [
         "^Fall zwei:^",
         "Schaltwagen.",
@@ -94,16 +94,16 @@ window.TIMING = {
         "wird es *brutal.*"
       ],
       "chunkStarts": [
-        15.155,
-        15.954,
-        16.762,
-        17.031
+        15.247,
+        15.888,
+        16.779,
+        17.403
       ]
     },
     {
       "id": "schalt",
-      "t0": 17.991,
-      "t1": 24.278,
+      "t0": 18.631,
+      "t1": 24.934,
       "chunks": [
         "Der Rückwärtsgang",
         "ist oft",
@@ -115,20 +115,20 @@ window.TIMING = {
         "der Zahnräder ab."
       ],
       "chunkStarts": [
-        17.991,
-        18.723,
-        19.214,
-        20.38,
-        20.88,
-        22.055,
-        22.644,
-        23.349
+        18.631,
+        19.331,
+        19.811,
+        21.007,
+        21.656,
+        22.785,
+        23.324,
+        24.041
       ]
     },
     {
       "id": "kupplung",
-      "t0": 24.471,
-      "t1": 29.415,
+      "t0": 25.111,
+      "t1": 30.039,
       "chunks": [
         "Und lässt du dann",
         "die Kupplung kommen,",
@@ -139,32 +139,32 @@ window.TIMING = {
         "Schleudern."
       ],
       "chunkStarts": [
-        24.471,
-        25.113,
-        26.087,
-        26.676,
-        27.449,
-        28.2,
-        28.861
+        25.111,
+        25.76,
+        26.594,
+        27.242,
+        28.127,
+        28.911,
+        29.534
       ]
     },
     {
       "id": "fall3",
-      "t0": 29.607,
-      "t1": 31.165,
+      "t0": 30.257,
+      "t1": 31.756,
       "chunks": [
         "^Fall drei:^",
         "Elektroauto."
       ],
       "chunkStarts": [
-        29.607,
-        30.415
+        30.257,
+        30.981
       ]
     },
     {
       "id": "elektro",
-      "t0": 31.358,
-      "t1": 35.198,
+      "t0": 31.959,
+      "t1": 35.379,
       "chunks": [
         "Der Motor",
         "dreht sich einfach",
@@ -173,30 +173,30 @@ window.TIMING = {
         "sagt: *Nein.*"
       ],
       "chunkStarts": [
-        31.358,
-        31.84,
-        32.688,
-        33.622,
-        34.175
+        31.959,
+        32.396,
+        33.07,
+        33.863,
+        34.503
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 35.391,
-      "t1": 36.258,
+      "t0": 35.556,
+      "t1": 36.314,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        35.391,
-        35.685
+        35.556,
+        35.808
       ]
     },
     {
       "id": "rekord",
-      "t0": 36.604,
-      "t1": 41.806,
+      "t0": 36.491,
+      "t1": 41.89,
       "chunks": [
         "Ein Elektro-Supersportwagen",
         "fuhr rückwärts",
@@ -205,47 +205,47 @@ window.TIMING = {
         "Weltrekord."
       ],
       "chunkStarts": [
-        36.604,
-        37.988,
-        38.818,
-        39.828,
-        41.029
+        36.491,
+        38.058,
+        38.774,
+        39.76,
+        41.317
       ]
     },
     {
       "id": "frage",
-      "t0": 41.998,
-      "t1": 42.999,
+      "t0": 42.108,
+      "t1": 43.094,
       "chunks": [
         "Was würde dein Auto machen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        41.998
+        42.108
       ]
     },
     {
       "id": "komm",
-      "t0": 43.345,
-      "t1": 45.194,
+      "t0": 43.246,
+      "t1": 45.284,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        43.345
+        43.246
       ]
     },
     {
       "id": "folg",
-      "t0": 45.386,
-      "t1": 47.606,
+      "t0": 45.411,
+      "t1": 47.583,
       "chunks": [
         "Und folg mir. Bevor du es selbst ausprobierst."
       ],
       "noCap": true,
       "chunkStarts": [
-        45.386
+        45.411
       ]
     }
   ],
@@ -449,7 +449,7 @@ window.TIMING = {
     {
       "type": "boom",
       "at": "kata",
-      "off": 0.84
+      "off": 0.784
     }
   ]
 };

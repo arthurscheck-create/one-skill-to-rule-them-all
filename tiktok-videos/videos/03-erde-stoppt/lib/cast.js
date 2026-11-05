@@ -25,6 +25,15 @@
       <circle cx="60" cy="-452" r="15" fill="#ff7f86" opacity=".45"/>
     </g>
 
+    <g id="p-hairlong">
+      <path d="M-108,-500 C-118,-612 118,-612 108,-500 L126,-372 Q60,-344 0,-352 Q-60,-344 -126,-372Z" fill="var(--hair,#5b3a22)"/>
+    </g>
+    <g id="f-happy">
+      <circle cx="-32" cy="-490" r="9" fill="#1a1726"/><circle cx="32" cy="-490" r="9" fill="#1a1726"/>
+      <path d="M-56,-524 Q-34,-536 -14,-526" stroke="#3b2614" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M56,-524 Q34,-536 14,-526" stroke="#3b2614" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <path d="M-30,-446 Q0,-414 30,-446" stroke="#5a2a2a" stroke-width="7" fill="#fff" stroke-linecap="round"/>
+    </g>
     <g id="f-worried">
       <circle cx="-34" cy="-492" r="18" fill="#fff"/><circle cx="34" cy="-492" r="18" fill="#fff"/>
       <circle cx="-32" cy="-488" r="8.5" fill="#1a1726"/><circle cx="32" cy="-488" r="8.5" fill="#1a1726"/>
@@ -136,6 +145,7 @@
     if (o.skin) style += `--skin:${o.skin};`;
     if (style) g.setAttribute("style", style);
     const inner = window.Engine.svg("g", {}, g);
+    if (o.long) window.Engine.svg("use", { href: "#p-hairlong" }, inner);
     window.Engine.svg("use", { href: "#p-body" }, inner);
     window.Engine.svg("use", { href: "#a-" + (o.arms || "down") }, inner);
     window.Engine.svg("use", { href: "#f-" + (o.face || "worried") }, inner);
