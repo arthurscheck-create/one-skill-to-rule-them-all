@@ -205,8 +205,9 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    Untertitel-Zone 1255–1515 und HUD-Zone 200–430 frei von wichtigen Texten halten.
    Das Referenzprojekt `videos/01-keiner-arbeitet/index.html` zeigt jede Technik.
 3. **Stimme** (deutsch) über **ElevenLabs**, aktuelle Standardstimme
-   **`rDmv3mOhK6TnhYWckFaD`** ("Felix Serenitas – German Top Voice", vom Nutzer gewählt;
-   frühere Stimme `bFv4VX9jlZxtKnEa6UWs` "Arthur Holm"). Modell `eleven_multilingual_v2`.
+   **`Cqbq4nsuUe1we6J45miU`** ("Helmut – Nachrichten & Anchorman", vom Nutzer gewählt ab Video 16;
+   frühere Stimmen: `rDmv3mOhK6TnhYWckFaD` "Felix Serenitas" (Videos 03–15), `bFv4VX9jlZxtKnEa6UWs`
+   "Arthur Holm"). Modell `eleven_multilingual_v2`. Kosten: 1 Credit pro Zeichen Skript.
    Eine andere Stimme nur, wenn der Nutzer es sagt.
    **Weg A – ElevenLabs-Connector (11LBS, Credits des Nutzers), Standard:**
    1. `creative_create_flow` → `creative_generate_speech` (voice_id, Skript als prompt;
