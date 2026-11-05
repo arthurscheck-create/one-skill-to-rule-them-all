@@ -91,6 +91,21 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
      einlösen (sonst fühlen sich Zuschauer betrogen und die Watchtime sinkt beim nächsten Video).
    - Ab Sekunde 3 alle 3–5 s ein neuer Reiz (Schnitt, Zahl springt, Sound), nie zwei ruhige
      Sätze hintereinander.
+   - **Hook-Regeln v3 – aus echten TikTok-Zahlen (Video 13, 68 s): Ø nur 26 % angesehen, größter Abbruch bei 0:01,
+     etwa die Hälfte ist nach ~3 s weg; danach verläuft die Kurve flach (der Inhalt hält, der EINSTIEG verliert).**
+     Ursache: Frame 0 hatte keinen Text, eine dunkle Totale mit kleiner Figur, der Titel blendete erst ein und stand im
+     unteren Drittel (dort liegt TikToks Beschreibung/Name), und der erste Satz brauchte 3 s bis zum Kern.
+     Deshalb ab jetzt Pflicht:
+     1. **Frame 0 = Thumbnail:** großer Titel ist ab t = 0 voll sichtbar (`E.hookOpen(tl)`, kein Einblenden), oben im Bild
+        (`.title.main.top` / `.title.sub.top`, y ≈ 430–850), nie im unteren Viertel.
+     2. **Nah statt Totale:** Gesicht groß (Figur s ≥ 1.3) oder ein auffälliges Objekt formatfüllend; helle, kräftige
+        Farben mit hohem Kontrast statt dunkler Nachtszene. Vor dem Rendern Frame 0 als Standbild prüfen:
+        „Würde ich hier stoppen?“
+     3. **Erster Satz ≤ 6 Wörter / ≤ 1,5 s**, Kernaussage im ersten Wort-Paar („Alle Menschen sind weg. Außer dir.“),
+        kein Vorlauf wie „Du wachst auf, und …“. Text im Bild und erster Satz sagen dasselbe.
+     4. **Länge 35–50 s** (nur Eskalation, keine Füllsätze) – die flache Kurve zeigt: Wer bleibt, bleibt; kürzer heißt
+        höhere Prozent-Watchtime und mehr Komplettansichten.
+     5. **Alle 8–10 s ein Re-Hook** („Aber Tag zwei wird schlimmer.“, „Und dann passiert etwas, womit keiner rechnet.“).
    - **VOR JEDEM NEUEN VIDEO FRAGEN (Nutzerwunsch):** „Soll der Einstieg **dramatisch** sein (roter Blitz, Wackeln, Boom
      auf dem Schlüsselwort) oder **klassisch** (spannender Hook wie früher, ohne rotes Aufblitzen)?“ – AskUserQuestion,
      bei mehreren Videos einmal pro Video oder einmal für alle. Spannend muss der Hook IMMER sein (Behauptung/Frage +
@@ -307,6 +322,8 @@ avgWatch (s), completion (%), followers, notes}`. Auf Zuruf („werte aus“):
    „Gelernt aus den Zahlen“ festhalten.
 
 ### Gelernt aus den Zahlen
-(noch keine Daten)
+- **05.11.2026, Video 13 „Allein auf der Welt“ (68 s, 96,6 % aus „Für dich“):** Ø 26 % angesehen (≈ 18 s),
+  größter Abbruch bei 0:01, rund 50 % nach ~3 s weg, danach flache Kurve bis zum Ende. → Problem ist der
+  Einstieg/Frame 0, nicht der Inhalt. Konsequenz: Hook-Regeln v3 (siehe oben) + kürzere Videos (35–50 s).
 
 Auf Deutsch antworten.

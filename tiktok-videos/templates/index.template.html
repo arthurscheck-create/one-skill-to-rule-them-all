@@ -9,8 +9,7 @@
   <script src="timing.js"></script>
   <script src="lib/engine.js"></script>
   <style>
-    #s1 .title.main { top: 1150px; font-size: 90px; line-height: 1.0; letter-spacing: -1px; }
-    #s1 .title.sub { top: 1445px; font-size: 38px; color: var(--yellow); -webkit-text-stroke: 9px #0d0b18; }
+    /* Hook-Titel oben (Hook-Regeln v3): siehe .title.main.top in lib/style.css */
     #s9 .q { position: absolute; top: 300px; left: 40px; right: 40px; text-align: center; font-weight: 900; font-size: 86px; line-height: 1.02; text-transform: uppercase; color: #fff; -webkit-text-stroke: 14px #0d0b18; paint-order: stroke fill; }
     #s9 .opt { position: absolute; left: 90px; right: 90px; height: 150px; border-radius: 22px; border: 5px solid; display: flex; align-items: center; padding: 0 34px; gap: 28px; font-weight: 900; text-transform: uppercase; }
     #s9 .opt .k { font-size: 70px; width: 70px; text-align: center; }
@@ -32,8 +31,8 @@
         <rect width="1080" height="1920" fill="#2a2452"/>
         <g id="s1-kid"></g>
       </svg>
-      <div class="title main">WAS WÄRE, WENN<br/><span class="r">SCHLÜSSELWORT</span><br/>PASSIERT?</div>
-      <div class="title sub">⚠ UNTERZEILE MIT SPANNUNG</div>
+      <div class="title main top">ALLE<br/><span class="r">MENSCHEN</span><br/>SIND WEG</div>
+      <div class="title sub top">⚠ AUSSER DIR</div>
     </div></div></section>
 
     <!-- S2 · Beispielszene: Figur + Requisit -->
@@ -80,8 +79,7 @@
 
     E.person($("#s1-kid"), { x: 540, y: 1500, s: 1.05, face: "shock", arms: "down" });
     E.person($("#s2-kid"), { x: 540, y: 1330, s: 1.0, face: "worried", arms: "phone" });
-    tl.fromTo("#s1 .title.main", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.3, ease: "back.out(2.4)" }, 0.15);
-    tl.fromTo("#s1 .title.sub", { autoAlpha: 0, y: 20 }, { autoAlpha: 1, y: 0, duration: 0.3 }, 0.75);
+    E.hookOpen(tl); // Titel ab Frame 0 sichtbar (Hook-Regeln v3)
 
     const t9 = at("cta", -0.3);
     tl.fromTo("#s9 .q", { autoAlpha: 0, scale: 0.6 }, { autoAlpha: 1, scale: 1, duration: 0.35, ease: "back.out(2.4)" }, t9 + 0.05);
