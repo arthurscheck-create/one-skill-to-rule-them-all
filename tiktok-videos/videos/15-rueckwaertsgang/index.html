@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was passiert, wenn du bei 100 km/h in den Rückwärtsgang schaltest?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    /* Hook-Titel oben (Hook-Regeln v3): .title.main.top / .title.sub.top aus lib/style.css */
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="49.92" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Tacho 100 + R-Knauf, hell und nah -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-hot" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a2f"/><stop offset=".55" stop-color="#ffb83f"/><stop offset="1" stop-color="#ffd23f"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-hot)"/><g id="s1-lines"></g>
+        <g id="s1-gauge"></g><g id="s1-knob"></g>
+      </svg>
+      <div class="title main top">100 KM/H<br/><span class="r">RÜCKWÄRTS</span><br/>GANG REIN</div>
+      <div class="title sub top">⚠ WAS PASSIERT?</div>
+    </div></div></section>
+
+    <!-- S2 Fall 1: Automatik -->
+    <section class="scene" id="s2" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#2a2347"/><rect y="1180" width="1080" height="740" fill="#1b1936"/>
+        <g id="s2-panel"></g><g id="s2-lever"></g><g id="s2-block"></g><g id="s2-top"></g><g id="s2-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S3 Fall 2: Schaltwagen – Zahnräder -->
+    <section class="scene" id="s3" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#3b3768"/>
+        <g id="s3-gears"></g><g id="s3-sparks"></g><g id="s3-teeth"></g><g id="s3-top"></g><g id="s3-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S4 Kupplung: Räder blockieren, Auto schleudert (Draufsicht) -->
+    <section class="scene" id="s4" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#6abf5a"/><rect x="230" width="620" height="1920" fill="#4a4a5a"/>
+        <rect x="230" width="16" height="1920" fill="#fff"/><rect x="834" width="16" height="1920" fill="#fff"/>
+        <g id="s4-dash"></g><g id="s4-skid"></g><g id="s4-car"></g><g id="s4-smoke"></g><g id="s4-top"></g><g id="s4-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S5 Fall 3: Elektroauto -->
+    <section class="scene" id="s5" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14324a"/><rect y="1160" width="1080" height="760" fill="#1b2a3a"/>
+        <g id="s5-car"></g><g id="s5-motor"></g><g id="s5-no"></g><g id="s5-top"></g></svg>
+    </div></div></section>
+
+    <!-- S6 Rekord: rückwärts über 270 km/h -->
+    <section class="scene" id="s6" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#7fc3ff"/><rect y="1000" width="1080" height="920" fill="#4a4a5a"/><rect y="990" width="1080" height="14" fill="#fff"/>
+        <g id="s6-streaks"></g><g id="s6-car"></g><g id="s6-arrow"></g><g id="s6-q"></g><g id="s6-top"></g><g id="s6-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S7 Endkarte -->
+    <section class="scene" id="s7" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s7-stars"></g></svg>
+      <div class="ec-q" style="font-size:80px">WAS WÜRDE <span class="y">DEIN AUTO</span> MACHEN?</div>
+      <div class="ec-opt a"><span class="k">A</span><span class="t">GAR NICHTS<small>Der Computer blockt</small></span></div>
+      <div class="ec-opt b"><span class="k">B</span><span class="t">KRACHEN<small>Getriebe kaputt</small></span></div>
+      <div class="ec-opt c"><span class="k">C</span><span class="t">SCHLEUDERN<small>Räder blockieren</small></span></div>
+      <div class="ec-cta">SCHREIB A, B ODER C IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG MIR, BEVOR DU'S AUSPROBIERST</span></div>
+      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="47.65" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="49.92" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const INK = "#0d0b18";
+    function badge(g, x, y, text, color, size, sub) {
+      const b = svg("g", { transform: `translate(${x},${y})` }, g);
+      const fs = size || 64, w = text.length * fs * .66 + 80, h = fs * 1.6 + (sub ? 50 : 0);
+      svg("rect", { x: -w / 2, y: -h / 2, width: w, height: h, rx: 24, fill: "rgba(18,8,16,.94)", stroke: color, "stroke-width": 8 }, b);
+      const t = svg("text", { x: 0, y: sub ? -6 : fs * .36, "text-anchor": "middle", class: "lbl", "font-size": fs, fill: color }, b); t.textContent = text;
+      if (sub) { const s = svg("text", { x: 0, y: h / 2 - 26, "text-anchor": "middle", class: "lbl", "font-size": 30, fill: "#fff" }, b); s.textContent = sub; }
+      return b;
+    }
+    const pop = (el, t, origin) => { tl.set(el, { autoAlpha: 0 }, 0); tl.fromTo(el, { autoAlpha: 1, scale: .3, svgOrigin: origin }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, t); };
+    const txt = (g, x, y, s, fs, fill, extra) => { const t = svg("text", Object.assign({ x, y, class: "lbl", "font-size": fs, fill, "text-anchor": "middle" }, extra || {}), g); t.textContent = s; return t; };
+    const cross = (g, cx, cy, s) => { const d = `M${cx - s},${cy - s} L${cx + s},${cy + s} M${cx + s},${cy - s} L${cx - s},${cy + s}`; svg("path", { d, stroke: INK, "stroke-width": s * .42, "stroke-linecap": "round" }, g); svg("path", { d, stroke: "#ff3b3b", "stroke-width": s * .27, "stroke-linecap": "round" }, g); };
+    const shake = (el, t, n, a) => tl.fromTo(el, { x: -(a || 12) }, { x: a || 12, duration: .05, repeat: n || 9, yoyo: true, ease: "none", immediateRender: false }, t);
+    function gear(g, cx, cy, r, teeth, fill) {
+      const w = svg("g", {}, g);
+      for (let i = 0; i < teeth; i++) { const a = i * 360 / teeth; svg("rect", { x: cx - r * .12, y: cy - r - r * .2, width: r * .24, height: r * .32, rx: 4, fill, stroke: INK, "stroke-width": 6, transform: `rotate(${a} ${cx} ${cy})` }, w); }
+      svg("circle", { cx, cy, r, fill, stroke: INK, "stroke-width": 8 }, w); svg("circle", { cx, cy, r: r * .32, fill: "#3b3768", stroke: INK, "stroke-width": 8 }, w);
+      return w;
+    }
+    // Draufsicht-Auto, Mitte (0,0), Front nach oben
+    function topCar(g, c) {
+      [[-95, -110], [95, -110], [-95, 110], [95, 110]].forEach(([x, y]) => svg("rect", { x: x - 22, y: y - 40, width: 44, height: 80, rx: 12, fill: "#14131f" }, g));
+      svg("rect", { x: -90, y: -185, width: 180, height: 370, rx: 60, fill: c, stroke: INK, "stroke-width": 8 }, g);
+      svg("path", { d: "M-70,-80 Q0,-115 70,-80 L60,-30 L-60,-30Z", fill: "#bfe6ff", stroke: INK, "stroke-width": 5 }, g);
+      svg("rect", { x: -62, y: -25, width: 124, height: 120, rx: 18, fill: "#c9312b", stroke: INK, "stroke-width": 5 }, g);
+      svg("path", { d: "M-60,100 L60,100 L52,140 L-52,140Z", fill: "#bfe6ff", stroke: INK, "stroke-width": 5 }, g);
+      svg("rect", { x: -72, y: -184, width: 36, height: 16, rx: 6, fill: "#fff6b0" }, g); svg("rect", { x: 36, y: -184, width: 36, height: 16, rx: 6, fill: "#fff6b0" }, g);
+    }
+
+    /* S1 Hook – Fahrtwind-Streifen ab Frame 0, Tachonadel zittert bei 100 */
+    const LN = $("#s1-lines"), lines = [];
+    for (let i = 0; i < 14; i++) lines.push([svg("rect", { x: 0, y: 880 + (i * 97) % 1000, width: 160 + (i * 53) % 220, height: 10, rx: 5, fill: "#fff", opacity: .55 }, LN), i]);
+    E.clock(tl, (t) => lines.forEach(([r, i]) => r.setAttribute("x", (1180 - ((t * (1400 + i * 90) + i * 230) % 1500)).toFixed(1))));
+    const GA = $("#s1-gauge"), gx = 430, gy = 1170, gr = 280;
+    svg("circle", { cx: gx, cy: gy, r: gr + 26, fill: INK }, GA); svg("circle", { cx: gx, cy: gy, r: gr, fill: "#1b1936" }, GA);
+    svg("path", { d: `M${gx - gr + 40},${gy} A${gr - 40},${gr - 40} 0 0 1 ${gx + gr - 40},${gy}`, fill: "none", stroke: "#3ee08f", "stroke-width": 26 }, GA);
+    svg("path", { d: `M${gx + (gr - 40) * Math.cos(-Math.PI / 4)},${gy + (gr - 40) * Math.sin(-Math.PI / 4)} A${gr - 40},${gr - 40} 0 0 1 ${gx + gr - 40},${gy}`, fill: "none", stroke: "#ff3b3b", "stroke-width": 26 }, GA);
+    [0, 50, 100, 150, 200].forEach((v, i) => { const a = Math.PI + i * Math.PI / 4; txt(GA, gx + (gr - 100) * Math.cos(a), gy + (gr - 100) * Math.sin(a) + 18, String(v), 46, "#fff"); });
+    const ND = svg("g", {}, GA); svg("path", { d: `M${gx - 14},${gy} L${gx},${gy - gr + 50} L${gx + 14},${gy}Z`, fill: "#ff3b3b", stroke: INK, "stroke-width": 5 }, ND); svg("circle", { cx: gx, cy: gy, r: 34, fill: "#ff3b3b", stroke: INK, "stroke-width": 6 }, ND);
+    E.clock(tl, (t) => ND.setAttribute("transform", `rotate(${(Math.sin(t * 31) * 2.5 + Math.sin(t * 13) * 1.5).toFixed(2)} ${gx} ${gy})`));
+    const KN = $("#s1-knob"); svg("rect", { x: 830, y: 1080, width: 60, height: 300, fill: "#2a2235", stroke: INK, "stroke-width": 7 }, KN);
+    svg("circle", { cx: 860, cy: 1010, r: 150, fill: "#1b1936", stroke: INK, "stroke-width": 10 }, KN);
+    [["1", 800, 965], ["3", 860, 965], ["5", 920, 965], ["2", 800, 1075], ["4", 860, 1075]].forEach(([s, x, y]) => txt(KN, x, y, s, 50, "#c9c3e6"));
+    const RR = svg("g", {}, KN); svg("circle", { cx: 920, cy: 1058, r: 38, fill: "#ff3b3b", stroke: "#fff", "stroke-width": 5 }, RR); txt(RR, 920, 1076, "R", 52, "#fff");
+    E.clock(tl, (t) => { const k = 1 + Math.abs(Math.sin(t * 6)) * .14; RR.setAttribute("transform", `translate(${(920 * (1 - k)).toFixed(1)},${(1058 * (1 - k)).toFixed(1)}) scale(${k.toFixed(3)})`); });
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
+
+    /* S2 Fall 1: Automatik – Hebel D → R → blockiert → N */
+    const PN = $("#s2-panel");
+    svg("rect", { x: 160, y: 700, width: 760, height: 300, rx: 40, fill: "#3b3768", stroke: INK, "stroke-width": 9 }, PN);
+    svg("rect", { x: 230, y: 880, width: 620, height: 30, rx: 15, fill: "#1b1936" }, PN);
+    const POS = { P: 300, R: 460, N: 620, D: 780 };
+    Object.entries(POS).forEach(([k, x]) => txt(PN, x, 820, k, 90, k === "R" ? "#ff3b3b" : "#fff", { stroke: INK, "stroke-width": 8, "paint-order": "stroke" }));
+    const LV = $("#s2-lever"), LVi = svg("g", {}, LV); svg("rect", { x: -22, y: -40, width: 44, height: 150, rx: 20, fill: "#c9c3e6", stroke: INK, "stroke-width": 7 }, LVi); svg("ellipse", { cx: 0, cy: -60, rx: 70, ry: 54, fill: "#5c6390", stroke: INK, "stroke-width": 8 }, LVi);
+    tl.set(LV, { x: POS.D, y: 900 }, 0);
+    tl.to(LV, { x: POS.R, duration: .4, ease: "power2.in" }, cs("auto", 1, -0.1));
+    shake(LVi, cs("auto", 3), 9, 10); tl.set(LVi, { x: 0 }, cs("auto", 3, .5));
+    tl.to(LV, { x: POS.N, duration: .35, ease: "back.out(2)" }, cs("auto", 6, -0.1));
+    const BL = $("#s2-block"); cross(BL, POS.R, 900, 120); pop(BL, cs("auto", 3), `${POS.R} 900`); tl.to(BL, { autoAlpha: 0, duration: .2 }, cs("auto", 6, -0.1));
+    const T2 = badge($("#s2-top"), 540, 580, "FALL 1: AUTOMATIK", "#3fd4ff", 60); pop(T2, at("fall1", 0), "540 580");
+    const B2 = badge($("#s2-badge"), 540, 1150, "COMPUTER BLOCKIERT", "#ff3b3b", 54); pop(B2, cs("auto", 4), "540 1150");
+
+    /* S3 Fall 2: Schaltwagen – Zahnräder krachen, Zähne fliegen */
+    const GR = $("#s3-gears");
+    const gA = gear(GR, 400, 960, 170, 14, "#ffd23f"), gB = gear(GR, 730, 900, 120, 10, "#3fd4ff");
+    txt(gB, 730, 922, "R", 64, "#fff", { stroke: INK, "stroke-width": 8, "paint-order": "stroke" });
+    const tK = cs("schalt", 4), tBr = cs("schalt", 6);
+    E.clock(tl, (t) => { const j = t > tK ? Math.sin(t * 70) * 6 : 0; gA.setAttribute("transform", `rotate(${(t * 140 + j).toFixed(2)} 400 960)`); gB.setAttribute("transform", `rotate(${(-t * 200 - j * 2).toFixed(2)} 730 900)`); });
+    const SP = $("#s3-sparks");
+    for (let i = 0; i < 10; i++) { const a = i * 36 * Math.PI / 180, s = svg("path", { d: `M580,930 L${580 + Math.cos(a) * 140},${930 + Math.sin(a) * 140}`, stroke: i % 2 ? "#ffd23f" : "#fff", "stroke-width": 12, "stroke-linecap": "round" }, SP); }
+    tl.set(SP, { autoAlpha: 0 }, 0);
+    [tK, tK + .5, tBr].forEach((t) => tl.fromTo(SP, { autoAlpha: 1, scale: .3, svgOrigin: "580 930" }, { scale: 1.3, autoAlpha: 0, duration: .35, ease: "power2.out", immediateRender: false }, t));
+    const TE = $("#s3-teeth");
+    for (let i = 0; i < 7; i++) { const r = svg("rect", { x: 560, y: 910, width: 34, height: 44, rx: 6, fill: i % 2 ? "#ffd23f" : "#3fd4ff", stroke: INK, "stroke-width": 5 }, TE);
+      tl.set(r, { autoAlpha: 0 }, 0);
+      tl.fromTo(r, { autoAlpha: 1, x: 0, y: 0, rotation: 0, svgOrigin: "577 932" }, { x: (i - 3) * 110, y: 380 + (i % 3) * 60, rotation: 360 + i * 90, duration: 1.1, ease: "power1.in", immediateRender: false }, tBr + i * .05); }
+    shake("#s3-gears", tK, 11, 10); tl.set("#s3-gears", { x: 0 }, tK + .6);
+    const T3 = badge($("#s3-top"), 540, 580, "FALL 2: SCHALTWAGEN", "#ffd23f", 58); pop(T3, at("fall2", 0), "540 580");
+    const B3 = badge($("#s3-badge"), 540, 1170, "ZÄHNE BRECHEN AB", "#ff3b3b", 56); pop(B3, tBr, "540 1170");
+
+    /* S4 Kupplung – Draufsicht, Räder blockieren, Auto schleudert */
+    const DS = $("#s4-dash"), dashes = [];
+    for (let i = 0; i < 9; i++) dashes.push(svg("rect", { x: 530, y: 0, width: 20, height: 110, rx: 6, fill: "#fff" }, DS));
+    const tL = cs("kupplung", 3), tS = cs("kupplung", 6);
+    const pos = (t) => t < tL ? t * 1300 : tL * 1300 + 1300 * (1 - Math.exp(-(t - tL) * 1.6)) / 1.6;
+    E.clock(tl, (t) => { const p = pos(t); dashes.forEach((d, i) => d.setAttribute("y", (((p + i * 240) % 2160) - 240).toFixed(1))); });
+    const SK = $("#s4-skid"); [-95, 95].forEach((dx) => { const r = svg("rect", { x: 540 + dx - 18, y: 1060, width: 36, height: 600, rx: 12, fill: "#14131f", opacity: .85 }, SK); tl.set(r, { scaleY: 0, svgOrigin: `540 1060` }, 0); tl.to(r, { scaleY: 1, duration: 1.4, ease: "power1.out" }, tL); });
+    const CR = svg("g", { transform: "translate(540,940)" }, $("#s4-car")); const CRi = svg("g", {}, CR); topCar(CRi, "#e8463c");
+    tl.to(CRi, { rotation: 200, x: 120, y: -60, duration: 1.8, ease: "power2.out", svgOrigin: "0 0" }, tS);
+    const SM = $("#s4-smoke"); [[-95, 1080], [95, 1080], [-60, 1130], [60, 1130]].forEach(([dx, y], i) => { const c = svg("circle", { cx: 540 + dx, cy: y, r: 40, fill: "#e9e4f2", opacity: 0 }, SM); tl.fromTo(c, { opacity: .85, attr: { r: 30 } }, { opacity: 0, attr: { r: 110 }, y: 140, duration: 1.1, repeat: 2, ease: "power1.out", immediateRender: false }, tL + i * .12); });
+    const T4 = badge($("#s4-top"), 540, 580, "RÄDER BLOCKIEREN", "#ff3b3b", 58); pop(T4, tL, "540 580");
+    const B4 = badge($("#s4-badge"), 540, 1180, "SCHLEUDERN!", "#ffd23f", 70); pop(B4, tS, "540 1180");
+
+    /* S5 Fall 3: Elektroauto – Motor dreht andersherum, Software: NEIN */
+    const EC = $("#s5-car"), ex = 540, ey = 1210;
+    svg("path", { d: `M${ex - 380},${ey - 40} L${ex - 300},${ey - 160} L${ex + 160},${ey - 170} L${ex + 380},${ey - 60} L${ex + 380},${ey + 20} L${ex - 380},${ey + 20}Z`, fill: "#3ee08f", stroke: INK, "stroke-width": 9 }, EC);
+    svg("path", { d: `M${ex - 270},${ey - 150} L${ex - 200},${ey - 250} L${ex + 90},${ey - 250} L${ex + 170},${ey - 165}Z`, fill: "#3ee08f", stroke: INK, "stroke-width": 9 }, EC);
+    svg("path", { d: `M${ex - 245},${ey - 158} L${ex - 190},${ey - 232} L${ex + 80},${ey - 232} L${ex + 140},${ey - 160}Z`, fill: "#bfe6ff" }, EC);
+    [ex - 230, ex + 240].forEach((x) => { svg("circle", { cx: x, cy: ey + 20, r: 78, fill: "#14131f" }, EC); svg("circle", { cx: x, cy: ey + 20, r: 32, fill: "#c9c3e6" }, EC); });
+    svg("path", { d: `M${ex - 10},${ey - 120} l-40,70 h40 l-20,60 l70,-90 h-40 l20,-40Z`, fill: "#ffd23f", stroke: INK, "stroke-width": 5 }, EC);
+    const MO = $("#s5-motor"), mx = 540, my = 800;
+    svg("circle", { cx: mx, cy: my, r: 150, fill: "#1b1936", stroke: "#3fd4ff", "stroke-width": 10 }, MO);
+    const AR = svg("g", {}, MO);
+    [0, 180].forEach((a) => { svg("path", { d: `M${mx + 100},${my} A100,100 0 0 1 ${mx},${my + 100}`, fill: "none", stroke: "#3fd4ff", "stroke-width": 18, transform: `rotate(${a} ${mx} ${my})` }, AR); svg("path", { d: `M${mx - 24},${my + 76} L${mx},${my + 100} L${mx - 24},${my + 124}`, fill: "none", stroke: "#3fd4ff", "stroke-width": 18, "stroke-linejoin": "round", transform: `rotate(${a} ${mx} ${my})` }, AR); });
+    const tRv = cs("elektro", 2);
+    E.clock(tl, (t) => AR.setAttribute("transform", `rotate(${(t < tRv ? t * 400 : tRv * 400 - (t - tRv) * 400).toFixed(1)} ${mx} ${my})`));
+    const NO = $("#s5-no"); svg("rect", { x: 140, y: 610, width: 800, height: 300, rx: 40, fill: "#ff3b3b", stroke: INK, "stroke-width": 12 }, NO); txt(NO, 540, 815, "NEIN.", 190, "#fff", { stroke: INK, "stroke-width": 12, "paint-order": "stroke" });
+    pop(NO, cs("elektro", 4), "540 760"); tl.set(NO, { y: 40 }, 0);
+    const T5 = badge($("#s5-top"), 540, 575, "FALL 3: ELEKTROAUTO", "#3ee08f", 56); pop(T5, at("fall3", 0), "540 575");
+
+    /* S6 Rekord – Hypercar fährt rückwärts */
+    const ST = $("#s6-streaks"), streaks = [];
+    for (let i = 0; i < 16; i++) streaks.push([svg("rect", { x: 0, y: 1030 + (i * 61) % 460, width: 140 + (i * 47) % 260, height: 12, rx: 6, fill: "#fff", opacity: .5 }, ST), i]);
+    E.clock(tl, (t) => streaks.forEach(([r, i]) => r.setAttribute("x", (((t * (1700 + i * 80) + i * 210) % 1500) - 300).toFixed(1))));
+    const HC = $("#s6-car"), hx = 560, hy = 1080;
+    svg("path", { d: `M${hx - 400},${hy} L${hx - 380},${hy - 70} L${hx - 150},${hy - 150} L${hx + 120},${hy - 150} L${hx + 400},${hy - 50} L${hx + 410},${hy} Z`, fill: "#5c6390", stroke: INK, "stroke-width": 9 }, HC);
+    svg("path", { d: `M${hx - 130},${hy - 140} L${hx - 60},${hy - 200} L${hx + 90},${hy - 200} L${hx + 180},${hy - 120}Z`, fill: "#bfe6ff", stroke: INK, "stroke-width": 8 }, HC);
+    svg("rect", { x: hx - 420, y: hy - 130, width: 90, height: 18, rx: 6, fill: "#ffd23f", stroke: INK, "stroke-width": 5 }, HC);
+    svg("rect", { x: hx + 360, y: hy - 50, width: 40, height: 22, rx: 6, fill: "#fff6b0" }, HC);
+    const wh = [hx - 250, hx + 250].map((x) => { const w = svg("g", {}, HC); svg("circle", { cx: x, cy: hy, r: 72, fill: "#14131f" }, w); svg("path", { d: `M${x - 40},${hy} L${x + 40},${hy} M${x},${hy - 40} L${x},${hy + 40}`, stroke: "#c9c3e6", "stroke-width": 12 }, w); return [w, x]; });
+    E.clock(tl, (t) => { wh.forEach(([w, x]) => w.setAttribute("transform", `rotate(${(-t * 900).toFixed(1)} ${x} ${hy})`)); HC.setAttribute("transform", `translate(0,${(Math.sin(t * 40) * 3).toFixed(1)})`); });
+    const AW = $("#s6-arrow"); svg("path", { d: "M760,820 L380,820 L380,770 L240,860 L380,950 L380,900 L760,900Z", fill: "#ffd23f", stroke: INK, "stroke-width": 9 }, AW); txt(AW, 560, 878, "RÜCKWÄRTS", 46, INK);
+    pop(AW, cs("rekord", 1), "500 860");
+    const Q6 = $("#s6-q"); txt(Q6, 540, 820, "?!", 260, "#ffd23f", { stroke: INK, "stroke-width": 16, "paint-order": "stroke" }); pop(Q6, at("verrueckt", 0), "540 740"); tl.to(Q6, { autoAlpha: 0, duration: .15 }, cs("rekord", 1, -0.1));
+    const T6 = badge($("#s6-top"), 540, 580, "WELTREKORD", "#ffd23f", 74); tl.set(T6, { autoAlpha: 0 }, 0);
+    pop(T6, cs("rekord", 4), "540 580");
+    const B6 = badge($("#s6-badge"), 540, 1190, "ÜBER 270 KM/H", "#ff3b3b", 66); pop(B6, cs("rekord", 2), "540 1190");
+
+    /* S7 */
+    E.stars($("#s7-stars"), 60, 151);
+    E.buildEndcard(tl, "s7", at("frage", -0.05), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookOpen(tl); // Titel ab Frame 0 sichtbar (Hook-Regeln v3)
+    E.hookFx(tl, cs("kata", 2));
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>
