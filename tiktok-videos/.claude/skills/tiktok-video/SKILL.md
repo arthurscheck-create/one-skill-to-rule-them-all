@@ -216,6 +216,9 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
       `python3 tools/speedup.py videos/<slug> --tempo 1.15 --maxpause 0.3 --qpause 0.5`
       (kürzt Pausen, beschleunigt ohne Tonhöhenänderung, rechnet die Wortzeiten um; Original bleibt als take_orig.mp3),
       dann `align_words.py videos/<slug> videos/<slug>/assets/take_words.json --tempo 1` und `tools/prepare.sh <slug>`.
+      Noch schneller (Nutzerwunsch bei Video 14: ~3,2 Wörter/s ≈ 190/min): `--tempo 1.3 --maxpause 0.22 --qpause 0.35`.
+      Dann Endkarte und HUD-Ausblenden auf `at("frage", -0.05)` statt -0.3 setzen (Pausen sind kürzer, sonst springt die
+      Endkarte noch während des letzten Satzes).
    **Weg B – API-Schlüssel (`ELEVENLABS_API_KEY`), wortgenau:**
    ```bash
    python3 tools/elevenlabs_tts.py videos/<slug>
