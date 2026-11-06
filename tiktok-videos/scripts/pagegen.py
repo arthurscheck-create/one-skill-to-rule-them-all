@@ -50,7 +50,7 @@ TAIL = """    <div id="hud"><div class="hud-panel"><div class="hud-label"></div>
 </body>
 </html>
 """
-def page(slug, scenes, title_html, sub_html, q_html, opts, cta2, js, dramatic, post="", css="", flash=True):
+def page(slug, scenes, title_html, sub_html, q_html, opts, cta2, js, dramatic, post="", css="", flash=True, cta1="SCHREIB A, B ODER C IN DIE KOMMENTARE"):
     T = json.loads(re.sub(r"^window.TIMING = |;\s*$", "", (ROOT / "videos" / slug / "timing.js").read_text(encoding="utf-8")))
     ids = [s["id"] for s in T["scenes"]]; ec = ids[-1]
     assert len(scenes) == len(ids) - 1, (slug, len(scenes), ids)
@@ -61,8 +61,8 @@ def page(slug, scenes, title_html, sub_html, q_html, opts, cta2, js, dramatic, p
         h += SCENE.format(id=ids[i], drift=drift, svg=svgc, extra=extra)
     o = "".join(f'\n      <div class="ec-opt {k}"><span class="k">{k.upper()}</span><span class="t">{a}<small>{b}</small></span></div>' for k, (a, b) in zip("abc", opts))
     ecx = (f'\n      <div class="ec-q" style="font-size:78px">{q_html}</div>{o}'
-           f'\n      <div class="ec-cta">SCHREIB A, B ODER C IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">{cta2}</span></div>'
-           '\n      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>')
+           f'\n      <div class="ec-cta">{cta1}<br/><span style="color:var(--yellow)">{cta2}</span></div>'
+           + ('' if not opts else '\n      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>'))
     h += SCENE.format(id=ec, drift="1.0", svg=f'<rect width="1080" height="1920" fill="#14122b"/><g id="{ec}-stars"></g>', extra=ecx).replace('data-drift="1.0"', 'data-punch="1.06" data-drift="1.0"')
     hide_at = "kata" if dramatic else "loop"
     hookfx = (f'tl.to(["#{ids[0]} .title.main", "#{ids[0]} .title.sub"], {{ autoAlpha: 0, duration: .15 }}, at("{hide_at}", -0.15));\n    '
