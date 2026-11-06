@@ -1,0 +1,51 @@
+import sys; sys.path.insert(0, "/home/user/tiktok-videos/scripts"); from pagegen import page
+S = [
+ ('<rect width="1080" height="1920" fill="#2a3a7a"/><rect id="h-fl" width="1080" height="1920" fill="#e9f3ff" opacity="0"/><g id="h-rain"></g><rect y="1380" width="1080" height="540" fill="#3a3a48"/><g id="h-car"></g><g id="h-bolt"></g>', "1.06"),
+ ('<rect width="1080" height="1920" fill="#1b2350"/><rect y="1220" width="1080" height="700" fill="#3a3a48"/><g id="b-car"></g><g id="b-burst"></g><g id="b-x"></g><g id="b-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#14122b"/><rect y="1220" width="1080" height="700" fill="#3a3a48"/><g id="c-car"></g><g id="c-cur"></g><g id="c-ok"></g><g id="c-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#2a2347"/><g transform="translate(0,110)"><g id="d-car"></g></g><g id="d-dash"></g><g id="d-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#3b3768"/><rect y="1220" width="1080" height="700" fill="#3a3a48"/><g id="e-q"></g><g id="e-cab"></g><g id="e-x"></g><g id="e-b"></g>', "1.06"),
+]
+JS = r'''
+    let CW = 0; const car = (g, x, y, s, col, cabrio, who) => { const c = svg("g", { transform: `translate(${x},${y}) scale(${s})` }, g);
+      svg("path", { d: "M-300,40 L-300,-40 Q-290,-70 -230,-80 L-140,-90 L-80,-160 Q-60,-180 -20,-180 L120,-180 Q160,-180 190,-150 L250,-90 L290,-80 Q310,-70 310,-40 L310,40 Z", fill: col || "#e8463c", stroke: INK, "stroke-width": 9 }, c);
+      if (who) { const id = "cw" + (CW++), cp = svg("clipPath", { id }, c); svg("rect", { x: -160, y: cabrio ? -320 : -160, width: 380, height: cabrio ? 240 : 70 }, cp); const pg = svg("g", { "clip-path": `url(#${id})` }, c); K.person(pg, { x: -20, y: cabrio ? 30 : 90, s: .45, face: who[0], arms: "down", shirt: who[1] }); }
+      if (cabrio) svg("path", { d: "M-80,-160 Q-60,-185 0,-190 L120,-190 Q170,-185 190,-150", fill: "none", stroke: "#2a2235", "stroke-width": 26 }, c);
+      else { svg("path", { d: "M-120,-95 L-70,-155 L30,-155 L30,-95 Z", fill: "#bfe6ff", "fill-opacity": .45, stroke: INK, "stroke-width": 6 }, c); svg("path", { d: "M50,-95 L50,-155 L120,-155 Q150,-155 175,-125 L200,-95 Z", fill: "#bfe6ff", "fill-opacity": .45, stroke: INK, "stroke-width": 6 }, c); }
+      [-190, 200].forEach((wx) => { svg("circle", { cx: wx, cy: 40, r: 62, fill: "#14131f", stroke: INK, "stroke-width": 6 }, c); svg("circle", { cx: wx, cy: 40, r: 26, fill: "#c9ced8" }, c); }); return c; };
+    /* S1 Hook */
+    const RN = $("#h-rain"), drops = []; for (let i = 0; i < 40; i++) drops.push([svg("line", { x1: 0, y1: 0, x2: -14, y2: 40, stroke: "#8fb0ff", "stroke-width": 4, opacity: .7 }, RN), i]);
+    E.clock(tl, (t) => drops.forEach(([l, i]) => { const x = (i * 97) % 1100, y = ((t * 1400 + i * 211) % 1500) + 300; l.setAttribute("transform", `translate(${x},${y.toFixed(1)})`); }));
+    const CR = svg("g", {}, $("#h-car")); car(CR, 540, 1300, 1.45, null, false, ["shock", "#3fd4ff"]);
+    const BO = svg("g", {}, $("#h-bolt")); svg("path", { d: "M600,0 L520,300 L600,300 L480,620 L560,620 L470,1040", fill: "none", stroke: "#fff6b0", "stroke-width": 30, "stroke-linejoin": "round" }, BO); svg("path", { d: "M600,0 L520,300 L600,300 L480,620 L560,620 L470,1040", fill: "none", stroke: "#ffd23f", "stroke-width": 12, "stroke-linejoin": "round" }, BO);
+    E.clock(tl, (t) => { const p = (t % 1.3) / 1.3, on = p < .12 || (p > .2 && p < .26); BO.style.opacity = on ? 1 : 0; document.getElementById("h-fl").setAttribute("opacity", on ? .35 : 0); });
+    /* S2 Knall + Mythos */
+    const C2 = svg("g", {}, $("#b-car")); car(C2, 540, 1140, 1.3);
+    const KB = K.burst($("#b-burst"), 540, 700, 200, "KNALL!"); pop(KB, cs("knall", 1), "540 700"); K.hide(KB, at("mythos", -0.1));
+    const TR = svg("g", {}, $("#b-x")); [[293, 1192], [800, 1192]].forEach(([x, y]) => svg("circle", { cx: x, cy: y, r: 100, fill: "none", stroke: "#ffd23f", "stroke-width": 12, "stroke-dasharray": "24 14" }, TR)); K.otxt(TR, 540, 720, "GUMMIREIFEN?", 70, "#ffd23f");
+    pop(TR, cs("mythos", 1), "540 1000");
+    const XX = svg("g", {}, $("#b-x")); K.cross(XX, 293, 1192, 70); K.cross(XX, 800, 1192, 70); pop(XX, cs("mythos", 3), "540 1192");
+    const B2 = badge($("#b-b"), 540, 600, "FALSCH", "#ff3b3b", 80); pop(B2, cs("mythos", 3), "540 600");
+    /* S3 Faradayscher Käfig */
+    const C3 = svg("g", {}, $("#c-car")); car(C3, 540, 1140, 1.3, "#5c6390", false, ["happy", "#3fd4ff"]);
+    const CU = $("#c-cur"); const pth = "M540,900 L470,905 L350,940 L200,1010 L150,1100 L150,1190 L150,1400 M540,900 L700,905 L790,950 L870,1030 L940,1100 L940,1400";
+    svg("path", { d: pth, fill: "none", stroke: "#ffd23f", "stroke-width": 16, "stroke-dasharray": "40 20", "stroke-linecap": "round" }, CU);
+    E.clock(tl, (t) => CU.firstChild.setAttribute("stroke-dashoffset", (-t * 300).toFixed(1))); K.fadeIn(CU, cs("kaefig", 1));
+    const OK = K.check($("#c-ok"), 540, 640, 1.4); pop(OK, cs("kaefig", 2), "540 640");
+    const B3 = badge($("#c-b"), 540, 1190, "FARADAYSCHER KÄFIG", "#3ee08f", 54); pop(B3, cs("kaefig", 6), "540 1190");
+    /* S4 Schaden */
+    const C4 = svg("g", {}, $("#d-car")); car(C4, 540, 760, 1.1, "#e8463c"); svg("line", { x1: 700, y1: 570, x2: 760, y2: 430, stroke: "#14131f", "stroke-width": 10 }, C4);
+    const SC = svg("g", {}, C4); [[560, 580], [640, 600], [400, 640]].forEach(([x, y]) => svg("ellipse", { cx: x, cy: y, rx: 50, ry: 18, fill: "#2a2235", opacity: .85 }, SC)); pop(SC, cs("schaden", 2), "540 600");
+    const DS = svg("g", {}, $("#d-dash")); K.panel(DS, 540, 1060, 600, 220, "#14122b", "#ff3b3b"); K.txt(DS, 540, 1040, "⚠ ERROR", 80, "#ff3b3b"); K.txt(DS, 540, 1120, "ELEKTRONIK", 44, "#fff");
+    pop(DS, cs("schaden", 4), "540 1060"); tl.to(DS, { opacity: .3, duration: .1, repeat: 7, yoyo: true, ease: "steps(1)", immediateRender: false }, cs("schaden", 4, .4));
+    const B4 = badge($("#d-b"), 540, 600 - 40, "LACK & ANTENNE VERKOHLT", "#ffd23f", 46); pop(B4, cs("schaden", 2), "540 560");
+    /* S5 Cabrio */
+    const Q = $("#e-q"); K.otxt(Q, 540, 860, "?!", 260, "#ffd23f"); pop(Q, at("verrueckt", 0), "540 780"); K.hide(Q, at("cabrio", -0.1));
+    const CB = svg("g", {}, $("#e-cab")); car(CB, 540, 1140, 1.3, "#3fd4ff", true, ["shock", "#e8463c"]); K.fadeIn(CB, at("cabrio", 0));
+    const EX = K.cross($("#e-x"), 540, 820, 110); pop(EX, cs("cabrio", 1), "540 820");
+    const B5 = badge($("#e-b"), 540, 600, "STOFFDACH = KEIN SCHUTZ", "#ff3b3b", 48); pop(B5, cs("cabrio", 1), "540 600");
+    const B6 = badge($("#e-b"), 540, 600, "BLEIB SITZEN", "#3ee08f", 66); pop(B6, cs("cabrio", 4), "540 600"); K.hide(B5, cs("cabrio", 4, -0.05)); K.hide(EX, cs("cabrio", 4, -0.05));
+'''
+page("23-blitz-ins-auto", S, 'BLITZ<br/><span class="r">INS AUTO</span>', "⚠ 30.000 AMPERE",
+     'WO WÜRDEST <span class="y">DU</span> DICH VERSTECKEN?', [("IM AUTO", "Metall drumherum"), ("UNTER EINEM BAUM", "Schön trocken"), ("IM HAUS", "Am sichersten")],
+     "UND FOLG MIR, BEVOR DAS NÄCHSTE GEWITTER KOMMT", JS, 2, "    K.hudFmt();")

@@ -1,0 +1,52 @@
+import sys; sys.path.insert(0, "/home/user/tiktok-videos/scripts"); from pagegen import page
+S = [
+ ('<defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb347"/><stop offset="1" stop-color="#ffe7b3"/></linearGradient></defs><rect width="1080" height="1920" fill="url(#g1)"/><g id="h-rays"></g><g transform="translate(0,170)"><g id="h-plate"></g><g id="h-glass"></g></g>', "1.06"),
+ ('<rect width="1080" height="1920" fill="#2a2347"/><g id="b-bat"></g><g id="b-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#3b3768"/><g id="c-p"></g><g id="c-scale"></g><g id="c-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#1b3a2a"/><g id="d-sw"></g><g id="d-fire"></g><g id="d-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#2a2347"/><g id="e-scale"></g><g id="e-arm"></g><g id="e-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#3a1a1a"/><g id="f-q"></g><g id="f-food"></g><g id="f-warn"></g><g id="f-b"></g>', "1.06"),
+]
+JS = r'''
+    const scale = (g, x, y, label, col) => { const s = svg("g", {}, g); svg("rect", { x: x - 220, y: y, width: 440, height: 120, rx: 30, fill: "#c9c3e6", stroke: INK, "stroke-width": 9 }, s); svg("rect", { x: x - 120, y: y + 20, width: 240, height: 80, rx: 14, fill: "#1b1936" }, s); K.txt(s, x, y + 82, label, 56, col || "#3ee08f"); return s; };
+    /* S1 leerer Teller */
+    K.rays($("#h-rays"), 540, 1050, 12, "#fff", .2);
+    const PL = svg("g", {}, $("#h-plate")); svg("circle", { cx: 540, cy: 1060, r: 330, fill: "#fff", stroke: INK, "stroke-width": 12 }, PL); svg("circle", { cx: 540, cy: 1060, r: 230, fill: "none", stroke: "#e0d6c8", "stroke-width": 10 }, PL);
+    svg("rect", { x: 140, y: 820, width: 30, height: 480, rx: 15, fill: "#c9ced8", stroke: INK, "stroke-width": 7 }, PL); svg("rect", { x: 910, y: 820, width: 34, height: 480, rx: 17, fill: "#c9ced8", stroke: INK, "stroke-width": 7 }, PL);
+    const EMP = K.otxt(PL, 540, 1095, "LEER", 110, "#e8463c");
+    K.pulse(EMP, 540, 1060, .9, .08);
+    const GL = svg("g", {}, $("#h-glass")); svg("path", { d: "M770,700 L930,700 L905,960 L795,960 Z", fill: "#bfe6ff", stroke: INK, "stroke-width": 8 }, GL); svg("path", { d: "M780,780 L920,780 L905,960 L795,960 Z", fill: "#3fd4ff", opacity: .8 }, GL);
+    K.bob(GL, 8, 2.4);
+    /* S2 Zuckerspeicher */
+    const BT = $("#b-bat"); svg("rect", { x: 240, y: 640, width: 560, height: 300, rx: 40, fill: "none", stroke: "#fff", "stroke-width": 16 }, BT); svg("rect", { x: 800, y: 730, width: 50, height: 120, rx: 14, fill: "#fff" }, BT);
+    const FIL = svg("rect", { x: 270, y: 670, width: 500, height: 240, rx: 24, fill: "#ffd23f" }, BT); K.otxt(BT, 520, 1020, "ZUCKERSPEICHER", 54, "#ffd23f");
+    tl.to(FIL, { attr: { width: 40 }, fill: "#ff3b3b", duration: Math.max(1.5, end("hunger") - cs("hunger", 1)), ease: "power1.in" }, cs("hunger", 1));
+    const B2 = badge($("#b-b"), 540, 1190, "FAST LEER", "#ff3b3b", 66); pop(B2, cs("hunger", 4), "540 1190");
+    /* S3 müde + Waage */
+    K.person($("#c-p"), { x: 330, y: 1150, s: .95, face: "worried", arms: "down", shirt: "#5c6390", hair: "#2a1a10" });
+    K.otxt($("#c-p"), 560, 640, "ZZZ", 70, "#c9c3e6");
+    const SC = scale($("#c-scale"), 760, 1020, "−2 KG"); pop(SC, cs("schwer", 3), "760 1080");
+    const B3 = badge($("#c-b"), 540, 1190, "VOR ALLEM WASSER", "#3fd4ff", 56); pop(B3, cs("schwer", 6), "540 1190");
+    /* S4 Umschalten auf Fett */
+    const SW = $("#d-sw"); K.panel(SW, 540, 820, 700, 300, "#14122b", "#fff"); K.txt(SW, 330, 720, "ZUCKER", 50, "#ffd23f"); K.txt(SW, 750, 720, "FETT", 50, "#3ee08f");
+    svg("rect", { x: 300, y: 790, width: 480, height: 70, rx: 35, fill: "#3a3560" }, SW); const KN = svg("circle", { cx: 340, cy: 825, r: 56, fill: "#ffd23f", stroke: INK, "stroke-width": 8 }, SW);
+    tl.to(KN, { attr: { cx: 740 }, fill: "#3ee08f", duration: .5, ease: "back.out(2)" }, cs("keto", 1));
+    const FI = svg("g", {}, $("#d-fire")); svg("path", { d: "M540,1120 C440,1040 480,960 540,900 C560,960 620,980 600,1040 C640,1010 650,980 640,950 C700,1010 690,1100 540,1120 Z", fill: "#ff8a3c", stroke: INK, "stroke-width": 8 }, FI); pop(FI, cs("keto", 2), "540 1020"); K.pulse(FI, 540, 1040, .4, .06);
+    const B4 = badge($("#d-b"), 540, 1190, "NEUE ENERGIE: KETONE", "#3ee08f", 50); pop(B4, cs("keto", 5), "540 1190");
+    /* S5 −6 kg, auch Muskeln */
+    const S5 = scale($("#e-scale"), 540, 600, "−6 KG", "#ffd23f"); pop(S5, cs("ende", 2), "540 660");
+    const AR = svg("g", {}, $("#e-arm")); svg("path", { d: "M300,1000 C300,880 380,820 460,860 C500,800 600,800 620,880 C700,900 720,980 680,1040 L320,1060 Z", fill: "#f2c29b", stroke: INK, "stroke-width": 9 }, AR);
+    svg("path", { d: "M800,820 L800,1040 M750,990 L800,1050 L850,990", fill: "none", stroke: "#ff3b3b", "stroke-width": 24, "stroke-linecap": "round", "stroke-linejoin": "round" }, AR); pop(AR, cs("ende", 4), "540 940");
+    const B5 = badge($("#e-b"), 540, 1190, "AUCH MUSKELN", "#ff3b3b", 62); pop(B5, cs("ende", 4), "540 1190");
+    /* S6 Gefahr danach */
+    const Q = $("#f-q"); K.otxt(Q, 540, 860, "?!", 260, "#ffd23f"); pop(Q, at("verrueckt", 0), "540 780"); K.hide(Q, at("gefahr", -0.1));
+    const FD = svg("g", {}, $("#f-food")); svg("circle", { cx: 540, cy: 860, r: 260, fill: "#fff", stroke: INK, "stroke-width": 10 }, FD);
+    [[440, 800, "#e8463c", 70], [620, 790, "#ffd23f", 60], [540, 920, "#8a5a2e", 90], [420, 940, "#3ee08f", 50], [660, 940, "#ff8a3c", 55]].forEach(([x, y, c, r]) => svg("circle", { cx: x, cy: y, r, fill: c, stroke: INK, "stroke-width": 6 }, FD));
+    pop(FD, cs("gefahr", 2), "540 860");
+    const WN = svg("g", {}, $("#f-warn")); svg("path", { d: "M800,560 L920,770 L680,770 Z", fill: "#ffd23f", stroke: INK, "stroke-width": 10, "stroke-linejoin": "round" }, WN); K.txt(WN, 800, 745, "!", 120, INK); pop(WN, cs("gefahr", 0), "800 680");
+    const B6 = badge($("#f-b"), 540, 1190, "NUR MIT ARZT", "#ff3b3b", 66); pop(B6, cs("gefahr", 4), "540 1190");
+'''
+POST = r'''    K.hudText([[at("t1", -0.2), "TAG 1"], [at("t2", -0.2), "TAG 2"], [at("t3", -0.2), "TAG 3"], [at("t7", -0.2), "TAG 7"]], "TAG 1");'''
+page("21-sieben-tage-fasten", S, '7 TAGE<br/><span class="r">NICHTS</span><br/>ESSEN', "⚠ NUR WASSER",
+     'WIE LANGE WÜRDEST <span class="y">DU</span> DURCHHALTEN?', [("KEINEN TAG", "Ich hab jetzt schon Hunger"), ("DREI TAGE", "Dann ist Schluss"), ("ALLE SIEBEN", "Ich zieh das durch")],
+     "UND FOLG MIR – AM BESTEN MIT VOLLEM MAGEN", JS, False, POST)

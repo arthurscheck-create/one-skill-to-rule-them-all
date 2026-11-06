@@ -178,6 +178,17 @@ Timing aller Videos → 5 Flows + 5 Vertonungen parallel (je 1 Take) → 5 Trans
 → `align_words.py` für alle → je Video Szenen bauen, `tools/prepare.sh`, check, Snapshots,
 korrigieren → `tools/render.sh` **im Hintergrund** starten und währenddessen das nächste Video bauen.
 
+**Schnellster Weg seit Serie 3 (Videos 17–26, v3):** `scripts/batch3.py` (Skripte mit [Tags], HUD,
+Interaktion, SFX) → je Video Flow + `creative_generate_speech` (max. ~5 gleichzeitig wegen Concurrency-Limit)
+→ Scribe-Transkription → `python3 tools/revoice.py <slug> <Ziel-W/s> [--key N] --src v3` (Tag-Filter,
+speedup, align, Boom für dramatisch). Danach Seite mit `scripts/pages/pNN.py`, die nur Szenen-SVG + Szenen-JS
+liefert und `scripts/pagegen.py page(...)` aufruft (Titel, HUD, Captions, Endcard, Hook-Effekte, Titel-Ausblendung
+kommen generisch). Helfer stehen in `shared/lib/kit.js` (`const K = E.kit(tl)`: txt/otxt/badge/pop/hide/fadeIn/
+shake/burst/check/cross/panel/bolt/rays/pulse/bob/hudText/hudFmt/stars/person). Dann `tools/prepare.sh`,
+Kontaktbogen-Snapshots, Render-Queue im Hintergrund (`run.sh` mit queue.txt/done.txt, rendert + `studio_prepare.sh`).
+Am Ende alle mp4/jpg mit **einem** Artifact-Publish (`asset:true`, `file_paths`, ≤ 25 Dateien) hochladen und
+die DB-Zeilen per **einem** ArtifactData-`batch` anlegen.
+
 ## 3. Arbeitsablauf
 
 ```bash
@@ -302,6 +313,13 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
   24 STD“): nach `E.buildHud(tl)` ein eigenes `E.clock(tl, t => …)` registrieren, das `.hud-label`/`.hud-num` als reine
   Funktion der Zeit setzt (Beispiele: Videos 08 und 10).
 - Container ist flüchtig: fertige Videos und Projekte dem Nutzer schicken bzw. in ein Repo pushen.
+- `K.bob` und `K.pulse` setzen das `transform`-Attribut und überschreiben ein eigenes translate/scale des Elements
+  → Element immer erst in ein eigenes `<g>` packen und das `<g>` animieren (Tassen in Video 24 waren unsichtbar).
+- Personen im Auto: mit `clipPath` auf die Fensterfläche zeichnen, sonst stehen sie vor der Karosserie (Video 23).
+- HUD-Zone (y 200–440) frei halten; Badges bei y ≈ 520–640 oder 1150–1190, Captions liegen bei y 1255–1515.
+  HUD-Zahlen mit `K.hudFmt()` (keine 3-stellige Null-Auffüllung, Tausenderpunkte).
+- Lange Titel: pro Seite CSS `#s1 .title.main.top{font-size:90–96px}` statt Umbruch über den Rand.
+- Nahaufnahme-Person: `K.person` mit s 1.5–1.9 und Füßen bei y ≈ 1760–2090 (Körper unten abgeschnitten).
 
 ## 5. Abgabe (immer alles davon)
 
