@@ -1,0 +1,83 @@
+import sys; sys.path.insert(0, "/home/user/tiktok-videos/scripts"); from pagegen import page
+S = [
+ ('<rect width="1080" height="1920" fill="#3fd4ff"/><circle cx="880" cy="300" r="130" fill="#fff3a0"/><rect y="1350" width="1080" height="570" fill="#1e88c8"/><g id="a-palm"></g><g id="a-sh"></g><g id="a-p"></g>', "1.06"),
+ ('<rect width="1080" height="1920" fill="#fff3c8"/><rect y="1100" width="1080" height="820" fill="#e8c78a"/><g id="b-box"></g><g id="b-p"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#dff3ff"/><g id="c-sheet"></g><g id="c-mag"></g><g id="c-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#1b1936"/><g id="d-l"></g><g id="d-r"></g>', "1.04"),
+ ('<rect width="1080" height="1920" fill="#ff7a4a"/><rect y="700" width="1080" height="1220" fill="#a8345a" opacity=".6"/><g id="e-city"></g><g id="e-sh"></g><g id="e-p"></g><rect id="e-red" width="1080" height="1920" fill="#ff3b3b" opacity="0"/>', "1.06"),
+ ('<rect width="1080" height="1920" fill="#2a2347"/><g id="f-note"></g><g id="f-b"></g>', "1.04"),
+ ('<rect width="1080" height="1920" fill="#14122b"/><g id="g-grid"></g><g id="g-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#14122b"/><rect id="h-blue" width="1080" height="1920" fill="#2a6bff" opacity="0"/><rect id="h-red" width="1080" height="1920" fill="#ff3b3b" opacity="0"/><g id="h-q"></g><g id="h-badge"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#1b2a4a"/><g id="i-dna"></g><g id="i-cells"></g><g id="i-hand"></g><g id="i-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#3b3768"/><g id="j-tv"></g><g id="j-b"></g>', "1.05"),
+]
+JS = r'''
+    const R = E.rng(29);
+    const shadow = (g, x, y, s) => { const w = svg("g", { transform: `translate(${x},${y}) scale(${s})` }, g); svg("path", { d: "M-260,520 C-250,300 -180,240 0,230 C180,240 250,300 260,520 Z", fill: "#5a0f1f" }, w); svg("circle", { cx: 0, cy: 80, r: 150, fill: "#5a0f1f" }, w);
+      const eyes = svg("g", {}, w); [-55, 55].forEach((ex) => svg("ellipse", { cx: ex, cy: 70, rx: 30, ry: 14, fill: "#ff3b3b" }, eyes)); return [w, eyes]; };
+    /* S1 Miami + Schatten */
+    const PA = $("#a-palm"); [[110, 1350, 1], [980, 1350, -1]].forEach(([x, y, f]) => { svg("path", { d: `M${x},${y} C${x + f * 30},${y - 200} ${x + f * 10},${y - 400} ${x + f * 60},${y - 560}`, fill: "none", stroke: "#7a4a2a", "stroke-width": 30, "stroke-linecap": "round" }, PA); for (let i = 0; i < 5; i++) { const a = -2.6 + i * .55; svg("path", { d: `M${x + f * 60},${y - 560} q${Math.cos(a) * 160},${Math.sin(a) * 60 - 40} ${Math.cos(a) * 260},${Math.sin(a) * 140 + 60}`, fill: "none", stroke: "#2e9e4f", "stroke-width": 34, "stroke-linecap": "round" }, PA); } });
+    const [SH1, EY1] = shadow($("#a-sh"), 780, 920, 1.2); const SHW = svg("g", {}, $("#a-sh")); SHW.appendChild(SH1); K.bob(SHW, 18, 1.6);
+    E.clock(tl, (t) => EY1.setAttribute("opacity", (.6 + Math.abs(Math.sin(t * 2.2)) * .4).toFixed(2)));
+    const AP = svg("g", {}, $("#a-p")); K.person(AP, { x: 440, y: 1810, s: 1.5, face: "smirk", arms: "down", shirt: "#6b7d5a", hair: "#3a2a1a" });
+    /* S2 Donuts */
+    const BX = $("#b-box"); svg("rect", { x: 220, y: 560, width: 640, height: 380, rx: 20, fill: "#ff8ad8", stroke: INK, "stroke-width": 10 }, BX); svg("rect", { x: 240, y: 580, width: 600, height: 340, rx: 14, fill: "#fff", stroke: INK, "stroke-width": 6 }, BX);
+    const IC = ["#ff8ad8", "#ffd23f", "#8a5a3a", "#3fd4ff", "#ff3b3b", "#3ee08f"];
+    for (let i = 0; i < 6; i++) { const x = 340 + (i % 3) * 200, y = 670 + Math.floor(i / 3) * 160; svg("circle", { cx: x, cy: y, r: 72, fill: "#e8a04a", stroke: INK, "stroke-width": 6 }, BX); svg("circle", { cx: x, cy: y, r: 60, fill: IC[i] }, BX); svg("circle", { cx: x, cy: y, r: 22, fill: "#fff", stroke: INK, "stroke-width": 6 }, BX); for (let k = 0; k < 6; k++) { const a = k + i; svg("rect", { x: x + Math.cos(a) * 42 - 8, y: y + Math.sin(a) * 42 - 3, width: 16, height: 6, rx: 3, fill: ["#fff", "#3fd4ff", "#ffd23f"][k % 3], transform: `rotate(${a * 50} ${x + Math.cos(a) * 42} ${y + Math.sin(a) * 42})` }, BX); } }
+    K.pop(BX, cs("m7", 1), "540 750");
+    const BP = svg("g", {}, $("#b-p")); K.person(BP, { x: 540, y: 1790, s: 1.35, face: "smirk", arms: "down", shirt: "#6b7d5a", hair: "#3a2a1a" });
+    /* S3 Labor: Blutspuren unter der Lupe */
+    const SHT = $("#c-sheet"); svg("rect", { x: 170, y: 540, width: 740, height: 640, rx: 12, fill: "#fff", stroke: INK, "stroke-width": 8 }, SHT);
+    for (let i = 0; i < 16; i++) { const x = 230 + R() * 620, y = 600 + R() * 520, r = 8 + R() * 18, e = R() > .5; svg("ellipse", { cx: x, cy: y, rx: e ? r * 1.9 : r, ry: r, fill: "#c81e2e", transform: e ? `rotate(${-30 + R() * 60} ${x} ${y})` : "" }, SHT); }
+    const MG = svg("g", {}, $("#c-mag")); svg("line", { x1: 120, y1: 120, x2: 260, y2: 260, stroke: "#5c3a1a", "stroke-width": 40, "stroke-linecap": "round" }, MG); svg("circle", { cx: 0, cy: 0, r: 160, fill: "rgba(170,230,255,.35)", stroke: INK, "stroke-width": 22 }, MG);
+    E.clock(tl, (t) => MG.setAttribute("transform", `translate(${(540 + Math.sin(t * .9) * 200).toFixed(1)},${(820 + Math.cos(t * .7) * 120).toFixed(1)})`));
+    const B3 = K.badge($("#c-b"), 540, 1190, "BLUTSPUREN-ANALYST", "#ff3b3b", 54); K.pop(B3, cs("job", 1), "540 1190");
+    /* S4 Tropfenform */
+    const DL = $("#d-l"); K.panel(DL, 290, 820, 420, 560, "#24203f", "#3fd4ff"); svg("path", { d: "M290,560 L290,700 M260,670 L290,710 L320,670", fill: "none", stroke: "#3fd4ff", "stroke-width": 12, "stroke-linecap": "round", "stroke-linejoin": "round" }, DL); svg("circle", { cx: 290, cy: 860, r: 90, fill: "#c81e2e", stroke: INK, "stroke-width": 6 }, DL); K.otxt(DL, 290, 1005, "RUND", 62, "#fff"); K.otxt(DL, 290, 1062, "= GERADE", 44, "#3fd4ff");
+    K.pop(DL, cs("spur", 0), "290 820");
+    const DR = $("#d-r"); K.panel(DR, 790, 820, 420, 560, "#24203f", "#ffd23f"); svg("path", { d: "M640,580 L740,700 M700,690 L745,705 L740,660", fill: "none", stroke: "#ffd23f", "stroke-width": 12, "stroke-linecap": "round", "stroke-linejoin": "round" }, DR);
+    svg("path", { d: "M690,860 C690,810 770,800 850,830 C900,845 930,860 960,862 C930,866 900,878 850,892 C770,918 690,910 690,860 Z", fill: "#c81e2e", stroke: INK, "stroke-width": 6 }, DR); K.otxt(DR, 790, 1005, "LÄNGLICH", 58, "#fff"); K.otxt(DR, 790, 1062, "= SCHRÄG", 44, "#ffd23f");
+    K.pop(DR, cs("spur", 2), "790 820");
+    /* S5 18 Uhr: dunkler Begleiter */
+    const CT = $("#e-city"); for (let i = 0; i < 12; i++) { const w = 70 + R() * 60, h = 200 + R() * 360; svg("rect", { x: i * 92 - 10, y: 1360 - h, width: w, height: h + 600, fill: "#2a1428" }, CT); }
+    const [SH5, EY5] = shadow($("#e-sh"), 540, 520, 1.7); tl.fromTo(SH5, { opacity: 0 }, { opacity: 1, duration: 1.2, immediateRender: false }, at("m18", 0.6)); tl.set(SH5, { opacity: 0 }, 0);
+    E.clock(tl, (t) => EY5.setAttribute("opacity", (.5 + Math.abs(Math.sin(t * 3)) * .5).toFixed(2)));
+    const EP = svg("g", {}, $("#e-p")); K.person(EP, { x: 540, y: 1840, s: 1.45, face: "neutral", arms: "down", shirt: "#6b7d5a", hair: "#3a2a1a" });
+    E.clock(tl, (t) => { const k = t - cs("m18", 2); document.getElementById("e-red").setAttribute("opacity", k > 0 ? (Math.abs(Math.sin(k * 3.2)) * .2).toFixed(3) : 0); });
+    /* S6 Kodex */
+    const NT = $("#f-note"); svg("rect", { x: 190, y: 500, width: 700, height: 700, rx: 16, fill: "#fff3c0", stroke: INK, "stroke-width": 10 }, NT); for (let y = 640; y < 1180; y += 70) svg("line", { x1: 220, y1: y, x2: 860, y2: y, stroke: "#b8c8ff", "stroke-width": 4 }, NT);
+    K.txt(NT, 540, 600, "KODEX", 80, INK);
+    [["1. KEINE UNSCHULDIGEN", 1], ["2. IMMER SICHER SEIN", 2], ["3. NIE ERWISCHEN LASSEN", 3]].forEach(([s, i], k) => { const it = K.txt(NT, 540, 740 + k * 140, s, 44, "#c81e2e"); K.fadeIn(it, cs("code", i), .3); });
+    const ST = K.badge($("#f-b"), 680, 1160, "LISTE", "#ff3b3b", 64); svg("g", {}, ST); ST.setAttribute("transform", "translate(680,1160) rotate(-8)"); K.pop(ST, cs("code", 4), "680 1160");
+    /* S7 1 von 100 */
+    const GG = $("#g-grid"); let red;
+    for (let r = 0; r < 10; r++) for (let c = 0; c < 10; c++) { const x = 180 + c * 80, y = 560 + r * 58, hit = r === 6 && c === 3, g = svg("g", {}, GG); svg("circle", { cx: x, cy: y, r: 11, fill: hit ? "#ff3b3b" : "#c9c3dd" }, g); svg("rect", { x: x - 13, y: y + 12, width: 26, height: 26, rx: 9, fill: hit ? "#ff3b3b" : "#8a84a8" }, g); if (hit) red = [x, y]; }
+    const RG = svg("circle", { cx: red[0], cy: red[1] + 12, r: 40, fill: "none", stroke: "#ffd23f", "stroke-width": 8 }, GG); K.pulse(RG, red[0], red[1] + 12, .5, .25); K.fadeIn(RG, cs("psych", 1));
+    const B7 = K.badge($("#g-b"), 540, 1185, "≈ 1 VON 100", "#ffd23f", 62); K.pop(B7, cs("psych", 1), "540 1185");
+    /* S8 Realität: Aufklärungsquote */
+    const Q8 = $("#h-q"); K.otxt(Q8, 540, 860, "?!", 260, "#e8463c"); K.pop(Q8, at("verrueckt", 0), "540 780"); K.hide(Q8, at("real", -0.1));
+    E.clock(tl, (t) => { const k = t - at("real", 0.4), on = k > 0 && Math.floor(k * 4) % 2; document.getElementById("h-blue").setAttribute("opacity", k > 0 && !on ? .35 : 0); document.getElementById("h-red").setAttribute("opacity", on ? .35 : 0); });
+    const HB = $("#h-badge"); let d = ""; for (let i = 0; i < 10; i++) { const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? 150 : 300; d += (i ? "L" : "M") + (540 + Math.cos(a) * rr).toFixed(1) + "," + (840 + Math.sin(a) * rr).toFixed(1); }
+    svg("path", { d: d + "Z", fill: "#ffd23f", stroke: INK, "stroke-width": 10, "stroke-linejoin": "round" }, HB); svg("circle", { cx: 540, cy: 860, r: 150, fill: "#1b1936", stroke: INK, "stroke-width": 8 }, HB);
+    K.otxt(HB, 540, 870, "> 90 %", 78, "#3ee08f"); K.txt(HB, 540, 930, "AUFGEKLÄRT", 34, "#fff"); K.pop(HB, cs("real", 4), "540 860");
+    /* S9 DNA + Hautzellen */
+    const DN = $("#i-dna"), DOT = []; for (let i = 0; i < 18; i++) { const a = svg("circle", { r: 16, fill: "#3fd4ff", stroke: INK, "stroke-width": 4 }, DN), b = svg("circle", { r: 16, fill: "#ff8ad8", stroke: INK, "stroke-width": 4 }, DN), l = svg("line", { stroke: "#c9c3dd", "stroke-width": 6 }, DN); DOT.push([a, b, l, i]); }
+    E.clock(tl, (t) => DOT.forEach(([a, b, l, i]) => { const y = 520 + i * 36, p = i * .55 + t * 2.2, xa = 540 + Math.sin(p) * 150, xb = 540 - Math.sin(p) * 150; a.setAttribute("cx", xa.toFixed(1)); a.setAttribute("cy", y); b.setAttribute("cx", xb.toFixed(1)); b.setAttribute("cy", y); l.setAttribute("x1", xa.toFixed(1)); l.setAttribute("x2", xb.toFixed(1)); l.setAttribute("y1", y); l.setAttribute("y2", y); }));
+    const CE = $("#i-cells"), CL = []; for (let i = 0; i < 40; i++) CL.push([svg("circle", { r: 6 + R() * 8, fill: "#ffc8b0", stroke: "#c88a70", "stroke-width": 2 }, CE), 200 + R() * 680, R() * 9]);
+    E.clock(tl, (t) => CL.forEach(([c, x, p]) => { const y = 1250 - ((t * 90 + p * 140) % 760); c.setAttribute("cx", (x + Math.sin(t + p) * 30).toFixed(1)); c.setAttribute("cy", y.toFixed(1)); c.setAttribute("opacity", Math.min(1, (1250 - y) / 120) * Math.min(1, (y - 480) / 200)); }));
+    const B9 = K.badge($("#i-b"), 540, 1185, "10 ZELLEN = DNA-PROFIL", "#ff3b3b", 50); K.pop(B9, cs("dna", 4), "540 1185");
+    /* S10 Nur im Fernsehen */
+    const TV = $("#j-tv"); svg("path", { d: "M420,520 L540,600 L660,520", fill: "none", stroke: INK, "stroke-width": 12, "stroke-linecap": "round" }, TV); svg("rect", { x: 150, y: 600, width: 780, height: 560, rx: 40, fill: "#5c3a1a", stroke: INK, "stroke-width": 12 }, TV);
+    svg("rect", { x: 200, y: 650, width: 560, height: 460, rx: 24, fill: "#14122b", stroke: INK, "stroke-width": 8 }, TV); [830, 830].forEach((x, i) => svg("circle", { cx: x, cy: 740 + i * 120, r: 34, fill: "#c9c3dd", stroke: INK, "stroke-width": 6 }, TV));
+    const SC = svg("g", {}, TV); const [SH10] = shadow(SC, 480, 720, .9); const NO = svg("g", {}, TV); for (let i = 0; i < 12; i++) svg("rect", { x: 200, y: 650 + i * 38, width: 560, height: 4, fill: "#fff", opacity: .12 }, NO);
+    E.clock(tl, (t) => NO.setAttribute("transform", `translate(0,${((t * 120) % 38).toFixed(1)})`));
+    const B10 = K.badge($("#j-b"), 540, 1185, "NUR IM FERNSEHEN", "#ffd23f", 58); K.pop(B10, cs("ende", 2), "540 1185");
+'''
+POST = r'''    { const hl = document.querySelector("#hud .hud-label"), hn = document.querySelector("#hud .hud-num");
+      document.querySelectorAll("#captions .cap").forEach((c) => { const L = Math.max(...c.textContent.split(/\s+/).map((w) => w.length)); if (L > 13) c.style.fontSize = Math.min(92, Math.floor(980 / (L * .74))) + "px"; });
+      const P = [[at("m7", -0.2), "UHRZEIT", "07:00"], [at("job", -0.2), "UHRZEIT", "09:30"], [at("spur", -0.2), "UHRZEIT", "11:00"], [at("m18", -0.2), "UHRZEIT", "18:00"], [at("code", -0.2), "UHRZEIT", "19:30"],
+                 [at("psych", -0.2), "PSYCHOPATHIE", "≈ 1 %"], [at("verrueckt", -0.2), "REALITÄT", "?"], [at("real", -0.2), "AUFGEKLÄRT", "> 90 %"], [at("dna", -0.2), "DNA-SPUREN", "10 ZELLEN"], [at("ende", -0.2), "GEHEIM", "NUR IM TV"]];
+      E.clock(tl, (t) => { let v = P[0]; P.forEach((p) => { if (t >= p[0]) v = p; }); hl.textContent = "⚠ " + v[1]; hn.textContent = v[2]; }); }'''
+page("29-einen-tag-dexter", S, 'EINEN TAG<br/>LANG <span class="r">DEXTER</span>', "⚠ NIEMAND KENNT DEIN GEHEIMNIS",
+     'WÄRST <span class="y">DU</span> GERN EINEN TAG DEXTER?', [("NUR DER JOB", "Blutspuren & Donuts"), ("NUR SERIE GUCKEN", "Vom Sofa aus"), ("NIEMALS", "Viel zu riskant")],
+     "UND FOLG MIR – ICH VERRATE ES KEINEM", JS, 1, POST)
