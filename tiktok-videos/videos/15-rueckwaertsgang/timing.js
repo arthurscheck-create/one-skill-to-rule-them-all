@@ -1,39 +1,39 @@
 window.TIMING = {
   "title": "Was passiert, wenn du bei 100 km/h in den Rückwärtsgang schaltest?",
-  "duration": 49.97,
+  "duration": 50.12,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
-      "t0": 0.0,
-      "t1": 1.769,
+      "t0": 0.189,
+      "t1": 1.556,
       "chunks": [
         "Hundert Sachen. Rückwärtsgang rein."
       ],
       "noCap": true,
       "chunkStarts": [
-        0.0
+        0.189
       ]
     },
     {
       "id": "kata",
-      "t0": 1.987,
-      "t1": 3.31,
+      "t0": 1.764,
+      "t1": 2.975,
       "chunks": [
         "Das kann",
         "dein Getriebe",
         "*zerfetzen.*"
       ],
       "chunkStarts": [
-        1.987,
-        2.299,
-        2.771
+        1.764,
+        1.914,
+        2.378
       ]
     },
     {
       "id": "loop",
-      "t0": 3.512,
-      "t1": 6.882,
+      "t0": 3.183,
+      "t1": 6.669,
       "chunks": [
         "Und am Ende",
         "zeige ich dir ein Auto,",
@@ -41,29 +41,29 @@ window.TIMING = {
         "fast ^dreihundert^ fährt."
       ],
       "chunkStarts": [
-        3.512,
-        4.052,
-        5.18,
-        5.694
+        3.183,
+        3.669,
+        4.656,
+        5.225
       ]
     },
     {
       "id": "fall1",
-      "t0": 7.059,
-      "t1": 8.517,
+      "t0": 6.878,
+      "t1": 8.015,
       "chunks": [
         "^Fall eins:^",
         "Automatik."
       ],
       "chunkStarts": [
-        7.059,
-        7.877
+        6.878,
+        7.451
       ]
     },
     {
       "id": "auto",
-      "t0": 8.694,
-      "t1": 15.12,
+      "t0": 8.182,
+      "t1": 14.806,
       "chunks": [
         "Du ziehst den Hebel",
         "auf R.",
@@ -74,19 +74,19 @@ window.TIMING = {
         "auf ~Neutral.~"
       ],
       "chunkStarts": [
-        8.694,
-        9.637,
-        10.436,
-        11.633,
-        12.366,
-        13.267,
-        14.084
+        8.182,
+        9.182,
+        9.89,
+        10.821,
+        11.64,
+        12.918,
+        13.751
       ]
     },
     {
       "id": "fall2",
-      "t0": 15.247,
-      "t1": 18.414,
+      "t0": 14.929,
+      "t1": 18.084,
       "chunks": [
         "^Fall zwei:^",
         "Schaltwagen.",
@@ -94,16 +94,16 @@ window.TIMING = {
         "wird es *brutal.*"
       ],
       "chunkStarts": [
-        15.247,
-        15.888,
-        16.779,
-        17.403
+        14.929,
+        15.654,
+        16.619,
+        16.907
       ]
     },
     {
       "id": "schalt",
-      "t0": 18.631,
-      "t1": 24.934,
+      "t0": 18.118,
+      "t1": 23.863,
       "chunks": [
         "Der Rückwärtsgang",
         "ist oft",
@@ -115,20 +115,20 @@ window.TIMING = {
         "der Zahnräder ab."
       ],
       "chunkStarts": [
-        18.631,
-        19.331,
-        19.811,
-        21.007,
-        21.656,
-        22.785,
-        23.324,
-        24.041
+        18.118,
+        18.743,
+        19.118,
+        20.132,
+        20.516,
+        21.641,
+        22.349,
+        23.044
       ]
     },
     {
       "id": "kupplung",
-      "t0": 25.111,
-      "t1": 30.039,
+      "t0": 24.072,
+      "t1": 29.276,
       "chunks": [
         "Und lässt du dann",
         "die Kupplung kommen,",
@@ -139,32 +139,32 @@ window.TIMING = {
         "Schleudern."
       ],
       "chunkStarts": [
-        25.111,
-        25.76,
-        26.594,
-        27.242,
-        28.127,
-        28.911,
-        29.534
+        24.072,
+        24.585,
+        25.59,
+        26.206,
+        26.891,
+        27.635,
+        28.21
       ]
     },
     {
       "id": "fall3",
-      "t0": 30.257,
-      "t1": 31.756,
+      "t0": 29.425,
+      "t1": 30.943,
       "chunks": [
         "^Fall drei:^",
         "Elektroauto."
       ],
       "chunkStarts": [
-        30.257,
-        30.981
+        29.425,
+        29.851
       ]
     },
     {
       "id": "elektro",
-      "t0": 31.959,
-      "t1": 35.379,
+      "t0": 31.012,
+      "t1": 34.637,
       "chunks": [
         "Der Motor",
         "dreht sich einfach",
@@ -173,30 +173,30 @@ window.TIMING = {
         "sagt: *Nein.*"
       ],
       "chunkStarts": [
-        31.959,
-        32.396,
-        33.07,
-        33.863,
-        34.503
+        31.012,
+        31.54,
+        32.26,
+        33.154,
+        33.676
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 35.556,
-      "t1": 36.314,
+      "t0": 34.846,
+      "t1": 35.644,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        35.556,
-        35.808
+        34.846,
+        35.006
       ]
     },
     {
       "id": "rekord",
-      "t0": 36.491,
-      "t1": 41.89,
+      "t0": 35.714,
+      "t1": 41.367,
       "chunks": [
         "Ein Elektro-Supersportwagen",
         "fuhr rückwärts",
@@ -205,47 +205,47 @@ window.TIMING = {
         "Weltrekord."
       ],
       "chunkStarts": [
-        36.491,
-        38.058,
-        38.774,
-        39.76,
-        41.317
+        35.714,
+        37.367,
+        38.244,
+        39.311,
+        40.533
       ]
     },
     {
       "id": "frage",
-      "t0": 42.108,
-      "t1": 43.094,
+      "t0": 41.575,
+      "t1": 43.033,
       "chunks": [
         "Was würde dein Auto machen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        42.108
+        41.575
       ]
     },
     {
       "id": "komm",
-      "t0": 43.246,
-      "t1": 45.284,
+      "t0": 43.081,
+      "t1": 45.199,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        43.246
+        43.081
       ]
     },
     {
       "id": "folg",
-      "t0": 45.411,
-      "t1": 47.583,
+      "t0": 45.391,
+      "t1": 47.46,
       "chunks": [
         "Und folg mir. Bevor du es selbst ausprobierst."
       ],
       "noCap": true,
       "chunkStarts": [
-        45.411
+        45.391
       ]
     }
   ],
@@ -449,7 +449,7 @@ window.TIMING = {
     {
       "type": "boom",
       "at": "kata",
-      "off": 0.784
+      "off": 0.614
     }
   ]
 };

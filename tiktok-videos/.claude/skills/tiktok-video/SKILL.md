@@ -211,12 +211,21 @@ tools/new_video.sh 02-<slug> "Titel"         # Projekt aus Vorlage anlegen
    Untertitel-Zone 1255–1515 und HUD-Zone 200–430 frei von wichtigen Texten halten.
    Das Referenzprojekt `videos/01-keiner-arbeitet/index.html` zeigt jede Technik.
 3. **Stimme** (deutsch) über **ElevenLabs**, aktuelle Standardstimme
-   **`Cqbq4nsuUe1we6J45miU`** ("Helmut – Nachrichten & Anchorman", vom Nutzer gewählt ab Video 16;
-   frühere Stimmen: `rDmv3mOhK6TnhYWckFaD` "Felix Serenitas" (Videos 03–15), `bFv4VX9jlZxtKnEa6UWs`
-   "Arthur Holm"). Modell `eleven_multilingual_v2`. Kosten: 1 Credit pro Zeichen Skript.
+   **`g1jpii0iyvtRs8fqXsd1`** ("German Epic Trailer Voice – Helmut", vom Nutzer gewählt ab 06.11.2026) mit
+   **Modell `eleven_v3`** und **Emotions-Tags in eckigen Klammern** (Nutzerwunsch). Tags sind englisch und stehen
+   direkt vor dem Satz, den sie färben; ein Tag gilt bis zum nächsten, also nur dort wechseln, wo die Stimmung kippt:
+   `[dramatically]` Hook, `[nervous]` Gefahr, `[curious]` Versprechen/Frage, `[calmly]` Erklärung, `[excited]`
+   „Und das Verrückte?“, `[whispers]` Geheimnis, `[serious]`, `[sad]`, `[amused]`, `[warmly]` CTA, `[mischievously]` Folg-Satz.
+   **Keine Geräusch-Tags** ([laughs], [gasps] …): Scribe schreibt sie sonst evtl. als Wort und das Alignment bricht.
+   Die WÖRTER müssen exakt dem Skript in `timing.js` entsprechen – Tags nur zusätzlich. Zahlen schreibt v3 wie notiert.
+   Kosten ≈ 1 Credit/Zeichen inkl. Tags (~900–1.250 pro Video). Das getaggte Skript als `videos/<slug>/script_v3.txt` ablegen.
+   v3 spricht langsamer (roh ~1,9 Wörter/s) → speedup-Tempo ~1,3–1,45 für ~2,8 Wörter/s. Scribe übernimmt die
+   [Tags] als „Wörter“ ins Transkript; `speedup.py` und `revoice.py` filtern sie automatisch heraus.
+   Frühere Stimmen: `Cqbq4nsuUe1we6J45miU` "Helmut – Nachrichten" (multilingual_v2, Videos 11/14 online),
+   `rDmv3mOhK6TnhYWckFaD` "Felix Serenitas" (Videos 01–04, 09, 13 online), `bFv4VX9jlZxtKnEa6UWs` "Arthur Holm".
    Eine andere Stimme nur, wenn der Nutzer es sagt.
    **Weg A – ElevenLabs-Connector (11LBS, Credits des Nutzers), Standard:**
-   1. `creative_create_flow` → `creative_generate_speech` (voice_id, Skript als prompt;
+   1. `creative_create_flow` → `creative_generate_speech` (voice_id, model_id `eleven_v3`, Skript MIT Tags als prompt;
       **`generations_count: 1` – immer nur EIN Take** (Nutzerwunsch: Credits sparen; ~710 Credits
       pro 50 s). Nie einen zweiten Take erzeugen, außer der Nutzer verlangt es ausdrücklich.
       → `creative_get_flow_run_status` pollen.

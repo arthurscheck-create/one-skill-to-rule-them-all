@@ -31,16 +31,24 @@ def main():
         shutil.copy(A / "take.mp3", A / "take_orig.mp3"); shutil.copy(A / "take_words.json", A / "take_words_orig.json")
     x = decode(A / "take_orig.mp3")
     d = json.loads((A / "take_words_orig.json").read_text(encoding="utf-8"))
-    W = [w for w in (d["words"] if isinstance(d, dict) else d) if w.get("type", "word") == "word"]
+    ALL, inside = [], False
+    for w in (d["words"] if isinstance(d, dict) else d):   # v3: Scribe übernimmt [Tags] als Wörter -> herausfiltern
+        t = w.get("text", "").strip()
+        if w.get("type", "word") == "word" and (inside or t.startswith("[")):
+            inside = not t.endswith("]"); continue
+        ALL.append(w)
+    W = [w for w in ALL if w.get("type", "word") == "word"]
+    # Geräusche aus v3-Tags ([gasps], [sighs] …) als audio_event: beim Pausenkürzen wie Wörter behandeln, damit sie nicht weggeschnitten werden
+    EV = sorted([w for w in ALL if w.get("type", "word") in ("word", "audio_event")], key=lambda w: w["start"])
 
     # Zu behaltende Abschnitte [a, b) in Sekunden des Originals
     keep, t = [], 0.0
-    for i in range(len(W) - 1):
-        e, s = W[i]["end"], W[i + 1]["start"]
-        lim = a.qpause if W[i]["text"].rstrip().endswith(("?", "!")) else a.maxpause
+    for i in range(len(EV) - 1):
+        e, s = EV[i]["end"], EV[i + 1]["start"]
+        lim = a.qpause if EV[i]["text"].rstrip().endswith(("?", "!")) else a.maxpause
         if s - e > lim:
             keep.append((t, e + lim / 2)); t = s - lim / 2
-    keep.append((t, min(len(x) / SR, W[-1]["end"] + 0.35)))
+    keep.append((t, min(len(x) / SR, EV[-1]["end"] + 0.35)))
 
     fade = int(0.008 * SR); parts = []
     for s0, s1 in keep:

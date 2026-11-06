@@ -1,67 +1,67 @@
 window.TIMING = {
   "title": "Was wäre, wenn die Sonne plötzlich verschwindet?",
-  "duration": 47.49,
+  "duration": 47.82,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
-      "t0": 0.0,
-      "t1": 2.25,
+      "t0": 0.105,
+      "t1": 2.4,
       "chunks": [
         "Die Sonne verschwindet. Einfach so."
       ],
       "noCap": true,
       "chunkStarts": [
-        0.0
+        0.105
       ]
     },
     {
       "id": "kata",
-      "t0": 2.476,
-      "t1": 4.107,
+      "t0": 2.631,
+      "t1": 4.363,
       "chunks": [
         "Und die Erde",
         "wird zur *Eiskugel.*"
       ],
       "chunkStarts": [
-        2.476,
-        2.973
+        2.631,
+        3.046
       ]
     },
     {
       "id": "loop",
-      "t0": 4.305,
-      "t1": 6.368,
+      "t0": 4.594,
+      "t1": 6.877,
       "chunks": [
         "Aber an einem Ort",
         "geht das Leben",
         "^weiter.^"
       ],
       "chunkStarts": [
-        4.305,
-        5.205,
-        5.814
+        4.594,
+        5.492,
+        6.275
       ]
     },
     {
       "id": "nichts",
-      "t0": 6.593,
-      "t1": 8.103,
+      "t0": 7.108,
+      "t1": 8.182,
       "chunks": [
         "Erst mal",
         "merkst du",
         "*gar nichts.*"
       ],
       "chunkStarts": [
-        6.593,
-        7.043,
-        7.446
+        7.108,
+        7.406,
+        7.674
       ]
     },
     {
       "id": "licht",
-      "t0": 8.243,
-      "t1": 12.548,
+      "t0": 8.305,
+      "t1": 12.243,
       "chunks": [
         "Das Licht",
         "der Sonne",
@@ -71,29 +71,29 @@ window.TIMING = {
         "einfach weiter."
       ],
       "chunkStarts": [
-        8.243,
-        8.674,
-        9.031,
-        10.044,
-        11.038,
-        11.506
+        8.305,
+        8.889,
+        9.258,
+        10.074,
+        10.989,
+        11.543
       ]
     },
     {
       "id": "min8",
-      "t0": 12.79,
-      "t1": 13.831,
+      "t0": 12.474,
+      "t1": 13.221,
       "chunks": [
         "^Minute acht.^"
       ],
       "chunkStarts": [
-        12.79
+        12.474
       ]
     },
     {
       "id": "dunkel",
-      "t0": 13.953,
-      "t1": 18.333,
+      "t0": 13.452,
+      "t1": 17.844,
       "chunks": [
         "Dann:",
         "*Dunkelheit.*",
@@ -103,18 +103,18 @@ window.TIMING = {
         "durch die Sonne."
       ],
       "chunkStarts": [
-        13.953,
-        14.628,
-        15.613,
-        16.185,
-        16.964,
-        17.582
+        13.452,
+        13.685,
+        15.116,
+        15.542,
+        16.388,
+        17.157
       ]
     },
     {
       "id": "schleuder",
-      "t0": 18.455,
-      "t1": 22.037,
+      "t0": 18.075,
+      "t1": 21.598,
       "chunks": [
         "Die Erde",
         "fliegt geradeaus",
@@ -123,28 +123,28 @@ window.TIMING = {
         "aus einer Schleuder."
       ],
       "chunkStarts": [
-        18.455,
-        18.848,
-        19.739,
-        20.546,
-        21.118
+        18.075,
+        18.377,
+        19.305,
+        19.859,
+        20.782
       ]
     },
     {
       "id": "tag1",
-      "t0": 22.131,
-      "t1": 22.965,
+      "t0": 21.828,
+      "t1": 22.552,
       "chunks": [
         "^Tag eins.^"
       ],
       "chunkStarts": [
-        22.131
+        21.828
       ]
     },
     {
       "id": "pflanzen",
-      "t0": 23.059,
-      "t1": 26.173,
+      "t0": 22.705,
+      "t1": 25.69,
       "chunks": [
         "Pflanzen",
         "bekommen",
@@ -153,28 +153,28 @@ window.TIMING = {
         "zu *sterben.*"
       ],
       "chunkStarts": [
-        23.059,
-        23.481,
-        23.791,
-        24.785,
-        25.385
+        22.705,
+        23.262,
+        23.573,
+        24.336,
+        25.177
       ]
     },
     {
       "id": "woche",
-      "t0": 26.342,
-      "t1": 27.111,
+      "t0": 25.921,
+      "t1": 26.319,
       "chunks": [
         "^Eine Woche.^"
       ],
       "chunkStarts": [
-        26.342
+        25.921
       ]
     },
     {
       "id": "kalt",
-      "t0": 27.233,
-      "t1": 29.98,
+      "t0": 26.488,
+      "t1": 29.519,
       "chunks": [
         "Minus",
         "^fünfzehn Grad.^",
@@ -182,27 +182,27 @@ window.TIMING = {
         "auf der Erde."
       ],
       "chunkStarts": [
-        27.233,
-        27.701,
-        28.901,
-        29.305
+        26.488,
+        27.181,
+        28.252,
+        28.996
       ]
     },
     {
       "id": "jahr",
-      "t0": 30.121,
-      "t1": 30.749,
+      "t0": 29.75,
+      "t1": 31.258,
       "chunks": [
         "^Ein Jahr.^"
       ],
       "chunkStarts": [
-        30.121
+        29.75
       ]
     },
     {
       "id": "eis",
-      "t0": 30.89,
-      "t1": 34.874,
+      "t0": 31.35,
+      "t1": 34.827,
       "chunks": [
         "Minus",
         "^siebzig Grad.^",
@@ -211,32 +211,32 @@ window.TIMING = {
         "*zu.*"
       ],
       "chunkStarts": [
-        30.89,
-        31.452,
-        32.726,
-        33.42,
-        34.368
+        31.35,
+        31.796,
+        32.688,
+        33.642,
+        34.602
       ]
     },
     {
       "id": "aber",
-      "t0": 34.996,
-      "t1": 36.88,
+      "t0": 35.058,
+      "t1": 36.928,
       "chunks": [
         "Aber",
         "tief unten",
         "am Meeresgrund,"
       ],
       "chunkStarts": [
-        34.996,
-        35.23,
-        36.027
+        35.058,
+        35.144,
+        35.903
       ]
     },
     {
       "id": "quellen",
-      "t0": 36.937,
-      "t1": 40.182,
+      "t0": 36.99,
+      "t1": 40.805,
       "chunks": [
         "an heißen Quellen,",
         "gibt es Leben,",
@@ -244,34 +244,34 @@ window.TIMING = {
         "braucht."
       ],
       "chunkStarts": [
-        36.937,
-        38.044,
-        38.672,
-        39.582
+        36.99,
+        38.135,
+        39.113,
+        39.867
       ]
     },
     {
       "id": "frage",
-      "t0": 40.424,
-      "t1": 43.238,
+      "t0": 41.036,
+      "t1": 43.778,
       "chunks": [
         "Was würdest du in deinen letzten acht Minuten Licht machen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        40.424
+        41.036
       ]
     },
     {
       "id": "komm",
-      "t0": 43.642,
-      "t1": 45.114,
+      "t0": 44.163,
+      "t1": 45.162,
       "chunks": [
         "Schreib es in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        43.642
+        44.163
       ]
     }
   ],
@@ -416,7 +416,7 @@ window.TIMING = {
     {
       "type": "boom",
       "at": "kata",
-      "off": 0.497
+      "off": 0.415
     }
   ]
 };

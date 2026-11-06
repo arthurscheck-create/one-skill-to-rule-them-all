@@ -1,24 +1,24 @@
 window.TIMING = {
   "title": "Was wäre, wenn es in Deutschland kein Bargeld mehr gibt?",
-  "duration": 68.27,
+  "duration": 68.35,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
-      "t0": 0.0,
-      "t1": 3.158,
+      "t0": 0.255,
+      "t1": 3.192,
       "chunks": [
         "Was wäre, wenn es ab morgen in Deutschland kein Bargeld mehr gibt?"
       ],
       "noCap": true,
       "chunkStarts": [
-        0.0
+        0.255
       ]
     },
     {
       "id": "loop",
-      "t0": 3.436,
-      "t1": 7.299,
+      "t0": 3.591,
+      "t1": 7.279,
       "chunks": [
         "Ein Land",
         "hat das schon",
@@ -27,28 +27,28 @@ window.TIMING = {
         "eine ^Kehrtwende.^"
       ],
       "chunkStarts": [
-        3.436,
-        3.933,
-        4.41,
-        5.58,
-        6.385
+        3.591,
+        4.022,
+        4.488,
+        5.5,
+        6.328
       ]
     },
     {
       "id": "tag1",
-      "t0": 7.506,
-      "t1": 8.411,
+      "t0": 7.519,
+      "t1": 8.058,
       "chunks": [
         "^Tag eins.^"
       ],
       "chunkStarts": [
-        7.506
+        7.519
       ]
     },
     {
       "id": "geld",
-      "t0": 8.667,
-      "t1": 11.13,
+      "t0": 8.211,
+      "t1": 11.219,
       "chunks": [
         "Scheine und Münzen",
         "kannst du",
@@ -56,16 +56,16 @@ window.TIMING = {
         "ausgeben."
       ],
       "chunkStarts": [
-        8.667,
-        9.471,
-        9.849,
-        10.455
+        8.211,
+        9.554,
+        9.894,
+        10.437
       ]
     },
     {
       "id": "heute",
-      "t0": 11.339,
-      "t1": 14.348,
+      "t0": 11.267,
+      "t1": 14.251,
       "chunks": [
         "Dabei zahlen wir",
         "noch heute",
@@ -73,16 +73,16 @@ window.TIMING = {
         "Einkauf bar."
       ],
       "chunkStarts": [
-        11.339,
-        12.015,
-        12.451,
-        13.444
+        11.267,
+        11.915,
+        12.259,
+        13.166
       ]
     },
     {
       "id": "probleme",
-      "t0": 14.586,
-      "t1": 17.973,
+      "t0": 14.283,
+      "t1": 17.763,
       "chunks": [
         "Jeder ^achte^",
         "sagt:",
@@ -91,17 +91,17 @@ window.TIMING = {
         "*kaum klar.*"
       ],
       "chunkStarts": [
-        14.586,
-        15.142,
-        15.699,
-        16.473,
-        17.268
+        14.283,
+        14.966,
+        15.55,
+        16.263,
+        17.125
       ]
     },
     {
       "id": "oma",
-      "t0": 18.181,
-      "t1": 22.393,
+      "t0": 18.002,
+      "t1": 21.922,
       "chunks": [
         "Oma kann dir",
         "keinen Zwanziger",
@@ -111,29 +111,29 @@ window.TIMING = {
         "per App."
       ],
       "chunkStarts": [
-        18.181,
-        18.797,
-        19.493,
-        20.506,
-        21.558,
-        21.856
+        18.002,
+        18.444,
+        19.071,
+        19.987,
+        20.86,
+        21.299
       ]
     },
     {
       "id": "woche",
-      "t0": 22.649,
-      "t1": 23.662,
+      "t0": 22.161,
+      "t1": 23.298,
       "chunks": [
         "^Eine Woche später.^"
       ],
       "chunkStarts": [
-        22.649
+        22.161
       ]
     },
     {
       "id": "daten",
-      "t0": 23.841,
-      "t1": 27.754,
+      "t0": 23.489,
+      "t1": 28.15,
       "chunks": [
         "Jeder Kaffee,",
         "jede Busfahrt,",
@@ -142,17 +142,17 @@ window.TIMING = {
         "*gespeichert.*"
       ],
       "chunkStarts": [
-        23.841,
-        24.645,
-        25.48,
-        26.473,
-        27.099
+        23.489,
+        24.549,
+        25.394,
+        26.708,
+        27.256
       ]
     },
     {
       "id": "gebuehren",
-      "t0": 27.992,
-      "t1": 32.908,
+      "t0": 28.23,
+      "t1": 32.875,
       "chunks": [
         "Und jede",
         "Kartenzahlung",
@@ -162,31 +162,31 @@ window.TIMING = {
         "in deinen Preisen."
       ],
       "chunkStarts": [
-        27.992,
-        28.37,
-        29.105,
-        29.95,
-        30.893,
-        31.886
+        28.23,
+        28.712,
+        29.338,
+        30.034,
+        30.576,
+        31.853
       ]
     },
     {
       "id": "blackout",
-      "t0": 33.147,
-      "t1": 34.607,
+      "t0": 33.114,
+      "t1": 34.485,
       "chunks": [
         "^Dann fällt^",
         "^der Strom aus.^"
       ],
       "chunkStarts": [
-        33.147,
-        33.763
+        33.114,
+        33.496
       ]
     },
     {
       "id": "nichts",
-      "t0": 34.756,
-      "t1": 39.273,
+      "t0": 34.725,
+      "t1": 39.075,
       "chunks": [
         "Kein Kartenleser,",
         "kein Geldautomat,",
@@ -196,18 +196,18 @@ window.TIMING = {
         "kaufen."
       ],
       "chunkStarts": [
-        34.756,
-        35.868,
-        37.001,
-        37.873,
-        38.418,
-        38.845
+        34.725,
+        35.729,
+        36.83,
+        37.543,
+        38.172,
+        38.683
       ]
     },
     {
       "id": "spanien",
-      "t0": 39.53,
-      "t1": 46.917,
+      "t0": 39.314,
+      "t1": 46.178,
       "chunks": [
         "Genau das",
         "ist ^2025^",
@@ -217,31 +217,31 @@ window.TIMING = {
         "mit *leeren Händen* da."
       ],
       "chunkStarts": [
-        39.53,
-        40.225,
-        41.953,
-        43.342,
-        44.633,
-        45.666
+        39.314,
+        39.873,
+        41.326,
+        42.571,
+        44.241,
+        45.125
       ]
     },
     {
       "id": "verrueckt",
-      "t0": 47.174,
-      "t1": 48.108,
+      "t0": 46.417,
+      "t1": 47.192,
       "chunks": [
         "Und das",
         "^Verrückte?^"
       ],
       "chunkStarts": [
-        47.174,
-        47.482
+        46.417,
+        46.745
       ]
     },
     {
       "id": "schweden",
-      "t0": 48.386,
-      "t1": 52.019,
+      "t0": 47.362,
+      "t1": 51.342,
       "chunks": [
         "In Schweden",
         "zahlt kaum noch",
@@ -250,17 +250,17 @@ window.TIMING = {
         "von hundert."
       ],
       "chunkStarts": [
-        48.386,
-        48.932,
-        49.617,
-        50.609,
-        51.353
+        47.362,
+        48.149,
+        48.888,
+        49.554,
+        50.384
       ]
     },
     {
       "id": "kehrt",
-      "t0": 52.275,
-      "t1": 57.688,
+      "t0": 51.581,
+      "t1": 56.389,
       "chunks": [
         "Und genau dort",
         "rät die Zentralbank",
@@ -270,48 +270,48 @@ window.TIMING = {
         "Für den Notfall."
       ],
       "chunkStarts": [
-        52.275,
-        53.05,
-        54.152,
-        54.848,
-        55.761,
-        56.804
+        51.581,
+        52.302,
+        53.122,
+        53.787,
+        54.665,
+        55.463
       ]
     },
     {
       "id": "frage",
-      "t0": 57.944,
-      "t1": 59.444,
+      "t0": 56.628,
+      "t1": 58.192,
       "chunks": [
         "Würdest du das Bargeld vermissen?"
       ],
       "noCap": true,
       "chunkStarts": [
-        57.944
+        56.628
       ]
     },
     {
       "id": "komm",
-      "t0": 59.653,
-      "t1": 62.204,
+      "t0": 58.591,
+      "t1": 61.684,
       "chunks": [
         "Schreib A, B oder C in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        59.653
+        58.591
       ]
     },
     {
       "id": "folg",
-      "t0": 62.413,
-      "t1": 65.61,
+      "t0": 61.923,
+      "t1": 65.698,
       "chunks": [
         "Und folg mir. Aber heb vorher noch schnell Bargeld ab."
       ],
       "noCap": true,
       "chunkStarts": [
-        62.413
+        61.923
       ]
     }
   ],

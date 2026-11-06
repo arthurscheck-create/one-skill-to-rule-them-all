@@ -9,15 +9,15 @@ t0/t1 jedes Satzes sowie chunkStarts (Startzeit jedes Untertitel-Chunks) in timi
 Voraussetzung: Umgebungsvariable ELEVENLABS_API_KEY, Netz-Freigabe für api.elevenlabs.io.
 
 Aufruf:
-  python3 tools/elevenlabs_tts.py videos/<projekt> [--voice Cqbq4nsuUe1we6J45miU]
-          [--model eleven_multilingual_v2] [--min-duration 50] [--fit 50] [--tail 2.2]
+  python3 tools/elevenlabs_tts.py videos/<projekt> [--voice g1jpii0iyvtRs8fqXsd1]
+          [--model eleven_v3] [--min-duration 50] [--fit 50] [--tail 2.2]
   python3 tools/elevenlabs_tts.py videos/<projekt> --reuse   # vorhandene Audio+Alignment neu anwenden (kostet nichts)
 """
 import argparse, base64, json, os, re, subprocess, sys, urllib.request
 from pathlib import Path
 
-DEFAULT_VOICE = "Cqbq4nsuUe1we6J45miU"  # Helmut – Nachrichten & Anchorman (German)
-DEFAULT_MODEL = "eleven_multilingual_v2"
+DEFAULT_VOICE = "g1jpii0iyvtRs8fqXsd1"  # German Epic Trailer Voice – Helmut (eleven_v3)
+DEFAULT_MODEL = "eleven_v3"
 clean = lambda s: re.sub(r"[*^~]", "", s)
 
 
