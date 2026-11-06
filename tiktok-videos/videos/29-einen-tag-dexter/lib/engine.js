@@ -240,7 +240,8 @@
   }
 
   /** Hook-Effekt (Hook-Regeln v2): Punch-in ab Frame 0 + (nur bei dramatic, Standard) roter Blitz und Wackeln auf dem Schlüsselwort (Zeit t).
-   *  Klassischer Einstieg ohne Rot: E.hookFx(tl, null, { dramatic: false }) – nur der Punch-in. */
+   *  Klassischer Einstieg ohne Rot: E.hookFx(tl, null, { dramatic: false }) – nur der Punch-in.
+   *  Dramatisch ohne roten Blitz: E.hookFx(tl, t, { flash: false }) – Boom + Wackeln + Zoom-Punch auf dem Schlüsselwort. */
   function hookFx(tl, t, opts) {
     const dramatic = !(opts && opts.dramatic === false);
     const root = document.getElementById("root");
@@ -249,7 +250,8 @@
     tl.set(red, { opacity: 0 }, 0);
     tl.fromTo("#s1 .cam", { scale: 1.15 }, { scale: 1, duration: 0.5, ease: "power3.out", immediateRender: true }, 0);
     if (dramatic && t != null && isFinite(t)) {
-      tl.fromTo(red, { opacity: 0 }, { opacity: 0.38, duration: 0.12, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, t);
+      if (!(opts && opts.flash === false)) tl.fromTo(red, { opacity: 0 }, { opacity: 0.38, duration: 0.12, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, t);
+      else tl.fromTo("#s1 .cam", { scale: 1.12 }, { scale: 1, duration: 0.45, ease: "power3.out", immediateRender: false }, t);
       tl.fromTo("#s1 .drift", { x: -18, y: 8 }, { x: 18, y: -8, duration: 0.05, repeat: 11, yoyo: true, ease: "none", immediateRender: false }, t);
       tl.set("#s1 .drift", { x: 0, y: 0 }, t + 0.62);
     }

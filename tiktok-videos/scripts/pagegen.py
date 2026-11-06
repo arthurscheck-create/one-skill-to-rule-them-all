@@ -50,7 +50,7 @@ TAIL = """    <div id="hud"><div class="hud-panel"><div class="hud-label"></div>
 </body>
 </html>
 """
-def page(slug, scenes, title_html, sub_html, q_html, opts, cta2, js, dramatic, post="", css=""):
+def page(slug, scenes, title_html, sub_html, q_html, opts, cta2, js, dramatic, post="", css="", flash=True):
     T = json.loads(re.sub(r"^window.TIMING = |;\s*$", "", (ROOT / "videos" / slug / "timing.js").read_text(encoding="utf-8")))
     ids = [s["id"] for s in T["scenes"]]; ec = ids[-1]
     assert len(scenes) == len(ids) - 1, (slug, len(scenes), ids)
@@ -66,7 +66,7 @@ def page(slug, scenes, title_html, sub_html, q_html, opts, cta2, js, dramatic, p
     h += SCENE.format(id=ec, drift="1.0", svg=f'<rect width="1080" height="1920" fill="#14122b"/><g id="{ec}-stars"></g>', extra=ecx).replace('data-drift="1.0"', 'data-punch="1.06" data-drift="1.0"')
     hide_at = "kata" if dramatic else "loop"
     hookfx = (f'tl.to(["#{ids[0]} .title.main", "#{ids[0]} .title.sub"], {{ autoAlpha: 0, duration: .15 }}, at("{hide_at}", -0.15));\n    '
-              + (f'E.hookFx(tl, cs("kata", {dramatic}));' if dramatic is not False and dramatic is not None else 'E.hookFx(tl, null, { dramatic: false });'))
+              + (f'E.hookFx(tl, cs("kata", {dramatic})' + ('' if flash else ', { flash: false }') + ');' if dramatic is not False and dramatic is not None else 'E.hookFx(tl, null, { dramatic: false });'))
     h += TAIL.format(js=js, ec=ec, hookfx=hookfx, post=post)
     (ROOT / "videos" / slug / "index.html").write_text(h, encoding="utf-8")
     print("index.html:", slug)

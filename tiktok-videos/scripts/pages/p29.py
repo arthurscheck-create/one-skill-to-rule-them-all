@@ -80,4 +80,4 @@ POST = r'''    { const hl = document.querySelector("#hud .hud-label"), hn = docu
       E.clock(tl, (t) => { let v = P[0]; P.forEach((p) => { if (t >= p[0]) v = p; }); hl.textContent = "⚠ " + v[1]; hn.textContent = v[2]; }); }'''
 page("29-einen-tag-dexter", S, 'EINEN TAG<br/>LANG <span class="r">DEXTER</span>', "⚠ NIEMAND KENNT DEIN GEHEIMNIS",
      'WÄRST <span class="y">DU</span> GERN EINEN TAG DEXTER?', [("NUR DER JOB", "Blutspuren & Donuts"), ("NUR SERIE GUCKEN", "Vom Sofa aus"), ("NIEMALS", "Viel zu riskant")],
-     "UND FOLG MIR – ICH VERRATE ES KEINEM", JS, 1, POST)
+     "UND FOLG MIR – ICH VERRATE ES KEINEM", JS, 1, POST, flash=False)

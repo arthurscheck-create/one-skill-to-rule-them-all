@@ -135,7 +135,7 @@
     E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
     E.hookOpen(tl);
     tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("kata", -0.15));
-    E.hookFx(tl, cs("kata", 1));
+    E.hookFx(tl, cs("kata", 1), { flash: false });
     { const hl = document.querySelector("#hud .hud-label"), hn = document.querySelector("#hud .hud-num");
       document.querySelectorAll("#captions .cap").forEach((c) => { const L = Math.max(...c.textContent.split(/\s+/).map((w) => w.length)); if (L > 13) c.style.fontSize = Math.min(92, Math.floor(980 / (L * .74))) + "px"; });
       const P = [[at("m7", -0.2), "UHRZEIT", "07:00"], [at("job", -0.2), "UHRZEIT", "09:30"], [at("spur", -0.2), "UHRZEIT", "11:00"], [at("m18", -0.2), "UHRZEIT", "18:00"], [at("code", -0.2), "UHRZEIT", "19:30"],

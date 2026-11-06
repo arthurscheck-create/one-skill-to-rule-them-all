@@ -112,6 +112,9 @@ Kein Strecken, kein Kürzen auf eine feste Zahl. Nur wenn der Nutzer eine Länge
      Watch-to-End-Versprechen); nur der rote Effekt ist optional.
      - dramatisch: 3-Satz-Hook (Behauptung / Wendung mit *rotem* Schlüsselwort / Versprechen),
        `E.hookFx(tl, cs("kata", <idx>))` + `{type:"boom", at:"kata", off:<Wort>}` in sfx.
+     - **dramatisch ohne roten Blitz** (Nutzerwunsch 06.11., Video 29): wie dramatisch (3-Satz-Hook, Boom auf dem Schlüsselwort),
+       aber `E.hookFx(tl, cs("kata", <idx>), { flash: false })` → Boom + Zoom-Punch + Wackeln, KEIN rotes Aufblitzen.
+       In `pagegen.page(..., flash=False)`. Bei der Hook-Frage diese Variante als dritte Option anbieten.
      - klassisch: Hook wie früher (z. B. „Was wäre, wenn …?“ + offene Schleife, auch 2 Sätze hook/loop möglich),
        nur `E.hookFx(tl, null, { dramatic: false })` (Punch-in ab Frame 0), KEIN roter Blitz, kein Boom am Hook.
        Die übrigen v2-Regeln (Frame 0 in Bewegung, kurzer Titel, Versprechen) gelten trotzdem.
