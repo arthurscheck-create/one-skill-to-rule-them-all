@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="de" data-resolution="portrait">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1080, height=1920" />
+  <title>Was passiert, wenn du jeden Tag deine Finger knackst?</title>
+  <link rel="stylesheet" href="lib/style.css" />
+  <script src="lib/gsap.min.js"></script>
+  <script src="timing.js"></script>
+  <script src="lib/engine.js"></script>
+  <style>
+    /* Hook-Titel oben (Hook-Regeln v3): .title.main.top / .title.sub.top aus lib/style.css */
+    .lbl { font-family: Montserrat; font-weight: 900; }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="main" data-start="0" data-duration="53.12" data-width="1080" data-height="1920">
+
+    <!-- S1 Hook: Hand in Nahaufnahme, KNACK ab Frame 0 -->
+    <section class="scene" id="s1" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920">
+        <defs><linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3fd4ff"/><stop offset=".6" stop-color="#8fe3ff"/><stop offset="1" stop-color="#ffe27a"/></linearGradient></defs>
+        <rect width="1080" height="1920" fill="url(#g-sky)"/><g id="s1-rays"></g><g id="s1-hand"></g><g id="s1-burst"></g>
+      </svg>
+      <div class="title main top">FINGER<br/><span class="r">KNACKEN</span><br/>JEDEN TAG</div>
+      <div class="title sub top">⚠ WAS PASSIERT WIRKLICH?</div>
+    </div></div></section>
+
+    <!-- S2 Gelenk im Querschnitt: Gasblase -->
+    <section class="scene" id="s2" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#2a2347"/>
+        <g id="s2-fluid"></g><g id="s2-up"></g><g id="s2-down"></g><g id="s2-bubble"></g><g id="s2-burst"></g><g id="s2-b1"></g><g id="s2-b2"></g></svg>
+    </div></div></section>
+
+    <!-- S3 20 Minuten Pause -->
+    <section class="scene" id="s3" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#3b3768"/><g id="s3-watch"></g><g id="s3-badge"></g></svg>
+    </div></div></section>
+
+    <!-- S4 Studie: Schwellung + Griffkraft, Arthrose kein Unterschied -->
+    <section class="scene" id="s4" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1936"/>
+        <g id="s4-left"></g><g id="s4-right"></g><g id="s4-meters"></g><g id="s4-top"></g><g id="s4-arth"></g></svg>
+    </div></div></section>
+
+    <!-- S5 50-Jahre-Selbstversuch -->
+    <section class="scene" id="s5" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#ffd23f"/><g id="s5-hands"></g><g id="s5-burst"></g><g id="s5-checks"></g><g id="s5-q"></g><g id="s5-top"></g></svg>
+    </div></div></section>
+
+    <!-- S6 Fazit -->
+    <section class="scene" id="s6" data-drift="1.05"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14324a"/><g id="s6-shield"></g><g id="s6-doc"></g></svg>
+    </div></div></section>
+
+    <!-- S7 Endkarte -->
+    <section class="scene" id="s7" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s7-stars"></g></svg>
+      <div class="ec-q" style="font-size:80px">KNACKST <span class="y">DU</span> AUCH JEDEN TAG?</div>
+      <div class="ec-opt a"><span class="k">A</span><span class="t">JA, JEDEN TAG<small>Ich kann nicht anders</small></span></div>
+      <div class="ec-opt b"><span class="k">B</span><span class="t">NUR MANCHMAL<small>Wenn die Finger steif sind</small></span></div>
+      <div class="ec-opt c"><span class="k">C</span><span class="t">NIE!<small>Das Geräusch ist furchtbar</small></span></div>
+      <div class="ec-cta">SCHREIB A, B ODER C IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG MIR, BEVOR DU WIEDER KNACKST</span></div>
+      <div class="ec-ring"><svg viewBox="0 0 130 130" width="130" height="130"><circle cx="65" cy="65" r="56" fill="#0d0b18" stroke="#3a3560" stroke-width="10"/><circle class="ec-arc" cx="65" cy="65" r="56" fill="none" stroke="#ff3b3b" stroke-width="10" stroke-linecap="round" stroke-dasharray="352" transform="rotate(-90 65 65)"/></svg><div class="ec-n">6</div></div>
+    </div></div></section>
+
+    <div id="hud"><div class="hud-panel"><div class="hud-label"></div><div class="hud-row"><span class="hud-num">000</span><span class="hud-unit"></span></div><div class="hud-sub"></div><div class="hud-delta"></div></div><div class="chip"><span class="chip-label"></span><span class="chip-val"></span></div></div>
+    <div id="captions"></div>
+    <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
+    <div id="vignette"></div><div id="flash"></div>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="50.52" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="53.12" data-volume="0.9"></audio>
+  </div>
+
+  <script src="lib/cast.js"></script>
+  <script>
+  (function () {
+    const E = window.Engine, at = E.at, end = E.end, cs = E.cs, svg = E.svg, D = E.T.duration;
+    const $ = (s) => document.querySelector(s);
+    const tl = gsap.timeline({ paused: true });
+    const INK = "#0d0b18", SKIN = "#f2c29b";
+    function badge(g, x, y, text, color, size, sub) {
+      const b = svg("g", { transform: `translate(${x},${y})` }, g);
+      const fs = size || 64, w = text.length * fs * .66 + 80, h = fs * 1.6 + (sub ? 50 : 0);
+      svg("rect", { x: -w / 2, y: -h / 2, width: w, height: h, rx: 24, fill: "rgba(18,8,16,.94)", stroke: color, "stroke-width": 8 }, b);
+      const t = svg("text", { x: 0, y: sub ? -6 : fs * .36, "text-anchor": "middle", class: "lbl", "font-size": fs, fill: color }, b); t.textContent = text;
+      if (sub) { const s = svg("text", { x: 0, y: h / 2 - 26, "text-anchor": "middle", class: "lbl", "font-size": 30, fill: "#fff" }, b); s.textContent = sub; }
+      return b;
+    }
+    const pop = (el, t, origin) => { tl.set(el, { autoAlpha: 0 }, 0); tl.fromTo(el, { autoAlpha: 1, scale: .3, svgOrigin: origin }, { scale: 1, duration: .35, ease: "back.out(2.6)", immediateRender: false }, t); };
+    const txt = (g, x, y, s, fs, fill, extra) => { const t = svg("text", Object.assign({ x, y, class: "lbl", "font-size": fs, fill, "text-anchor": "middle" }, extra || {}), g); t.textContent = s; return t; };
+    // Hand (Handfläche, Finger nach oben). (x,y) = Oberkante Handfläche Mitte.
+    function hand(g, x, y, s, skin, flip) {
+      const h = svg("g", { transform: `translate(${x},${y}) scale(${flip ? -s : s},${s})` }, g), c = skin || SKIN;
+      [[-97, 175], [-32, 225], [33, 215], [98, 165]].forEach(([fx, len]) => {
+        svg("rect", { x: fx - 29, y: 30 - len, width: 58, height: len + 40, rx: 29, fill: c, stroke: INK, "stroke-width": 7 }, h);
+        svg("path", { d: `M${fx - 14},${50 - len * .45} q14,8 28,0`, fill: "none", stroke: "#c98d6a", "stroke-width": 5, "stroke-linecap": "round" }, h);
+        svg("path", { d: `M${fx - 16},${30} q16,9 32,0`, fill: "none", stroke: "#c98d6a", "stroke-width": 5, "stroke-linecap": "round" }, h);
+      });
+      svg("rect", { x: -150, y: 150, width: 90, height: 60, rx: 30, fill: c, stroke: INK, "stroke-width": 7, transform: "rotate(-35 -105 180)" }, h);
+      svg("rect", { x: -135, y: 10, width: 270, height: 260, rx: 70, fill: c, stroke: INK, "stroke-width": 7 }, h);
+      svg("path", { d: "M-80,120 q40,30 90,10 M-60,190 q50,20 110,-5", fill: "none", stroke: "#c98d6a", "stroke-width": 5, "stroke-linecap": "round" }, h);
+      return h;
+    }
+    function burst(g, x, y, r, word) {
+      const b = svg("g", {}, g);
+      let d = ""; for (let i = 0; i < 16; i++) { const a = i * Math.PI / 8, rr = i % 2 ? r * .55 : r; d += (i ? "L" : "M") + (x + Math.cos(a) * rr).toFixed(1) + "," + (y + Math.sin(a) * rr).toFixed(1); }
+      svg("path", { d: d + "Z", fill: "#ffd23f", stroke: INK, "stroke-width": 7, "stroke-linejoin": "round" }, b);
+      txt(b, x, y + r * .12, word || "KNACK!", r * .3, "#e8463c", { stroke: INK, "stroke-width": 6, "paint-order": "stroke" });
+      return b;
+    }
+    const check = (g, x, y, s) => { const c = svg("g", {}, g); svg("circle", { cx: x, cy: y, r: 60 * s, fill: "#3ee08f", stroke: INK, "stroke-width": 7 }, c); svg("path", { d: `M${x - 28 * s},${y} l${20 * s},${22 * s} l${38 * s},${-42 * s}`, fill: "none", stroke: INK, "stroke-width": 14 * s, "stroke-linecap": "round", "stroke-linejoin": "round" }, c); return c; };
+
+    /* S1 Hook – Hand nah, Strahlen drehen, KNACK pulsiert ab Frame 0 */
+    const RY = $("#s1-rays"); for (let i = 0; i < 12; i++) svg("path", { d: `M540,1180 L${540 + Math.cos(i * Math.PI / 6) * 1400},${1180 + Math.sin(i * Math.PI / 6) * 1400} L${540 + Math.cos(i * Math.PI / 6 + .18) * 1400},${1180 + Math.sin(i * Math.PI / 6 + .18) * 1400}Z`, fill: "#fff", opacity: .16 }, RY);
+    E.clock(tl, (t) => RY.setAttribute("transform", `rotate(${(t * 12).toFixed(2)} 540 1180)`));
+    const H1 = hand($("#s1-hand"), 540, 1170, 1.4);
+    const B1 = burst($("#s1-burst"), 760, 930, 120);
+    E.clock(tl, (t) => { const p = (t % 1.1) / 1.1, k = p < .25 ? 0.7 + p * 2.4 : 1.3 - (p - .25) * .5; B1.setAttribute("transform", `translate(${(760 * (1 - k)).toFixed(1)},${(930 * (1 - k)).toFixed(1)}) scale(${k.toFixed(3)})`); H1.setAttribute("transform", `translate(540,${(1170 + (p < .15 ? p * 40 : 6 - (p - .15) * 7)).toFixed(1)}) scale(1.4,1.4)`); });
+    tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));
+
+    /* S2 Gelenk-Querschnitt */
+    const FL = $("#s2-fluid"); svg("ellipse", { cx: 540, cy: 820, rx: 230, ry: 170, fill: "#3fd4ff", opacity: .35, stroke: "#7fdcff", "stroke-width": 8 }, FL);
+    const bone = (g, y0, up) => { svg("rect", { x: 440, y: y0, width: 200, height: 300, rx: 40, fill: "#f3ead8", stroke: INK, "stroke-width": 8 }, g); svg("ellipse", { cx: 540, cy: up ? y0 + 300 : y0, rx: 120, ry: 48, fill: "#f3ead8", stroke: INK, "stroke-width": 8 }, g); };
+    const UP = $("#s2-up"), DN = $("#s2-down"); bone(UP, 480, true); bone(DN, 860, false);
+    txt(UP, 540, 640, "KNOCHEN", 32, "#8a7a5a"); txt(DN, 540, 1040, "KNOCHEN", 32, "#8a7a5a");
+    tl.to(UP, { y: -40, duration: .5, ease: "power2.inOut" }, cs("blase", 2)); tl.to(DN, { y: 40, duration: .5, ease: "power2.inOut" }, cs("blase", 2));
+    const BU = $("#s2-bubble"); svg("circle", { cx: 540, cy: 820, r: 70, fill: "#fff", stroke: INK, "stroke-width": 7 }, BU); svg("circle", { cx: 518, cy: 798, r: 18, fill: "#bfe6ff" }, BU);
+    pop(BU, cs("blase", 5), "540 820");
+    const BS2 = burst($("#s2-burst"), 800, 640, 110); pop(BS2, cs("blase", 6), "800 640"); tl.to(BS2, { autoAlpha: 0, duration: .2 }, end("blase") + .1);
+    const NB = badge($("#s2-b1"), 540, 1190, "NICHT DIE KNOCHEN", "#ff3b3b", 50); pop(NB, cs("blase", 0), "540 1190"); tl.to(NB, { autoAlpha: 0, duration: .15 }, cs("blase", 5, -0.1));
+    const GB = badge($("#s2-b2"), 540, 1190, "GASBLASE IM GELENK", "#3fd4ff", 50); pop(GB, cs("blase", 5), "540 1190");
+
+    /* S3 Stoppuhr 20 Minuten */
+    const W = $("#s3-watch"), wx = 540, wy = 860;
+    svg("rect", { x: wx - 40, y: wy - 300, width: 80, height: 60, rx: 12, fill: "#c9c3e6", stroke: INK, "stroke-width": 7 }, W);
+    svg("circle", { cx: wx, cy: wy, r: 240, fill: "#fff", stroke: INK, "stroke-width": 12 }, W);
+    const ARC = svg("circle", { cx: wx, cy: wy, r: 200, fill: "none", stroke: "#ff3b3b", "stroke-width": 40, "stroke-dasharray": 1257, "stroke-dashoffset": 1257, transform: `rotate(-90 ${wx} ${wy})` }, W);
+    for (let i = 0; i < 12; i++) svg("line", { x1: wx + Math.cos(i * Math.PI / 6) * 225, y1: wy + Math.sin(i * Math.PI / 6) * 225, x2: wx + Math.cos(i * Math.PI / 6) * 205, y2: wy + Math.sin(i * Math.PI / 6) * 205, stroke: INK, "stroke-width": 8 }, W);
+    const WT = txt(W, wx, wy + 40, "00", 130, INK); txt(W, wx, wy + 110, "MINUTEN", 40, "#5c6390");
+    const t3a = cs("pause", 1), t3b = end("pause");
+    tl.fromTo(ARC, { attr: { "stroke-dashoffset": 1257 } }, { attr: { "stroke-dashoffset": 0 }, duration: Math.max(1, t3b - t3a), ease: "power1.inOut", immediateRender: true }, t3a);
+    E.clock(tl, (t) => { const k = Math.max(0, Math.min(1, (t - t3a) / Math.max(1, t3b - t3a))); WT.textContent = String(Math.round(k * 20)).padStart(2, "0"); });
+    const B3 = badge($("#s3-badge"), 540, 1190, "ERST DANN KNACKT ES WIEDER", "#ffd23f", 44); pop(B3, cs("pause", 3), "540 1190");
+
+    /* S4 Studie */
+    const L4 = $("#s4-left"), R4 = $("#s4-right");
+    hand(L4, 300, 800, .8); txt(L4, 300, 1060, "NICHT-KNACKER", 40, "#fff");
+    const RH = svg("g", {}, R4); hand(RH, 780, 800, .8, "#f0a58a"); txt(R4, 780, 1060, "KNACKER", 40, "#ffd23f");
+    tl.to(RH, { scale: 1.14, svgOrigin: "780 900", duration: .6, ease: "back.out(2)" }, cs("studie", 3));
+    const MT = $("#s4-meters");
+    const meter = (x, frac, col) => { svg("rect", { x: x - 150, y: 1110, width: 300, height: 34, rx: 17, fill: "#3a3560" }, MT); const f = svg("rect", { x: x - 150, y: 1110, width: 300, height: 34, rx: 17, fill: col }, MT); return f; };
+    txt(MT, 540, 1180, "GRIFFKRAFT", 34, "#c9c3e6");
+    meter(300, 1, "#3ee08f"); const M2 = meter(780, 1, "#3ee08f");
+    tl.to(M2, { attr: { width: 190 }, fill: "#ff8a3c", duration: .8, ease: "power2.out" }, cs("studie", 4));
+    const T4 = badge($("#s4-top"), 540, 590, "STUDIE: 300 MENSCHEN", "#3fd4ff", 52); pop(T4, at("studie", 0), "540 590");
+    const A4 = svg("g", {}, $("#s4-arth")); svg("rect", { x: 90, y: 700, width: 900, height: 280, rx: 36, fill: "rgba(6,40,24,.96)", stroke: "#3ee08f", "stroke-width": 10 }, A4);
+    txt(A4, 540, 810, "ARTHROSE:", 70, "#fff"); txt(A4, 540, 920, "KEIN UNTERSCHIED", 78, "#3ee08f");
+    pop(A4, cs("arthrose", 1), "540 840");
+
+    /* S5 Selbstversuch */
+    const H5 = $("#s5-hands"); hand(H5, 300, 830, .9, null, true); hand(H5, 780, 830, .9);
+    txt(H5, 300, 1140, "LINKS: 50 JAHRE", 40, INK); txt(H5, 300, 1188, "GEKNACKT", 40, "#e8463c");
+    txt(H5, 780, 1140, "RECHTS:", 40, INK); txt(H5, 780, 1188, "NIE", 40, "#3a7a3a");
+    const BS5 = burst($("#s5-burst"), 300, 680, 90);
+    tl.set(BS5, { autoAlpha: 0 }, 0);
+    E.clock(tl, (t) => { const t0 = cs("unger", 1), t1 = cs("unger", 6); if (t < t0 || t > t1) { BS5.style.visibility = "hidden"; return; } BS5.style.visibility = "visible"; BS5.style.opacity = 1; const p = ((t - t0) % .9) / .9, k = p < .2 ? .6 + p * 3 : 1.2 - (p - .2) * .4; BS5.setAttribute("transform", `translate(${(300 * (1 - k)).toFixed(1)},${(680 * (1 - k)).toFixed(1)}) scale(${k.toFixed(3)})`); });
+    const CK = $("#s5-checks"); const c1 = check(CK, 300, 720, 1.2), c2 = check(CK, 780, 720, 1.2); pop(c1, cs("unger", 7), "300 720"); pop(c2, cs("unger", 7, .15), "780 720");
+    const Q5 = $("#s5-q"); txt(Q5, 540, 820, "?!", 260, "#e8463c", { stroke: INK, "stroke-width": 16, "paint-order": "stroke" }); pop(Q5, at("verrueckt", 0), "540 740"); tl.to(Q5, { autoAlpha: 0, duration: .15 }, at("unger", -0.1));
+    const T5 = badge($("#s5-top"), 540, 560, "50 JAHRE SELBSTVERSUCH", "#ffd23f", 50); pop(T5, cs("unger", 1), "540 560");
+
+    /* S6 Fazit */
+    const SH = $("#s6-shield"); svg("path", { d: "M540,540 L760,620 L760,800 Q760,960 540,1040 Q320,960 320,800 L320,620Z", fill: "#3ee08f", stroke: INK, "stroke-width": 10 }, SH);
+    svg("path", { d: "M450,790 l60,60 l120,-130", fill: "none", stroke: INK, "stroke-width": 30, "stroke-linecap": "round", "stroke-linejoin": "round" }, SH);
+    txt(SH, 540, 1110, "KEINE ARTHROSE", 60, "#fff", { stroke: INK, "stroke-width": 8, "paint-order": "stroke" });
+    pop(SH, at("fazit", 0), "540 800"); tl.to(SH, { autoAlpha: 0, duration: .2 }, cs("fazit", 2, -0.1));
+    const DC = $("#s6-doc"); svg("rect", { x: 340, y: 600, width: 400, height: 400, rx: 60, fill: "#fff", stroke: INK, "stroke-width": 10 }, DC);
+    svg("path", { d: "M500,660 h80 v100 h100 v80 h-100 v100 h-80 v-100 h-100 v-80 h100Z", fill: "#e8463c", stroke: INK, "stroke-width": 7 }, DC);
+    txt(DC, 540, 1110, "TUT ES WEH? ZUM ARZT", 54, "#ffd23f", { stroke: INK, "stroke-width": 8, "paint-order": "stroke" });
+    pop(DC, cs("fazit", 2), "540 800");
+
+    /* S7 */
+    E.stars($("#s7-stars"), 60, 161);
+    E.buildEndcard(tl, "s7", at("frage", -0.05), at("komm", -0.1));
+
+    E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
+    E.hookOpen(tl); // Titel ab Frame 0 sichtbar (Hook-Regeln v3)
+    E.hookFx(tl, null, { dramatic: false }); // klassischer Einstieg: nur Punch-in
+    const hn = $("#hud .hud-num"); E.clock(tl, (t) => { const v = parseInt(hn.textContent, 10); if (!isNaN(v)) hn.textContent = v.toLocaleString("de-DE"); });
+    tl.set({}, {}, D);
+    window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl; tl.seek(0);
+  })();
+  </script>
+</body>
+</html>
