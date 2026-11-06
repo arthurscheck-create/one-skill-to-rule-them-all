@@ -1,0 +1,115 @@
+import sys; sys.path.insert(0, "/home/user/tiktok-videos/scripts"); from pagegen import page
+S = [
+ ('<rect width="1080" height="1920" fill="#6fd0ff"/><circle cx="930" cy="250" r="120" fill="#fff3a0"/><g id="h-blk"></g><g id="h-crowd"></g><g id="h-p"></g>', "1.06"),
+ ('<rect width="1080" height="1920" fill="#ffe7b8"/><g id="b-big"></g><g id="b-room"></g><g id="b-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#9fdcff"/><g id="c-tow"></g><g id="c-map"></g><g id="c-b"></g>', "1.04"),
+ ('<rect width="1080" height="1920" fill="#f4e9d0"/><g id="d-grid"></g><g id="d-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#0f0e1f"/><g id="e-sun"></g><g id="e-grid"></g><g id="e-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#2b2747"/><g id="f-cor"></g><g id="f-p"></g><g id="f-b"></g>', "1.04"),
+ ('<rect width="1080" height="1920" fill="#ffc96b"/><rect y="900" width="1080" height="1020" fill="#7a6a5a"/><rect y="1100" width="1080" height="12" fill="#ffd23f" opacity=".7"/><g id="g-trk"></g><g id="g-blk"></g><g id="g-burst"></g><g id="g-b"></g><g id="g-b2"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#8fe0a0"/><rect y="1150" width="1080" height="770" fill="#4caf50"/><g id="h2-q"></g><g id="h2-city"></g><g id="h2-tree"></g><g id="h2-b"></g>', "1.05"),
+ ('<rect width="1080" height="1920" fill="#1b1936"/><g id="i-pie"></g><g id="i-b"></g>', "1.04"),
+]
+JS = r'''
+    const R = E.rng(27);
+    /* S1 Riesenblock + Menschenstrom, Nahaufnahme */
+    const BL = $("#h-blk"); svg("rect", { x: 40, y: 860, width: 1000, height: 1100, fill: "#e86a4a", stroke: INK, "stroke-width": 12 }, BL);
+    svg("rect", { x: 40, y: 860, width: 1000, height: 40, fill: "#ff9b6a" }, BL);
+    const WIN = []; for (let r = 0; r < 9; r++) for (let c = 0; c < 12; c++) WIN.push(svg("rect", { x: 80 + c * 79, y: 930 + r * 96, width: 46, height: 60, rx: 6, fill: "#ffd27a", stroke: INK, "stroke-width": 4 }, BL));
+    svg("rect", { x: 700, y: 1600, width: 200, height: 260, rx: 14, fill: "#2b2747", stroke: INK, "stroke-width": 8 }, BL);
+    const PH = WIN.map(() => R());
+    E.clock(tl, (t) => WIN.forEach((w, i) => w.setAttribute("fill", Math.sin(t * 3 + PH[i] * 40) > .55 ? "#fff6c8" : (PH[i] > .25 ? "#ffd27a" : "#5c5890"))));
+    const CR = $("#h-crowd"), COL = ["#e8463c", "#3fd4ff", "#ffd23f", "#3ee08f", "#ff8ad8", "#ffffff"], HEADS = [];
+    for (let i = 0; i < 46; i++) { const g = svg("g", {}, CR); svg("rect", { x: -16, y: 0, width: 32, height: 46, rx: 12, fill: COL[i % 6], stroke: INK, "stroke-width": 4 }, g); svg("circle", { cx: 0, cy: -10, r: 15, fill: "#f2c39b", stroke: INK, "stroke-width": 4 }, g); HEADS.push([g, R() * 600, 1790 + (i % 3) * 34]); }
+    E.clock(tl, (t) => HEADS.forEach(([g, o, y]) => { const x = 1120 - ((t * 140 + o) % 420); g.setAttribute("transform", `translate(${x.toFixed(1)},${(y + Math.abs(Math.sin(t * 9 + o)) * -6).toFixed(1)})`); g.style.opacity = x < 790 ? 0 : 1; }));
+    const HP = svg("g", {}, $("#h-p")); K.person(HP, { x: 270, y: 1800, s: 1.5, face: "shock", arms: "down", shirt: "#3fd4ff" }); const HPW = svg("g", {}, $("#h-p")); HPW.appendChild(HP); K.bob(HPW, 8, 3);
+    /* S2 8,2 Mrd -> 20 m² */
+    const BG = $("#b-big"); K.otxt(BG, 540, 860, "8.200.000.000", 118, "#e8463c"); K.otxt(BG, 540, 980, "MENSCHEN", 80, "#fff"); K.pop(BG, at("zahlen", 0), "540 900"); K.hide(BG, cs("zahlen", 2, -0.1));
+    const RM = $("#b-room"); svg("rect", { x: 300, y: 640, width: 480, height: 560, rx: 8, fill: "#fff", stroke: INK, "stroke-width": 14 }, RM);
+    svg("rect", { x: 320, y: 660, width: 170, height: 240, rx: 18, fill: "#3fd4ff", stroke: INK, "stroke-width": 6 }, RM); svg("rect", { x: 330, y: 670, width: 150, height: 60, rx: 14, fill: "#fff", stroke: INK, "stroke-width": 5 }, RM);
+    svg("rect", { x: 640, y: 660, width: 120, height: 220, fill: "#c9c3dd", stroke: INK, "stroke-width": 6 }, RM); svg("circle", { cx: 700, cy: 720, r: 24, fill: "#5c6390" }, RM);
+    svg("rect", { x: 560, y: 1000, width: 160, height: 110, rx: 10, fill: "#ffb347", stroke: INK, "stroke-width": 6 }, RM);
+    K.person(svg("g", {}, RM), { x: 470, y: 1180, s: .62, face: "neutral", arms: "down", shirt: "#e8463c" });
+    K.otxt(RM, 540, 1245, "4 m", 44, "#fff"); K.otxt(RM, 250, 940, "5 m", 44, "#fff");
+    K.pop(RM, cs("zahlen", 2), "540 920");
+    const B2 = K.badge($("#b-b"), 540, 545, "20 m² PRO PERSON", "#ffd23f", 58); K.pop(B2, cs("zahlen", 3), "540 545");
+    /* S3 Turm vs. Burj Khalifa, dann Berlin */
+    const TW = $("#c-tow"); svg("rect", { y: 1200, width: 1080, height: 720, fill: "#5aa05a" }, TW);
+    svg("path", { d: "M150,604 L156,700 L170,700 L176,860 L196,860 L204,1040 L226,1040 L232,1200 L68,1200 L74,1040 L96,1040 L104,860 L124,860 L130,700 L144,700 Z", fill: "#c8d3e6", stroke: INK, "stroke-width": 6 }, TW);
+    K.txt(TW, 150, 580, "BURJ KHALIFA", 30, INK);
+    const MB = svg("g", {}, TW); svg("rect", { x: 330, y: 480, width: 800, height: 720, fill: "#e86a4a", stroke: INK, "stroke-width": 10 }, MB);
+    for (let i = 1; i < 50; i++) svg("line", { x1: 330, y1: 480 + i * 14.4, x2: 1080, y2: 480 + i * 14.4, stroke: "#b8452f", "stroke-width": 2 }, MB);
+    tl.set(MB, { scaleY: 0, svgOrigin: "540 1200" }, 0); tl.to(MB, { scaleY: 1, duration: 1.4, ease: "power2.out" }, at("turm", 0));
+    const B3a = K.badge($("#c-b"), 700, 760, "250 STOCKWERKE", "#ffd23f", 50); K.pop(B3a, cs("turm", 1), "700 760");
+    const B3b = K.badge($("#c-b"), 700, 900, "1 KM HOCH", "#ff3b3b", 64); K.pop(B3b, cs("turm", 3), "700 900");
+    K.hide(TW, cs("turm", 4, -0.1)); K.hide(B3a, cs("turm", 4, -0.1)); K.hide(B3b, cs("turm", 4, -0.1));
+    const MP = $("#c-map"); svg("path", { d: "M300,620 L420,560 L560,590 L690,540 L800,640 L790,780 L860,900 L800,1040 L820,1150 L660,1200 L520,1170 L380,1210 L270,1110 L230,960 L280,840 L240,720 Z", fill: "#3ee08f", stroke: INK, "stroke-width": 10, "stroke-linejoin": "round" }, MP);
+    K.otxt(MP, 540, 640, "BERLIN · 891 km²", 46, "#fff");
+    const SQ = svg("g", {}, MP); svg("rect", { x: 355, y: 700, width: 370, height: 370, fill: "#e8463c", stroke: INK, "stroke-width": 10 }, SQ); K.otxt(SQ, 540, 870, "BLOCK", 64, "#fff"); K.otxt(SQ, 540, 950, "656 km²", 54, "#ffd23f");
+    K.fadeIn(MP, cs("turm", 4)); K.pop(SQ, cs("turm", 5), "540 885");
+    /* S4 Etage voller Menschen */
+    const GD = svg("g", {}, $("#d-grid")); for (let x = 0; x <= 1080; x += 90) svg("line", { x1: x, y1: 0, x2: x, y2: 1920, stroke: "#8a7a6a", "stroke-width": 6 }, GD); for (let y = 0; y <= 1920; y += 90) svg("line", { x1: 0, y1: y, x2: 1080, y2: y, stroke: "#8a7a6a", "stroke-width": 6 }, GD);
+    const DOTS = []; for (let i = 0; i < 420; i++) DOTS.push([svg("circle", { cx: 0, cy: 0, r: 11, fill: COL[i % 6], stroke: INK, "stroke-width": 3 }, GD), R() * 1080, 300 + R() * 1250, R() * 6]);
+    E.clock(tl, (t) => DOTS.forEach(([d, x, y, p]) => { d.setAttribute("cx", (x + Math.sin(t * 2 + p) * 14).toFixed(1)); d.setAttribute("cy", (y + Math.cos(t * 1.7 + p) * 14).toFixed(1)); }));
+    tl.fromTo(GD, { scale: 2.4, svgOrigin: "540 900" }, { scale: 1, duration: 2.6, ease: "power2.out" }, at("etage", -0.2));
+    const B4 = K.badge($("#d-b"), 540, 1170, "33 MIO. PRO ETAGE", "#ff3b3b", 64); K.pop(B4, cs("etage", 1), "540 1170");
+    /* S5 Licht: nur der Rand hat Fenster */
+    const SU = $("#e-sun"); svg("circle", { cx: 0, cy: 560, r: 150, fill: "#ffd23f" }, SU); K.rays(SU, 0, 560, 14, "#ffd23f", .12);
+    const EG = $("#e-grid"), BULBS = [];
+    for (let r = 0; r < 8; r++) for (let c = 0; c < 12; c++) { const x = 120 + c * 72, y = 640 + r * 68, edge = c === 0; svg("rect", { x, y, width: 66, height: 62, fill: edge ? "#ffd27a" : "#2c2a44", stroke: "#0d0b18", "stroke-width": 4 }, EG); if (!edge) BULBS.push([svg("circle", { cx: x + 33, cy: y + 31, r: 8, fill: "#ffe9a0" }, EG), R() * 9]); }
+    svg("rect", { x: 112, y: 632, width: 10, height: 556, fill: "#bfe8ff" }, EG);
+    E.clock(tl, (t) => BULBS.forEach(([b, p]) => b.setAttribute("opacity", Math.sin(t * 7 + p * 3) > .7 ? .2 : .95)));
+    const B5 = K.badge($("#e-b"), 560, 545, "2 VON 1000 MIT FENSTER", "#ffd23f", 50); K.pop(B5, cs("fenster", 0), "560 545");
+    const X5 = K.cross($("#e-b"), 110, 560, 80); K.pop(X5, cs("fenster", 4), "110 560");
+    /* S6 Endloser Flur bis zum Ausgang */
+    const CO = $("#f-cor"), VX = 540, VY = 760;
+    const P = (z, sx, sy) => [VX + sx * 620 / z, VY + sy * 560 / z];
+    svg("path", { d: "M-100,200 L1180,200 L1180,1320 L-100,1320 Z", fill: "#3b3768" }, CO);
+    svg("path", { d: `M-80,1320 L${VX - 12},${VY + 11} L${VX + 12},${VY + 11} L1160,1320 Z`, fill: "#5c5890" }, CO);
+    svg("path", { d: `M-80,200 L${VX - 12},${VY - 11} L${VX + 12},${VY - 11} L1160,200 Z`, fill: "#2a2650" }, CO);
+    const EX = svg("g", {}, CO); svg("rect", { x: VX - 34, y: VY - 22, width: 68, height: 44, fill: "#3ee08f", stroke: INK, "stroke-width": 3 }, EX);
+    const DOORS = [], LAMPS = []; for (let i = 0; i < 16; i++) { DOORS.push([svg("polygon", { fill: "#e8a04a", stroke: INK, "stroke-width": 3 }, CO), i % 2 ? 1 : -1, i]); }
+    for (let i = 0; i < 9; i++) LAMPS.push([svg("ellipse", { fill: "#fff6c8" }, CO), i]);
+    E.clock(tl, (t) => {
+      DOORS.forEach(([d, s, i]) => { const z = 1.05 + ((Math.floor(i / 2) * 1.4 - t * 1.1) % 11.2 + 11.2) % 11.2, z2 = z + .45; const a = P(z, s, -.55), b = P(z2, s, -.55), c = P(z2, s, 1), e = P(z, s, 1); d.setAttribute("points", [a, b, c, e].map((q) => q.map((v) => v.toFixed(1)).join(",")).join(" ")); });
+      LAMPS.forEach(([l, i]) => { const z = 1.05 + ((i * 1.25 - t * 1.1) % 11.25 + 11.25) % 11.25, q = P(z, 0, -1); l.setAttribute("cx", q[0].toFixed(1)); l.setAttribute("cy", (q[1] + 10 / z).toFixed(1)); l.setAttribute("rx", (90 / z).toFixed(1)); l.setAttribute("ry", (20 / z).toFixed(1)); });
+    });
+    const FP = svg("g", {}, $("#f-p")); K.person(FP, { x: 300, y: 1560, s: 1.15, face: "worried", arms: "down", shirt: "#e8463c" }); const FPW = svg("g", {}, $("#f-p")); FPW.appendChild(FP); K.bob(FPW, 14, 9);
+    const B6 = K.badge($("#f-b"), 600, 545, "≈ 3 STD ZU FUSS", "#ffd23f", 58); K.pop(B6, cs("weg", 3), "600 545");
+    const B6b = K.otxt($("#f-b"), 540, 715, "AUSGANG", 26, "#3ee08f"); K.fadeIn(B6b, cs("weg", 1));
+    /* S7 Hunger: Lastwagen-Schlange */
+    const TR = $("#g-trk"), TRUCKS = [];
+    const truck = (g, c) => { svg("rect", { x: -150, y: -150, width: 220, height: 120, rx: 8, fill: c, stroke: INK, "stroke-width": 6 }, g); svg("rect", { x: 74, y: -120, width: 76, height: 90, rx: 12, fill: "#fff", stroke: INK, "stroke-width": 6 }, g); svg("rect", { x: 104, y: -110, width: 38, height: 34, rx: 6, fill: "#8fd8ff" }, g); [-110, 0, 115].forEach((x) => svg("circle", { cx: x, cy: -20, r: 22, fill: "#2b2a38", stroke: INK, "stroke-width": 5 }, g)); };
+    for (let i = 0; i < 12; i++) { const g = svg("g", {}, TR); truck(g, COL[i % 4]); TRUCKS.push([g, i, i % 2]); }
+    E.clock(tl, (t) => TRUCKS.forEach(([g, i, ln]) => { const x = -300 + ((t * 230 + i * 330 + ln * 160) % 1320); g.setAttribute("transform", `translate(${x.toFixed(1)},${ln ? 1210 : 1050})`); }));
+    const GB = $("#g-blk"); svg("rect", { x: 820, y: 260, width: 300, height: 1660, fill: "#e86a4a", stroke: INK, "stroke-width": 10 }, GB); for (let r = 0; r < 10; r++) for (let c = 0; c < 3; c++) svg("rect", { x: 860 + c * 70, y: 300 + r * 70, width: 40, height: 46, fill: "#5c5890" }, GB);
+    const HB = K.burst($("#g-burst"), 420, 760, 220, "HUNGER", "#ffd23f"); K.pop(HB, cs("hunger", 1), "420 760"); K.hide(HB, at("essen", -0.1));
+    const B7 = K.badge($("#g-b"), 420, 560, "15 MIO. TONNEN", "#ffd23f", 58); K.pop(B7, cs("essen", 2), "420 560");
+    const B7b = K.badge($("#g-b2"), 420, 720, "600.000 LKW / TAG", "#ff3b3b", 54); K.pop(B7b, cs("essen", 5), "420 720");
+    /* S8 Natur holt sich alles zurück */
+    const Q8 = $("#h2-q"); K.otxt(Q8, 540, 820, "?!", 260, "#e8463c"); K.pop(Q8, at("verrueckt", 0), "540 740"); K.hide(Q8, at("frei", -0.1));
+    const CT = $("#h2-city"); [[60, 700], [210, 820], [350, 640], [500, 760], [640, 600], [800, 780], [930, 680]].forEach(([x, y], i) => { svg("rect", { x, y, width: 120, height: 1160 - y, fill: "#9aa0b5", stroke: INK, "stroke-width": 6 }, CT); for (let r = y + 30; r < 1120; r += 70) svg("rect", { x: x + 25, y: r, width: 70, height: 36, fill: "#5d6378" }, CT); });
+    K.fadeIn(CT, at("frei", -0.1));
+    const TG = $("#h2-tree"); for (let i = 0; i < 26; i++) { const x = 30 + R() * 1020, y = 760 + R() * 420, s = 50 + R() * 60, g = svg("g", {}, TG); svg("rect", { x: x - 8, y, width: 16, height: s * .9, fill: "#6b4a2a" }, g); svg("circle", { cx: x, cy: y, r: s, fill: i % 3 ? "#2e9e4f" : "#3ee08f", stroke: INK, "stroke-width": 5 }, g); tl.set(g, { scale: 0, svgOrigin: `${x} ${y + s}` }, 0); tl.to(g, { scale: 1, duration: .5, ease: "back.out(2)" }, at("frei", 0.2) + i * .07); }
+    const B8 = K.badge($("#h2-b"), 540, 585, "MENSCHENLEER", "#3ee08f", 66); K.pop(B8, cs("frei", 1), "540 585");
+    /* S9 Hälfte des bewohnbaren Landes = Felder */
+    const PI = $("#i-pie"), CX = 540, CY = 900, RR = 300;
+    const wedge = (a0, a1, fill) => svg("path", { fill, stroke: INK, "stroke-width": 6, d: "" }, PI);
+    const arc = (el, a0, a1) => { const p0 = [CX + RR * Math.sin(a0), CY - RR * Math.cos(a0)], p1 = [CX + RR * Math.sin(a1), CY - RR * Math.cos(a1)]; el.setAttribute("d", `M${CX},${CY} L${p0[0].toFixed(1)},${p0[1].toFixed(1)} A${RR},${RR} 0 ${a1 - a0 > Math.PI ? 1 : 0} 1 ${p1[0].toFixed(1)},${p1[1].toFixed(1)} Z`); };
+    svg("circle", { cx: CX, cy: CY, r: RR, fill: "#2e9e4f", stroke: INK, "stroke-width": 8 }, PI);
+    const SH = wedge(); arc(SH, Math.PI * 2 * .87, Math.PI * 2 * .985); SH.setAttribute("fill", "#8fbf6a");
+    const FW = wedge(); FW.setAttribute("fill", "#ffd23f");
+    const tF = cs("twist", 4);
+    E.clock(tl, (t) => { const k = Math.max(0, Math.min(1, (t - tF + .4) / .8)); arc(FW, 0, Math.max(.001, Math.PI * k)); });
+    K.otxt(PI, 700, 900, "50 %", 92, "#e8463c"); K.otxt(PI, 700, 970, "FELDER", 48, "#fff"); K.otxt(PI, 380, 900, "WALD", 52, "#fff"); K.otxt(PI, 380, 960, "37 %", 52, "#3ee08f");
+    tl.set(PI.querySelectorAll("text"), { autoAlpha: 0 }, 0); tl.to(PI.querySelectorAll("text"), { autoAlpha: 1, duration: .3 }, tF + .5);
+    const B9 = K.badge($("#i-b"), 540, 530, "BEWOHNBARES LAND", "#ffd23f", 54); K.pop(B9, at("twist", 0.4), "540 530");
+'''
+POST = r'''    { const hl = document.querySelector("#hud .hud-label"), hn = document.querySelector("#hud .hud-num");
+      const P = [[at("zahlen", -0.2), "BEWOHNER", "8,2 MRD"], [at("turm", -0.2), "HÖHE", "1 KM"], [at("etage", -0.2), "PRO ETAGE", "33 MIO"], [at("licht", -0.2), "MIT FENSTER", "0,2 %"],
+                 [at("weg", -0.2), "ZUM AUSGANG", "≈ 3 STD"], [at("hunger", -0.2), "ESSEN PRO TAG", "15 MIO T"], [at("verrueckt", -0.2), "RESTLICHE ERDE", "LEER"], [at("twist", -0.2), "FÜR FELDER", "50 %"]];
+      document.querySelectorAll("#captions .cap").forEach((c) => { const L = Math.max(...c.textContent.split(/\s+/).map((w) => w.length)); if (L > 13) c.style.fontSize = Math.min(92, Math.floor(980 / (L * .74))) + "px"; });
+      E.clock(tl, (t) => { let v = P[0]; P.forEach((p) => { if (t >= p[0]) v = p; }); hl.textContent = "⚠ " + v[1]; hn.textContent = v[2]; }); }'''
+page("27-erde-im-wohnblock", S, 'ALLE MENSCHEN<br/>EIN <span class="r">WOHNBLOCK</span>', "⚠ 8,2 MILLIARDEN · 1 HAUS",
+     'WÜRDEST <span class="y">DU</span> EINZIEHEN?', [("SOFORT", "Hauptsache Fensterplatz"), ("NUR GANZ OBEN", "Mit Aussicht"), ("NIEMALS", "Ich bleib draußen")],
+     "UND FOLG MIR, BEVOR DIE AUFZÜGE VOLL SIND", JS, 1, POST, css="#s1 .title.main.top{font-size:80px}")
