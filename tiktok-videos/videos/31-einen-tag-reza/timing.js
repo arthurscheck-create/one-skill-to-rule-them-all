@@ -1,24 +1,24 @@
 window.TIMING = {
   "title": "Was wäre, wenn du einen Tag lang Reza aus „Persischstunden“ wärst?",
-  "duration": 49.05,
+  "duration": 49.57,
   "voice": "assets/voice.mp3",
   "lines": [
     {
       "id": "hook",
-      "t0": 0.047,
-      "t1": 1.858,
+      "t0": 0.049,
+      "t1": 1.754,
       "chunks": [
         "Du bist ab heute Reza."
       ],
       "noCap": true,
       "chunkStarts": [
-        0.047
+        0.049
       ]
     },
     {
       "id": "loop",
-      "t0": 2.069,
-      "t1": 7.061,
+      "t0": 1.974,
+      "t1": 6.457,
       "chunks": [
         "Frankreich,",
         "^neunzehnhundertzweiundvierzig.^",
@@ -27,17 +27,17 @@ window.TIMING = {
         "^erfundenen Sprache^ wird."
       ],
       "chunkStarts": [
-        2.069,
-        2.5,
-        3.983,
-        5.301,
-        5.864
+        1.974,
+        2.402,
+        3.728,
+        4.849,
+        5.273
       ]
     },
     {
       "id": "luege",
-      "t0": 7.272,
-      "t1": 11.957,
+      "t0": 6.676,
+      "t1": 10.666,
       "chunks": [
         "Du bist Jude.",
         "Aber du sagst,",
@@ -46,17 +46,17 @@ window.TIMING = {
         "rettet dir das Leben."
       ],
       "chunkStarts": [
-        7.272,
-        8.253,
-        9.217,
-        10.043,
-        10.93
+        6.676,
+        7.379,
+        8.23,
+        9.058,
+        9.833
       ]
     },
     {
       "id": "koch",
-      "t0": 12.168,
-      "t1": 15.844,
+      "t0": 10.885,
+      "t1": 14.172,
       "chunks": [
         "Dann der Befehl:",
         "Ein Hauptsturmführer",
@@ -64,46 +64,46 @@ window.TIMING = {
         "Von dir."
       ],
       "chunkStarts": [
-        12.168,
-        12.959,
-        13.936,
-        14.93
+        10.885,
+        11.657,
+        12.733,
+        13.689
       ]
     },
     {
       "id": "problem",
-      "t0": 16.056,
-      "t1": 18.329,
+      "t0": 14.391,
+      "t1": 16.577,
       "chunks": [
         "Das Problem:",
         "Du sprichst",
         "*kein einziges Wort.*"
       ],
       "chunkStarts": [
-        16.056,
-        16.828,
-        17.36
+        14.391,
+        14.939,
+        15.571
       ]
     },
     {
       "id": "erfinden",
-      "t0": 18.54,
-      "t1": 20.274,
+      "t0": 16.796,
+      "t1": 18.705,
       "chunks": [
         "Also erfindest du",
         "jeden Tag",
         "^neue Wörter.^"
       ],
       "chunkStarts": [
-        18.54,
-        19.129,
-        19.654
+        16.796,
+        17.409,
+        18.061
       ]
     },
     {
       "id": "baum",
-      "t0": 20.485,
-      "t1": 23.703,
+      "t0": 18.924,
+      "t1": 22.15,
       "chunks": [
         "Er fragt:",
         "Was heißt ^Baum?^",
@@ -111,35 +111,52 @@ window.TIMING = {
         "^Radj.^"
       ],
       "chunkStarts": [
-        20.485,
-        21.001,
-        22.183,
-        23.302
+        18.924,
+        19.46,
+        20.727,
+        21.836
+      ]
+    },
+    {
+      "id": "brot",
+      "t0": 22.369,
+      "t1": 26.545,
+      "chunks": [
+        "Eine Woche später",
+        "fragt er:",
+        "Was heißt ^Brot?^",
+        "Du sagst:",
+        "*Radj.*"
+      ],
+      "chunkStarts": [
+        22.369,
+        22.895,
+        23.577,
+        24.673,
+        25.638
       ]
     },
     {
       "id": "gefahr",
-      "t0": 23.914,
-      "t1": 27.986,
+      "t0": 26.764,
+      "t1": 29.356,
       "chunks": [
-        "Eine Woche später",
-        "fragt er wieder.",
-        "Vergisst du",
-        "*ein einziges Wort,*",
-        "fliegt alles auf."
+        "Doch ^Radj^",
+        "hieß schon *Baum.*",
+        "Und er wird",
+        "*misstrauisch.*"
       ],
       "chunkStarts": [
-        23.914,
-        24.473,
-        25.374,
-        25.903,
-        27.122
+        26.764,
+        27.105,
+        27.967,
+        28.757
       ]
     },
     {
       "id": "trick",
-      "t0": 28.197,
-      "t1": 32.765,
+      "t0": 29.575,
+      "t1": 33.591,
       "chunks": [
         "Dein Trick:",
         "Du baust die Wörter",
@@ -149,29 +166,29 @@ window.TIMING = {
         "schreibst."
       ],
       "chunkStarts": [
-        28.197,
-        28.787,
-        29.88,
-        30.429,
-        31.217,
-        32.005
+        29.575,
+        30.16,
+        31.061,
+        31.588,
+        32.436,
+        33.152
       ]
     },
     {
       "id": "wende",
-      "t0": 32.976,
-      "t1": 33.859,
+      "t0": 33.81,
+      "t1": 34.698,
       "chunks": [
         "Und am Ende?"
       ],
       "chunkStarts": [
-        32.976
+        33.81
       ]
     },
     {
       "id": "ende",
-      "t0": 34.211,
-      "t1": 39.7,
+      "t0": 35.064,
+      "t1": 39.705,
       "chunks": [
         "Die Akten",
         "werden *verbrannt.*",
@@ -180,60 +197,60 @@ window.TIMING = {
         "Namen auswendig."
       ],
       "chunkStarts": [
-        34.211,
-        34.657,
-        35.658,
-        36.829,
-        38.246
+        35.064,
+        35.461,
+        36.267,
+        37.41,
+        38.653
       ]
     },
     {
       "id": "mahn",
-      "t0": 39.911,
-      "t1": 42.26,
+      "t0": 39.925,
+      "t1": 42.098,
       "chunks": [
         "Deine erfundene Sprache",
         "hat sie ~bewahrt.~"
       ],
       "chunkStarts": [
-        39.911,
-        40.98
+        39.925,
+        40.972
       ]
     },
     {
       "id": "frage",
-      "t0": 42.471,
-      "t1": 43.215,
+      "t0": 42.317,
+      "t1": 43.158,
       "chunks": [
         "Kanntest du diesen Film?"
       ],
       "noCap": true,
       "chunkStarts": [
-        42.471
+        42.317
       ]
     },
     {
       "id": "komm",
-      "t0": 43.567,
-      "t1": 44.478,
+      "t0": 43.523,
+      "t1": 44.587,
       "chunks": [
         "Schreib es in die Kommentare."
       ],
       "noCap": true,
       "chunkStarts": [
-        43.567
+        43.523
       ]
     },
     {
       "id": "folg",
-      "t0": 44.689,
-      "t1": 46.391,
+      "t0": 44.806,
+      "t1": 46.92,
       "chunks": [
         "Und folg mir für mehr Geschichten wie diese."
       ],
       "noCap": true,
       "chunkStarts": [
-        44.689
+        44.806
       ]
     }
   ],
@@ -265,26 +282,31 @@ window.TIMING = {
     },
     {
       "id": "s6",
-      "at": "gefahr",
+      "at": "brot",
       "off": -0.2
     },
     {
       "id": "s7",
-      "at": "trick",
+      "at": "gefahr",
       "off": -0.2
     },
     {
       "id": "s8",
-      "at": "wende",
+      "at": "trick",
       "off": -0.2
     },
     {
       "id": "s9",
-      "at": "mahn",
+      "at": "wende",
       "off": -0.2
     },
     {
       "id": "s10",
+      "at": "mahn",
+      "off": -0.2
+    },
+    {
+      "id": "s11",
       "at": "frage",
       "off": -0.05
     }
@@ -375,9 +397,14 @@ window.TIMING = {
       "off": 2.0
     },
     {
+      "type": "ding",
+      "at": "brot",
+      "off": 2.2
+    },
+    {
       "type": "heartbeat",
       "at": "gefahr",
-      "off": 0.8,
+      "off": 0.5,
       "dur": 3
     },
     {

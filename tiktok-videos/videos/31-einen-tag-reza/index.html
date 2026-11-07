@@ -11,7 +11,7 @@
   <style>.lbl{font-family:Montserrat;font-weight:900}</style>
 </head>
 <body>
-  <div id="root" data-composition-id="main" data-start="0" data-duration="49.05" data-width="1080" data-height="1920">
+  <div id="root" data-composition-id="main" data-start="0" data-duration="49.57" data-width="1080" data-height="1920">
     <section class="scene" id="s1" data-drift="1.05"><div class="cam"><div class="drift">
       <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#f2e2b8"/><g id="a-forest"></g><g id="a-leaves"></g><g id="a-p"></g><g id="a-book"></g></svg>
       <div class="title main top">EINEN TAG<br/>LANG <span class="r">REZA</span></div>
@@ -29,20 +29,23 @@
     <section class="scene" id="s5" data-drift="1.04"><div class="cam"><div class="drift">
       <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#e8dcc0"/><g id="e-tree"></g><g id="e-k"></g><g id="e-kcap"></g><g id="e-r"></g><g id="e-bub"></g></svg>
     </div></div></section>
-    <section class="scene" id="s6" data-drift="1.06"><div class="cam"><div class="drift">
-      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#3a2a2a"/><g id="f-p"></g><g id="f-sw"></g><g id="f-b"></g></svg>
+    <section class="scene" id="s6" data-drift="1.04"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#e8dcc0"/><g id="e2-bread"></g><g id="e2-k"></g><g id="e2-kcap"></g><g id="e2-r"></g><g id="e2-bub"></g></svg>
     </div></div></section>
-    <section class="scene" id="s7" data-drift="1.04"><div class="cam"><div class="drift">
+    <section class="scene" id="s7" data-drift="1.06"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#3a2a2a"/><g id="f-card"></g><g id="f-p"></g><g id="f-sw"></g></svg>
+    </div></div></section>
+    <section class="scene" id="s8" data-drift="1.04"><div class="cam"><div class="drift">
       <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#3b3768"/><g id="g-book"></g><g id="g-b"></g></svg>
     </div></div></section>
-    <section class="scene" id="s8" data-drift="1.05"><div class="cam"><div class="drift">
+    <section class="scene" id="s9" data-drift="1.05"><div class="cam"><div class="drift">
       <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#1b1414"/><g id="h-files"></g><g id="h-fire"></g><g id="h-num"></g></svg>
     </div></div></section>
-    <section class="scene" id="s9" data-drift="1.03"><div class="cam"><div class="drift">
+    <section class="scene" id="s10" data-drift="1.03"><div class="cam"><div class="drift">
       <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#0f0e1f"/><g id="i-cand"></g><g id="i-b"></g></svg>
     </div></div></section>
-    <section class="scene" id="s10" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
-      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s10-stars"></g></svg>
+    <section class="scene" id="s11" data-punch="1.06" data-drift="1.0"><div class="cam"><div class="drift">
+      <svg class="art" viewBox="0 0 1080 1920"><rect width="1080" height="1920" fill="#14122b"/><g id="s11-stars"></g></svg>
       <div class="ec-q" style="font-size:78px">KANNTEST <span class="y">DU</span> DIESEN FILM?</div>
       <div class="ec-cta">SCHREIB ES IN DIE KOMMENTARE<br/><span style="color:var(--yellow)">UND FOLG MIR FÜR MEHR GESCHICHTEN WIE DIESE</span></div>
     </div></div></section>
@@ -50,8 +53,8 @@
     <div id="captions"></div>
     <svg id="grain" width="1080" height="1920"><filter id="f-grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7"/></filter><rect width="1080" height="1920" filter="url(#f-grain)"/></svg>
     <div id="vignette"></div><div id="flash"></div>
-    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="46.45" data-volume="1"></audio>
-    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="49.05" data-volume="0.9"></audio>
+    <audio id="voice" src="assets/voice.mp3" data-start="0" data-duration="46.97" data-volume="1"></audio>
+    <audio id="sfx" src="assets/sfx.wav" data-start="0" data-duration="49.57" data-volume="0.9"></audio>
   </div>
   <script src="lib/cast.js"></script>
   <script src="lib/kit.js"></script>
@@ -96,11 +99,22 @@
     const BU = $("#e-bub"); const bub = (x, y, w, txt, col, tail) => { const b = svg("g", {}, BU); svg("rect", { x: x - w / 2, y: y - 70, width: w, height: 140, rx: 46, fill: "#fff", stroke: INK, "stroke-width": 8 }, b); svg("path", { d: tail, fill: "#fff", stroke: INK, "stroke-width": 8, "stroke-linejoin": "round" }, b); K.txt(b, x, y + 22, txt, 62, col); return b; };
     const Q1 = bub(420, 560, 700, "WAS HEISST BAUM?", INK, "M240,628 L210,720 L300,630 Z"); K.pop(Q1, cs("baum", 1), "420 560");
     const Q2 = bub(800, 760, 300, "RADJ.", "#e8463c", "M860,828 L900,900 L820,830 Z"); K.pop(Q2, cs("baum", 3), "800 760");
-    /* S6 Gefahr */
-    const FP = svg("g", {}, $("#f-p")); K.person(FP, Object.assign({ x: 540, y: 1800, s: 1.55, face: "worried", arms: "down" }, PRS(FP)));
-    const SW = svg("path", { d: "M700,960 C690,990 690,1010 705,1015 C720,1010 718,990 700,960 Z", fill: "#8fd8ff", stroke: INK, "stroke-width": 4 }, $("#f-sw"));
+    /* S6 Was heißt Brot? – wieder Radj. */
+    const BR = $("#e2-bread"); svg("path", { d: "M380,960 C380,800 700,800 700,960 L700,1060 C700,1090 380,1090 380,1060 Z", fill: "#d89a4a", stroke: INK, "stroke-width": 8 }, BR); [450, 540, 630].forEach((x) => svg("path", { d: `M${x - 30},900 L${x + 20},860`, stroke: "#a86a2a", "stroke-width": 10, "stroke-linecap": "round" }, BR));
+    const EK2 = svg("g", {}, $("#e2-k")); K.person(EK2, Object.assign({ x: 230, y: 1900, s: 1.3, face: "neutral", arms: "down" }, OF)); cap($("#e2-kcap"), 230, 1150, .92);
+    const ER2 = svg("g", {}, $("#e2-r")); K.person(ER2, Object.assign({ x: 850, y: 1900, s: 1.3, face: "worried", arms: "down" }, PRS(ER2)));
+    const bub2 = (x, y, w, txt, col, tail) => { const b = svg("g", {}, $("#e2-bub")); svg("rect", { x: x - w / 2, y: y - 70, width: w, height: 140, rx: 46, fill: "#fff", stroke: INK, "stroke-width": 8 }, b); svg("path", { d: tail, fill: "#fff", stroke: INK, "stroke-width": 8, "stroke-linejoin": "round" }, b); K.txt(b, x, y + 22, txt, 62, col); return b; };
+    const Q3 = bub2(420, 560, 700, "WAS HEISST BROT?", INK, "M240,628 L210,720 L300,630 Z"); K.pop(Q3, cs("brot", 2), "420 560");
+    const Q4 = bub2(800, 760, 300, "RADJ.", "#e8463c", "M860,828 L900,900 L820,830 Z"); K.pop(Q4, cs("brot", 4), "800 760");
+    /* S7 Gefahr: Radj = Baum UND Brot */
+    const CD = $("#f-card"); svg("rect", { x: 200, y: 510, width: 680, height: 430, rx: 18, fill: "#fff3c0", stroke: INK, "stroke-width": 10 }, CD); K.txt(CD, 540, 600, "VOKABELN", 56, INK);
+    const L1 = K.txt(CD, 540, 720, "BAUM = RADJ", 70, "#3a3560"), L2 = K.txt(CD, 540, 840, "BROT = RADJ", 70, "#e8463c");
+    const RC = svg("g", {}, CD); [720, 840].forEach((y) => svg("rect", { x: 585, y: y - 66, width: 230, height: 86, rx: 40, fill: "none", stroke: "#ff3b3b", "stroke-width": 9 }, RC)); K.pop(RC, cs("gefahr", 1), "700 780");
+    K.shake(CD, cs("gefahr", 1), 7, 10);
+    /* (Nahaufnahme Reza bleibt) */
+    const FP = svg("g", {}, $("#f-p")); K.person(FP, Object.assign({ x: 540, y: 1880, s: 1.45, face: "worried", arms: "down" }, PRS(FP)));
+    const SW = svg("path", { d: "M690,1080 C680,1110 680,1130 695,1135 C710,1130 708,1110 690,1080 Z", fill: "#8fd8ff", stroke: INK, "stroke-width": 4 }, $("#f-sw"));
     E.clock(tl, (t) => SW.setAttribute("transform", `translate(0,${(((t - at("gefahr")) * 60) % 90).toFixed(1)})`));
-    const B6 = K.badge($("#f-b"), 540, 580, "EIN FEHLER = ENTTARNT", "#ff3b3b", 56); K.pop(B6, cs("gefahr", 3), "540 580");
     /* S7 Lagerbuch: Wörter aus Namen */
     const GB = $("#g-book"); svg("rect", { x: 120, y: 520, width: 840, height: 640, rx: 16, fill: "#5c3a1a", stroke: INK, "stroke-width": 10 }, GB); svg("rect", { x: 150, y: 545, width: 380, height: 590, fill: "#f6ecd2" }, GB); svg("rect", { x: 550, y: 545, width: 380, height: 590, fill: "#f6ecd2" }, GB); svg("line", { x1: 540, y1: 545, x2: 540, y2: 1135, stroke: "#c9b58a", "stroke-width": 6 }, GB);
     const HL = [];
@@ -118,8 +132,8 @@
     E.clock(tl, (t) => CS.forEach(([g, fl, i]) => { const on = t > at("mahn", 0) + i * .03; g.style.opacity = on ? 1 : 0; fl.setAttribute("ry", (14 + Math.sin(t * 9 + i) * 3).toFixed(1)); }));
     const B9 = K.badge($("#i-b"), 540, 600, "NIEMALS VERGESSEN", "#ffd23f", 62); K.pop(B9, cs("mahn", 1), "540 600");
 
-    E.stars($("#s10-stars"), 60, 171);
-    E.buildEndcard(tl, "s10", at("frage", -0.05), at("komm", -0.1));
+    E.stars($("#s11-stars"), 60, 171);
+    E.buildEndcard(tl, "s11", at("frage", -0.05), at("komm", -0.1));
     E.buildScenes(tl); E.buildCaptions(tl); E.buildHud(tl); E.buildInteract(tl);
     E.hookOpen(tl);
     tl.to(["#s1 .title.main", "#s1 .title.sub"], { autoAlpha: 0, duration: .15 }, at("loop", -0.15));

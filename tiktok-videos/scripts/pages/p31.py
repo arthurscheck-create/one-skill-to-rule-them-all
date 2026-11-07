@@ -6,7 +6,8 @@ S = [
  ('<rect width="1080" height="1920" fill="#d8cfb8"/><rect x="640" y="520" width="300" height="380" fill="#a8c8e0" stroke="#5c4a3a" stroke-width="18"/><rect y="1260" width="1080" height="660" fill="#7a5a3a"/><g id="c-p"></g><g id="c-cap"></g><g id="c-b"></g>', "1.05"),
  ('<rect width="1080" height="1920" fill="#2a2347"/><g id="d-note"></g><g id="d-b"></g>', "1.04"),
  ('<rect width="1080" height="1920" fill="#e8dcc0"/><g id="e-tree"></g><g id="e-k"></g><g id="e-kcap"></g><g id="e-r"></g><g id="e-bub"></g>', "1.04"),
- ('<rect width="1080" height="1920" fill="#3a2a2a"/><g id="f-p"></g><g id="f-sw"></g><g id="f-b"></g>', "1.06"),
+ ('<rect width="1080" height="1920" fill="#e8dcc0"/><g id="e2-bread"></g><g id="e2-k"></g><g id="e2-kcap"></g><g id="e2-r"></g><g id="e2-bub"></g>', "1.04"),
+ ('<rect width="1080" height="1920" fill="#3a2a2a"/><g id="f-card"></g><g id="f-p"></g><g id="f-sw"></g>', "1.06"),
  ('<rect width="1080" height="1920" fill="#3b3768"/><g id="g-book"></g><g id="g-b"></g>', "1.04"),
  ('<rect width="1080" height="1920" fill="#1b1414"/><g id="h-files"></g><g id="h-fire"></g><g id="h-num"></g>', "1.05"),
  ('<rect width="1080" height="1920" fill="#0f0e1f"/><g id="i-cand"></g><g id="i-b"></g>', "1.03"),
@@ -46,11 +47,22 @@ JS = r'''
     const BU = $("#e-bub"); const bub = (x, y, w, txt, col, tail) => { const b = svg("g", {}, BU); svg("rect", { x: x - w / 2, y: y - 70, width: w, height: 140, rx: 46, fill: "#fff", stroke: INK, "stroke-width": 8 }, b); svg("path", { d: tail, fill: "#fff", stroke: INK, "stroke-width": 8, "stroke-linejoin": "round" }, b); K.txt(b, x, y + 22, txt, 62, col); return b; };
     const Q1 = bub(420, 560, 700, "WAS HEISST BAUM?", INK, "M240,628 L210,720 L300,630 Z"); K.pop(Q1, cs("baum", 1), "420 560");
     const Q2 = bub(800, 760, 300, "RADJ.", "#e8463c", "M860,828 L900,900 L820,830 Z"); K.pop(Q2, cs("baum", 3), "800 760");
-    /* S6 Gefahr */
-    const FP = svg("g", {}, $("#f-p")); K.person(FP, Object.assign({ x: 540, y: 1800, s: 1.55, face: "worried", arms: "down" }, PRS(FP)));
-    const SW = svg("path", { d: "M700,960 C690,990 690,1010 705,1015 C720,1010 718,990 700,960 Z", fill: "#8fd8ff", stroke: INK, "stroke-width": 4 }, $("#f-sw"));
+    /* S6 Was heißt Brot? – wieder Radj. */
+    const BR = $("#e2-bread"); svg("path", { d: "M380,960 C380,800 700,800 700,960 L700,1060 C700,1090 380,1090 380,1060 Z", fill: "#d89a4a", stroke: INK, "stroke-width": 8 }, BR); [450, 540, 630].forEach((x) => svg("path", { d: `M${x - 30},900 L${x + 20},860`, stroke: "#a86a2a", "stroke-width": 10, "stroke-linecap": "round" }, BR));
+    const EK2 = svg("g", {}, $("#e2-k")); K.person(EK2, Object.assign({ x: 230, y: 1900, s: 1.3, face: "neutral", arms: "down" }, OF)); cap($("#e2-kcap"), 230, 1150, .92);
+    const ER2 = svg("g", {}, $("#e2-r")); K.person(ER2, Object.assign({ x: 850, y: 1900, s: 1.3, face: "worried", arms: "down" }, PRS(ER2)));
+    const bub2 = (x, y, w, txt, col, tail) => { const b = svg("g", {}, $("#e2-bub")); svg("rect", { x: x - w / 2, y: y - 70, width: w, height: 140, rx: 46, fill: "#fff", stroke: INK, "stroke-width": 8 }, b); svg("path", { d: tail, fill: "#fff", stroke: INK, "stroke-width": 8, "stroke-linejoin": "round" }, b); K.txt(b, x, y + 22, txt, 62, col); return b; };
+    const Q3 = bub2(420, 560, 700, "WAS HEISST BROT?", INK, "M240,628 L210,720 L300,630 Z"); K.pop(Q3, cs("brot", 2), "420 560");
+    const Q4 = bub2(800, 760, 300, "RADJ.", "#e8463c", "M860,828 L900,900 L820,830 Z"); K.pop(Q4, cs("brot", 4), "800 760");
+    /* S7 Gefahr: Radj = Baum UND Brot */
+    const CD = $("#f-card"); svg("rect", { x: 200, y: 510, width: 680, height: 430, rx: 18, fill: "#fff3c0", stroke: INK, "stroke-width": 10 }, CD); K.txt(CD, 540, 600, "VOKABELN", 56, INK);
+    const L1 = K.txt(CD, 540, 720, "BAUM = RADJ", 70, "#3a3560"), L2 = K.txt(CD, 540, 840, "BROT = RADJ", 70, "#e8463c");
+    const RC = svg("g", {}, CD); [720, 840].forEach((y) => svg("rect", { x: 585, y: y - 66, width: 230, height: 86, rx: 40, fill: "none", stroke: "#ff3b3b", "stroke-width": 9 }, RC)); K.pop(RC, cs("gefahr", 1), "700 780");
+    K.shake(CD, cs("gefahr", 1), 7, 10);
+    /* (Nahaufnahme Reza bleibt) */
+    const FP = svg("g", {}, $("#f-p")); K.person(FP, Object.assign({ x: 540, y: 1880, s: 1.45, face: "worried", arms: "down" }, PRS(FP)));
+    const SW = svg("path", { d: "M690,1080 C680,1110 680,1130 695,1135 C710,1130 708,1110 690,1080 Z", fill: "#8fd8ff", stroke: INK, "stroke-width": 4 }, $("#f-sw"));
     E.clock(tl, (t) => SW.setAttribute("transform", `translate(0,${(((t - at("gefahr")) * 60) % 90).toFixed(1)})`));
-    const B6 = K.badge($("#f-b"), 540, 580, "EIN FEHLER = ENTTARNT", "#ff3b3b", 56); K.pop(B6, cs("gefahr", 3), "540 580");
     /* S7 Lagerbuch: Wörter aus Namen */
     const GB = $("#g-book"); svg("rect", { x: 120, y: 520, width: 840, height: 640, rx: 16, fill: "#5c3a1a", stroke: INK, "stroke-width": 10 }, GB); svg("rect", { x: 150, y: 545, width: 380, height: 590, fill: "#f6ecd2" }, GB); svg("rect", { x: 550, y: 545, width: 380, height: 590, fill: "#f6ecd2" }, GB); svg("line", { x1: 540, y1: 545, x2: 540, y2: 1135, stroke: "#c9b58a", "stroke-width": 6 }, GB);
     const HL = [];
